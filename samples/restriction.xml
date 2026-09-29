@@ -1,0 +1,350 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<d2:payload xmlns:d2="http://datex2.eu/schema/3/d2Payload" xmlns:com="http://datex2.eu/schema/3/common" xmlns:sit="http://datex2.eu/schema/3/situation" xmlns:loc="http://datex2.eu/schema/3/locationReferencing" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="sit:SituationPublication" lang="cs" modelBaseVersion="3" profileName="cz-ndic_d2-restrictions" profileVersion="2.0">
+  <!-- tag::header[] -->
+  <com:feedType>x-source:cz-ndic_d2-restrictions-pull-v1</com:feedType>
+  <com:publicationTime>2023-08-30T09:18:24+02:00</com:publicationTime>
+  <com:publicationCreator>
+    <com:country>cz</com:country>
+    <com:nationalIdentifier>NDIC</com:nationalIdentifier>
+  </com:publicationCreator>
+  <!-- end::header[] -->
+  <sit:situation id="3bdeb91a-d680-47e5-ab5c-c3b9b4a13006">
+    <!-- tag::situation-head[] -->
+    <sit:situationVersionTime>2023-08-30T07:00:02+02:00</sit:situationVersionTime>
+    <sit:headerInformation>
+      <com:confidentiality>noRestriction</com:confidentiality>
+      <com:informationStatus>real</com:informationStatus>
+    </sit:headerInformation>
+    <!-- end::situation-head[] -->
+    <sit:situationRecord xsi:type="sit:ConstructionWorks" id="3bdeb91a-d680-47e5-ab5c-c3b9b4a13006_ConstructionWorks" version="6">
+      <!-- tag::record-meta[] -->
+      <sit:situationRecordCreationTime>2023-08-30T07:00:02+02:00</sit:situationRecordCreationTime>
+      <sit:situationRecordVersionTime>2023-08-30T07:00:02+02:00</sit:situationRecordVersionTime>
+      <sit:probabilityOfOccurrence>certain</sit:probabilityOfOccurrence>
+      <sit:source>
+        <com:sourceIdentification>RSD</com:sourceIdentification>
+      </sit:source>
+      <!-- end::record-meta[] -->
+      <!-- tag::validity[] -->
+      <sit:validity>
+        <com:validityStatus>definedByValidityTimeSpec</com:validityStatus>
+        <com:validityTimeSpecification>
+          <com:overallStartTime>2023-08-30T07:00:00+02:00</com:overallStartTime>
+          <com:overallEndTime>2023-09-01T23:59:00+02:00</com:overallEndTime>
+        </com:validityTimeSpecification>
+      </sit:validity>
+      <!-- end::validity[] -->
+      <!-- tag::comment-url[] -->
+      <sit:generalPublicComment>
+        <sit:comment>
+          <com:values>
+            <com:value lang="cs">silnice I/10 (ulice Krkonošská), Desná, okr. Jablonec nad Nisou, stavební práce, kyvadlový provoz jedním jízdním pruhem, Od 30.08.2023 07:00 Do 01.09.2023 23:59, Z důvodu provádění stavebních prací bude na dotčeném úseku silnice I/10  provedena 
+částečná uzavírka provozu, která bude označena dle schváleného dopravně 
+inženýrského opatření. V průběhu provádění stavebních prací bude doprava řízena kyvadlově 
+dvoucestným signalizačním zařízením., Vydal: Krajský úřad Libereckého kraje</com:value>
+          </com:values>
+        </sit:comment>
+      </sit:generalPublicComment>
+      <sit:urlLink>
+        <com:urlLinkAddress>https://dopravniinfo.cz/te/3bdeb91a-d680-47e5-ab5c-c3b9b4a13006</com:urlLinkAddress>
+        <com:urlLinkType>html</com:urlLinkType>
+      </sit:urlLink>
+      <!-- end::comment-url[] -->
+      <sit:locationReference xsi:type="loc:SingleRoadLinearLocation">
+        <!-- tag::loc-extref[] -->
+        <loc:externalReferencing>
+          <loc:externalLocationCode>126599</loc:externalLocationCode>
+          <loc:externalReferencingSystem>CZ-RSD-GlobalNetwork:22.12</loc:externalReferencingSystem>
+        </loc:externalReferencing>
+        <loc:externalReferencing>
+          <loc:externalLocationCode>1461717</loc:externalLocationCode>
+          <loc:externalReferencingSystem>CZ-RSD-GlobalNetwork:22.12</loc:externalReferencingSystem>
+        </loc:externalReferencing>
+        <loc:externalReferencing>
+          <loc:externalLocationCode>1461719</loc:externalLocationCode>
+          <loc:externalReferencingSystem>CZ-RSD-GlobalNetwork:22.12</loc:externalReferencingSystem>
+        </loc:externalReferencing>
+        <!-- end::loc-extref[] -->
+        <!-- tag::loc-openlr[] -->
+        <loc:openlrLinear>
+          <loc:firstDirection>
+            <loc:openlrLocationReferencePoint>
+              <loc:openlrCoordinates>
+                <loc:latitude>50.765282088427412</loc:latitude>
+                <loc:longitude>15.337521544012871</loc:longitude>
+              </loc:openlrCoordinates>
+              <loc:openlrLineAttributes>
+                <loc:openlrFunctionalRoadClass>frc1</loc:openlrFunctionalRoadClass>
+                <loc:openlrFormOfWay>singleCarriageway</loc:openlrFormOfWay>
+                <loc:openlrBearing>112</loc:openlrBearing>
+              </loc:openlrLineAttributes>
+              <loc:openlrPathAttributes>
+                <loc:openlrLowestFrcToNextLRPoint>frc1</loc:openlrLowestFrcToNextLRPoint>
+                <loc:openlrDistanceToNextLRPoint>1240</loc:openlrDistanceToNextLRPoint>
+              </loc:openlrPathAttributes>
+            </loc:openlrLocationReferencePoint>
+            <loc:openlrLastLocationReferencePoint>
+              <loc:openlrCoordinates>
+                <loc:latitude>50.763208691718496</loc:latitude>
+                <loc:longitude>15.347566415800618</loc:longitude>
+              </loc:openlrCoordinates>
+              <loc:openlrLineAttributes>
+                <loc:openlrFunctionalRoadClass>frc1</loc:openlrFunctionalRoadClass>
+                <loc:openlrFormOfWay>singleCarriageway</loc:openlrFormOfWay>
+                <loc:openlrBearing>283</loc:openlrBearing>
+              </loc:openlrLineAttributes>
+            </loc:openlrLastLocationReferencePoint>
+            <loc:openlrOffsets>
+              <loc:openlrPositiveOffset>120</loc:openlrPositiveOffset>
+              <loc:openlrNegativeOffset>418</loc:openlrNegativeOffset>
+            </loc:openlrOffsets>
+          </loc:firstDirection>
+        </loc:openlrLinear>
+        <!-- end::loc-openlr[] -->
+        <!-- tag::loc-alertc[] -->
+        <loc:alertCLinear xsi:type="loc:AlertCMethod2Linear">
+          <loc:alertCLocationCountryCode>2</loc:alertCLocationCountryCode>
+          <loc:alertCLocationTableNumber>25</loc:alertCLocationTableNumber>
+          <loc:alertCLocationTableVersion>9.0</loc:alertCLocationTableVersion>
+          <loc:alertCDirection>
+            <loc:alertCDirectionCoded>negative</loc:alertCDirectionCoded>
+            <loc:alertCAffectedDirection>aligned</loc:alertCAffectedDirection>
+          </loc:alertCDirection>
+          <loc:alertCMethod2PrimaryPointLocation>
+            <loc:alertCLocation>
+              <loc:specificLocation>8973</loc:specificLocation>
+            </loc:alertCLocation>
+          </loc:alertCMethod2PrimaryPointLocation>
+          <loc:alertCMethod2SecondaryPointLocation>
+            <loc:alertCLocation>
+              <loc:specificLocation>8974</loc:specificLocation>
+            </loc:alertCLocation>
+          </loc:alertCMethod2SecondaryPointLocation>
+        </loc:alertCLinear>
+        <!-- end::loc-alertc[] -->
+        <!-- tag::loc-station[] -->
+        <loc:linearWithinLinearElement>
+          <loc:directionRelativeOnLinearSection>aligned</loc:directionRelativeOnLinearSection>
+          <loc:linearElement>
+            <loc:roadNumber>10</loc:roadNumber>
+          </loc:linearElement>
+          <loc:fromPoint xsi:type="loc:DistanceFromLinearElementStart">
+            <loc:distanceAlong>106797</loc:distanceAlong>
+          </loc:fromPoint>
+          <loc:toPoint xsi:type="loc:DistanceFromLinearElementStart">
+            <loc:distanceAlong>107507</loc:distanceAlong>
+          </loc:toPoint>
+        </loc:linearWithinLinearElement>
+        <!-- end::loc-station[] -->
+        <!-- tag::loc-gn[] -->
+        <loc:linearWithinLinearElement>
+          <loc:directionRelativeOnLinearSection>opposite</loc:directionRelativeOnLinearSection>
+          <loc:linearElement xsi:type="loc:LinearElementByCode">
+            <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
+            <loc:linearElementReferenceModelVersion>22.12</loc:linearElementReferenceModelVersion>
+            <loc:linearElementIdentifier>126853</loc:linearElementIdentifier>
+          </loc:linearElement>
+          <loc:fromPoint xsi:type="loc:DistanceFromLinearElementReferent">
+            <loc:distanceAlong>0</loc:distanceAlong>
+            <loc:fromReferent>
+              <loc:referentIdentifier>126853-start</loc:referentIdentifier>
+              <loc:referentType>referenceMarker</loc:referentType>
+              <loc:pointCoordinates>
+                <loc:latitude>50.765102</loc:latitude>
+                <loc:longitude>15.339157</loc:longitude>
+              </loc:pointCoordinates>
+            </loc:fromReferent>
+          </loc:fromPoint>
+          <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
+          </loc:toPoint>
+        </loc:linearWithinLinearElement>
+        <loc:linearWithinLinearElement>
+          <loc:directionRelativeOnLinearSection>opposite</loc:directionRelativeOnLinearSection>
+          <loc:linearElement xsi:type="loc:LinearElementByCode">
+            <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
+            <loc:linearElementReferenceModelVersion>22.12</loc:linearElementReferenceModelVersion>
+            <loc:linearElementIdentifier>2901326</loc:linearElementIdentifier>
+          </loc:linearElement>
+          <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
+          </loc:fromPoint>
+          <loc:toPoint xsi:type="loc:DistanceFromLinearElementReferent">
+            <loc:distanceAlong>0</loc:distanceAlong>
+            <loc:fromReferent>
+              <loc:referentIdentifier>2901326-end</loc:referentIdentifier>
+              <loc:referentType>referenceMarker</loc:referentType>
+              <loc:pointCoordinates>
+                <loc:latitude>50.764969</loc:latitude>
+                <loc:longitude>15.343119</loc:longitude>
+              </loc:pointCoordinates>
+            </loc:fromReferent>
+          </loc:toPoint>
+        </loc:linearWithinLinearElement>
+        <!-- end::loc-gn[] -->
+      </sit:locationReference>
+      <!-- tag::works[] -->
+      <sit:subjects>
+        <sit:subjectTypeOfWorks>other</sit:subjectTypeOfWorks>
+      </sit:subjects>
+      <sit:constructionWorkType>constructionWork</sit:constructionWorkType>
+      <!-- end::works[] -->
+    </sit:situationRecord>
+    <sit:situationRecord xsi:type="sit:RoadOrCarriagewayOrLaneManagement" id="3bdeb91a-d680-47e5-ab5c-c3b9b4a13006_RoadOrCarriagewayOrLaneManagement" version="6">
+      <sit:situationRecordCreationTime>2023-08-30T07:00:02+02:00</sit:situationRecordCreationTime>
+      <sit:situationRecordVersionTime>2023-08-30T07:00:02+02:00</sit:situationRecordVersionTime>
+      <sit:probabilityOfOccurrence>certain</sit:probabilityOfOccurrence>
+      <sit:source>
+        <com:sourceIdentification>RSD</com:sourceIdentification>
+      </sit:source>
+      <sit:validity>
+        <com:validityStatus>definedByValidityTimeSpec</com:validityStatus>
+        <com:validityTimeSpecification>
+          <com:overallStartTime>2023-08-30T07:00:00+02:00</com:overallStartTime>
+          <com:overallEndTime>2023-09-01T23:59:00+02:00</com:overallEndTime>
+        </com:validityTimeSpecification>
+      </sit:validity>
+      <sit:generalPublicComment>
+        <sit:comment>
+          <com:values>
+            <com:value lang="cs">silnice I/10 (ulice Krkonošská), Desná, okr. Jablonec nad Nisou, stavební práce, kyvadlový provoz jedním jízdním pruhem, Od 30.08.2023 07:00 Do 01.09.2023 23:59, Z důvodu provádění stavebních prací bude na dotčeném úseku silnice I/10  provedena 
+částečná uzavírka provozu, která bude označena dle schváleného dopravně 
+inženýrského opatření. V průběhu provádění stavebních prací bude doprava řízena kyvadlově 
+dvoucestným signalizačním zařízením., Vydal: Krajský úřad Libereckého kraje</com:value>
+          </com:values>
+        </sit:comment>
+      </sit:generalPublicComment>
+      <sit:urlLink>
+        <com:urlLinkAddress>https://dopravniinfo.cz/te/3bdeb91a-d680-47e5-ab5c-c3b9b4a13006</com:urlLinkAddress>
+        <com:urlLinkType>html</com:urlLinkType>
+      </sit:urlLink>
+      <sit:locationReference xsi:type="loc:SingleRoadLinearLocation">
+        <loc:externalReferencing>
+          <loc:externalLocationCode>126599</loc:externalLocationCode>
+          <loc:externalReferencingSystem>CZ-RSD-GlobalNetwork:22.12</loc:externalReferencingSystem>
+        </loc:externalReferencing>
+        <loc:externalReferencing>
+          <loc:externalLocationCode>1461717</loc:externalLocationCode>
+          <loc:externalReferencingSystem>CZ-RSD-GlobalNetwork:22.12</loc:externalReferencingSystem>
+        </loc:externalReferencing>
+        <loc:externalReferencing>
+          <loc:externalLocationCode>1461719</loc:externalLocationCode>
+          <loc:externalReferencingSystem>CZ-RSD-GlobalNetwork:22.12</loc:externalReferencingSystem>
+        </loc:externalReferencing>
+        <loc:openlrLinear>
+          <loc:firstDirection>
+            <loc:openlrLocationReferencePoint>
+              <loc:openlrCoordinates>
+                <loc:latitude>50.765282088427412</loc:latitude>
+                <loc:longitude>15.337521544012871</loc:longitude>
+              </loc:openlrCoordinates>
+              <loc:openlrLineAttributes>
+                <loc:openlrFunctionalRoadClass>frc1</loc:openlrFunctionalRoadClass>
+                <loc:openlrFormOfWay>singleCarriageway</loc:openlrFormOfWay>
+                <loc:openlrBearing>112</loc:openlrBearing>
+              </loc:openlrLineAttributes>
+              <loc:openlrPathAttributes>
+                <loc:openlrLowestFrcToNextLRPoint>frc1</loc:openlrLowestFrcToNextLRPoint>
+                <loc:openlrDistanceToNextLRPoint>1240</loc:openlrDistanceToNextLRPoint>
+              </loc:openlrPathAttributes>
+            </loc:openlrLocationReferencePoint>
+            <loc:openlrLastLocationReferencePoint>
+              <loc:openlrCoordinates>
+                <loc:latitude>50.763208691718496</loc:latitude>
+                <loc:longitude>15.347566415800618</loc:longitude>
+              </loc:openlrCoordinates>
+              <loc:openlrLineAttributes>
+                <loc:openlrFunctionalRoadClass>frc1</loc:openlrFunctionalRoadClass>
+                <loc:openlrFormOfWay>singleCarriageway</loc:openlrFormOfWay>
+                <loc:openlrBearing>283</loc:openlrBearing>
+              </loc:openlrLineAttributes>
+            </loc:openlrLastLocationReferencePoint>
+            <loc:openlrOffsets>
+              <loc:openlrPositiveOffset>120</loc:openlrPositiveOffset>
+              <loc:openlrNegativeOffset>418</loc:openlrNegativeOffset>
+            </loc:openlrOffsets>
+          </loc:firstDirection>
+        </loc:openlrLinear>
+        <loc:alertCLinear xsi:type="loc:AlertCMethod2Linear">
+          <loc:alertCLocationCountryCode>2</loc:alertCLocationCountryCode>
+          <loc:alertCLocationTableNumber>25</loc:alertCLocationTableNumber>
+          <loc:alertCLocationTableVersion>9.0</loc:alertCLocationTableVersion>
+          <loc:alertCDirection>
+            <loc:alertCDirectionCoded>negative</loc:alertCDirectionCoded>
+            <loc:alertCAffectedDirection>aligned</loc:alertCAffectedDirection>
+          </loc:alertCDirection>
+          <loc:alertCMethod2PrimaryPointLocation>
+            <loc:alertCLocation>
+              <loc:specificLocation>8973</loc:specificLocation>
+            </loc:alertCLocation>
+          </loc:alertCMethod2PrimaryPointLocation>
+          <loc:alertCMethod2SecondaryPointLocation>
+            <loc:alertCLocation>
+              <loc:specificLocation>8974</loc:specificLocation>
+            </loc:alertCLocation>
+          </loc:alertCMethod2SecondaryPointLocation>
+        </loc:alertCLinear>
+        <loc:linearWithinLinearElement>
+          <loc:directionRelativeOnLinearSection>aligned</loc:directionRelativeOnLinearSection>
+          <loc:linearElement>
+            <loc:roadNumber>10</loc:roadNumber>
+          </loc:linearElement>
+          <loc:fromPoint xsi:type="loc:DistanceFromLinearElementStart">
+            <loc:distanceAlong>106797</loc:distanceAlong>
+          </loc:fromPoint>
+          <loc:toPoint xsi:type="loc:DistanceFromLinearElementStart">
+            <loc:distanceAlong>107507</loc:distanceAlong>
+          </loc:toPoint>
+        </loc:linearWithinLinearElement>
+        <loc:linearWithinLinearElement>
+          <loc:directionRelativeOnLinearSection>opposite</loc:directionRelativeOnLinearSection>
+          <loc:linearElement xsi:type="loc:LinearElementByCode">
+            <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
+            <loc:linearElementReferenceModelVersion>22.12</loc:linearElementReferenceModelVersion>
+            <loc:linearElementIdentifier>126853</loc:linearElementIdentifier>
+          </loc:linearElement>
+          <loc:fromPoint xsi:type="loc:DistanceFromLinearElementReferent">
+            <loc:distanceAlong>0</loc:distanceAlong>
+            <loc:fromReferent>
+              <loc:referentIdentifier>126853-start</loc:referentIdentifier>
+              <loc:referentType>referenceMarker</loc:referentType>
+              <loc:pointCoordinates>
+                <loc:latitude>50.765102</loc:latitude>
+                <loc:longitude>15.339157</loc:longitude>
+              </loc:pointCoordinates>
+            </loc:fromReferent>
+          </loc:fromPoint>
+          <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
+          </loc:toPoint>
+        </loc:linearWithinLinearElement>
+        <loc:linearWithinLinearElement>
+          <loc:directionRelativeOnLinearSection>opposite</loc:directionRelativeOnLinearSection>
+          <loc:linearElement xsi:type="loc:LinearElementByCode">
+            <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
+            <loc:linearElementReferenceModelVersion>22.12</loc:linearElementReferenceModelVersion>
+            <loc:linearElementIdentifier>2901326</loc:linearElementIdentifier>
+          </loc:linearElement>
+          <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
+          </loc:fromPoint>
+          <loc:toPoint xsi:type="loc:DistanceFromLinearElementReferent">
+            <loc:distanceAlong>0</loc:distanceAlong>
+            <loc:fromReferent>
+              <loc:referentIdentifier>2901326-end</loc:referentIdentifier>
+              <loc:referentType>referenceMarker</loc:referentType>
+              <loc:pointCoordinates>
+                <loc:latitude>50.764969</loc:latitude>
+                <loc:longitude>15.343119</loc:longitude>
+              </loc:pointCoordinates>
+            </loc:fromReferent>
+          </loc:toPoint>
+        </loc:linearWithinLinearElement>
+      </sit:locationReference>
+      <!-- tag::operator[] -->
+      <sit:complianceOption>mandatory</sit:complianceOption>
+      <sit:roadOrCarriagewayOrLaneManagementType>singleAlternateLineTraffic</sit:roadOrCarriagewayOrLaneManagementType>
+      <!-- end::operator[] -->
+    </sit:situationRecord>
+  </sit:situation>
+</d2:payload>

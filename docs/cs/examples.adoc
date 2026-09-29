@@ -1,0 +1,37 @@
+== Příklady zpráv
+
+Vzorky jsou součástí balíčku specifikace `{schema-uri}.zip` (adresář `samples`). Všechny jsou validní vůči
+schématu DATEX II 3.7 a odpovídají výběru profilu (`.sel`).
+
+=== restriction.xml – práce na silnici, kyvadlový provoz
+
+Publikace obsahuje částečnou uzavírku silnice I/10 v Desné (okres Jablonec nad Nisou)
+kvůli stavebním pracím s kyvadlovým provozem jedním jízdním pruhem.
+
+[source,xml]
+----
+include::{samplesdir}/restriction.xml[tags=**]
+----
+
+Obálka a hlavička::
+Kořen `d2:payload` typu `sit:SituationPublication` s atributy `profileName` a `profileVersion`
+identifikujícími formát, `publicationTime` a `publicationCreator`. Odkaz na zdroj dat (`feedType`) je
+`x-source:cz-ndic_d2-restrictions-pull-v1`.
+
+Situace::
+Situace obsahuje dva záznamy ve verzi 6. Záznam typu `ConstructionWorks` popisuje příčinu (stavební
+práce, `constructionWork`), záznam typu `RoadOrCarriagewayOrLaneManagement` dopad (střídavý provoz
+jedním pruhem, `singleAlternateLineTraffic`, závazně – `complianceOption` = `mandatory`). Hodnota
+`probabilityOfOccurrence` = `certain` – uzavírka v době publikace již platí.
+
+Platnost::
+Oba záznamy platí od 30. 8. 2023 7:00 do 1. 9. 2023 23:59.
+
+Poloha::
+Poloha je popsána čtyřmi metodami: OpenLR, ALERT-C, staničením silnice 10 (106 797–107 507 m) a úseky
+Global Network verze 22.12: krajní úseky 126853 a 2901326 se souřadnicemi počátku a konce WGS-84, tři
+plné vnitřní úseky (126599, 1461717, 1461719) zkráceně v `externalReferencing`.
+
+Další obsah::
+`source` uvádí původce informace (ŘSD), `generalPublicComment` text rozhodnutí o uzavírce
+a `urlLink` odkaz na podrobnosti.

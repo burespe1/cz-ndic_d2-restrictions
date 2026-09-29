@@ -1,0 +1,286 @@
+== Koncepty
+
+Formát poskytuje informace o aktuálních a plánovaných uzavírkách a omezeních provozu na silniční síti
+ČR: práce na silnici, uzavírky, objížďky, omezení rychlosti a změny uspořádání provozu.
+
+IMPORTANT: Formát je podmnožinou formátu `cz-ndic_d2-common`, kde jsou uzavírky a práce na silnici
+publikovány společně s ostatními událostmi. Výběr profilu restrictions vzniká z výběru common
+omezením na akce správce komunikace (`OperatorAction`); struktury a pravidla jsou v obou formátech
+shodné.
+
+Formát vychází z DATEX II publikace `SituationPublication` <<EN16157-3>>. Oproti verzi 1.2 (DATEX II 2.3)
+je převeden na model DATEX II 3.7 bez národních rozšíření. Do publikace
+nepatří žádné stavové informace.
+
+[[obalka]]
+=== Obálka a hlavička publikace
+
+Každá zpráva je dokument DATEX II 3 s kořenovým elementem `d2:payload`. Obálky `d2LogicalModel`
+a `exchange` z verze 2 se již nepoužívají. Atribut `xsi:type` kořenového elementu určuje typ
+publikace (zde `sit:SituationPublication`), atribut `modelBaseVersion="3"` verzi modelu a atribut `lang` výchozí jazyk
+textů.
+
+Formát, podle kterého je zpráva sestavena, identifikují výhradně atributy kořenového elementu:
+
+[horizontal]
+`profileName`:: identifikátor formátu bez verze (`cz-ndic_d2-restrictions`),
+`profileVersion`:: verze formátu (`2.0`).
+
+Hlavička publikace obsahuje:
+
+* `feedType` – odkaz na *zdroj dat* (distribuci) v registru národního přístupového bodu <<nap>>,
+  např. `x-source:cz-ndic_d2-restrictions-pull-v1`. Název distribuce tvoří název formátu, případně obsah distribuce (u VMS `fixed`/`mobile`,
+  u sad poloh `fcd`/`weather`), u snímků (pull) protokol `pull` a celé číslo verze distribuce
+  (`-v1`, `-v2`, …), které se mění nezávisle na verzi formátu a navazuje na řadu distribucí v registru.
+  Verze sítě Global Network není součástí `feedType`; nese ji obsah (verze předdefinovaných poloh).
+  Element neodkazuje na formát; ten určují atributy `profileName` a `profileVersion`. Element
+  `feedDescription` se nepoužívá.
+* `publicationTime` – čas vytvoření obsahu publikace. Pokud se obsah od předchozí publikace nezměnil,
+  zůstává čas původní (stejně jako hlavičky HTTP `Last-Modified` a `ETag`); nový čas vzniká jen se
+  změnou obsahu.
+* `publicationCreator` – poskytovatel publikace: kód země malými písmeny (`cz`) a zkratka
+  poskytovatele (`nationalIdentifier`).
+* `headerInformation` – způsob nakládání s informacemi; NDIC uvádí vždy `confidentiality`
+  = `noRestriction` a `informationStatus` = `real`.
+
+Všechny časové údaje ve zprávě se uvádějí včetně časové zóny.
+
+.Kořenový element a hlavička publikace (vzorek `restriction.xml`)
+[source,xml]
+----
+include::{samplesdir}/restriction.xml[lines=2]
+include::{samplesdir}/restriction.xml[tag=header,indent=2]
+  ...
+----
+
+[[situace]]
+=== Situace a záznamy situace
+
+Každá událost je popsána elementem `situation` s jednoznačným identifikátorem (`@id`). Situace se může
+v čase vyvíjet; obsahuje čas své poslední změny `situationVersionTime` a hlavičku `headerInformation`.
+
+.Situace (vzorek `restriction.xml`)
+[source,xml]
+----
+include::{samplesdir}/restriction.xml[tag=situation-head,indent=0]
+  ...
+----
+
+Vlastní informace nesou záznamy `situationRecord`. V jedné situaci může být záznamů více, každý jiného
+typu (`xsi:type`) – typicky příčina (např. nehoda) a její důsledek (např. uzavření silnice). Identifikátor
+záznamu je odvozen od identifikátoru situace a typu záznamu.
+
+[[verzovani]]
+==== Verzování
+
+* Každý záznam nese číslo verze (`@version`), čas vzniku první verze `situationRecordCreationTime`
+  a čas vzniku aktuální verze `situationRecordVersionTime`.
+* Každá změna záznamu zvyšuje jeho verzi o jedna a mění `situationRecordVersionTime`.
+* Situace ve verzi 3 modelu číslo verze nemá. Její verzi vyjadřuje `situationVersionTime`, který je vždy
+  roven nejnovějšímu `situationRecordVersionTime` jejích záznamů – každá změna záznamu je tedy
+  zároveň novou verzí situace.
+
+==== Společný obsah záznamu
+
+.Záznam situace – verze, pravděpodobnost a zdroj (vzorek `restriction.xml`)
+[source,xml]
+----
+include::{samplesdir}/restriction.xml[tag=record-meta,indent=0]
+----
+
+* `probabilityOfOccurrence` – `certain` pro nastalou událost, `probable` pro pravděpodobnou,
+  `riskOf` pro plánovanou událost, která zatím nenastala.
+* `safetyRelatedMessage` – `true` označuje informaci související s bezpečností silničního provozu podle
+  nařízení v přenesené pravomoci (EU) č. 886/2013 (SRTI). Ve verzi 3 je součástí modelu, národní
+  rozšíření se již nepoužívá.
+* `source` – kdo informaci vytvořil a odpovídá za její správnost (`sourceIdentification`, případně
+  `sourceName`).
+* `generalPublicComment` – volný popis události jejím tvůrcem, zpravidla česky.
+* `urlLink` – odkaz na webovou stránku s podrobnostmi o události (`urlLinkType` = `html`).
+
+NOTE: Souhrnný záznam situace (`situationSummary`), který model 3.7 nabízí, se zatím nepoužívá: souhrn
+musí mít vlastní polohu, platnost a povinné prvky typu, takže zprávy prodlužuje. Komentáře zůstávají
+v jednotlivých záznamech.
+
+.Komentář a odkaz na podrobnosti (vzorek `restriction.xml`)
+[source,xml]
+----
+include::{samplesdir}/restriction.xml[tag=comment-url,indent=0]
+----
+
+[[typy]]
+=== Typy záznamů
+
+Formát používá výhradně záznamy typu akce správce komunikace (potomci třídy `OperatorAction`):
+
+[cols="2,3",options="header"]
+|===
+|Oblast |Typy záznamů
+|Práce na silnici |`ConstructionWorks` (stavební práce), `MaintenanceWorks` (údržba)
+|Uzavírky a uspořádání provozu |`RoadOrCarriagewayOrLaneManagement`
+|Objížďky |`ReroutingManagement`
+|Omezení rychlosti |`SpeedManagement`
+|Zimní údržba a provoz |`WinterDrivingManagement`
+|Ostatní řízení provozu |`GeneralNetworkManagement`, `GeneralInstructionOrMessageToRoadUsers`, `RoadsideAssistance`
+|===
+
+Jedna situace typicky obsahuje příčinu (např. práce na silnici) a její důsledek (např. uzavírku či
+kyvadlový provoz) jako dva záznamy.
+
+.Práce na silnici (vzorek `restriction.xml`)
+[source,xml]
+----
+include::{samplesdir}/restriction.xml[tag=works,indent=0]
+----
+
+U akcí správce komunikace určuje `complianceOption`, zda je opatření závazné (`mandatory`) nebo
+doporučené (`advisory`). Dopad na provoz lze vyjádřit elementem `impact` (zbytková kapacita
+`capacityRemaining`, při úplném uzavření 0, nebo zdržení `delays`); u opatření v obou směrech
+(`applicableForTrafficDirection` = `bothWays`) se dopad v opačném směru uvádí v elementu
+`impactOnOppositeDirection`.
+
+.Kyvadlový provoz jedním pruhem (vzorek `restriction.xml`)
+[source,xml]
+----
+include::{samplesdir}/restriction.xml[tag=operator,indent=0]
+----
+
+[[platnost]]
+=== Časová platnost
+
+Časová platnost se uvádí pro každý záznam situace samostatně ve struktuře `validity`. Používá se výhradně
+`validityStatus` = `definedByValidityTimeSpec` a interval `validityTimeSpecification` (třída
+`OverallPeriod`) s počátkem `overallStartTime` a koncem `overallEndTime`.
+
+Platí-li událost jen v určité části dne (např. práce jen přes den, v noci nebo mimo dopravní špičku),
+doplňuje se interval elementem `validPeriod`: název období `periodName` a denní časový úsek
+`recurringTimePeriodOfDay` (`startTimeOfPeriod`, `endTimeOfPeriod`). Jiné opakované intervaly
+(dny v týdnu, data) se nepoužívají; opakovaná událost se jinak popíše více po sobě jdoucími záznamy.
+Interval platnosti může ležet v minulosti, přítomnosti i budoucnosti.
+
+.Časová platnost záznamu (vzorek `restriction.xml`)
+[source,xml]
+----
+include::{samplesdir}/restriction.xml[tag=validity,indent=0]
+----
+
+[[polohy]]
+== Popisování poloh
+
+Poloha se popisuje přímo ve zprávě elementem `locationReference`, zpravidla typu `loc:SingleRoadLinearLocation`
+(liniová poloha na jedné komunikaci). Liniová poloha se používá i pro bodové události (např. nehodu):
+počátek a konec jsou pak shodné. Uvádí-li zdroj polohu jako bod, použije se `loc:PointLocation`
+(ALERT-C `alertCPoint` typu `AlertCMethod2Point`). Plošné polohy se nepoužívají.
+
+Jedna poloha bývá popsána současně několika metodami podle jejich dostupnosti v daném místě; všechny
+popisují tentýž úsek skutečnosti. Musí být uvedena alespoň jedna metoda. Všechny metody jsou součástí
+modelu DATEX II 3.7 – národní rozšíření polohy (`linearExtension`, `globalNetworkLinear`,
+`openlrExtendedLinear`) z verze 2 se již nepoužívají.
+
+[cols="2,3,4",options="header"]
+|===
+|Metoda |Element |Použití
+|ALERT-C |`alertCLinear` (`AlertCMethod2Linear`) |kde existuje lokace v lokační tabulce ALERT-C
+|OpenLR |`openlrLinear` |vždy, kde lze polohu zakódovat (dynamická lokalizace)
+|Staničení |`linearWithinLinearElement` s `roadNumber` |silnice se staničením
+|Global Network |`linearWithinLinearElement` s `LinearElementByCode`, `externalReferencing` |úseky sítě Global Network (ŘSD)
+|===
+
+=== Popis polohy pomocí ALERT-C
+
+Metoda popisuje liniovou polohu kódy lokační tabulky ALERT-C <<ISO14819-3>> v elementu `alertCLinear` typu
+`AlertCMethod2Linear` (bodovou polohu obdobně `alertCPoint` typu `AlertCMethod2Point`).
+
+* Lokační tabulku určují `alertCLocationCountryCode`, `alertCLocationTableNumber`
+  a `alertCLocationTableVersion`. Kód země se uvádí podle IEC 62106 – pro ČR hodnota `2`
+  (nikoli `CZ`).
+* Primární lokace (`alertCMethod2PrimaryPointLocation`) je podle principu ALERT-C místo, kde došlo
+  k události či kde řidič opouští problémový úsek; sekundární lokace
+  (`alertCMethod2SecondaryPointLocation`) je konec kolony či místo, kde řidič do problémového úseku
+  vjíždí.
+* `alertCDirectionCoded` = `positive`, je-li směr dopravního proudu souhlasný se směrem kódování
+  cesty v lokační tabulce.
+* `alertCAffectedDirection` (ve verzi 3 povinný) určuje, kterých směrů dopravního proudu se událost
+  týká, vůči směru popsané polohy (danému `alertCDirectionCoded`): `aligned` pro jednosměrné události
+  v tomto směru, `both` pro události platné v obou směrech. Hodnota vychází ze směrovosti události
+  v katalogu událostí ALERT-C <<ISO14819-2>>.
+* Dlouhé události, které nelze popsat jednou cestou ALERT-C, mají více elementů `alertCLinear`.
+* Bodová událost (i vnitřek křižovatky či tunelu) má shodnou primární a sekundární lokaci.
+
+IMPORTANT: Význam `alertCDirectionCoded` je opačný než význam bitu `direction` v RDS-TMC, který slouží
+k dohledání sekundární lokace.
+
+.Popis polohy pomocí ALERT-C (vzorek `restriction.xml`)
+[source,xml]
+----
+include::{samplesdir}/restriction.xml[tag=loc-alertc,indent=0]
+----
+
+=== Popis polohy pomocí OpenLR
+
+Metoda OpenLR (element `openlrLinear`) popisuje polohu nezávisle na mapovém podkladu: odběratel ji
+v libovolné mapě najde vyhledáním cesty (tzv. on-the-fly lokalizace). Referenční body
+`openlrLocationReferencePoint` a `openlrLastLocationReferencePoint` jsou dány souřadnicemi (WGS-84),
+azimutem a třídou komunikace; nalezená cesta je upřesněna ofsety `openlrPositiveOffset`
+a `openlrNegativeOffset` na skutečný rozsah události. Nestačí-li dva body, použijí se body mezilehlé.
+U bodové události vymezují ofsety úsek nulové délky.
+
+.Popis polohy pomocí OpenLR (vzorek `restriction.xml`)
+[source,xml]
+----
+include::{samplesdir}/restriction.xml[tag=loc-openlr,indent=0]
+----
+
+=== Popis polohy pomocí staničení
+
+Staničení se popisuje elementem `linearWithinLinearElement`, jehož `linearElement` nese číslo
+komunikace (`roadNumber`). `directionRelativeOnLinearSection` určuje směr vůči staničení (`aligned`
+po směru, `opposite` proti směru) a `fromPoint` a `toPoint` typu `DistanceFromLinearElementStart`
+vzdálenost počátku a konce události od počátku komunikace v metrech (`distanceAlong`). Bodová událost
+má shodný počátek a konec.
+
+.Popis polohy pomocí staničení (vzorek `restriction.xml`)
+[source,xml]
+----
+include::{samplesdir}/restriction.xml[tag=loc-station,indent=0]
+----
+
+[[gn]]
+=== Popis polohy pomocí sítě Global Network
+
+Úseky silniční sítě Global Network (GN, ŘSD) se ve verzi 3 popisují nativními prostředky modelu:
+
+* Každý úsek je jeden element `linearWithinLinearElement`, jehož `linearElement` je typu
+  `LinearElementByCode`: `linearElementReferenceModel` = `CZ-RSD-GlobalNetwork`,
+  `linearElementReferenceModelVersion` = verze sítě a `linearElementIdentifier` = identifikátor
+  úseku. Pořadí elementů odpovídá pořadí úseků ve směru trasy.
+* `directionRelativeOnLinearSection` určuje směr vůči směru kódování úseku.
+* Krajní úseky, které událost zasahuje jen částečně, vymezují `fromPoint` a `toPoint` typu
+  `PercentageDistanceAlongLinearElement` – vzdálenost od počátku úseku v procentech jeho délky
+  (0–100, kde 100 = konec úseku).
+* *Počátek a konec polohy* nesou (jsou-li známy) souřadnice WGS-84: `fromPoint` prvního a `toPoint` posledního úseku
+  jsou typu `DistanceFromLinearElementReferent` s `distanceAlong` = 0 a referentem (`fromReferent`,
+  `referentType` = `referenceMarker`) se souřadnicemi `pointCoordinates`. Nahrazují tak body
+  `startPoint` a `endPoint` z verze 2 (tam v S-JTSK).
+* *Plné vnitřní úseky* (zasažené celé a ve stejném směru) se neuvádějí jako samostatné
+  `linearWithinLinearElement`, ale zkráceně elementy `externalReferencing` přímo v poloze:
+  `externalLocationCode` = identifikátor úseku, `externalReferencingSystem` =
+  `CZ-RSD-GlobalNetwork:<verze sítě>`; pořadí odpovídá pořadí úseků na trase.
+
+.Úseky Global Network – krajní úseky se souřadnicemi počátku a konce (vzorek `restriction.xml`)
+[source,xml]
+----
+include::{samplesdir}/restriction.xml[tag=loc-gn,indent=0]
+----
+
+.Plné vnitřní úseky Global Network zkráceně (vzorek `restriction.xml`)
+[source,xml]
+----
+include::{samplesdir}/restriction.xml[tag=loc-extref,indent=0]
+----
+
+Úplný seznam úseků trasy tvoří první krajní úsek (`linearWithinLinearElement`), vnitřní úseky v pořadí
+`externalReferencing` a poslední krajní úsek. Nemají-li vnitřní úseky stejný směr vůči svému kódování,
+uvádějí se všechny úseky jako `linearWithinLinearElement`.
+
+NOTE: Procentní hodnoty (typ `Percentage`) se uvádějí v rozsahu 0–100.

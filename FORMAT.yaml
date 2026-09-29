@@ -1,0 +1,40 @@
+# Metadata formátu – součást vydání specifikace (tag v2.0).
+uri: cz-ndic_d2-restrictions
+version: '2.0'
+name:
+  cs: DATEX II Situation Publication – Uzavírky a omezení
+  en: DATEX II Situation Publication – Closures and restrictions
+description:
+  cs: Plánované uzavírky, práce a omezení provozu na celé síti ČR (podmnožina common).
+  en: Planned closures, roadworks and traffic restrictions in the Czech Republic (subset of common).
+publisher:
+  cs: Národní dopravní informační centrum
+  en: National Traffic Information Centre
+model:
+  name: DATEX II
+  version: '3.7'
+  publication: SituationPublication
+  extensions: []
+schema:
+  dir: schema
+  entry: DATEXII_3_D2Payload.xsd
+selection: sel/cz-ndic_d2-restrictions.sel
+samples: samples
+ndic:
+  action: upgrade
+  previous: cz-ndic_d2-restrictions-v1.2 (DATEX II 2.3)
+  source: NDIC – dopravní informace (uzavírky a omezení)
+  distributions:
+  - x-source:cz-ndic_d2-restrictions-v3 (push, delta)
+  - x-source:cz-ndic_d2-restrictions-pull-v1 (pull, snímek, nová)
+  legislation:
+  - SRTI
+  - RTTI
+  profiles:
+  - RRP SRTI
+  profileName: cz-ndic_d2-restrictions
+  profileVersion: '2.0'
+maintainer:
+  name: Petr Bureš
+  company: TamTam Research s.r.o.
+  url: https://www.tamtamresearch.com
