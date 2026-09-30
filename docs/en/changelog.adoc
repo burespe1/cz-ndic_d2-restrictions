@@ -16,5 +16,8 @@
 ** The start and end of a GN location (`startPoint`, `endPoint` in S-JTSK) are replaced by the location path
    in WGS-84 (`gmlLineString`); GN edge sections use percentages.
 ** New mandatory element `alertCAffectedDirection`.
+** A location is not described by one linear location over several roads: `SingleRoadLinearLocation` is a
+   contiguous section of one road with at most one `alertCLinear`, a contiguous route over several roads is
+   `ItineraryByIndexedLocations` and a non-contiguous or branching location `LocationGroupByList`.
 * Origin of the data:
 ** The directionality of an event (`alertCAffectedDirection`) follows the directionality in the ALERT-C event list <<ISO14819-2>>.

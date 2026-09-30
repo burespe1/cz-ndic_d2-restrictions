@@ -34,3 +34,27 @@ location path `gmlLineString` in WGS-84.
 Other content::
 `source` gives the originator of the information (ŘSD), `generalPublicComment` the text of the closure
 decision and `urlLink` a link to details.
+
+=== closure-junction.xml – closure of a junction with three arms
+
+Full closure of the junction of roads II/259 and III/25924 in Vrátno (Mladá Boleslav district) due to sewer
+construction. The sections meet in one node and do not form a contiguous chain, so the location is a group of
+sections.
+
+[source,xml]
+----
+include::{samplesdir}/closure-junction.xml[tags=**]
+----
+
+Situation::
+One record of type `RoadOrCarriagewayOrLaneManagement` in version 5: road closure (`roadClosed`) in both
+directions with remaining capacity 0, mandatory (`complianceOption` = `mandatory`).
+
+Validity::
+From 7{nbsp}October 2026 10:01 to 31{nbsp}October 2026 23:59.
+
+Location::
+`LocationGroupByList` with three linear locations, each on one road: road II/259 (two Global Network sections
+in travel order), an unnumbered connecting link (one section) and road III/25924 (one section). Each location
+carries its own location path `gmlLineString`; the sections serve both directions
+(`directionRelativeOnLinearSection` = `both`).

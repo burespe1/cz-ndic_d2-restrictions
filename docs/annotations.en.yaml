@@ -20,3 +20,7 @@ GmlLineString:
 PercentageDistanceAlongLinearElement:
   percentageDistanceAlong:
     ndic: "Percent of the section length 0–100, at most 2 decimal places."
+
+LocationGroupByList:
+  locationContainedInGroup:
+    ndic: "Each member of the group is a contiguous section of one road (`SingleRoadLinearLocation`); the order of the members has no meaning."

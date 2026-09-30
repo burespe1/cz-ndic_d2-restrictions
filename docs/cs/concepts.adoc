@@ -169,6 +169,19 @@ v ALERT-C je primární a sekundární lokace shodná, OpenLR a úseky Global Ne
 komunikace v místě události. Uvádí-li zdroj polohu jako bod, použije se `loc:PointLocation`
 (ALERT-C `alertCPoint` typu `AlertCMethod2Point`). Plošné polohy se nepoužívají.
 
+Typ polohy odpovídá jejímu tvaru. Liniová poloha `loc:SingleRoadLinearLocation` je vždy souvislý úsek *jedné
+komunikace* – silnice s číslem nebo ulice s názvem – a všechny metody jejího popisu popisují tentýž úsek.
+
+[cols="3,3",options="header"]
+|===
+|Tvar polohy |Typ `locationReference`
+|souvislý úsek jedné komunikace |`loc:SingleRoadLinearLocation`
+|souvislá trasa přes více komunikací |`loc:ItineraryByIndexedLocations` (<<trasa>>)
+|nesouvislá nebo rozvětvená poloha, jednorázová oblast |`loc:LocationGroupByList` (<<skupiny>>)
+|opakující se oblast |`loc:LocationGroupByReference` (<<skupiny>>)
+|bod uvedený zdrojem |`loc:PointLocation`
+|===
+
 Jedna poloha bývá popsána současně několika metodami podle jejich dostupnosti v daném místě; všechny
 popisují tentýž úsek skutečnosti. Musí být uvedena alespoň jedna metoda. Všechny metody jsou součástí modelu DATEX II 3.7.
 
@@ -199,7 +212,8 @@ Metoda popisuje liniovou polohu kódy lokační tabulky ALERT-C <<ISO14819-3>> v
 * `alertCAffectedDirection` (povinný) určuje, kterých směrů dopravního proudu se událost
   týká, vůči směru popsané polohy (danému `alertCDirectionCoded`): `aligned` pro jednosměrné události
   v tomto směru, `both` pro události platné v obou směrech.
-* Dlouhé události, které nelze popsat jednou cestou ALERT-C, mají více elementů `alertCLinear`.
+* Poloha má nejvýše jeden element `alertCLinear` – jednu cestu ALERT-C po jedné komunikaci. Vede-li
+  událost po více komunikacích, má vlastní `alertCLinear` každá část trasy (<<trasa>>) nebo člen skupiny.
 * Bodová událost (i vnitřek křižovatky či tunelu) má shodnou primární a sekundární lokaci.
 
 IMPORTANT: Význam `alertCDirectionCoded` je opačný než význam bitu `direction` v RDS-TMC, který slouží
@@ -302,17 +316,43 @@ bez sítě GN, lokační tabulky ALERT-C i dekodéru OpenLR:
 include::{samplesdir}/restriction.xml[tag=loc-gml,indent=0]
 ----
 
+[[trasa]]
+=== Poloha na více komunikacích
+
+Vede-li souvislá poloha z jedné komunikace na jinou (např. uzavírka po silnici II. třídy a navazující silnici
+III. třídy), popisuje se jako trasa – `locationReference` typu `loc:ItineraryByIndexedLocations`:
+
+* Každá část trasy leží na jedné komunikaci. Je to element `locationContainedInItinerary` s atributem `index`
+  (1, 2, …), uvnitř liniová poloha `loc:SingleRoadLinearLocation` popsaná všemi dostupnými metodami a vlastním
+  průběhem `gmlLineString`.
+* Části jsou v pořadí jízdy (u obousměrné polohy v pořadí prvního směru), konec části je počátkem následující
+  a části se nepřekrývají. Směrovost je ve všech částech shodná.
+* Novou část nezakládá úsek jiné komunikace uvnitř křižovatky, krátká spojka ani souběh dvou silnic. Má-li
+  poloha popis ALERT-C, odpovídá každá část jedné cestě lokační tabulky ALERT-C.
+* Trasa má nejméně dvě části; `routeDestination` se nepoužívá. Poloha na jedné komunikaci je vždy přímo
+  `loc:SingleRoadLinearLocation`.
+
+Událost zůstává jedním záznamem situace. Rozdělení odpovídá ALERT-C <<ISO14819-3>>, kde se poloha vztahuje vždy
+k jedné komunikaci: každou část s `alertCLinear` lze samostatně převést na zprávu RDS-TMC se stejnou událostí.
+
 [[skupiny]]
 === Oblastní jevy a skupiny úseků
 
-Jev, který zasahuje více silnic nebo nesouvislé úseky (uzavírka oblasti, akce, kalamita), se popisuje
+Poloha, jejíž úseky netvoří jeden souvislý úsek ani trasu – uzavírka křižovatky včetně ramen, síť ulic,
+úseky s mezerami (i na jedné komunikaci) nebo oblastní jev (uzavírka oblasti, akce, kalamita) – se popisuje
 jedním záznamem, jehož poloha je skupinou úseků:
 
 * *Jednorázová oblast* – `locationReference` typu `loc:LocationGroupByList`; jednotlivé úseky jsou
-  v elementech `locationContainedInGroup` (alespoň dva), každý popsaný jako samostatná liniová poloha
-  (`loc:SingleRoadLinearLocation`) všemi metodami, které jsou k dispozici.
+  v elementech `locationContainedInGroup` (alespoň dva), každý na jedné komunikaci a popsaný jako samostatná liniová poloha (`loc:SingleRoadLinearLocation`) všemi
+  metodami, které jsou k dispozici. Pořadí úseků nemá význam.
 * *Opakující se oblast* (pravidelné zimní uzavírky, stálé objízdné trasy) – odkaz na předdefinovanou
   skupinu formátu `cz-ndic_d2-pls`: `locationReference` typu `loc:LocationGroupByReference`
   s `predefinedLocationGroupReference` (`targetClass` = `loc:PredefinedLocationGroup`).
 
 Plošné polohy se nepoužívají; oblast pokrývá výčet liniových úseků.
+
+.Uzavírka křižovatky se třemi rameny – skupina úseků (vzorek `closure-junction.xml`)
+[source,xml]
+----
+include::{samplesdir}/closure-junction.xml[tag=group,indent=0]
+----

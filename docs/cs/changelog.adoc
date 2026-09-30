@@ -15,5 +15,8 @@
 ** Počátek a konec polohy GN (`startPoint`, `endPoint` v S-JTSK) nahradil průběh polohy ve WGS-84
    (`gmlLineString`); krajní úseky GN mají procenta.
 ** Nový povinný prvek `alertCAffectedDirection`.
+** Poloha se nepopisuje jednou liniovou polohou přes více komunikací: `SingleRoadLinearLocation` je souvislý
+   úsek jedné komunikace s nejvýše jedním `alertCLinear`, souvislá trasa přes více komunikací je
+   `ItineraryByIndexedLocations` a nesouvislá nebo rozvětvená poloha `LocationGroupByList`.
 * Původ dat:
 ** Směrovost události (`alertCAffectedDirection`) vychází ze směrovosti v katalogu událostí ALERT-C <<ISO14819-2>>.

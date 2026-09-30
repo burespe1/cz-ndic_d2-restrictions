@@ -33,3 +33,25 @@ polohy `gmlLineString` ve WGS-84.
 Další obsah::
 `source` uvádí původce informace (ŘSD), `generalPublicComment` text rozhodnutí o uzavírce
 a `urlLink` odkaz na podrobnosti.
+
+=== closure-junction.xml – uzavírka křižovatky se třemi rameny
+
+Úplná uzavírka křižovatky silnic II/259 a III/25924 ve Vrátně (okres Mladá Boleslav) kvůli stavbě
+kanalizace. Úseky se stýkají v jednom uzlu a netvoří souvislý řetěz, proto je poloha skupinou úseků.
+
+[source,xml]
+----
+include::{samplesdir}/closure-junction.xml[tags=**]
+----
+
+Situace::
+Jeden záznam typu `RoadOrCarriagewayOrLaneManagement` ve verzi 5: uzavření silnice (`roadClosed`) v obou
+směrech se zbytkovou kapacitou 0, závazně (`complianceOption` = `mandatory`).
+
+Platnost::
+Od 7.{nbsp}10.{nbsp}2026 10:01 do 31.{nbsp}10.{nbsp}2026 23:59.
+
+Poloha::
+`LocationGroupByList` se třemi liniovými polohami, každou na jedné komunikaci: silnice II/259 (dva úseky
+Global Network v pořadí jízdy), nečíslovaná spojka (jeden úsek) a silnice III/25924 (jeden úsek). Každá poloha
+nese vlastní průběh `gmlLineString`; úseky slouží oběma směrům (`directionRelativeOnLinearSection` = `both`).

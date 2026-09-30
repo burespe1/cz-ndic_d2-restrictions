@@ -20,3 +20,7 @@ GmlLineString:
 PercentageDistanceAlongLinearElement:
   percentageDistanceAlong:
     ndic: "Procenta délky úseku 0–100, nejvýše 2 desetinná místa."
+
+LocationGroupByList:
+  locationContainedInGroup:
+    ndic: "Každý člen skupiny je souvislý úsek jedné komunikace (`SingleRoadLinearLocation`); pořadí členů nemá význam."

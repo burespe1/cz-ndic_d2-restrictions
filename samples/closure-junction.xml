@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<d2:payload xmlns:d2="http://datex2.eu/schema/3/d2Payload" xmlns:com="http://datex2.eu/schema/3/common" xmlns:sit="http://datex2.eu/schema/3/situation" xmlns:loc="http://datex2.eu/schema/3/locationReferencing" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="sit:SituationPublication" lang="cs" modelBaseVersion="3" profileName="cz-ndic_d2-restrictions" profileVersion="2.0">
+  <!-- tag::header[] -->
+  <com:feedType>x-source:cz-ndic_d2-restrictions-pull-v1</com:feedType>
+  <com:publicationTime>2026-09-29T22:32:51+02:00</com:publicationTime>
+  <com:publicationCreator>
+    <com:country>cz</com:country>
+    <com:nationalIdentifier>NDIC</com:nationalIdentifier>
+  </com:publicationCreator>
+  <!-- end::header[] -->
+  <sit:situation id="a9d65f32-da45-400a-b4ba-8f6631134ab8">
+    <sit:situationVersionTime>2026-09-29T08:47:13+02:00</sit:situationVersionTime>
+    <sit:headerInformation>
+      <com:confidentiality>noRestriction</com:confidentiality>
+      <com:informationStatus>real</com:informationStatus>
+    </sit:headerInformation>
+    <sit:situationRecord xsi:type="sit:RoadOrCarriagewayOrLaneManagement" id="a9d65f32-da45-400a-b4ba-8f6631134ab8_RoadOrCarriagewayOrLaneManagement" version="5">
+      <sit:situationRecordCreationTime>2026-09-25T13:50:23+02:00</sit:situationRecordCreationTime>
+      <sit:situationRecordVersionTime>2026-09-29T08:47:13+02:00</sit:situationRecordVersionTime>
+      <sit:probabilityOfOccurrence>certain</sit:probabilityOfOccurrence>
+      <sit:source>
+        <com:sourceIdentification>RSD</com:sourceIdentification>
+      </sit:source>
+      <sit:validity>
+        <com:validityStatus>definedByValidityTimeSpec</com:validityStatus>
+        <com:validityTimeSpecification>
+          <com:overallStartTime>2026-10-07T10:01:00+02:00</com:overallStartTime>
+          <com:overallEndTime>2026-10-31T23:59:00+01:00</com:overallEndTime>
+        </com:validityTimeSpecification>
+      </sit:validity>
+      <sit:impact>
+        <sit:capacityRemaining>0</sit:capacityRemaining>
+      </sit:impact>
+      <sit:generalPublicComment>
+        <sit:comment>
+          <com:values>
+            <com:value lang="cs">silnice II/259, III/25924, místní komunikace, Vrátno (okres Mladá Boleslav), uzavřeno, stavební práce, Od 07.10.2026 10:01 Do 31.10.2026 23:59</com:value>
+          </com:values>
+        </sit:comment>
+      </sit:generalPublicComment>
+      <!-- tag::group[] -->
+      <sit:locationReference xsi:type="loc:LocationGroupByList">
+        <loc:locationContainedInGroup xsi:type="loc:SingleRoadLinearLocation">
+          <!-- II/259 -->
+          <loc:gmlLineString srsName="EPSG:4326" srsDimension="2">
+            <loc:posList>50.43145 14.69128 50.43192 14.69192 50.43278 14.69394</loc:posList>
+          </loc:gmlLineString>
+          <loc:linearWithinLinearElement>
+            <loc:directionRelativeOnLinearSection>both</loc:directionRelativeOnLinearSection>
+            <loc:linearElement xsi:type="loc:LinearElementByCode">
+              <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
+              <loc:linearElementReferenceModelVersion>26.06</loc:linearElementReferenceModelVersion>
+              <loc:linearElementIdentifier>977670</loc:linearElementIdentifier>
+            </loc:linearElement>
+            <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+              <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
+            </loc:fromPoint>
+            <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+              <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
+            </loc:toPoint>
+          </loc:linearWithinLinearElement>
+          <loc:linearWithinLinearElement>
+            <loc:directionRelativeOnLinearSection>both</loc:directionRelativeOnLinearSection>
+            <loc:linearElement xsi:type="loc:LinearElementByCode">
+              <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
+              <loc:linearElementReferenceModelVersion>26.06</loc:linearElementReferenceModelVersion>
+              <loc:linearElementIdentifier>3271695</loc:linearElementIdentifier>
+            </loc:linearElement>
+            <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+              <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
+            </loc:fromPoint>
+            <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+              <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
+            </loc:toPoint>
+          </loc:linearWithinLinearElement>
+        </loc:locationContainedInGroup>
+        <loc:locationContainedInGroup xsi:type="loc:SingleRoadLinearLocation">
+          <loc:gmlLineString srsName="EPSG:4326" srsDimension="2">
+            <loc:posList>50.43188 14.69322 50.43245 14.69326</loc:posList>
+          </loc:gmlLineString>
+          <loc:linearWithinLinearElement>
+            <loc:directionRelativeOnLinearSection>both</loc:directionRelativeOnLinearSection>
+            <loc:linearElement xsi:type="loc:LinearElementByCode">
+              <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
+              <loc:linearElementReferenceModelVersion>26.06</loc:linearElementReferenceModelVersion>
+              <loc:linearElementIdentifier>2010685</loc:linearElementIdentifier>
+            </loc:linearElement>
+            <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+              <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
+            </loc:fromPoint>
+            <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+              <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
+            </loc:toPoint>
+          </loc:linearWithinLinearElement>
+        </loc:locationContainedInGroup>
+        <loc:locationContainedInGroup xsi:type="loc:SingleRoadLinearLocation">
+          <!-- III/25924 -->
+          <loc:gmlLineString srsName="EPSG:4326" srsDimension="2">
+            <loc:posList>50.43364 14.69181 50.43245 14.69326</loc:posList>
+          </loc:gmlLineString>
+          <loc:linearWithinLinearElement>
+            <loc:directionRelativeOnLinearSection>both</loc:directionRelativeOnLinearSection>
+            <loc:linearElement xsi:type="loc:LinearElementByCode">
+              <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
+              <loc:linearElementReferenceModelVersion>26.06</loc:linearElementReferenceModelVersion>
+              <loc:linearElementIdentifier>977635</loc:linearElementIdentifier>
+            </loc:linearElement>
+            <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+              <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
+            </loc:fromPoint>
+            <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+              <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
+            </loc:toPoint>
+          </loc:linearWithinLinearElement>
+        </loc:locationContainedInGroup>
+      </sit:locationReference>
+      <!-- end::group[] -->
+      <sit:impactOnOppositeDirection>
+        <sit:capacityRemaining>0</sit:capacityRemaining>
+      </sit:impactOnOppositeDirection>
+      <sit:complianceOption>mandatory</sit:complianceOption>
+      <sit:applicableForTrafficDirection>bothWays</sit:applicableForTrafficDirection>
+      <sit:roadOrCarriagewayOrLaneManagementType>roadClosed</sit:roadOrCarriagewayOrLaneManagementType>
+    </sit:situationRecord>
+  </sit:situation>
+</d2:payload>
