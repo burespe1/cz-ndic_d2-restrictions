@@ -128,6 +128,13 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:complexType name="_PredefinedLocationGroupVersionedReference">
+    <xs:complexContent>
+      <xs:extension base="com:VersionedReference">
+        <xs:attribute name="targetClass" type="xs:string" use="required" fixed="loc:PredefinedLocationGroup" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="_ReferentTypeEnum">
     <xs:simpleContent>
       <xs:extension base="loc:ReferentTypeEnum">
@@ -1178,6 +1185,52 @@
         <xs:sequence>
           <xs:element name="externalReferencing" type="loc:ExternalReferencing" minOccurs="0" maxOccurs="unbounded" />
           <xs:element name="_locationExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LocationGroup" abstract="true">
+    <xs:annotation>
+      <xs:documentation>Multiple (i.e. more than one) physically separate locations which have no specific order.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="loc:LocationReference">
+        <xs:sequence>
+          <xs:element name="_locationGroupExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LocationGroupByList">
+    <xs:annotation>
+      <xs:documentation>A group of (i.e. more than one) physically separate locations which have no specific order and where each location is explicitly listed.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="loc:LocationGroup">
+        <xs:sequence>
+          <xs:element name="locationContainedInGroup" type="loc:Location" minOccurs="2" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>A location contained in a non-ordered group of locations.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="_locationGroupByListExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LocationGroupByReference">
+    <xs:annotation>
+      <xs:documentation>A group of (i.e. more than one) physically separate locations which have no specific order that are defined by reference to a predefined non ordered location group.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="loc:LocationGroup">
+        <xs:sequence>
+          <xs:element name="predefinedLocationGroupReference" type="loc:_PredefinedLocationGroupVersionedReference" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>A reference to a versioned instance of a predefined location group as specified in a PredefinedLocationsPublication.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="_locationGroupByReferenceExtension" type="com:_ExtensionType" minOccurs="0" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

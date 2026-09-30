@@ -8,16 +8,16 @@
     <com:nationalIdentifier>NDIC</com:nationalIdentifier>
   </com:publicationCreator>
   <!-- end::header[] -->
+  <!-- tag::situation-head[] -->
   <sit:situation id="3bdeb91a-d680-47e5-ab5c-c3b9b4a13006">
-    <!-- tag::situation-head[] -->
     <sit:situationVersionTime>2023-08-30T07:00:02+02:00</sit:situationVersionTime>
     <sit:headerInformation>
       <com:confidentiality>noRestriction</com:confidentiality>
       <com:informationStatus>real</com:informationStatus>
     </sit:headerInformation>
     <!-- end::situation-head[] -->
+    <!-- tag::record-meta[] -->
     <sit:situationRecord xsi:type="sit:ConstructionWorks" id="3bdeb91a-d680-47e5-ab5c-c3b9b4a13006_ConstructionWorks" version="6">
-      <!-- tag::record-meta[] -->
       <sit:situationRecordCreationTime>2023-08-30T07:00:02+02:00</sit:situationRecordCreationTime>
       <sit:situationRecordVersionTime>2023-08-30T07:00:02+02:00</sit:situationRecordVersionTime>
       <sit:probabilityOfOccurrence>certain</sit:probabilityOfOccurrence>

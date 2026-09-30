@@ -64,6 +64,7 @@ v čase vyvíjet; obsahuje čas své poslední změny `situationVersionTime` a h
 ----
 include::{samplesdir}/restriction.xml[tag=situation-head,indent=0]
   ...
+</sit:situation>
 ----
 
 Vlastní informace nesou záznamy `situationRecord`. V jedné situaci může být záznamů více, každý jiného
@@ -86,6 +87,8 @@ záznamu je odvozen od identifikátoru situace a typu záznamu.
 [source,xml]
 ----
 include::{samplesdir}/restriction.xml[tag=record-meta,indent=0]
+  ...
+</sit:situationRecord>
 ----
 
 * `probabilityOfOccurrence` – `certain` pro nastalou událost, `probable` pro pravděpodobnou,
@@ -169,7 +172,8 @@ include::{samplesdir}/restriction.xml[tag=validity,indent=0]
 
 Poloha se popisuje přímo ve zprávě elementem `locationReference`, zpravidla typu `loc:SingleRoadLinearLocation`
 (liniová poloha na jedné komunikaci). Liniová poloha se používá i pro bodové události (např. nehodu):
-počátek a konec jsou pak shodné. Uvádí-li zdroj polohu jako bod, použije se `loc:PointLocation`
+v ALERT-C je primární a sekundární lokace shodná, OpenLR a úseky Global Network popisují krátký úsek
+komunikace v místě události. Uvádí-li zdroj polohu jako bod, použije se `loc:PointLocation`
 (ALERT-C `alertCPoint` typu `AlertCMethod2Point`). Plošné polohy se nepoužívají.
 
 Jedna poloha bývá popsána současně několika metodami podle jejich dostupnosti v daném místě; všechny
@@ -223,7 +227,7 @@ v libovolné mapě najde vyhledáním cesty (tzv. on-the-fly lokalizace). Refere
 `openlrLocationReferencePoint` a `openlrLastLocationReferencePoint` jsou dány souřadnicemi (WGS-84),
 azimutem a třídou komunikace; nalezená cesta je upřesněna ofsety `openlrPositiveOffset`
 a `openlrNegativeOffset` na skutečný rozsah události. Nestačí-li dva body, použijí se body mezilehlé.
-U bodové události vymezují ofsety úsek nulové délky.
+U bodové události popisuje OpenLR krátký úsek v místě události (ofsety nevymezují úsek nulové délky).
 
 .Popis polohy pomocí OpenLR (vzorek `restriction.xml`)
 [source,xml]
@@ -236,8 +240,7 @@ include::{samplesdir}/restriction.xml[tag=loc-openlr,indent=0]
 Staničení se popisuje elementem `linearWithinLinearElement`, jehož `linearElement` nese číslo
 komunikace (`roadNumber`). `directionRelativeOnLinearSection` určuje směr vůči staničení (`aligned`
 po směru, `opposite` proti směru) a `fromPoint` a `toPoint` typu `DistanceFromLinearElementStart`
-vzdálenost počátku a konce události od počátku komunikace v metrech (`distanceAlong`). Bodová událost
-má shodný počátek a konec.
+vzdálenost počátku a konce události od počátku komunikace v metrech (`distanceAlong`).
 
 .Popis polohy pomocí staničení (vzorek `restriction.xml`)
 [source,xml]
@@ -283,4 +286,28 @@ include::{samplesdir}/restriction.xml[tag=loc-extref,indent=0]
 `externalReferencing` a poslední krajní úsek. Nemají-li vnitřní úseky stejný směr vůči svému kódování,
 uvádějí se všechny úseky jako `linearWithinLinearElement`.
 
+Poloha platná pro oba směry jízdy se v síti GN popisuje takto:
+
+* Slouží-li úseky oběma směrům ve stejném rozsahu, uvádějí se jednou s `directionRelativeOnLinearSection`
+  = `both`.
+* Liší-li se úseky nebo jejich rozsah v protisměru (oddělené jízdní pásy, jiný rozsah krajních úseků),
+  následují za úseky prvního směru úseky protisměru, každý se svým směrem a rozsahem; všechny se pak
+  uvádějí jako `linearWithinLinearElement` (bez zkrácení `externalReferencing`). Průběh obou směrů
+  jednoznačně popisuje OpenLR (`firstDirection`, `oppositeDirection`).
+
 NOTE: Procentní hodnoty (typ `Percentage`) se uvádějí v rozsahu 0–100.
+
+[[skupiny]]
+=== Oblastní jevy a skupiny úseků
+
+Jev, který zasahuje více silnic nebo nesouvislé úseky (uzavírka oblasti, akce, kalamita), se popisuje
+jedním záznamem, jehož poloha je skupinou úseků:
+
+* *Jednorázová oblast* – `locationReference` typu `loc:LocationGroupByList`; jednotlivé úseky jsou
+  v elementech `locationContainedInGroup` (alespoň dva), každý popsaný jako samostatná liniová poloha
+  (`loc:SingleRoadLinearLocation`) všemi metodami, které jsou k dispozici.
+* *Opakující se oblast* (pravidelné zimní uzavírky, stálé objízdné trasy) – odkaz na předdefinovanou
+  skupinu formátu `cz-ndic_d2-pls`: `locationReference` typu `loc:LocationGroupByReference`
+  s `predefinedLocationGroupReference` (`targetClass` = `loc:PredefinedLocationGroup`).
+
+Plošné polohy se nepoužívají; oblast pokrývá výčet liniových úseků.

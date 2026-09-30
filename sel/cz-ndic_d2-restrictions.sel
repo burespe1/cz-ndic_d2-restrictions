@@ -342,7 +342,7 @@
         <definition>A collection of information related to specifying locations within a transportation network.</definition>
         <NamespaceName>LocationReferencing</NamespaceName>
       </package>
-      <generate>false</generate>
+      <generate>true</generate>
       <isGenerated>true</isGenerated>
       <SuperD2Component>EAID_A2A4DD9E_C635_48e4_8143_F444A0A0C335</SuperD2Component>
       <NamespaceName>LocationReferencing</NamespaceName>
@@ -8852,7 +8852,7 @@
         <definition>A collection of information related to specifying locations within a transportation network.</definition>
         <NamespaceName>LocationReferencing</NamespaceName>
       </package>
-      <generate>false</generate>
+      <generate>true</generate>
       <isGenerated>true</isGenerated>
       <SuperD2Component>EAID_0218B7CA_6205_44c7_B1BD_60839D13ABC5</SuperD2Component>
       <NamespaceName>LocationReferencing</NamespaceName>
@@ -8867,7 +8867,7 @@
         <upperBound>-1</upperBound>
         <upperBoundUnlimited>true</upperBoundUnlimited>
         <definition>A location contained in a non-ordered group of locations.</definition>
-        <generate>false</generate>
+        <generate>true</generate>
         <newLowerBound>-1</newLowerBound>
         <newUpperBound>-1</newUpperBound>
       </relations>
@@ -22141,7 +22141,7 @@
         <definition>A collection of information related to specifying locations within a transportation network.</definition>
         <NamespaceName>LocationReferencing</NamespaceName>
       </package>
-      <generate>false</generate>
+      <generate>true</generate>
       <isGenerated>true</isGenerated>
       <SuperD2Component>EAID_0218B7CA_6205_44c7_B1BD_60839D13ABC5</SuperD2Component>
       <NamespaceName>LocationReferencing</NamespaceName>
@@ -22156,7 +22156,7 @@
         <upperBound>1</upperBound>
         <upperBoundUnlimited>false</upperBoundUnlimited>
         <definition>A reference to a versioned instance of a predefined location group as specified in a PredefinedLocationsPublication.</definition>
-        <generate>false</generate>
+        <generate>true</generate>
         <attribute>false</attribute>
         <targetClass>loc:PredefinedLocationGroup</targetClass>
         <newLowerBound>-1</newLowerBound>
