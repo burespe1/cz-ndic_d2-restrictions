@@ -94,6 +94,12 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:complexType name="_LocationContainedInItinerary">
+    <xs:sequence>
+      <xs:element name="location" type="loc:Location" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="index" type="xs:int" use="required" />
+  </xs:complexType>
   <xs:complexType name="_OpenlrFormOfWayEnum">
     <xs:simpleContent>
       <xs:extension base="loc:OpenlrFormOfWayEnum">
@@ -674,6 +680,35 @@
       <xs:enumeration value="_extended" />
     </xs:restriction>
   </xs:simpleType>
+  <xs:complexType name="Itinerary" abstract="true">
+    <xs:annotation>
+      <xs:documentation>Multiple (i.e. more than one) physically separate locations arranged as an ordered set that defines an itinerary or route.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="loc:LocationReference">
+        <xs:sequence>
+          <xs:element name="_itineraryExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ItineraryByIndexedLocations">
+    <xs:annotation>
+      <xs:documentation>Multiple physically separate locations arranged as an ordered set that defines an itinerary or route. The index qualifier indicates the order.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="loc:Itinerary">
+        <xs:sequence>
+          <xs:element name="locationContainedInItinerary" type="loc:_LocationContainedInItinerary" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>A location contained in an itinerary (i.e. an ordered set of locations defining a route or itinerary).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="_itineraryByIndexedLocationsExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="Lane">
     <xs:annotation>
       <xs:documentation>Indicates a specific lane or group of lanes.</xs:documentation>

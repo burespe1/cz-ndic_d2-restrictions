@@ -337,7 +337,7 @@ adjoining third-class road), it is described as a route – `locationReference` 
 `loc:ItineraryByIndexedLocations`:
 
 * Each part of the route lies on one road. It is a `locationContainedInItinerary` element with the `index`
-  attribute (1, 2, …) containing a linear location `loc:SingleRoadLinearLocation` described by all available
+  attribute (1, 2, …) whose `location` element is a linear location `loc:SingleRoadLinearLocation` described by all available
   methods and with its own location path `gmlLineString`.
 * The parts are in the order of travel (for a bidirectional location in the order of the first direction);
   the end of a part is the start of the next one and the parts do not overlap. Directionality is the same in
@@ -347,6 +347,22 @@ adjoining third-class road), it is described as a route – `locationReference` 
   location table.
 * A route has at least two parts; `routeDestination` is not used. A location on one road is always directly
   `loc:SingleRoadLinearLocation`.
+
+.Route along two roads (sample `closure-route.xml`, shortened)
+[source,xml]
+----
+include::{samplesdir}/closure-route.xml[tag=itinerary,indent=0]
+      ...
+    </loc:location>
+  </loc:locationContainedInItinerary>
+  <loc:locationContainedInItinerary index="2">
+    <loc:location xsi:type="loc:SingleRoadLinearLocation">
+      <!-- III/34042 -->
+      ...
+    </loc:location>
+  </loc:locationContainedInItinerary>
+</sit:locationReference>
+----
 
 The event remains one situation record. The split corresponds to ALERT-C <<ISO14819-3>>, where a location
 always refers to one road: each part with `alertCLinear` can be converted separately into an RDS-TMC message

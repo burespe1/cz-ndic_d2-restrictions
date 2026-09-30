@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<d2:payload xmlns:d2="http://datex2.eu/schema/3/d2Payload" xmlns:com="http://datex2.eu/schema/3/common" xmlns:sit="http://datex2.eu/schema/3/situation" xmlns:loc="http://datex2.eu/schema/3/locationReferencing" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="sit:SituationPublication" lang="cs" modelBaseVersion="3" profileName="cz-ndic_d2-restrictions" profileVersion="2.0">
+  <!-- tag::header[] -->
+  <com:feedType>x-source:cz-ndic_d2-restrictions-pull-v1</com:feedType>
+  <com:publicationTime>2026-09-29T22:32:51+02:00</com:publicationTime>
+  <com:publicationCreator>
+    <com:country>cz</com:country>
+    <com:nationalIdentifier>NDIC</com:nationalIdentifier>
+  </com:publicationCreator>
+  <!-- end::header[] -->
+  <sit:situation id="64d93a07-86fc-41a2-aed2-493d9db006af">
+    <sit:situationVersionTime>2026-09-21T07:00:02+02:00</sit:situationVersionTime>
+    <sit:headerInformation>
+      <com:confidentiality>noRestriction</com:confidentiality>
+      <com:informationStatus>real</com:informationStatus>
+    </sit:headerInformation>
+    <sit:situationRecord xsi:type="sit:RoadOrCarriagewayOrLaneManagement" id="64d93a07-86fc-41a2-aed2-493d9db006af_RoadOrCarriagewayOrLaneManagement" version="4">
+      <sit:situationRecordCreationTime>2026-07-24T15:35:12+02:00</sit:situationRecordCreationTime>
+      <sit:situationRecordVersionTime>2026-09-21T07:00:02+02:00</sit:situationRecordVersionTime>
+      <sit:probabilityOfOccurrence>certain</sit:probabilityOfOccurrence>
+      <sit:source>
+        <com:sourceIdentification>RSD</com:sourceIdentification>
+      </sit:source>
+      <sit:validity>
+        <com:validityStatus>definedByValidityTimeSpec</com:validityStatus>
+        <com:validityTimeSpecification>
+          <com:overallStartTime>2026-09-21T07:00:00+02:00</com:overallStartTime>
+          <com:overallEndTime>2026-10-01T23:59:00+02:00</com:overallEndTime>
+        </com:validityTimeSpecification>
+      </sit:validity>
+      <sit:impact>
+        <sit:capacityRemaining>0</sit:capacityRemaining>
+      </sit:impact>
+      <sit:generalPublicComment>
+        <sit:comment>
+          <com:values>
+            <com:value lang="cs">silnice III/34041, silnice III/34042, Úhřetice, okr. Chrudim, uzavřeno, oprava povrchu vozovky, Od 21.09.2026 7:00 Do 01.10.2026 23:59</com:value>
+          </com:values>
+        </sit:comment>
+      </sit:generalPublicComment>
+      <!-- tag::itinerary[] -->
+      <sit:locationReference xsi:type="loc:ItineraryByIndexedLocations">
+        <loc:locationContainedInItinerary index="1">
+          <loc:location xsi:type="loc:SingleRoadLinearLocation">
+            <!-- III/34041 -->
+      <!-- end::itinerary[] -->
+            <loc:gmlLineString srsName="EPSG:4326" srsDimension="2">
+              <loc:posList>49.97614 15.86850 49.97670 15.86815 49.97789 15.86826 49.97846 15.86793</loc:posList>
+            </loc:gmlLineString>
+            <loc:linearWithinLinearElement>
+              <loc:directionRelativeOnLinearSection>both</loc:directionRelativeOnLinearSection>
+              <loc:linearElement xsi:type="loc:LinearElementByCode">
+                <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
+                <loc:linearElementReferenceModelVersion>26.06</loc:linearElementReferenceModelVersion>
+                <loc:linearElementIdentifier>3189908</loc:linearElementIdentifier>
+              </loc:linearElement>
+              <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+                <loc:percentageDistanceAlong>21.69</loc:percentageDistanceAlong>
+              </loc:fromPoint>
+              <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+                <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
+              </loc:toPoint>
+            </loc:linearWithinLinearElement>
+            <loc:linearWithinLinearElement>
+              <loc:directionRelativeOnLinearSection>both</loc:directionRelativeOnLinearSection>
+              <loc:linearElement xsi:type="loc:LinearElementByCode">
+                <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
+                <loc:linearElementReferenceModelVersion>26.06</loc:linearElementReferenceModelVersion>
+                <loc:linearElementIdentifier>2595655</loc:linearElementIdentifier>
+              </loc:linearElement>
+              <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+                <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
+              </loc:fromPoint>
+              <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+                <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
+              </loc:toPoint>
+            </loc:linearWithinLinearElement>
+            <loc:linearWithinLinearElement>
+              <loc:directionRelativeOnLinearSection>both</loc:directionRelativeOnLinearSection>
+              <loc:linearElement xsi:type="loc:LinearElementByCode">
+                <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
+                <loc:linearElementReferenceModelVersion>26.06</loc:linearElementReferenceModelVersion>
+                <loc:linearElementIdentifier>3360805</loc:linearElementIdentifier>
+              </loc:linearElement>
+              <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+                <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
+              </loc:fromPoint>
+              <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+                <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
+              </loc:toPoint>
+            </loc:linearWithinLinearElement>
+            <loc:linearWithinLinearElement>
+              <loc:directionRelativeOnLinearSection>both</loc:directionRelativeOnLinearSection>
+              <loc:linearElement xsi:type="loc:LinearElementByCode">
+                <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
+                <loc:linearElementReferenceModelVersion>26.06</loc:linearElementReferenceModelVersion>
+                <loc:linearElementIdentifier>3360807</loc:linearElementIdentifier>
+              </loc:linearElement>
+              <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+                <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
+              </loc:fromPoint>
+              <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+                <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
+              </loc:toPoint>
+            </loc:linearWithinLinearElement>
+          </loc:location>
+        </loc:locationContainedInItinerary>
+        <loc:locationContainedInItinerary index="2">
+          <loc:location xsi:type="loc:SingleRoadLinearLocation">
+            <!-- III/34042 -->
+            <loc:gmlLineString srsName="EPSG:4326" srsDimension="2">
+              <loc:posList>49.97846 15.86793 49.97873 15.86969 49.97799 15.87155</loc:posList>
+            </loc:gmlLineString>
+            <loc:linearWithinLinearElement>
+              <loc:directionRelativeOnLinearSection>both</loc:directionRelativeOnLinearSection>
+              <loc:linearElement xsi:type="loc:LinearElementByCode">
+                <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
+                <loc:linearElementReferenceModelVersion>26.06</loc:linearElementReferenceModelVersion>
+                <loc:linearElementIdentifier>2595656</loc:linearElementIdentifier>
+              </loc:linearElement>
+              <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+                <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
+              </loc:fromPoint>
+              <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+                <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
+              </loc:toPoint>
+            </loc:linearWithinLinearElement>
+            <loc:linearWithinLinearElement>
+              <loc:directionRelativeOnLinearSection>both</loc:directionRelativeOnLinearSection>
+              <loc:linearElement xsi:type="loc:LinearElementByCode">
+                <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
+                <loc:linearElementReferenceModelVersion>26.06</loc:linearElementReferenceModelVersion>
+                <loc:linearElementIdentifier>3360789</loc:linearElementIdentifier>
+              </loc:linearElement>
+              <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+                <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
+              </loc:fromPoint>
+              <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+                <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
+              </loc:toPoint>
+            </loc:linearWithinLinearElement>
+            <loc:linearWithinLinearElement>
+              <loc:directionRelativeOnLinearSection>both</loc:directionRelativeOnLinearSection>
+              <loc:linearElement xsi:type="loc:LinearElementByCode">
+                <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
+                <loc:linearElementReferenceModelVersion>26.06</loc:linearElementReferenceModelVersion>
+                <loc:linearElementIdentifier>3360788</loc:linearElementIdentifier>
+              </loc:linearElement>
+              <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+                <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
+              </loc:fromPoint>
+              <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+                <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
+              </loc:toPoint>
+            </loc:linearWithinLinearElement>
+            <loc:linearWithinLinearElement>
+              <loc:directionRelativeOnLinearSection>both</loc:directionRelativeOnLinearSection>
+              <loc:linearElement xsi:type="loc:LinearElementByCode">
+                <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
+                <loc:linearElementReferenceModelVersion>26.06</loc:linearElementReferenceModelVersion>
+                <loc:linearElementIdentifier>3189904</loc:linearElementIdentifier>
+              </loc:linearElement>
+              <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+                <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
+              </loc:fromPoint>
+              <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+                <loc:percentageDistanceAlong>95.51</loc:percentageDistanceAlong>
+              </loc:toPoint>
+            </loc:linearWithinLinearElement>
+          </loc:location>
+        </loc:locationContainedInItinerary>
+      </sit:locationReference>
+      <sit:impactOnOppositeDirection>
+        <sit:capacityRemaining>0</sit:capacityRemaining>
+      </sit:impactOnOppositeDirection>
+      <sit:complianceOption>mandatory</sit:complianceOption>
+      <sit:applicableForTrafficDirection>bothWays</sit:applicableForTrafficDirection>
+      <sit:roadOrCarriagewayOrLaneManagementType>roadClosed</sit:roadOrCarriagewayOrLaneManagementType>
+    </sit:situationRecord>
+  </sit:situation>
+</d2:payload>

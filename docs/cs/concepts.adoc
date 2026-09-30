@@ -322,7 +322,7 @@ Vede-li souvislá poloha z jedné komunikace na jinou (např. uzavírka po silni
 III. třídy), popisuje se jako trasa – `locationReference` typu `loc:ItineraryByIndexedLocations`:
 
 * Každá část trasy leží na jedné komunikaci. Je to element `locationContainedInItinerary` s atributem `index`
-  (1, 2, …), uvnitř liniová poloha `loc:SingleRoadLinearLocation` popsaná všemi dostupnými metodami a vlastním
+  (1, 2, …), jehož element `location` je liniová poloha `loc:SingleRoadLinearLocation` popsaná všemi dostupnými metodami a vlastním
   průběhem `gmlLineString`.
 * Části jsou v pořadí jízdy (u obousměrné polohy v pořadí prvního směru), konec části je počátkem následující
   a části se nepřekrývají. Směrovost je ve všech částech shodná.
@@ -330,6 +330,22 @@ III. třídy), popisuje se jako trasa – `locationReference` typu `loc:Itinerar
   poloha popis ALERT-C, odpovídá každá část jedné cestě lokační tabulky ALERT-C.
 * Trasa má nejméně dvě části; `routeDestination` se nepoužívá. Poloha na jedné komunikaci je vždy přímo
   `loc:SingleRoadLinearLocation`.
+
+.Trasa po dvou silnicích (vzorek `closure-route.xml`, zkráceno)
+[source,xml]
+----
+include::{samplesdir}/closure-route.xml[tag=itinerary,indent=0]
+      ...
+    </loc:location>
+  </loc:locationContainedInItinerary>
+  <loc:locationContainedInItinerary index="2">
+    <loc:location xsi:type="loc:SingleRoadLinearLocation">
+      <!-- III/34042 -->
+      ...
+    </loc:location>
+  </loc:locationContainedInItinerary>
+</sit:locationReference>
+----
 
 Událost zůstává jedním záznamem situace. Rozdělení odpovídá ALERT-C <<ISO14819-3>>, kde se poloha vztahuje vždy
 k jedné komunikaci: každou část s `alertCLinear` lze samostatně převést na zprávu RDS-TMC se stejnou událostí.

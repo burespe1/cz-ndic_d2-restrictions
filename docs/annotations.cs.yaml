@@ -24,3 +24,8 @@ PercentageDistanceAlongLinearElement:
 LocationGroupByList:
   locationContainedInGroup:
     ndic: "Každý člen skupiny je souvislý úsek jedné komunikace (`SingleRoadLinearLocation`); pořadí členů nemá význam."
+
+ItineraryByIndexedLocations:
+  locationContainedInItinerary:
+    card: '2..n'
+    ndic: "Části trasy v pořadí jízdy, `@index` = 1, 2, …; každá část (`location`) je souvislý úsek jedné komunikace (`SingleRoadLinearLocation`)."

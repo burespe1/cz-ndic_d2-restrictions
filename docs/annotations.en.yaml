@@ -24,3 +24,8 @@ PercentageDistanceAlongLinearElement:
 LocationGroupByList:
   locationContainedInGroup:
     ndic: "Each member of the group is a contiguous section of one road (`SingleRoadLinearLocation`); the order of the members has no meaning."
+
+ItineraryByIndexedLocations:
+  locationContainedInItinerary:
+    card: '2..n'
+    ndic: "Parts of the route in travel order, `@index` = 1, 2, …; each part (`location`) is a contiguous section of one road (`SingleRoadLinearLocation`)."

@@ -55,3 +55,26 @@ Poloha::
 `LocationGroupByList` se třemi liniovými polohami, každou na jedné komunikaci: silnice II/259 (dva úseky
 Global Network v pořadí jízdy), nečíslovaná spojka (jeden úsek) a silnice III/25924 (jeden úsek). Každá poloha
 nese vlastní průběh `gmlLineString`; úseky slouží oběma směrům (`directionRelativeOnLinearSection` = `both`).
+
+=== closure-route.xml – uzavírka po dvou navazujících silnicích
+
+Úplná uzavírka silnic III/34041 a III/34042 v Úhřeticích (okres Chrudim) kvůli opravě povrchu vozovky. Poloha
+vede souvisle z jedné silnice na druhou, proto je trasou o dvou částech.
+
+[source,xml]
+----
+include::{samplesdir}/closure-route.xml[tags=**]
+----
+
+Situace::
+Jeden záznam typu `RoadOrCarriagewayOrLaneManagement` ve verzi 4: uzavření silnice (`roadClosed`) v obou
+směrech se zbytkovou kapacitou 0, závazně.
+
+Platnost::
+Od 21.{nbsp}9.{nbsp}2026 7:00 do 1.{nbsp}10.{nbsp}2026 23:59.
+
+Poloha::
+`ItineraryByIndexedLocations` se dvěma částmi v pořadí jízdy: část 1 na silnici III/34041 (čtyři úseky Global
+Network), část 2 na navazující silnici III/34042 (čtyři úseky). Každá část je liniová poloha
+`SingleRoadLinearLocation` s vlastním průběhem `gmlLineString`; konec první části je počátkem druhé. Úseky slouží
+oběma směrům (`directionRelativeOnLinearSection` = `both`).

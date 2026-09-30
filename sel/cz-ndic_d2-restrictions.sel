@@ -891,6 +891,37 @@
       </relations>
       <definition>A group of (i.e. more than one) physically separate locations which have no specific order and where each location is explicitly listed.</definition>
     </D2Component>
+    <D2Component>
+      <name>Itinerary</name>
+      <ID>EAID_36407EEB_B4DB_4779_9908_A0DD512EF781</ID>
+      <package>
+        <name>LocationReference</name>
+        <ID>EAPK_612CA98D_ED91_4514_BFD2_7AC2C233656D</ID>
+        <generate>true</generate>
+        <definition>A collection of information related to specifying locations within a transportation network.</definition>
+        <NamespaceName>LocationReferencing</NamespaceName>
+      </package>
+      <generate>true</generate>
+      <isGenerated>true</isGenerated>
+      <SuperD2Component>EAID_A2A4DD9E_C635_48e4_8143_F444A0A0C335</SuperD2Component>
+      <NamespaceName>LocationReferencing</NamespaceName>
+      <isAbstract>true</isAbstract>
+      <isExtension>false</isExtension>
+      <relations>
+        <ID>EAID_6DA049C2_B0B6_47f5_BE26_26CA6ABA5315</ID>
+        <role>routeDestination</role>
+        <target>EAID_42AEF70A_9AAE_43c8_BF44_6BA8C2A3DA75</target>
+        <order>0</order>
+        <lowerBound>0</lowerBound>
+        <upperBound>-1</upperBound>
+        <upperBoundUnlimited>true</upperBoundUnlimited>
+        <definition>Destination of a route or final location in an itinerary.</definition>
+        <generate>false</generate>
+        <newLowerBound>-1</newLowerBound>
+        <newUpperBound>-1</newUpperBound>
+      </relations>
+      <definition>Multiple (i.e. more than one) physically separate locations arranged as an ordered set that defines an itinerary or route.</definition>
+    </D2Component>
     <D2Identifiable>
       <name>Situation</name>
       <ID>EAID_377430AF_6445_4a16_9877_6AE90C0E6F26</ID>
@@ -1536,6 +1567,38 @@
         <newUpperBound>-1</newUpperBound>
       </attributes>
       <definition>The characteristics of a vehicle, e.g. lorry of gross weight greater than 30 tonnes.</definition>
+    </D2Component>
+    <D2Component>
+      <name>ItineraryByIndexedLocations</name>
+      <ID>EAID_468C8E8F_8B62_4eb4_A659_CCD4D83BD062</ID>
+      <package>
+        <name>LocationReference</name>
+        <ID>EAPK_612CA98D_ED91_4514_BFD2_7AC2C233656D</ID>
+        <generate>true</generate>
+        <definition>A collection of information related to specifying locations within a transportation network.</definition>
+        <NamespaceName>LocationReferencing</NamespaceName>
+      </package>
+      <generate>true</generate>
+      <isGenerated>true</isGenerated>
+      <SuperD2Component>EAID_36407EEB_B4DB_4779_9908_A0DD512EF781</SuperD2Component>
+      <NamespaceName>LocationReferencing</NamespaceName>
+      <isAbstract>false</isAbstract>
+      <isExtension>false</isExtension>
+      <relations>
+        <ID>EAID_3219FF82_9CC1_4ded_BC0B_8192DBFFCF22</ID>
+        <role>locationContainedInItinerary</role>
+        <target>EAID_8B6050E8_8BFC_4b0e_9354_4F0527307112</target>
+        <order>0</order>
+        <lowerBound>1</lowerBound>
+        <upperBound>1</upperBound>
+        <upperBoundUnlimited>false</upperBoundUnlimited>
+        <definition>A location contained in an itinerary (i.e. an ordered set of locations defining a route or itinerary).</definition>
+        <qualifier>index</qualifier>
+        <generate>true</generate>
+        <newLowerBound>-1</newLowerBound>
+        <newUpperBound>-1</newUpperBound>
+      </relations>
+      <definition>Multiple physically separate locations arranged as an ordered set that defines an itinerary or route. The index qualifier indicates the order.</definition>
     </D2Component>
     <D2Component>
       <name>PointCoordinates</name>
