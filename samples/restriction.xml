@@ -51,20 +51,6 @@ dvoucestným signalizačním zařízením., Vydal: Krajský úřad Libereckého 
       </sit:urlLink>
       <!-- end::comment-url[] -->
       <sit:locationReference xsi:type="loc:SingleRoadLinearLocation">
-        <!-- tag::loc-extref[] -->
-        <loc:externalReferencing>
-          <loc:externalLocationCode>126599</loc:externalLocationCode>
-          <loc:externalReferencingSystem>CZ-RSD-GlobalNetwork:22.12</loc:externalReferencingSystem>
-        </loc:externalReferencing>
-        <loc:externalReferencing>
-          <loc:externalLocationCode>1461717</loc:externalLocationCode>
-          <loc:externalReferencingSystem>CZ-RSD-GlobalNetwork:22.12</loc:externalReferencingSystem>
-        </loc:externalReferencing>
-        <loc:externalReferencing>
-          <loc:externalLocationCode>1461719</loc:externalLocationCode>
-          <loc:externalReferencingSystem>CZ-RSD-GlobalNetwork:22.12</loc:externalReferencingSystem>
-        </loc:externalReferencing>
-        <!-- end::loc-extref[] -->
         <!-- tag::loc-openlr[] -->
         <loc:openlrLinear>
           <loc:firstDirection>
@@ -101,6 +87,11 @@ dvoucestným signalizačním zařízením., Vydal: Krajský úřad Libereckého 
           </loc:firstDirection>
         </loc:openlrLinear>
         <!-- end::loc-openlr[] -->
+        <!-- tag::loc-gml[] -->
+        <loc:gmlLineString srsName="EPSG:4326" srsDimension="2">
+          <loc:posList>50.76510 15.33916 50.76538 15.33975 50.76567 15.33998 50.76613 15.33994 50.76677 15.33941 50.76698 15.33935 50.76723 15.33955 50.76734 15.34006 50.76724 15.34041 50.76705 15.34061 50.76642 15.34087 50.76574 15.34091 50.76497 15.34312</loc:posList>
+        </loc:gmlLineString>
+        <!-- end::loc-gml[] -->
         <!-- tag::loc-alertc[] -->
         <loc:alertCLinear xsi:type="loc:AlertCMethod2Linear">
           <loc:alertCLocationCountryCode>2</loc:alertCLocationCountryCode>
@@ -144,16 +135,50 @@ dvoucestným signalizačním zařízením., Vydal: Krajský úřad Libereckého 
             <loc:linearElementReferenceModelVersion>22.12</loc:linearElementReferenceModelVersion>
             <loc:linearElementIdentifier>126853</loc:linearElementIdentifier>
           </loc:linearElement>
-          <loc:fromPoint xsi:type="loc:DistanceFromLinearElementReferent">
-            <loc:distanceAlong>0</loc:distanceAlong>
-            <loc:fromReferent>
-              <loc:referentIdentifier>126853-start</loc:referentIdentifier>
-              <loc:referentType>referenceMarker</loc:referentType>
-              <loc:pointCoordinates>
-                <loc:latitude>50.765102</loc:latitude>
-                <loc:longitude>15.339157</loc:longitude>
-              </loc:pointCoordinates>
-            </loc:fromReferent>
+          <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>9.224</loc:percentageDistanceAlong>
+          </loc:fromPoint>
+          <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
+          </loc:toPoint>
+        </loc:linearWithinLinearElement>
+        <loc:linearWithinLinearElement>
+          <loc:directionRelativeOnLinearSection>opposite</loc:directionRelativeOnLinearSection>
+          <loc:linearElement xsi:type="loc:LinearElementByCode">
+            <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
+            <loc:linearElementReferenceModelVersion>22.12</loc:linearElementReferenceModelVersion>
+            <loc:linearElementIdentifier>126599</loc:linearElementIdentifier>
+          </loc:linearElement>
+          <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
+          </loc:fromPoint>
+          <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
+          </loc:toPoint>
+        </loc:linearWithinLinearElement>
+        <loc:linearWithinLinearElement>
+          <loc:directionRelativeOnLinearSection>opposite</loc:directionRelativeOnLinearSection>
+          <loc:linearElement xsi:type="loc:LinearElementByCode">
+            <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
+            <loc:linearElementReferenceModelVersion>22.12</loc:linearElementReferenceModelVersion>
+            <loc:linearElementIdentifier>1461717</loc:linearElementIdentifier>
+          </loc:linearElement>
+          <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
+          </loc:fromPoint>
+          <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
+          </loc:toPoint>
+        </loc:linearWithinLinearElement>
+        <loc:linearWithinLinearElement>
+          <loc:directionRelativeOnLinearSection>opposite</loc:directionRelativeOnLinearSection>
+          <loc:linearElement xsi:type="loc:LinearElementByCode">
+            <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
+            <loc:linearElementReferenceModelVersion>22.12</loc:linearElementReferenceModelVersion>
+            <loc:linearElementIdentifier>1461719</loc:linearElementIdentifier>
+          </loc:linearElement>
+          <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
           </loc:fromPoint>
           <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
             <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
@@ -169,16 +194,8 @@ dvoucestným signalizačním zařízením., Vydal: Krajský úřad Libereckého 
           <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
             <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
           </loc:fromPoint>
-          <loc:toPoint xsi:type="loc:DistanceFromLinearElementReferent">
-            <loc:distanceAlong>0</loc:distanceAlong>
-            <loc:fromReferent>
-              <loc:referentIdentifier>2901326-end</loc:referentIdentifier>
-              <loc:referentType>referenceMarker</loc:referentType>
-              <loc:pointCoordinates>
-                <loc:latitude>50.764969</loc:latitude>
-                <loc:longitude>15.343119</loc:longitude>
-              </loc:pointCoordinates>
-            </loc:fromReferent>
+          <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>14.7949</loc:percentageDistanceAlong>
           </loc:toPoint>
         </loc:linearWithinLinearElement>
         <!-- end::loc-gn[] -->
@@ -219,18 +236,6 @@ dvoucestným signalizačním zařízením., Vydal: Krajský úřad Libereckého 
         <com:urlLinkType>html</com:urlLinkType>
       </sit:urlLink>
       <sit:locationReference xsi:type="loc:SingleRoadLinearLocation">
-        <loc:externalReferencing>
-          <loc:externalLocationCode>126599</loc:externalLocationCode>
-          <loc:externalReferencingSystem>CZ-RSD-GlobalNetwork:22.12</loc:externalReferencingSystem>
-        </loc:externalReferencing>
-        <loc:externalReferencing>
-          <loc:externalLocationCode>1461717</loc:externalLocationCode>
-          <loc:externalReferencingSystem>CZ-RSD-GlobalNetwork:22.12</loc:externalReferencingSystem>
-        </loc:externalReferencing>
-        <loc:externalReferencing>
-          <loc:externalLocationCode>1461719</loc:externalLocationCode>
-          <loc:externalReferencingSystem>CZ-RSD-GlobalNetwork:22.12</loc:externalReferencingSystem>
-        </loc:externalReferencing>
         <loc:openlrLinear>
           <loc:firstDirection>
             <loc:openlrLocationReferencePoint>
@@ -265,6 +270,9 @@ dvoucestným signalizačním zařízením., Vydal: Krajský úřad Libereckého 
             </loc:openlrOffsets>
           </loc:firstDirection>
         </loc:openlrLinear>
+        <loc:gmlLineString srsName="EPSG:4326" srsDimension="2">
+          <loc:posList>50.76510 15.33916 50.76538 15.33975 50.76567 15.33998 50.76613 15.33994 50.76677 15.33941 50.76698 15.33935 50.76723 15.33955 50.76734 15.34006 50.76724 15.34041 50.76705 15.34061 50.76642 15.34087 50.76574 15.34091 50.76497 15.34312</loc:posList>
+        </loc:gmlLineString>
         <loc:alertCLinear xsi:type="loc:AlertCMethod2Linear">
           <loc:alertCLocationCountryCode>2</loc:alertCLocationCountryCode>
           <loc:alertCLocationTableNumber>25</loc:alertCLocationTableNumber>
@@ -303,16 +311,50 @@ dvoucestným signalizačním zařízením., Vydal: Krajský úřad Libereckého 
             <loc:linearElementReferenceModelVersion>22.12</loc:linearElementReferenceModelVersion>
             <loc:linearElementIdentifier>126853</loc:linearElementIdentifier>
           </loc:linearElement>
-          <loc:fromPoint xsi:type="loc:DistanceFromLinearElementReferent">
-            <loc:distanceAlong>0</loc:distanceAlong>
-            <loc:fromReferent>
-              <loc:referentIdentifier>126853-start</loc:referentIdentifier>
-              <loc:referentType>referenceMarker</loc:referentType>
-              <loc:pointCoordinates>
-                <loc:latitude>50.765102</loc:latitude>
-                <loc:longitude>15.339157</loc:longitude>
-              </loc:pointCoordinates>
-            </loc:fromReferent>
+          <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>9.224</loc:percentageDistanceAlong>
+          </loc:fromPoint>
+          <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
+          </loc:toPoint>
+        </loc:linearWithinLinearElement>
+        <loc:linearWithinLinearElement>
+          <loc:directionRelativeOnLinearSection>opposite</loc:directionRelativeOnLinearSection>
+          <loc:linearElement xsi:type="loc:LinearElementByCode">
+            <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
+            <loc:linearElementReferenceModelVersion>22.12</loc:linearElementReferenceModelVersion>
+            <loc:linearElementIdentifier>126599</loc:linearElementIdentifier>
+          </loc:linearElement>
+          <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
+          </loc:fromPoint>
+          <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
+          </loc:toPoint>
+        </loc:linearWithinLinearElement>
+        <loc:linearWithinLinearElement>
+          <loc:directionRelativeOnLinearSection>opposite</loc:directionRelativeOnLinearSection>
+          <loc:linearElement xsi:type="loc:LinearElementByCode">
+            <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
+            <loc:linearElementReferenceModelVersion>22.12</loc:linearElementReferenceModelVersion>
+            <loc:linearElementIdentifier>1461717</loc:linearElementIdentifier>
+          </loc:linearElement>
+          <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
+          </loc:fromPoint>
+          <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
+          </loc:toPoint>
+        </loc:linearWithinLinearElement>
+        <loc:linearWithinLinearElement>
+          <loc:directionRelativeOnLinearSection>opposite</loc:directionRelativeOnLinearSection>
+          <loc:linearElement xsi:type="loc:LinearElementByCode">
+            <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
+            <loc:linearElementReferenceModelVersion>22.12</loc:linearElementReferenceModelVersion>
+            <loc:linearElementIdentifier>1461719</loc:linearElementIdentifier>
+          </loc:linearElement>
+          <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
           </loc:fromPoint>
           <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
             <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
@@ -328,16 +370,8 @@ dvoucestným signalizačním zařízením., Vydal: Krajský úřad Libereckého 
           <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
             <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
           </loc:fromPoint>
-          <loc:toPoint xsi:type="loc:DistanceFromLinearElementReferent">
-            <loc:distanceAlong>0</loc:distanceAlong>
-            <loc:fromReferent>
-              <loc:referentIdentifier>2901326-end</loc:referentIdentifier>
-              <loc:referentType>referenceMarker</loc:referentType>
-              <loc:pointCoordinates>
-                <loc:latitude>50.764969</loc:latitude>
-                <loc:longitude>15.343119</loc:longitude>
-              </loc:pointCoordinates>
-            </loc:fromReferent>
+          <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>14.7949</loc:percentageDistanceAlong>
           </loc:toPoint>
         </loc:linearWithinLinearElement>
       </sit:locationReference>

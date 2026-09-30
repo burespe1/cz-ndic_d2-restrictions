@@ -3,4 +3,17 @@
 // Revize dokumentace (MAJOR.MINOR.REVIZE). Změny formátu viz CHANGELOG.adoc ve specifikaci.
 === 2.0.0
 
-* Nová dokumentace formátu `cz-ndic_d2-restrictions` verze 2.0 (DATEX II 3.7); nahrazuje dokumentaci formátu cz-ndic_d2-restrictions-v1.2 (DATEX II 2.3).
+* Nová dokumentace formátu `cz-ndic_d2-restrictions` verze 2.0 (DATEX II 3.7); nahrazuje dokumentaci formátu
+  cz-ndic_d2-restrictions-v1.2 (DATEX II 2.3).
+* Změny oproti verzi 1.2 (DATEX II 2.3):
+** Formát je převeden na model DATEX II 3.7 bez národních rozšíření. Obálky `d2LogicalModel` a `exchange`
+   se nepoužívají; kořen je `d2:payload`, formát určují atributy `profileName` a `profileVersion`.
+** `safetyRelatedMessage` je součástí modelu (dříve národní rozšíření).
+** Národní rozšíření polohy (`linearExtension`, `globalNetworkLinear`, `openlrExtendedLinear`) nahradily
+   prvky modelu 3.7: OpenLR v `openlrLinear`, úseky Global Network v `linearWithinLinearElement`
+   s `LinearElementByCode`.
+** Počátek a konec polohy GN (`startPoint`, `endPoint` v S-JTSK) nahradil průběh polohy ve WGS-84
+   (`gmlLineString`); krajní úseky GN mají procenta.
+** Nový povinný prvek `alertCAffectedDirection`.
+* Původ dat:
+** Směrovost události (`alertCAffectedDirection`) vychází ze směrovosti v katalogu událostí ALERT-C <<ISO14819-2>>.

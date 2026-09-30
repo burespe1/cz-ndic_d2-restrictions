@@ -1,5 +1,20 @@
 == Documentation change history
 
+// Documentation revisions (MAJOR.MINOR.REVISION). Format changes: see CHANGELOG.adoc in the specification.
 === 2.0.0
 
-* first release of the documentation
+* New documentation of the `cz-ndic_d2-restrictions` format version 2.0 (DATEX II 3.7); replaces the
+  documentation of the cz-ndic_d2-restrictions-v1.2 format (DATEX II 2.3).
+* Changes compared to version 1.2 (DATEX II 2.3):
+** The format has been migrated to the DATEX II 3.7 model without national extensions. The `d2LogicalModel`
+   and `exchange` envelopes are not used; the root is `d2:payload`, the format is identified by the
+   `profileName` and `profileVersion` attributes.
+** `safetyRelatedMessage` is part of the model (formerly a national extension).
+** The national location extensions (`linearExtension`, `globalNetworkLinear`, `openlrExtendedLinear`) were
+   replaced by elements of the 3.7 model: OpenLR in `openlrLinear`, Global Network sections in
+   `linearWithinLinearElement` with `LinearElementByCode`.
+** The start and end of a GN location (`startPoint`, `endPoint` in S-JTSK) are replaced by the location path
+   in WGS-84 (`gmlLineString`); GN edge sections use percentages.
+** New mandatory element `alertCAffectedDirection`.
+* Origin of the data:
+** The directionality of an event (`alertCAffectedDirection`) follows the directionality in the ALERT-C event list <<ISO14819-2>>.

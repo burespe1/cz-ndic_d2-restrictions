@@ -8,15 +8,13 @@ publikovány společně s ostatními událostmi. Výběr profilu restrictions vz
 omezením na akce správce komunikace (`OperatorAction`); struktury a pravidla jsou v obou formátech
 shodné.
 
-Formát vychází z DATEX II publikace `SituationPublication` <<EN16157-3>>. Oproti verzi 1.2 (DATEX II 2.3)
-je převeden na model DATEX II 3.7 bez národních rozšíření. Do publikace
+Formát vychází z DATEX II publikace `SituationPublication` <<EN16157-3>>. Používá model DATEX II 3.7 bez národních rozšíření. Do publikace
 nepatří žádné stavové informace.
 
 [[obalka]]
 === Obálka a hlavička publikace
 
-Každá zpráva je dokument DATEX II 3 s kořenovým elementem `d2:payload`. Obálky `d2LogicalModel`
-a `exchange` z verze 2 se již nepoužívají. Atribut `xsi:type` kořenového elementu určuje typ
+Každá zpráva je dokument DATEX II 3 s kořenovým elementem `d2:payload`. Atribut `xsi:type` kořenového elementu určuje typ
 publikace (zde `sit:SituationPublication`), atribut `modelBaseVersion="3"` verzi modelu a atribut `lang` výchozí jazyk
 textů.
 
@@ -94,8 +92,7 @@ include::{samplesdir}/restriction.xml[tag=record-meta,indent=0]
 * `probabilityOfOccurrence` – `certain` pro nastalou událost, `probable` pro pravděpodobnou,
   `riskOf` pro plánovanou událost, která zatím nenastala.
 * `safetyRelatedMessage` – `true` označuje informaci související s bezpečností silničního provozu podle
-  nařízení v přenesené pravomoci (EU) č. 886/2013 (SRTI). Ve verzi 3 je součástí modelu, národní
-  rozšíření se již nepoužívá.
+  nařízení v přenesené pravomoci (EU) č. 886/2013 (SRTI).
 * `source` – kdo informaci vytvořil a odpovídá za její správnost (`sourceIdentification`, případně
   `sourceName`).
 * `generalPublicComment` – volný popis události jejím tvůrcem, zpravidla česky.
@@ -177,9 +174,7 @@ komunikace v místě události. Uvádí-li zdroj polohu jako bod, použije se `l
 (ALERT-C `alertCPoint` typu `AlertCMethod2Point`). Plošné polohy se nepoužívají.
 
 Jedna poloha bývá popsána současně několika metodami podle jejich dostupnosti v daném místě; všechny
-popisují tentýž úsek skutečnosti. Musí být uvedena alespoň jedna metoda. Všechny metody jsou součástí
-modelu DATEX II 3.7 – národní rozšíření polohy (`linearExtension`, `globalNetworkLinear`,
-`openlrExtendedLinear`) z verze 2 se již nepoužívají.
+popisují tentýž úsek skutečnosti. Musí být uvedena alespoň jedna metoda. Všechny metody jsou součástí modelu DATEX II 3.7.
 
 [cols="2,3,4",options="header"]
 |===
@@ -187,7 +182,8 @@ modelu DATEX II 3.7 – národní rozšíření polohy (`linearExtension`, `glob
 |ALERT-C |`alertCLinear` (`AlertCMethod2Linear`) |kde existuje lokace v lokační tabulce ALERT-C
 |OpenLR |`openlrLinear` |vždy, kde lze polohu zakódovat (dynamická lokalizace)
 |Staničení |`linearWithinLinearElement` s `roadNumber` |silnice se staničením
-|Global Network |`linearWithinLinearElement` s `LinearElementByCode`, `externalReferencing` |úseky sítě Global Network (ŘSD)
+|Global Network |`linearWithinLinearElement` s `LinearElementByCode` |úseky sítě Global Network (ŘSD)
+|Průběh polohy |`gmlLineString` |linie ve WGS-84 pro zobrazení v mapě (<<prubeh>>)
 |===
 
 === Popis polohy pomocí ALERT-C
@@ -204,10 +200,9 @@ Metoda popisuje liniovou polohu kódy lokační tabulky ALERT-C <<ISO14819-3>> v
   vjíždí.
 * `alertCDirectionCoded` = `positive`, je-li směr dopravního proudu souhlasný se směrem kódování
   cesty v lokační tabulce.
-* `alertCAffectedDirection` (ve verzi 3 povinný) určuje, kterých směrů dopravního proudu se událost
+* `alertCAffectedDirection` (povinný) určuje, kterých směrů dopravního proudu se událost
   týká, vůči směru popsané polohy (danému `alertCDirectionCoded`): `aligned` pro jednosměrné události
-  v tomto směru, `both` pro události platné v obou směrech. Hodnota vychází ze směrovosti události
-  v katalogu událostí ALERT-C <<ISO14819-2>>.
+  v tomto směru, `both` pro události platné v obou směrech.
 * Dlouhé události, které nelze popsat jednou cestou ALERT-C, mají více elementů `alertCLinear`.
 * Bodová událost (i vnitřek křižovatky či tunelu) má shodnou primární a sekundární lokaci.
 
@@ -251,49 +246,30 @@ include::{samplesdir}/restriction.xml[tag=loc-station,indent=0]
 [[gn]]
 === Popis polohy pomocí sítě Global Network
 
-Úseky silniční sítě Global Network (GN, ŘSD) se ve verzi 3 popisují nativními prostředky modelu:
+Úseky silniční sítě Global Network (GN, ŘSD) se popisují takto:
 
 * Každý úsek je jeden element `linearWithinLinearElement`, jehož `linearElement` je typu
   `LinearElementByCode`: `linearElementReferenceModel` = `CZ-RSD-GlobalNetwork`,
   `linearElementReferenceModelVersion` = verze sítě a `linearElementIdentifier` = identifikátor
-  úseku. Pořadí elementů odpovídá pořadí úseků ve směru jízdy.
+  úseku. Uvádějí se všechny úseky trasy v pořadí jízdy, i celé vnitřní úseky.
 * `directionRelativeOnLinearSection` určuje směr jízdy vůči směru kódování úseku, tj. směru, v němž byl
   úsek vytvořen v databázi GN: `aligned` (po směru kódování), `opposite` (proti směru kódování), `both`
   (úsek slouží oběma směrům). Směr se na trase může střídat tak, aby na sebe konce úseků navazovaly – např.
   když trasa přechází úsek vzniklý kódováním jiné komunikace, se kterou je v souběhu.
 * Jednosměrné úseky (např. oddělené jízdní pásy, větve křižovatek) jsou vždy kódovány ve směru jízdy;
   pojíždějí se tedy jen jako `aligned` a trasa nikdy nevede proti nim.
-* `fromPoint` a `toPoint` jsou místa, kde trasa na úsek vstupuje a kde ho opouští. Uvnitř trasy jsou typu
+* `fromPoint` a `toPoint` jsou místa, kde trasa na úsek vstupuje a kde ho opouští, vždy typu
   `PercentageDistanceAlongLinearElement` – procenta délky úseku (0–100) měřená od počátku kódování úseku.
   U `aligned` hodnota roste (např. 20 → 100), u `opposite` klesá (např. 100 → 20); celý úsek je 0 → 100,
   resp. 100 → 0.
-* *Počátek a konec polohy* (`fromPoint` prvního a `toPoint` posledního úseku) jsou typu
-  `DistanceFromLinearElementReferent` a nesou (jsou-li známy) souřadnice WGS-84. Referent (`fromReferent`,
-  `referentType` = `referenceMarker`) je známý bod ležící na úseku, zadaný souřadnicemi (`pointCoordinates`);
-  zde je jím přímo počátek, resp. konec polohy. `distanceAlong` je vzdálenost popisovaného bodu od
-  referentu podél úseku – protože referentem je bod sám, je vždy 0. S počátkem úseku nesouvisí: místo na
-  krajním úseku je dáno souřadnicemi, ne procenty. Nahrazuje body `startPoint` a `endPoint` z verze 2
-  (tam v S-JTSK).
-* *Plné vnitřní úseky* (zasažené celé a ve stejném směru) se neuvádějí jako samostatné
-  `linearWithinLinearElement`, ale zkráceně elementy `externalReferencing` přímo v poloze:
-  `externalLocationCode` = identifikátor úseku, `externalReferencingSystem` =
-  `CZ-RSD-GlobalNetwork:<verze sítě>`; pořadí odpovídá pořadí úseků na trase.
+* *Počátek a konec polohy* dávají procenta prvního a posledního úseku. Souřadnice počátku a konce úseky
+  GN nenesou; nese je průběh polohy `gmlLineString` (<<prubeh>>).
 
-.Úseky Global Network – krajní úseky se souřadnicemi počátku a konce (vzorek `restriction.xml`)
+.Úseky Global Network – trasa (vzorek `restriction.xml`)
 [source,xml]
 ----
 include::{samplesdir}/restriction.xml[tag=loc-gn,indent=0]
 ----
-
-.Plné vnitřní úseky Global Network zkráceně (vzorek `restriction.xml`)
-[source,xml]
-----
-include::{samplesdir}/restriction.xml[tag=loc-extref,indent=0]
-----
-
-Úplný seznam úseků trasy tedy tvoří: první krajní úsek (`linearWithinLinearElement`), vnitřní úseky
-v pořadí `externalReferencing` a poslední krajní úsek. Nemají-li vnitřní úseky stejný směr vůči svému
-kódování, uvádějí se všechny úseky jako `linearWithinLinearElement`.
 
 Poloha platná pro oba směry jízdy se v síti GN popisuje takto:
 
@@ -303,14 +279,31 @@ Poloha platná pro oba směry jízdy se v síti GN popisuje takto:
   tentýž seznam čtený od konce, s body v opačném pořadí. Směr `both` mohou mít jen úseky průjezdné v obou
   směrech.
 * Vede-li protisměr jinudy (oddělené jízdní pásy, jednosměrné úseky) nebo v jiném rozsahu, uvádí se
-  nejprve celá trasa prvního směru a za ní celá trasa protisměru, obě jako `linearWithinLinearElement`
-  (bez zkrácení `externalReferencing`). Každá trasa začíná a končí referentem se souřadnicemi: první směr
-  vede od počátku ke konci polohy, protisměr od konce k počátku. Každou trasu uvozuje komentář XML `<!-- GN firstDirection -->`, resp.
+  nejprve celá trasa prvního směru a za ní celá trasa protisměru, obě jako `linearWithinLinearElement`.
+  První směr vede od počátku ke konci polohy, protisměr od konce k počátku. Každou trasu uvozuje komentář XML `<!-- GN firstDirection -->`, resp.
   `<!-- GN oppositeDirection -->` (názvy prvků modelu, nezávislé na jazyce). Komentář slouží ke čtení
-  člověkem, příjemce se jím nemá řídit; hranici mezi trasami určuje referent. Oba směry
+  člověkem, příjemce se jím nemá řídit; hranici mezi trasami určí z návaznosti úseků v síti GN. Oba směry
   jednoznačně popisuje i OpenLR (`firstDirection`, `oppositeDirection`).
 
 NOTE: Procentní hodnoty (typ `Percentage`) se uvádějí v rozsahu 0–100.
+
+[[prubeh]]
+=== Průběh polohy
+
+Liniová poloha nese svůj průběh ve WGS-84 v elementu `gmlLineString`, aby ji odběratel zobrazil v mapě
+bez sítě GN, lokační tabulky ALERT-C i dekodéru OpenLR:
+
+* `posList` – dvojice „zeměpisná šířka zeměpisná délka“ oddělené mezerou; `srsName` = `EPSG:4326`,
+  `srsDimension` = `2`.
+* Linie vzniká z geometrie úseků GN oříznuté procenty krajních úseků, je zjednodušená (tolerance 5 m)
+  a souřadnice mají 5 desetinných míst (≈ 1 m). První bod linie je počátek, poslední bod konec polohy.
+* U obousměrné polohy vede linie v prvním směru (model dovoluje jednu linii na polohu).
+
+.Průběh polohy (vzorek `restriction.xml`)
+[source,xml]
+----
+include::{samplesdir}/restriction.xml[tag=loc-gml,indent=0]
+----
 
 [[skupiny]]
 === Oblastní jevy a skupiny úseků

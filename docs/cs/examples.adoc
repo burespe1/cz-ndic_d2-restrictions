@@ -29,8 +29,8 @@ Oba záznamy platí od 30. 8. 2023 7:00 do 1. 9. 2023 23:59.
 
 Poloha::
 Poloha je popsána čtyřmi metodami: OpenLR, ALERT-C, staničením silnice 10 (106 797–107 507 m) a úseky
-Global Network verze 22.12: krajní úseky 126853 a 2901326 se souřadnicemi počátku a konce WGS-84, tři
-plné vnitřní úseky (126599, 1461717, 1461719) zkráceně v `externalReferencing`.
+Global Network verze 22.12: pět úseků v pořadí jízdy (126853–2901326), a průběhem
+polohy `gmlLineString` ve WGS-84.
 
 Další obsah::
 `source` uvádí původce informace (ŘSD), `generalPublicComment` text rozhodnutí o uzavírce

@@ -1,4 +1,337 @@
 == Concepts
 
-Description of the format concepts: content of the publication, static vs. dynamic part,
-location referencing, record versioning. References: <<EN16157-3>>.
+The format provides information on current and planned closures and traffic restrictions on the road
+network of the Czech Republic: roadworks, closures, diversions, speed limits and changes of traffic layout.
+
+IMPORTANT: The format is a subset of the `cz-ndic_d2-common` format, where closures and roadworks are
+published together with other events. The restrictions profile selection is derived from the common
+selection by limiting it to road operator actions (`OperatorAction`); the structures and rules are the same
+in both formats.
+
+The format is based on the DATEX II publication `SituationPublication` <<EN16157-3>>. It uses the DATEX II 3.7 model without national extensions. No status
+information is part of the publication.
+
+[[obalka]]
+=== Envelope and publication header
+
+Each message is a DATEX II 3 document with the root element `d2:payload`. The `xsi:type` attribute of the root element
+specifies the publication type (here `sit:SituationPublication`), the `modelBaseVersion="3"` attribute
+the model version and the `lang` attribute the default language of texts.
+
+The format the message conforms to is identified solely by attributes of the root element:
+
+[horizontal]
+`profileName`:: format identifier without version (`cz-ndic_d2-restrictions`),
+`profileVersion`:: format version (`2.0`).
+
+The publication header contains:
+
+* `feedType` – reference to the *data source* (distribution) in the register of the national access
+  point <<nap>>, e.g. `x-source:cz-ndic_d2-restrictions-pull-v1`. The distribution name consists of the format
+  name, where applicable the distribution content (`fixed`/`mobile` for VMS, `fcd`/`weather` for location
+  sets), the protocol `pull` for snapshots and a whole-number distribution version (`-v1`, `-v2`, …), which
+  changes independently of the format version and continues the series of distributions in the register.
+  The Global Network version is not part of `feedType`; it is carried by the content (the version of the
+  predefined locations). The element does not refer to the format; the format is identified by the
+  `profileName` and `profileVersion` attributes. The `feedDescription` element is not used.
+* `publicationTime` – time the publication content was created. If the content has not changed since
+  the previous publication, the original time is kept (as are the HTTP headers `Last-Modified` and
+  `ETag`); a new time is set only when the content changes.
+* `publicationCreator` – publication provider: country code in lower case (`cz`) and provider
+  abbreviation (`nationalIdentifier`).
+* `headerInformation` – handling of the information; NDIC always sets `confidentiality` =
+  `noRestriction` and `informationStatus` = `real`.
+
+All times in the message include the time zone.
+
+.Root element and publication header (sample `restriction.xml`)
+[source,xml]
+----
+include::{samplesdir}/restriction.xml[lines=2]
+include::{samplesdir}/restriction.xml[tag=header,indent=2]
+  ...
+----
+
+[[situace]]
+=== Situations and situation records
+
+Each event is described by a `situation` element with a unique identifier (`@id`). A situation may evolve
+over time; it contains the time of its last change `situationVersionTime` and the `headerInformation`
+header.
+
+.Situation (sample `restriction.xml`)
+[source,xml]
+----
+include::{samplesdir}/restriction.xml[tag=situation-head,indent=0]
+  ...
+</sit:situation>
+----
+
+The information itself is carried by `situationRecord` records. A situation may contain several records,
+each of a different type (`xsi:type`) – typically a cause (e.g. an accident) and its consequence (e.g. a
+road closure). The record identifier is derived from the situation identifier and the record type.
+
+[[verzovani]]
+==== Versioning
+
+* Each record carries a version number (`@version`), the creation time of its first version
+  `situationRecordCreationTime` and the creation time of the current version
+  `situationRecordVersionTime`.
+* Each change of a record increases its version by one and changes `situationRecordVersionTime`.
+* In version 3 of the model a situation has no version number. Its version is expressed by
+  `situationVersionTime`, which always equals the latest `situationRecordVersionTime` of its records – each
+  change of a record is therefore also a new version of the situation.
+
+==== Common content of a record
+
+.Situation record – version, probability and source (sample `restriction.xml`)
+[source,xml]
+----
+include::{samplesdir}/restriction.xml[tag=record-meta,indent=0]
+  ...
+</sit:situationRecord>
+----
+
+* `probabilityOfOccurrence` – `certain` for an event that has occurred, `probable` for a probable event,
+  `riskOf` for a planned event that has not occurred yet.
+* `safetyRelatedMessage` – `true` marks safety-related traffic information according to Commission
+  Delegated Regulation (EU) No 886/2013 (SRTI).
+* `source` – who created the information and is responsible for its correctness (`sourceIdentification`,
+  where applicable `sourceName`).
+* `generalPublicComment` – free-text description of the event by its originator, usually in Czech.
+* `urlLink` – link to a web page with details of the event (`urlLinkType` = `html`).
+
+NOTE: The situation summary record (`situationSummary`) offered by model 3.7 is not used yet: a summary
+must have its own location, validity and mandatory type elements, which would make messages longer.
+Comments remain in the individual records.
+
+.Comment and link to details (sample `restriction.xml`)
+[source,xml]
+----
+include::{samplesdir}/restriction.xml[tag=comment-url,indent=0]
+----
+
+[[typy]]
+=== Record types
+
+The format uses only records of the road operator action type (subclasses of `OperatorAction`):
+
+[cols="2,3",options="header"]
+|===
+|Area |Record types
+|Roadworks |`ConstructionWorks` (construction works), `MaintenanceWorks` (maintenance)
+|Closures and traffic layout |`RoadOrCarriagewayOrLaneManagement`
+|Diversions |`ReroutingManagement`
+|Speed limits |`SpeedManagement`
+|Winter maintenance and driving |`WinterDrivingManagement`
+|Other traffic management |`GeneralNetworkManagement`, `GeneralInstructionOrMessageToRoadUsers`, `RoadsideAssistance`
+|===
+
+A situation typically contains the cause (e.g. roadworks) and its consequence (e.g. a closure or
+alternating one-lane traffic) as two records.
+
+.Roadworks (sample `restriction.xml`)
+[source,xml]
+----
+include::{samplesdir}/restriction.xml[tag=works,indent=0]
+----
+
+For road operator actions, `complianceOption` specifies whether the measure is mandatory (`mandatory`) or
+advisory (`advisory`). The impact on traffic can be expressed by the `impact` element (remaining capacity
+`capacityRemaining`, 0 for a full closure, or delay `delays`); for measures in both directions
+(`applicableForTrafficDirection` = `bothWays`) the impact on the opposite direction is given in the
+`impactOnOppositeDirection` element.
+
+.Alternating one-lane traffic (sample `restriction.xml`)
+[source,xml]
+----
+include::{samplesdir}/restriction.xml[tag=operator,indent=0]
+----
+
+[[platnost]]
+=== Validity
+
+Validity is given for each situation record separately in the `validity` structure. Only
+`validityStatus` = `definedByValidityTimeSpec` is used, with the interval `validityTimeSpecification`
+(class `OverallPeriod`) with the start `overallStartTime` and the end `overallEndTime`.
+
+If an event applies only in a certain part of the day (e.g. works only during the day, at night or
+outside rush hours), the interval is supplemented by the `validPeriod` element: the period name
+`periodName` and the daily time period `recurringTimePeriodOfDay` (`startTimeOfPeriod`,
+`endTimeOfPeriod`). Other recurring intervals (days of the week, dates) are not used; a recurring event is
+otherwise described by several consecutive records. The validity interval may lie in the past, the present
+or the future.
+
+.Validity of a record (sample `restriction.xml`)
+[source,xml]
+----
+include::{samplesdir}/restriction.xml[tag=validity,indent=0]
+----
+
+[[polohy]]
+== Location referencing
+
+The location is described directly in the message by the `locationReference` element, usually of type
+`loc:SingleRoadLinearLocation` (linear location on a single road). A linear location is also used for
+point-like events (e.g. an accident): in ALERT-C the primary and secondary locations are identical, OpenLR
+and the Global Network sections describe a short road section at the place of the event. If the source
+gives the location as a point, `loc:PointLocation` is used (ALERT-C `alertCPoint` of type
+`AlertCMethod2Point`). Area locations are not used.
+
+A location is usually described by several methods at the same time, depending on their availability at
+the given place; all of them describe the same real-world section. At least one method must be given. All methods are part of the DATEX II 3.7 model.
+
+[cols="2,3,4",options="header"]
+|===
+|Method |Element |Use
+|ALERT-C |`alertCLinear` (`AlertCMethod2Linear`) |where a location exists in the ALERT-C location table
+|OpenLR |`openlrLinear` |always, where the location can be encoded (dynamic location referencing)
+|Road chainage |`linearWithinLinearElement` with `roadNumber` |roads with chainage
+|Global Network |`linearWithinLinearElement` with `LinearElementByCode` |sections of the Global Network (ŘSD)
+|Location path |`gmlLineString` |line in WGS-84 for display on a map (<<prubeh>>)
+|===
+
+=== ALERT-C location referencing
+
+The method describes a linear location by codes of the ALERT-C location table <<ISO14819-3>> in the
+`alertCLinear` element of type `AlertCMethod2Linear` (a point location similarly by `alertCPoint` of type
+`AlertCMethod2Point`).
+
+* The location table is identified by `alertCLocationCountryCode`, `alertCLocationTableNumber`
+  and `alertCLocationTableVersion`. The country code is given according to IEC 62106 – for the Czech
+  Republic the value `2` (not `CZ`).
+* According to the ALERT-C principle, the primary location (`alertCMethod2PrimaryPointLocation`) is the
+  place where the event occurred or where the driver leaves the problem section; the secondary location
+  (`alertCMethod2SecondaryPointLocation`) is the end of the queue or the place where the driver enters the
+  problem section.
+* `alertCDirectionCoded` = `positive` if the direction of traffic matches the coding direction of the road
+  in the location table.
+* `alertCAffectedDirection` (mandatory) specifies which directions of traffic the event
+  concerns, relative to the direction of the described location (given by `alertCDirectionCoded`):
+  `aligned` for one-directional events in this direction, `both` for events valid in both directions.
+* Long events that cannot be described by one ALERT-C path have several `alertCLinear` elements.
+* A point-like event (including the inside of a junction or tunnel) has identical primary and secondary
+  locations.
+
+IMPORTANT: The meaning of `alertCDirectionCoded` is the opposite of the meaning of the RDS-TMC
+`direction` bit, which is used to find the secondary location.
+
+.ALERT-C location referencing (sample `restriction.xml`)
+[source,xml]
+----
+include::{samplesdir}/restriction.xml[tag=loc-alertc,indent=0]
+----
+
+=== OpenLR location referencing
+
+The OpenLR method (`openlrLinear` element) describes the location independently of any map: the
+subscriber finds it in its own map by searching a route (so-called on-the-fly location referencing). The
+reference points `openlrLocationReferencePoint` and `openlrLastLocationReferencePoint` are given by
+coordinates (WGS-84), bearing and road class; the found route is trimmed by the offsets
+`openlrPositiveOffset` and `openlrNegativeOffset` to the actual extent of the event. If two points are not
+enough, intermediate points are used. For a point-like event, OpenLR describes a short section at the
+place of the event (the offsets do not delimit a section of zero length).
+
+.OpenLR location referencing (sample `restriction.xml`)
+[source,xml]
+----
+include::{samplesdir}/restriction.xml[tag=loc-openlr,indent=0]
+----
+
+=== Road chainage location referencing
+
+Road chainage is described by the `linearWithinLinearElement` element whose `linearElement` carries the
+road number (`roadNumber`). `directionRelativeOnLinearSection` specifies the direction relative to the
+chainage (`aligned` along, `opposite` against it) and `fromPoint` and `toPoint` of type
+`DistanceFromLinearElementStart` the distance of the start and end of the event from the beginning of the
+road in metres (`distanceAlong`).
+
+.Road chainage location referencing (sample `restriction.xml`)
+[source,xml]
+----
+include::{samplesdir}/restriction.xml[tag=loc-station,indent=0]
+----
+
+[[gn]]
+=== Global Network location referencing
+
+Sections of the Global Network road network (GN, ŘSD) are described as follows:
+
+* Each section is one `linearWithinLinearElement` element whose `linearElement` is of type
+  `LinearElementByCode`: `linearElementReferenceModel` = `CZ-RSD-GlobalNetwork`,
+  `linearElementReferenceModelVersion` = network version and `linearElementIdentifier` = section
+  identifier. All sections of the route are given in travel order, including full inner sections.
+* `directionRelativeOnLinearSection` specifies the travel direction relative to the section coding, i.e.
+  the direction in which the section was created in the GN database: `aligned` (along the coding),
+  `opposite` (against the coding), `both` (the section serves both directions). The direction may
+  alternate along a route so that the section ends connect – e.g. when the route passes a section created
+  by coding another road that runs concurrently with it.
+* One-way sections (e.g. separate carriageways, junction ramps) are always coded in the travel direction;
+  they are therefore travelled only as `aligned` and a route never runs against them.
+* `fromPoint` and `toPoint` are the points where the route enters and leaves the section, always of type
+  `PercentageDistanceAlongLinearElement` – percent of the section length (0–100) measured from the start
+  of the section coding. For `aligned` the value increases (e.g. 20 → 100), for `opposite` it decreases
+  (e.g. 100 → 20); a full section is 0 → 100 or 100 → 0.
+* The *start and end of the location* are given by the percentages of the first and last section. The GN
+  sections do not carry the coordinates of the start and end; they are carried by the location path
+  `gmlLineString` (<<prubeh>>).
+
+.Global Network sections – route (sample `restriction.xml`)
+[source,xml]
+----
+include::{samplesdir}/restriction.xml[tag=loc-gn,indent=0]
+----
+
+A location valid for both directions of travel is described in the GN network as follows:
+
+* If the sections serve both directions to the same extent, they are given once with
+  `directionRelativeOnLinearSection` = `both`, in the order of the first direction and with its points:
+  `fromPoint` → `toPoint` describes travel in the first direction, so a decreasing value (e.g. 100 → 30)
+  means that the first direction runs against the section coding. The opposite direction is the same list
+  read from the end, with the points in reverse order. Only sections passable in both directions may have
+  direction `both`.
+* If the opposite direction runs elsewhere (separate carriageways, one-way sections) or to a different
+  extent, the whole route of the first direction is given first, followed by the whole route of the
+  opposite direction, both as `linearWithinLinearElement`. The first direction runs from the start to the
+  end of the location, the opposite direction from the end to the start. Each route is preceded by the XML
+  comment `<!-- GN firstDirection -->` or `<!-- GN oppositeDirection -->` (model element names, independent
+  of language). The comment is meant for human readers and a receiver should not rely on it; it determines
+  the boundary between the routes from the connectivity of the sections in the GN network. Both directions
+  are also described unambiguously by OpenLR (`firstDirection`, `oppositeDirection`).
+
+NOTE: Percentage values (type `Percentage`) are given in the range 0–100.
+
+[[prubeh]]
+=== Location path
+
+A linear location carries its path in WGS-84 in the `gmlLineString` element so that a subscriber can show
+it on a map without the GN network, the ALERT-C location table or an OpenLR decoder:
+
+* `posList` – "latitude longitude" pairs separated by spaces; `srsName` = `EPSG:4326`,
+  `srsDimension` = `2`.
+* The line is made from the geometry of the GN sections trimmed by the percentages of the edge sections,
+  simplified (tolerance 5 m), with coordinates to 5 decimal places (≈ 1 m). The first point of the line is
+  the start and the last point the end of the location.
+* For a bidirectional location the line runs in the first direction (the model allows one line per
+  location).
+
+.Location path (sample `restriction.xml`)
+[source,xml]
+----
+include::{samplesdir}/restriction.xml[tag=loc-gml,indent=0]
+----
+
+[[skupiny]]
+=== Area events and groups of sections
+
+A phenomenon that affects several roads or non-contiguous sections (closure of an area, an event, a
+calamity) is described by one record whose location is a group of sections:
+
+* *One-off area* – `locationReference` of type `loc:LocationGroupByList`; the individual sections are in
+  `locationContainedInGroup` elements (at least two), each described as a separate linear location
+  (`loc:SingleRoadLinearLocation`) by all available methods.
+* *Recurring area* (regular winter closures, permanent diversion routes) – reference to a predefined group
+  of the `cz-ndic_d2-pls` format: `locationReference` of type `loc:LocationGroupByReference` with
+  `predefinedLocationGroupReference` (`targetClass` = `loc:PredefinedLocationGroup`).
+
+Area locations are not used; an area is covered by a list of linear sections.

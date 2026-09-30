@@ -1,4 +1,38 @@
-== Examples
+== Sample messages
 
-// Sample excerpts via tags – in the sample: <!-- tag::location[] --> … <!-- end::location[] -->
-Samples are part of the specification package `{schema-uri}.zip`.
+The samples are part of the specification package `{schema-uri}.zip` (directory `samples`). All of them are
+valid against the DATEX II 3.7 schema and conform to the profile selection (`.sel`).
+
+=== restriction.xml – roadworks, alternating one-lane traffic
+
+The publication contains a partial closure of road I/10 in Desná (Jablonec nad Nisou district) due to
+construction works with alternating traffic in one lane.
+
+[source,xml]
+----
+include::{samplesdir}/restriction.xml[tags=**]
+----
+
+Envelope and header::
+Root `d2:payload` of type `sit:SituationPublication` with the `profileName` and `profileVersion` attributes
+identifying the format, `publicationTime` and `publicationCreator`. The reference to the data source
+(`feedType`) is `x-source:cz-ndic_d2-restrictions-pull-v1`.
+
+Situation::
+The situation contains two records in version 6. A record of type `ConstructionWorks` describes the cause
+(construction works, `constructionWork`), a record of type `RoadOrCarriagewayOrLaneManagement` the impact
+(alternating traffic in one lane, `singleAlternateLineTraffic`, mandatory – `complianceOption` =
+`mandatory`). The value `probabilityOfOccurrence` = `certain` – the closure is already in force at the time
+of publication.
+
+Validity::
+Both records are valid from 30{nbsp}August 2023 7:00 to 1{nbsp}September 2023 23:59.
+
+Location::
+The location is described by four methods: OpenLR, ALERT-C, chainage of road 10 (106 797–107 507 m) and
+Global Network sections of version 22.12 – five sections in travel order (126853–2901326) – and by the
+location path `gmlLineString` in WGS-84.
+
+Other content::
+`source` gives the originator of the information (ŘSD), `generalPublicComment` the text of the closure
+decision and `urlLink` a link to details.
