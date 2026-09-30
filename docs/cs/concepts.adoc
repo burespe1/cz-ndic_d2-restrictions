@@ -256,15 +256,24 @@ include::{samplesdir}/restriction.xml[tag=loc-station,indent=0]
 * Každý úsek je jeden element `linearWithinLinearElement`, jehož `linearElement` je typu
   `LinearElementByCode`: `linearElementReferenceModel` = `CZ-RSD-GlobalNetwork`,
   `linearElementReferenceModelVersion` = verze sítě a `linearElementIdentifier` = identifikátor
-  úseku. Pořadí elementů odpovídá pořadí úseků ve směru trasy.
-* `directionRelativeOnLinearSection` určuje směr vůči směru kódování úseku.
-* Krajní úseky, které událost zasahuje jen částečně, vymezují `fromPoint` a `toPoint` typu
-  `PercentageDistanceAlongLinearElement` – vzdálenost od počátku úseku v procentech jeho délky
-  (0–100, kde 100 = konec úseku).
-* *Počátek a konec polohy* nesou (jsou-li známy) souřadnice WGS-84: `fromPoint` prvního a `toPoint` posledního úseku
-  jsou typu `DistanceFromLinearElementReferent` s `distanceAlong` = 0 a referentem (`fromReferent`,
-  `referentType` = `referenceMarker`) se souřadnicemi `pointCoordinates`. Nahrazují tak body
-  `startPoint` a `endPoint` z verze 2 (tam v S-JTSK).
+  úseku. Pořadí elementů odpovídá pořadí úseků ve směru jízdy.
+* `directionRelativeOnLinearSection` určuje směr jízdy vůči směru kódování úseku, tj. směru, v němž byl
+  úsek vytvořen v databázi GN: `aligned` (po směru kódování), `opposite` (proti směru kódování), `both`
+  (úsek slouží oběma směrům). Směr se na trase může střídat tak, aby na sebe konce úseků navazovaly – např.
+  když trasa přechází úsek vzniklý kódováním jiné komunikace, se kterou je v souběhu.
+* Jednosměrné úseky (např. oddělené jízdní pásy, větve křižovatek) jsou vždy kódovány ve směru jízdy;
+  pojíždějí se tedy jen jako `aligned` a trasa nikdy nevede proti nim.
+* `fromPoint` a `toPoint` jsou místa, kde trasa na úsek vstupuje a kde ho opouští. Uvnitř trasy jsou typu
+  `PercentageDistanceAlongLinearElement` – procenta délky úseku (0–100) měřená od počátku kódování úseku.
+  U `aligned` hodnota roste (např. 20 → 100), u `opposite` klesá (např. 100 → 20); celý úsek je 0 → 100,
+  resp. 100 → 0.
+* *Počátek a konec polohy* (`fromPoint` prvního a `toPoint` posledního úseku) jsou typu
+  `DistanceFromLinearElementReferent` a nesou (jsou-li známy) souřadnice WGS-84. Referent (`fromReferent`,
+  `referentType` = `referenceMarker`) je známý bod ležící na úseku, zadaný souřadnicemi (`pointCoordinates`);
+  zde je jím přímo počátek, resp. konec polohy. `distanceAlong` je vzdálenost popisovaného bodu od
+  referentu podél úseku – protože referentem je bod sám, je vždy 0. S počátkem úseku nesouvisí: místo na
+  krajním úseku je dáno souřadnicemi, ne procenty. Nahrazuje body `startPoint` a `endPoint` z verze 2
+  (tam v S-JTSK).
 * *Plné vnitřní úseky* (zasažené celé a ve stejném směru) se neuvádějí jako samostatné
   `linearWithinLinearElement`, ale zkráceně elementy `externalReferencing` přímo v poloze:
   `externalLocationCode` = identifikátor úseku, `externalReferencingSystem` =
@@ -282,18 +291,24 @@ include::{samplesdir}/restriction.xml[tag=loc-gn,indent=0]
 include::{samplesdir}/restriction.xml[tag=loc-extref,indent=0]
 ----
 
-Úplný seznam úseků trasy tvoří první krajní úsek (`linearWithinLinearElement`), vnitřní úseky v pořadí
-`externalReferencing` a poslední krajní úsek. Nemají-li vnitřní úseky stejný směr vůči svému kódování,
-uvádějí se všechny úseky jako `linearWithinLinearElement`.
+Úplný seznam úseků trasy tedy tvoří: první krajní úsek (`linearWithinLinearElement`), vnitřní úseky
+v pořadí `externalReferencing` a poslední krajní úsek. Nemají-li vnitřní úseky stejný směr vůči svému
+kódování, uvádějí se všechny úseky jako `linearWithinLinearElement`.
 
 Poloha platná pro oba směry jízdy se v síti GN popisuje takto:
 
 * Slouží-li úseky oběma směrům ve stejném rozsahu, uvádějí se jednou s `directionRelativeOnLinearSection`
-  = `both`.
-* Liší-li se úseky nebo jejich rozsah v protisměru (oddělené jízdní pásy, jiný rozsah krajních úseků),
-  následují za úseky prvního směru úseky protisměru, každý se svým směrem a rozsahem; všechny se pak
-  uvádějí jako `linearWithinLinearElement` (bez zkrácení `externalReferencing`). Průběh obou směrů
-  jednoznačně popisuje OpenLR (`firstDirection`, `oppositeDirection`).
+  = `both`, v pořadí prvního směru a s jeho body: `fromPoint` → `toPoint` popisuje jízdu prvního směru,
+  pokles hodnoty (např. 100 → 30) tedy znamená, že první směr vede proti směru kódování úseku. Protisměr je
+  tentýž seznam čtený od konce, s body v opačném pořadí. Směr `both` mohou mít jen úseky průjezdné v obou
+  směrech.
+* Vede-li protisměr jinudy (oddělené jízdní pásy, jednosměrné úseky) nebo v jiném rozsahu, uvádí se
+  nejprve celá trasa prvního směru a za ní celá trasa protisměru, obě jako `linearWithinLinearElement`
+  (bez zkrácení `externalReferencing`). Každá trasa začíná a končí referentem se souřadnicemi: první směr
+  vede od počátku ke konci polohy, protisměr od konce k počátku. Každou trasu uvozuje komentář XML `<!-- GN firstDirection -->`, resp.
+  `<!-- GN oppositeDirection -->` (názvy prvků modelu, nezávislé na jazyce). Komentář slouží ke čtení
+  člověkem, příjemce se jím nemá řídit; hranici mezi trasami určuje referent. Oba směry
+  jednoznačně popisuje i OpenLR (`firstDirection`, `oppositeDirection`).
 
 NOTE: Procentní hodnoty (typ `Percentage`) se uvádějí v rozsahu 0–100.
 
