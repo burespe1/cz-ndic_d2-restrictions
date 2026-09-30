@@ -168,9 +168,7 @@ include::{samplesdir}/restriction.xml[tag=validity,indent=0]
 The location is described directly in the message by the `locationReference` element, usually of type
 `loc:SingleRoadLinearLocation` (linear location on a single road). A linear location is also used for
 point-like events (e.g. an accident): in ALERT-C the primary and secondary locations are identical, OpenLR
-and the Global Network sections describe a short road section at the place of the event. If the source
-gives the location as a point, `loc:PointLocation` is used (ALERT-C `alertCPoint` of type
-`AlertCMethod2Point`). Area locations are not used.
+and the Global Network sections describe a short road section at the place of the event. Point and area locations are not used.
 
 The location type follows its shape. A linear location `loc:SingleRoadLinearLocation` is always a
 contiguous section of *one road* – a numbered road or a named street – and all methods describing it
@@ -183,7 +181,7 @@ describe the same section.
 |contiguous route over several roads |`loc:ItineraryByIndexedLocations` (<<trasa>>)
 |non-contiguous or branching location, one-off area |`loc:LocationGroupByList` (<<skupiny>>)
 |recurring area |`loc:LocationGroupByReference` (<<skupiny>>)
-|point given by the source |`loc:PointLocation`
+
 |===
 
 A location is usually described by several methods at the same time, depending on their availability at
@@ -202,8 +200,7 @@ the given place; all of them describe the same real-world section. At least one 
 === ALERT-C location referencing
 
 The method describes a linear location by codes of the ALERT-C location table <<ISO14819-3>> in the
-`alertCLinear` element of type `AlertCMethod2Linear` (a point location similarly by `alertCPoint` of type
-`AlertCMethod2Point`).
+`alertCLinear` element of type `AlertCMethod2Linear`.
 
 * The location table is identified by `alertCLocationCountryCode`, `alertCLocationTableNumber`
   and `alertCLocationTableVersion`. The country code is given according to IEC 62106 – for the Czech

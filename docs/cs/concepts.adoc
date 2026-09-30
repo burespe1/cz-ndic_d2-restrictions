@@ -166,8 +166,7 @@ include::{samplesdir}/restriction.xml[tag=validity,indent=0]
 Poloha se popisuje přímo ve zprávě elementem `locationReference`, zpravidla typu `loc:SingleRoadLinearLocation`
 (liniová poloha na jedné komunikaci). Liniová poloha se používá i pro bodové události (např. nehodu):
 v ALERT-C je primární a sekundární lokace shodná, OpenLR a úseky Global Network popisují krátký úsek
-komunikace v místě události. Uvádí-li zdroj polohu jako bod, použije se `loc:PointLocation`
-(ALERT-C `alertCPoint` typu `AlertCMethod2Point`). Plošné polohy se nepoužívají.
+komunikace v místě události. Bodové ani plošné polohy se nepoužívají.
 
 Typ polohy odpovídá jejímu tvaru. Liniová poloha `loc:SingleRoadLinearLocation` je vždy souvislý úsek *jedné
 komunikace* – silnice s číslem nebo ulice s názvem – a všechny metody jejího popisu popisují tentýž úsek.
@@ -179,7 +178,7 @@ komunikace* – silnice s číslem nebo ulice s názvem – a všechny metody je
 |souvislá trasa přes více komunikací |`loc:ItineraryByIndexedLocations` (<<trasa>>)
 |nesouvislá nebo rozvětvená poloha, jednorázová oblast |`loc:LocationGroupByList` (<<skupiny>>)
 |opakující se oblast |`loc:LocationGroupByReference` (<<skupiny>>)
-|bod uvedený zdrojem |`loc:PointLocation`
+
 |===
 
 Jedna poloha bývá popsána současně několika metodami podle jejich dostupnosti v daném místě; všechny
@@ -198,7 +197,7 @@ popisují tentýž úsek skutečnosti. Musí být uvedena alespoň jedna metoda.
 === Popis polohy pomocí ALERT-C
 
 Metoda popisuje liniovou polohu kódy lokační tabulky ALERT-C <<ISO14819-3>> v elementu `alertCLinear` typu
-`AlertCMethod2Linear` (bodovou polohu obdobně `alertCPoint` typu `AlertCMethod2Point`).
+`AlertCMethod2Linear`.
 
 * Lokační tabulku určují `alertCLocationCountryCode`, `alertCLocationTableNumber`
   a `alertCLocationTableVersion`. Kód země se uvádí podle IEC 62106 – pro ČR hodnota `2`
