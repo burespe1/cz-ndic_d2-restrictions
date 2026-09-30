@@ -89,7 +89,7 @@ dvoucestným signalizačním zařízením., Vydal: Krajský úřad Libereckého 
         <!-- end::loc-openlr[] -->
         <!-- tag::loc-gml[] -->
         <loc:gmlLineString srsName="EPSG:4326" srsDimension="2">
-          <loc:posList>50.76510 15.33916 50.76538 15.33975 50.76567 15.33998 50.76613 15.33994 50.76677 15.33941 50.76698 15.33935 50.76723 15.33955 50.76734 15.34006 50.76724 15.34041 50.76705 15.34061 50.76642 15.34087 50.76574 15.34091 50.76497 15.34312</loc:posList>
+          <loc:posList>50.76510 15.33916 50.76567 15.33998 50.76613 15.33994 50.76698 15.33935 50.76723 15.33955 50.76734 15.34006 50.76705 15.34061 50.76574 15.34091 50.76497 15.34312</loc:posList>
         </loc:gmlLineString>
         <!-- end::loc-gml[] -->
         <!-- tag::loc-alertc[] -->
@@ -136,7 +136,7 @@ dvoucestným signalizačním zařízením., Vydal: Krajský úřad Libereckého 
             <loc:linearElementIdentifier>126853</loc:linearElementIdentifier>
           </loc:linearElement>
           <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
-            <loc:percentageDistanceAlong>9.224</loc:percentageDistanceAlong>
+            <loc:percentageDistanceAlong>9.22</loc:percentageDistanceAlong>
           </loc:fromPoint>
           <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
             <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
@@ -195,7 +195,7 @@ dvoucestným signalizačním zařízením., Vydal: Krajský úřad Libereckého 
             <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
           </loc:fromPoint>
           <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
-            <loc:percentageDistanceAlong>14.7949</loc:percentageDistanceAlong>
+            <loc:percentageDistanceAlong>14.79</loc:percentageDistanceAlong>
           </loc:toPoint>
         </loc:linearWithinLinearElement>
         <!-- end::loc-gn[] -->
@@ -271,7 +271,7 @@ dvoucestným signalizačním zařízením., Vydal: Krajský úřad Libereckého 
           </loc:firstDirection>
         </loc:openlrLinear>
         <loc:gmlLineString srsName="EPSG:4326" srsDimension="2">
-          <loc:posList>50.76510 15.33916 50.76538 15.33975 50.76567 15.33998 50.76613 15.33994 50.76677 15.33941 50.76698 15.33935 50.76723 15.33955 50.76734 15.34006 50.76724 15.34041 50.76705 15.34061 50.76642 15.34087 50.76574 15.34091 50.76497 15.34312</loc:posList>
+          <loc:posList>50.76510 15.33916 50.76567 15.33998 50.76613 15.33994 50.76698 15.33935 50.76723 15.33955 50.76734 15.34006 50.76705 15.34061 50.76574 15.34091 50.76497 15.34312</loc:posList>
         </loc:gmlLineString>
         <loc:alertCLinear xsi:type="loc:AlertCMethod2Linear">
           <loc:alertCLocationCountryCode>2</loc:alertCLocationCountryCode>
@@ -312,7 +312,7 @@ dvoucestným signalizačním zařízením., Vydal: Krajský úřad Libereckého 
             <loc:linearElementIdentifier>126853</loc:linearElementIdentifier>
           </loc:linearElement>
           <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
-            <loc:percentageDistanceAlong>9.224</loc:percentageDistanceAlong>
+            <loc:percentageDistanceAlong>9.22</loc:percentageDistanceAlong>
           </loc:fromPoint>
           <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
             <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
@@ -371,7 +371,7 @@ dvoucestným signalizačním zařízením., Vydal: Krajský úřad Libereckého 
             <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
           </loc:fromPoint>
           <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
-            <loc:percentageDistanceAlong>14.7949</loc:percentageDistanceAlong>
+            <loc:percentageDistanceAlong>14.79</loc:percentageDistanceAlong>
           </loc:toPoint>
         </loc:linearWithinLinearElement>
       </sit:locationReference>

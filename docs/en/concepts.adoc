@@ -26,17 +26,11 @@ The format the message conforms to is identified solely by attributes of the roo
 
 The publication header contains:
 
-* `feedType` – reference to the *data source* (distribution) in the register of the national access
-  point <<nap>>, e.g. `x-source:cz-ndic_d2-restrictions-pull-v1`. The distribution name consists of the format
-  name, where applicable the distribution content (`fixed`/`mobile` for VMS, `fcd`/`weather` for location
-  sets), the protocol `pull` for snapshots and a whole-number distribution version (`-v1`, `-v2`, …), which
-  changes independently of the format version and continues the series of distributions in the register.
-  The Global Network version is not part of `feedType`; it is carried by the content (the version of the
-  predefined locations). The element does not refer to the format; the format is identified by the
-  `profileName` and `profileVersion` attributes. The `feedDescription` element is not used.
+* `feedType` – identifier of the data source (distribution) in the register of the national access point
+  <<nap>>. The source refers to the format in which it provides the data; the format of the message is
+  identified by the `profileName` and `profileVersion` attributes. The `feedDescription` element is not used.
 * `publicationTime` – time the publication content was created. If the content has not changed since
-  the previous publication, the original time is kept (as are the HTTP headers `Last-Modified` and
-  `ETag`); a new time is set only when the content changes.
+  the previous publication, the original time is kept; a new time is set only when the content changes.
 * `publicationCreator` – publication provider: country code in lower case (`cz`) and provider
   abbreviation (`nationalIdentifier`).
 * `headerInformation` – handling of the information; NDIC always sets `confidentiality` =
@@ -269,7 +263,7 @@ Sections of the Global Network road network (GN, ŘSD) are described as follows:
 * One-way sections (e.g. separate carriageways, junction ramps) are always coded in the travel direction;
   they are therefore travelled only as `aligned` and a route never runs against them.
 * `fromPoint` and `toPoint` are the points where the route enters and leaves the section, always of type
-  `PercentageDistanceAlongLinearElement` – percent of the section length (0–100) measured from the start
+  `PercentageDistanceAlongLinearElement` – percent of the section length (0–100, at most 2 decimal places) measured from the start
   of the section coding. For `aligned` the value increases (e.g. 20 → 100), for `opposite` it decreases
   (e.g. 100 → 20); a full section is 0 → 100 or 100 → 0.
 * The *start and end of the location* are given by the percentages of the first and last section. The GN
@@ -309,9 +303,11 @@ it on a map without the GN network, the ALERT-C location table or an OpenLR deco
 
 * `posList` – "latitude longitude" pairs separated by spaces; `srsName` = `EPSG:4326`,
   `srsDimension` = `2`.
-* The line is made from the geometry of the GN sections trimmed by the percentages of the edge sections,
-  simplified (tolerance 5 m), with coordinates to 5 decimal places (≈ 1 m). The first point of the line is
-  the start and the last point the end of the location.
+* The line runs in the direction of travel: the first point is the start and the last point the end
+  of the location. It is
+  made from the geometry of the GN sections trimmed by the percentages of the edge sections; the start and end
+  are exact, intermediate points are simplified so that the line deviates from the section geometry by at
+  most 10{nbsp}m. Coordinates have 5 decimal places (≈{nbsp}1{nbsp}m).
 * For a bidirectional location the line runs in the first direction (the model allows one line per
   location).
 

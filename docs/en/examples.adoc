@@ -1,7 +1,6 @@
 == Sample messages
 
-The samples are part of the specification package `{schema-uri}.zip` (directory `samples`). All of them are
-valid against the DATEX II 3.7 schema and conform to the profile selection (`.sel`).
+The samples are part of the specification package `{schema-uri}.zip` (directory `samples`).
 
 === restriction.xml – roadworks, alternating one-lane traffic
 
@@ -15,8 +14,7 @@ include::{samplesdir}/restriction.xml[tags=**]
 
 Envelope and header::
 Root `d2:payload` of type `sit:SituationPublication` with the `profileName` and `profileVersion` attributes
-identifying the format, `publicationTime` and `publicationCreator`. The reference to the data source
-(`feedType`) is `x-source:cz-ndic_d2-restrictions-pull-v1`.
+identifying the format, `publicationTime` and `publicationCreator`. `feedType` refers to the data source.
 
 Situation::
 The situation contains two records in version 6. A record of type `ConstructionWorks` describes the cause

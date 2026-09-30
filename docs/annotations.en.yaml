@@ -12,4 +12,11 @@
 #
 # _enum:                # překlady hodnot výčtů pro celý formát (přepisují sdílený slovník kitu)
 #   ProbabilityEnum.certain: jistá
-{}
+
+GmlLineString:
+  posList:
+    ndic: "Line in the direction of travel from the start to the end of the location (for a bidirectional location in the first direction). The start and end are exact, intermediate points are simplified with a deviation of at most 10 m from the GN section geometry; WGS-84 coordinates to 5 decimal places (≈ 1 m)."
+
+PercentageDistanceAlongLinearElement:
+  percentageDistanceAlong:
+    ndic: "Percent of the section length 0–100, at most 2 decimal places."

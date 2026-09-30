@@ -26,15 +26,11 @@ Formát, podle kterého je zpráva sestavena, identifikují výhradně atributy 
 
 Hlavička publikace obsahuje:
 
-* `feedType` – odkaz na *zdroj dat* (distribuci) v registru národního přístupového bodu <<nap>>,
-  např. `x-source:cz-ndic_d2-restrictions-pull-v1`. Název distribuce tvoří název formátu, případně obsah distribuce (u VMS `fixed`/`mobile`,
-  u sad poloh `fcd`/`weather`), u snímků (pull) protokol `pull` a celé číslo verze distribuce
-  (`-v1`, `-v2`, …), které se mění nezávisle na verzi formátu a navazuje na řadu distribucí v registru.
-  Verze sítě Global Network není součástí `feedType`; nese ji obsah (verze předdefinovaných poloh).
-  Element neodkazuje na formát; ten určují atributy `profileName` a `profileVersion`. Element
-  `feedDescription` se nepoužívá.
+* `feedType` – identifikátor zdroje dat (distribuce) v registru národního přístupového bodu <<nap>>.
+  Zdroj odkazuje na formát, ve kterém data poskytuje; formát zprávy určují atributy `profileName`
+  a `profileVersion`. Element `feedDescription` se nepoužívá.
 * `publicationTime` – čas vytvoření obsahu publikace. Pokud se obsah od předchozí publikace nezměnil,
-  zůstává čas původní (stejně jako hlavičky HTTP `Last-Modified` a `ETag`); nový čas vzniká jen se
+  zůstává čas původní; nový čas vzniká jen se
   změnou obsahu.
 * `publicationCreator` – poskytovatel publikace: kód země malými písmeny (`cz`) a zkratka
   poskytovatele (`nationalIdentifier`).
@@ -259,7 +255,7 @@ include::{samplesdir}/restriction.xml[tag=loc-station,indent=0]
 * Jednosměrné úseky (např. oddělené jízdní pásy, větve křižovatek) jsou vždy kódovány ve směru jízdy;
   pojíždějí se tedy jen jako `aligned` a trasa nikdy nevede proti nim.
 * `fromPoint` a `toPoint` jsou místa, kde trasa na úsek vstupuje a kde ho opouští, vždy typu
-  `PercentageDistanceAlongLinearElement` – procenta délky úseku (0–100) měřená od počátku kódování úseku.
+  `PercentageDistanceAlongLinearElement` – procenta délky úseku (0–100, nejvýše 2 desetinná místa) měřená od počátku kódování úseku.
   U `aligned` hodnota roste (např. 20 → 100), u `opposite` klesá (např. 100 → 20); celý úsek je 0 → 100,
   resp. 100 → 0.
 * *Počátek a konec polohy* dávají procenta prvního a posledního úseku. Souřadnice počátku a konce úseky
@@ -295,8 +291,9 @@ bez sítě GN, lokační tabulky ALERT-C i dekodéru OpenLR:
 
 * `posList` – dvojice „zeměpisná šířka zeměpisná délka“ oddělené mezerou; `srsName` = `EPSG:4326`,
   `srsDimension` = `2`.
-* Linie vzniká z geometrie úseků GN oříznuté procenty krajních úseků, je zjednodušená (tolerance 5 m)
-  a souřadnice mají 5 desetinných míst (≈ 1 m). První bod linie je počátek, poslední bod konec polohy.
+* Linie vede ve směru jízdy: první bod je počátek, poslední bod konec polohy. Vzniká z geometrie úseků GN oříznuté procenty krajních úseků; počátek
+  a konec jsou přesné, mezilehlé body jsou zjednodušené tak, že se linie od geometrie úseků odchyluje nejvýše
+  o 10{nbsp}m. Souřadnice mají 5 desetinných míst (≈{nbsp}1{nbsp}m).
 * U obousměrné polohy vede linie v prvním směru (model dovoluje jednu linii na polohu).
 
 .Průběh polohy (vzorek `restriction.xml`)

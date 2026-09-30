@@ -23,13 +23,6 @@ samples: samples
 ndic:
   action: upgrade
   previous: cz-ndic_d2-restrictions-v1.2 (DATEX II 2.3)
-  source: NDIC – dopravní informace (uzavírky a omezení)
-  distributions:
-  - x-source:cz-ndic_d2-restrictions-v3 (push, delta)
-  - x-source:cz-ndic_d2-restrictions-pull-v1 (pull, snímek, nová)
-  legislation:
-  - SRTI
-  - RTTI
   profiles:
   - RRP SRTI
   profileName: cz-ndic_d2-restrictions
