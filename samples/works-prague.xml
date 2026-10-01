@@ -1,0 +1,266 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<d2:payload xmlns:d2="http://datex2.eu/schema/3/d2Payload" xmlns:com="http://datex2.eu/schema/3/common" xmlns:sit="http://datex2.eu/schema/3/situation" xmlns:loc="http://datex2.eu/schema/3/locationReferencing" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="sit:SituationPublication" lang="cs" modelBaseVersion="3" profileName="cz-ndic_d2-restrictions" profileVersion="2.0">
+  <!-- tag::header[] -->
+  <com:feedType>x-source:cz-ndic_d2-restrictions-pull-v1</com:feedType>
+  <com:publicationTime>2026-10-01T14:47:43+02:00</com:publicationTime>
+  <com:publicationCreator>
+    <com:country>cz</com:country>
+    <com:nationalIdentifier>NDIC</com:nationalIdentifier>
+  </com:publicationCreator>
+  <!-- end::header[] -->
+  <sit:situation id="df6473db-1033-4b05-b22b-b3c9d866636d">
+    <sit:situationVersionTime>2026-09-11T08:14:07+02:00</sit:situationVersionTime>
+    <sit:headerInformation>
+      <com:confidentiality>noRestriction</com:confidentiality>
+      <com:informationStatus>real</com:informationStatus>
+    </sit:headerInformation>
+    <sit:situationRecord xsi:type="sit:ConstructionWorks" id="df6473db-1033-4b05-b22b-b3c9d866636d_ConstructionWorks" version="6">
+      <sit:situationRecordCreationTime>2026-09-10T14:30:41+02:00</sit:situationRecordCreationTime>
+      <sit:situationRecordVersionTime>2026-09-11T08:14:07+02:00</sit:situationRecordVersionTime>
+      <sit:probabilityOfOccurrence>certain</sit:probabilityOfOccurrence>
+      <sit:source>
+        <com:sourceIdentification>TSK2</com:sourceIdentification>
+      </sit:source>
+      <sit:validity>
+        <com:validityStatus>definedByValidityTimeSpec</com:validityStatus>
+        <com:validityTimeSpecification>
+          <com:overallStartTime>2026-09-09T00:00:00+02:00</com:overallStartTime>
+          <com:overallEndTime>2026-10-10T23:59:00+02:00</com:overallEndTime>
+        </com:validityTimeSpecification>
+      </sit:validity>
+      <!-- tag::comment-url[] -->
+      <sit:generalPublicComment>
+        <sit:comment>
+          <com:values>
+            <com:value lang="cs">ulice Počernická, Praha 10, Praha, stavební práce, zúžené jízdní pruhy, kyvadlový provoz, od 9.9.2026 00:00 do 10.10.2026 23:59, částečná uzavírka, Vydal: ÚMČ Praha 10</com:value>
+          </com:values>
+        </sit:comment>
+      </sit:generalPublicComment>
+      <sit:urlLink>
+        <com:urlLinkAddress>https://opravujeme.to/action/2626/</com:urlLinkAddress>
+        <com:urlLinkType>html</com:urlLinkType>
+      </sit:urlLink>
+      <!-- end::comment-url[] -->
+      <sit:urlLink>
+        <com:urlLinkAddress/>
+        <com:urlLinkType>html</com:urlLinkType>
+      </sit:urlLink>
+      <sit:locationReference xsi:type="loc:SingleRoadLinearLocation">
+        <!-- OpenLR -->
+        <loc:openlrLinear>
+          <loc:firstDirection>
+            <loc:openlrLocationReferencePoint>
+              <loc:openlrCoordinates>
+                <loc:latitude>50.08100060199741</loc:latitude>
+                <loc:longitude>14.493764088466639</loc:longitude>
+              </loc:openlrCoordinates>
+              <loc:openlrLineAttributes>
+                <loc:openlrFunctionalRoadClass>frc5</loc:openlrFunctionalRoadClass>
+                <loc:openlrFormOfWay>multipleCarriageway</loc:openlrFormOfWay>
+                <loc:openlrBearing>259</loc:openlrBearing>
+              </loc:openlrLineAttributes>
+              <loc:openlrPathAttributes>
+                <loc:openlrLowestFrcToNextLRPoint>frc5</loc:openlrLowestFrcToNextLRPoint>
+                <loc:openlrDistanceToNextLRPoint>450</loc:openlrDistanceToNextLRPoint>
+              </loc:openlrPathAttributes>
+            </loc:openlrLocationReferencePoint>
+            <loc:openlrLastLocationReferencePoint>
+              <loc:openlrCoordinates>
+                <loc:latitude>50.080369515971753</loc:latitude>
+                <loc:longitude>14.487548431403475</loc:longitude>
+              </loc:openlrCoordinates>
+              <loc:openlrLineAttributes>
+                <loc:openlrFunctionalRoadClass>frc5</loc:openlrFunctionalRoadClass>
+                <loc:openlrFormOfWay>multipleCarriageway</loc:openlrFormOfWay>
+                <loc:openlrBearing>79</loc:openlrBearing>
+              </loc:openlrLineAttributes>
+            </loc:openlrLastLocationReferencePoint>
+            <loc:openlrOffsets>
+              <loc:openlrPositiveOffset>0</loc:openlrPositiveOffset>
+              <loc:openlrNegativeOffset>0</loc:openlrNegativeOffset>
+            </loc:openlrOffsets>
+          </loc:firstDirection>
+        </loc:openlrLinear>
+        <!-- gmlLineString -->
+        <loc:gmlLineString srsName="EPSG:4326" srsDimension="2">
+          <loc:posList>50.08100 14.49376 50.08037 14.48755</loc:posList>
+        </loc:gmlLineString>
+        <!-- ALERT-C -->
+        <loc:alertCLinear xsi:type="loc:AlertCMethod2Linear">
+          <loc:alertCLocationCountryCode>2</loc:alertCLocationCountryCode>
+          <loc:alertCLocationTableNumber>25</loc:alertCLocationTableNumber>
+          <loc:alertCLocationTableVersion>11.0</loc:alertCLocationTableVersion>
+          <loc:alertCDirection>
+            <loc:alertCDirectionCoded>positive</loc:alertCDirectionCoded>
+            <loc:alertCAffectedDirection>both</loc:alertCAffectedDirection>
+          </loc:alertCDirection>
+          <loc:alertCMethod2PrimaryPointLocation>
+            <loc:alertCLocation>
+              <loc:specificLocation>13131</loc:specificLocation>
+            </loc:alertCLocation>
+          </loc:alertCMethod2PrimaryPointLocation>
+          <loc:alertCMethod2SecondaryPointLocation>
+            <loc:alertCLocation>
+              <loc:specificLocation>13131</loc:specificLocation>
+            </loc:alertCLocation>
+          </loc:alertCMethod2SecondaryPointLocation>
+        </loc:alertCLinear>
+        <!-- GN -->
+        <loc:linearWithinLinearElement>
+          <loc:directionRelativeOnLinearSection>both</loc:directionRelativeOnLinearSection>
+          <loc:linearElement xsi:type="loc:LinearElementByCode">
+            <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
+            <loc:linearElementReferenceModelVersion>25.12</loc:linearElementReferenceModelVersion>
+            <loc:linearElementIdentifier>3960222</loc:linearElementIdentifier>
+          </loc:linearElement>
+          <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
+          </loc:fromPoint>
+          <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
+          </loc:toPoint>
+        </loc:linearWithinLinearElement>
+        <loc:linearWithinLinearElement>
+          <loc:directionRelativeOnLinearSection>both</loc:directionRelativeOnLinearSection>
+          <loc:linearElement xsi:type="loc:LinearElementByCode">
+            <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
+            <loc:linearElementReferenceModelVersion>25.12</loc:linearElementReferenceModelVersion>
+            <loc:linearElementIdentifier>280866</loc:linearElementIdentifier>
+          </loc:linearElement>
+          <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
+          </loc:fromPoint>
+          <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
+          </loc:toPoint>
+        </loc:linearWithinLinearElement>
+      </sit:locationReference>
+      <sit:subjects>
+        <sit:subjectTypeOfWorks>other</sit:subjectTypeOfWorks>
+      </sit:subjects>
+      <sit:constructionWorkType>constructionWork</sit:constructionWorkType>
+    </sit:situationRecord>
+    <sit:situationRecord xsi:type="sit:RoadOrCarriagewayOrLaneManagement" id="df6473db-1033-4b05-b22b-b3c9d866636d_RoadOrCarriagewayOrLaneManagement" version="6">
+      <sit:situationRecordCreationTime>2026-09-10T14:30:41+02:00</sit:situationRecordCreationTime>
+      <sit:situationRecordVersionTime>2026-09-11T08:14:07+02:00</sit:situationRecordVersionTime>
+      <sit:probabilityOfOccurrence>certain</sit:probabilityOfOccurrence>
+      <sit:source>
+        <com:sourceIdentification>TSK2</com:sourceIdentification>
+      </sit:source>
+      <sit:validity>
+        <com:validityStatus>definedByValidityTimeSpec</com:validityStatus>
+        <com:validityTimeSpecification>
+          <com:overallStartTime>2026-09-09T00:00:00+02:00</com:overallStartTime>
+          <com:overallEndTime>2026-10-10T23:59:00+02:00</com:overallEndTime>
+        </com:validityTimeSpecification>
+      </sit:validity>
+      <sit:generalPublicComment>
+        <sit:comment>
+          <com:values>
+            <com:value lang="cs">ulice Počernická, Praha 10, Praha, stavební práce, zúžené jízdní pruhy, kyvadlový provoz, od 9.9.2026 00:00 do 10.10.2026 23:59, částečná uzavírka, Vydal: ÚMČ Praha 10</com:value>
+          </com:values>
+        </sit:comment>
+      </sit:generalPublicComment>
+      <sit:urlLink>
+        <com:urlLinkAddress>https://opravujeme.to/action/2626/</com:urlLinkAddress>
+        <com:urlLinkType>html</com:urlLinkType>
+      </sit:urlLink>
+      <sit:urlLink>
+        <com:urlLinkAddress/>
+        <com:urlLinkType>html</com:urlLinkType>
+      </sit:urlLink>
+      <sit:locationReference xsi:type="loc:SingleRoadLinearLocation">
+        <!-- OpenLR -->
+        <loc:openlrLinear>
+          <loc:firstDirection>
+            <loc:openlrLocationReferencePoint>
+              <loc:openlrCoordinates>
+                <loc:latitude>50.08100060199741</loc:latitude>
+                <loc:longitude>14.493764088466639</loc:longitude>
+              </loc:openlrCoordinates>
+              <loc:openlrLineAttributes>
+                <loc:openlrFunctionalRoadClass>frc5</loc:openlrFunctionalRoadClass>
+                <loc:openlrFormOfWay>multipleCarriageway</loc:openlrFormOfWay>
+                <loc:openlrBearing>259</loc:openlrBearing>
+              </loc:openlrLineAttributes>
+              <loc:openlrPathAttributes>
+                <loc:openlrLowestFrcToNextLRPoint>frc5</loc:openlrLowestFrcToNextLRPoint>
+                <loc:openlrDistanceToNextLRPoint>450</loc:openlrDistanceToNextLRPoint>
+              </loc:openlrPathAttributes>
+            </loc:openlrLocationReferencePoint>
+            <loc:openlrLastLocationReferencePoint>
+              <loc:openlrCoordinates>
+                <loc:latitude>50.080369515971753</loc:latitude>
+                <loc:longitude>14.487548431403475</loc:longitude>
+              </loc:openlrCoordinates>
+              <loc:openlrLineAttributes>
+                <loc:openlrFunctionalRoadClass>frc5</loc:openlrFunctionalRoadClass>
+                <loc:openlrFormOfWay>multipleCarriageway</loc:openlrFormOfWay>
+                <loc:openlrBearing>79</loc:openlrBearing>
+              </loc:openlrLineAttributes>
+            </loc:openlrLastLocationReferencePoint>
+            <loc:openlrOffsets>
+              <loc:openlrPositiveOffset>0</loc:openlrPositiveOffset>
+              <loc:openlrNegativeOffset>0</loc:openlrNegativeOffset>
+            </loc:openlrOffsets>
+          </loc:firstDirection>
+        </loc:openlrLinear>
+        <!-- gmlLineString -->
+        <loc:gmlLineString srsName="EPSG:4326" srsDimension="2">
+          <loc:posList>50.08100 14.49376 50.08037 14.48755</loc:posList>
+        </loc:gmlLineString>
+        <!-- ALERT-C -->
+        <loc:alertCLinear xsi:type="loc:AlertCMethod2Linear">
+          <loc:alertCLocationCountryCode>2</loc:alertCLocationCountryCode>
+          <loc:alertCLocationTableNumber>25</loc:alertCLocationTableNumber>
+          <loc:alertCLocationTableVersion>11.0</loc:alertCLocationTableVersion>
+          <loc:alertCDirection>
+            <loc:alertCDirectionCoded>positive</loc:alertCDirectionCoded>
+            <loc:alertCAffectedDirection>both</loc:alertCAffectedDirection>
+          </loc:alertCDirection>
+          <loc:alertCMethod2PrimaryPointLocation>
+            <loc:alertCLocation>
+              <loc:specificLocation>13131</loc:specificLocation>
+            </loc:alertCLocation>
+          </loc:alertCMethod2PrimaryPointLocation>
+          <loc:alertCMethod2SecondaryPointLocation>
+            <loc:alertCLocation>
+              <loc:specificLocation>13131</loc:specificLocation>
+            </loc:alertCLocation>
+          </loc:alertCMethod2SecondaryPointLocation>
+        </loc:alertCLinear>
+        <!-- GN -->
+        <loc:linearWithinLinearElement>
+          <loc:directionRelativeOnLinearSection>both</loc:directionRelativeOnLinearSection>
+          <loc:linearElement xsi:type="loc:LinearElementByCode">
+            <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
+            <loc:linearElementReferenceModelVersion>25.12</loc:linearElementReferenceModelVersion>
+            <loc:linearElementIdentifier>3960222</loc:linearElementIdentifier>
+          </loc:linearElement>
+          <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
+          </loc:fromPoint>
+          <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
+          </loc:toPoint>
+        </loc:linearWithinLinearElement>
+        <loc:linearWithinLinearElement>
+          <loc:directionRelativeOnLinearSection>both</loc:directionRelativeOnLinearSection>
+          <loc:linearElement xsi:type="loc:LinearElementByCode">
+            <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
+            <loc:linearElementReferenceModelVersion>25.12</loc:linearElementReferenceModelVersion>
+            <loc:linearElementIdentifier>280866</loc:linearElementIdentifier>
+          </loc:linearElement>
+          <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
+          </loc:fromPoint>
+          <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
+          </loc:toPoint>
+        </loc:linearWithinLinearElement>
+      </sit:locationReference>
+      <sit:complianceOption>mandatory</sit:complianceOption>
+      <sit:roadOrCarriagewayOrLaneManagementType>contraflow</sit:roadOrCarriagewayOrLaneManagementType>
+    </sit:situationRecord>
+  </sit:situation>
+</d2:payload>

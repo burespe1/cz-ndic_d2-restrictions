@@ -2,7 +2,7 @@
 <d2:payload xmlns:d2="http://datex2.eu/schema/3/d2Payload" xmlns:com="http://datex2.eu/schema/3/common" xmlns:sit="http://datex2.eu/schema/3/situation" xmlns:loc="http://datex2.eu/schema/3/locationReferencing" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="sit:SituationPublication" lang="cs" modelBaseVersion="3" profileName="cz-ndic_d2-restrictions" profileVersion="2.0">
   <!-- tag::header[] -->
   <com:feedType>x-source:cz-ndic_d2-restrictions-pull-v1</com:feedType>
-  <com:publicationTime>2026-09-29T22:32:51+02:00</com:publicationTime>
+  <com:publicationTime>2026-09-30T00:32:07+02:00</com:publicationTime>
   <com:publicationCreator>
     <com:country>cz</com:country>
     <com:nationalIdentifier>NDIC</com:nationalIdentifier>

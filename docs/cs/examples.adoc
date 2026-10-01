@@ -4,35 +4,48 @@ Vzorky jsou součástí balíčku specifikace `{schema-uri}.zip` (adresář `sam
 
 === restriction.xml – práce na silnici, kyvadlový provoz
 
-Publikace obsahuje částečnou uzavírku silnice I/10 v Desné (okres Jablonec nad Nisou)
-kvůli stavebním pracím s kyvadlovým provozem jedním jízdním pruhem.
+Plánované práce na silnici I/14 v Dolní Radechové (okres Náchod) s kyvadlovým provozem jedním jízdním pruhem.
 
 [source,xml]
 ----
 include::{samplesdir}/restriction.xml[tags=**]
 ----
 
-Obálka a hlavička::
-Kořen `d2:payload` typu `sit:SituationPublication` s atributy `profileName` a `profileVersion`
-identifikujícími formát, `publicationTime` a `publicationCreator`. `feedType` odkazuje na zdroj dat.
-
 Situace::
-Situace obsahuje dva záznamy ve verzi 6. Záznam typu `ConstructionWorks` popisuje příčinu (stavební
-práce, `constructionWork`), záznam typu `RoadOrCarriagewayOrLaneManagement` dopad (střídavý provoz
-jedním pruhem, `singleAlternateLineTraffic`, závazně – `complianceOption` = `mandatory`). Hodnota
-`probabilityOfOccurrence` = `certain` – uzavírka v době publikace již platí.
+Záznam typu `MaintenanceWorks` popisuje příčinu (práce na silnici, `roadworks`, předmět prací vozovka – `road`),
+záznam typu `RoadOrCarriagewayOrLaneManagement` dopad (střídavý provoz jedním pruhem,
+`singleAlternateLineTraffic`, závazně – `complianceOption` = `mandatory`). Práce jsou naplánované, proto
+`probabilityOfOccurrence` = `certain` a počátek platnosti leží v budoucnosti. Oba záznamy jsou ve verzi 2.
 
 Platnost::
-Oba záznamy platí od 30.{nbsp}8.{nbsp}2023 7:00 do 1.{nbsp}9.{nbsp}2023 23:59.
+Od 5.{nbsp}10.{nbsp}2026 0:00 do 18.{nbsp}12.{nbsp}2026 23:59. Upřesnění, že se provoz řídí ve všední dny
+7:00–16:00, nese jen komentář.
 
 Poloha::
-Poloha je popsána všemi metodami: OpenLR, ALERT-C, staničením silnice 10 (106 797–107 507 m), úseky
-Global Network verze 22.12 (pět úseků v pořadí jízdy, 126853–2901326) a průběhem polohy `gmlLineString`
-ve WGS-84.
+Poloha je popsána všemi metodami: OpenLR, ALERT-C (lokace 26094 → 23386, `alertCDirectionCoded` = `negative`),
+staničením silnice 14 (115 498–115 821 m), úseky Global Network verze 26.06 (čtyři úseky v pořadí jízdy,
+1678138 od 82,16{nbsp}%, 1456372 a 1456373 celé, 1456374 do 0,88{nbsp}%) a průběhem polohy `gmlLineString`.
 
-Další obsah::
-`source` uvádí původce informace (ŘSD), `generalPublicComment` text rozhodnutí o uzavírce
-a `urlLink` odkaz na podrobnosti.
+=== works-prague.xml – stavební práce v Praze s odkazem na podrobnosti
+
+Stavební práce v ulici Počernická (Praha 10) se zúženými jízdními pruhy; zdrojem je TSK hl. m. Prahy (`TSK2`).
+
+[source,xml]
+----
+include::{samplesdir}/works-prague.xml[tags=**]
+----
+
+Situace::
+Záznam typu `ConstructionWorks` (`constructionWork`) a záznam typu `RoadOrCarriagewayOrLaneManagement` –
+provoz v protisměrném pruhu (`contraflow`), oba ve verzi 6. Oba záznamy nesou odkaz na stránku s podrobnostmi
+(`urlLink`, `urlLinkType` = `html`).
+
+Platnost::
+Od 9.{nbsp}9.{nbsp}2026 0:00 do 10.{nbsp}10.{nbsp}2026 23:59.
+
+Poloha::
+Obousměrná poloha (`alertCAffectedDirection` = `both`) v jedné lokaci ALERT-C (13131 → 13131), OpenLR a dva
+úseky Global Network verze 25.12 sloužící oběma směrům (`directionRelativeOnLinearSection` = `both`).
 
 === lane-closure.xml – uzavřený jízdní pruh na dálnici
 

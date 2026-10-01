@@ -98,10 +98,10 @@ include::{samplesdir}/restriction.xml[tag=record-meta,indent=0]
   in every record of the situation (usually the same text), so that each record can be understood on its own.
 * `urlLink` – link to a web page with details of the event (`urlLinkType` = `html`).
 
-.Comment and link to details (sample `restriction.xml`)
+.Comment and link to details (sample `works-prague.xml`)
 [source,xml]
 ----
-include::{samplesdir}/restriction.xml[tag=comment-url,indent=0]
+include::{samplesdir}/works-prague.xml[tag=comment-url,indent=0]
 ----
 
 [[typy]]

@@ -2,24 +2,180 @@
 <d2:payload xmlns:d2="http://datex2.eu/schema/3/d2Payload" xmlns:com="http://datex2.eu/schema/3/common" xmlns:sit="http://datex2.eu/schema/3/situation" xmlns:loc="http://datex2.eu/schema/3/locationReferencing" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="sit:SituationPublication" lang="cs" modelBaseVersion="3" profileName="cz-ndic_d2-restrictions" profileVersion="2.0">
   <!-- tag::header[] -->
   <com:feedType>x-source:cz-ndic_d2-restrictions-pull-v1</com:feedType>
-  <com:publicationTime>2023-08-30T09:18:24+02:00</com:publicationTime>
+  <com:publicationTime>2026-10-01T14:47:43+02:00</com:publicationTime>
   <com:publicationCreator>
     <com:country>cz</com:country>
     <com:nationalIdentifier>NDIC</com:nationalIdentifier>
   </com:publicationCreator>
   <!-- end::header[] -->
-  <!-- tag::situation-head[] -->
-  <sit:situation id="3bdeb91a-d680-47e5-ab5c-c3b9b4a13006">
-    <sit:situationVersionTime>2023-08-30T07:00:02+02:00</sit:situationVersionTime>
+  <sit:situation id="5177a7c3-31bd-42de-a7d9-740ff941af03">
+    <!-- tag::situation-head[] -->
+    <sit:situationVersionTime>2026-09-18T08:28:56+02:00</sit:situationVersionTime>
     <sit:headerInformation>
       <com:confidentiality>noRestriction</com:confidentiality>
       <com:informationStatus>real</com:informationStatus>
     </sit:headerInformation>
     <!-- end::situation-head[] -->
-    <!-- tag::record-meta[] -->
-    <sit:situationRecord xsi:type="sit:ConstructionWorks" id="3bdeb91a-d680-47e5-ab5c-c3b9b4a13006_ConstructionWorks" version="6">
-      <sit:situationRecordCreationTime>2023-08-30T07:00:02+02:00</sit:situationRecordCreationTime>
-      <sit:situationRecordVersionTime>2023-08-30T07:00:02+02:00</sit:situationRecordVersionTime>
+    <sit:situationRecord xsi:type="sit:RoadOrCarriagewayOrLaneManagement" id="5177a7c3-31bd-42de-a7d9-740ff941af03_RoadOrCarriagewayOrLaneManagement" version="2">
+      <sit:situationRecordCreationTime>2026-09-18T07:57:42+02:00</sit:situationRecordCreationTime>
+      <sit:situationRecordVersionTime>2026-09-18T08:28:56+02:00</sit:situationRecordVersionTime>
+      <sit:probabilityOfOccurrence>certain</sit:probabilityOfOccurrence>
+      <sit:source>
+        <com:sourceIdentification>RSD</com:sourceIdentification>
+      </sit:source>
+      <sit:validity>
+        <com:validityStatus>definedByValidityTimeSpec</com:validityStatus>
+        <com:validityTimeSpecification>
+          <com:overallStartTime>2026-10-05T00:00:00+02:00</com:overallStartTime>
+          <com:overallEndTime>2026-12-18T23:59:00+01:00</com:overallEndTime>
+        </com:validityTimeSpecification>
+      </sit:validity>
+      <sit:generalPublicComment>
+        <sit:comment>
+          <com:values>
+            <com:value lang="cs">silnice I/14 (ulice Kostelecká), Dolní Radechová, okr. Náchod, práce na silnici, střídavý jednosměrný provoz, Od 05.10.2026 00:00 Do 18.12.2026 23:59, Částečná uzavírka silnice I/14 dvoucestné řízení provozu, kyvadlový provoz; Kyvadlový provoz bude řízen ve dnech pondělí až pátek 7:00 - 16:00 hod. pověřenými a poučenými osobami zhotovitele. Mimo tuto dobu semafory., Vydal: Krajský úřad Královéhradeckého kraje</com:value>
+          </com:values>
+        </sit:comment>
+      </sit:generalPublicComment>
+      <sit:locationReference xsi:type="loc:SingleRoadLinearLocation">
+        <!-- OpenLR -->
+        <loc:openlrLinear>
+          <loc:firstDirection>
+            <loc:openlrLocationReferencePoint>
+              <loc:openlrCoordinates>
+                <loc:latitude>50.445582174407051</loc:latitude>
+                <loc:longitude>16.149628367016476</loc:longitude>
+              </loc:openlrCoordinates>
+              <loc:openlrLineAttributes>
+                <loc:openlrFunctionalRoadClass>frc2</loc:openlrFunctionalRoadClass>
+                <loc:openlrFormOfWay>singleCarriageway</loc:openlrFormOfWay>
+                <loc:openlrBearing>212</loc:openlrBearing>
+              </loc:openlrLineAttributes>
+              <loc:openlrPathAttributes>
+                <loc:openlrLowestFrcToNextLRPoint>frc2</loc:openlrLowestFrcToNextLRPoint>
+                <loc:openlrDistanceToNextLRPoint>497</loc:openlrDistanceToNextLRPoint>
+              </loc:openlrPathAttributes>
+            </loc:openlrLocationReferencePoint>
+            <loc:openlrLastLocationReferencePoint>
+              <loc:openlrCoordinates>
+                <loc:latitude>50.441726871333032</loc:latitude>
+                <loc:longitude>16.148647700733559</loc:longitude>
+              </loc:openlrCoordinates>
+              <loc:openlrLineAttributes>
+                <loc:openlrFunctionalRoadClass>frc2</loc:openlrFunctionalRoadClass>
+                <loc:openlrFormOfWay>singleCarriageway</loc:openlrFormOfWay>
+                <loc:openlrBearing>352</loc:openlrBearing>
+              </loc:openlrLineAttributes>
+            </loc:openlrLastLocationReferencePoint>
+            <loc:openlrOffsets>
+              <loc:openlrPositiveOffset>141</loc:openlrPositiveOffset>
+              <loc:openlrNegativeOffset>33</loc:openlrNegativeOffset>
+            </loc:openlrOffsets>
+          </loc:firstDirection>
+        </loc:openlrLinear>
+        <!-- gmlLineString -->
+        <loc:gmlLineString srsName="EPSG:4326" srsDimension="2">
+          <loc:posList>50.44449 16.14860 50.44361 16.14751 50.44301 16.14775 50.44202 16.14859</loc:posList>
+        </loc:gmlLineString>
+        <!-- ALERT-C -->
+        <loc:alertCLinear xsi:type="loc:AlertCMethod2Linear">
+          <loc:alertCLocationCountryCode>2</loc:alertCLocationCountryCode>
+          <loc:alertCLocationTableNumber>25</loc:alertCLocationTableNumber>
+          <loc:alertCLocationTableVersion>11.0</loc:alertCLocationTableVersion>
+          <loc:alertCDirection>
+            <loc:alertCDirectionCoded>negative</loc:alertCDirectionCoded>
+            <loc:alertCAffectedDirection>aligned</loc:alertCAffectedDirection>
+          </loc:alertCDirection>
+          <loc:alertCMethod2PrimaryPointLocation>
+            <loc:alertCLocation>
+              <loc:specificLocation>26094</loc:specificLocation>
+            </loc:alertCLocation>
+          </loc:alertCMethod2PrimaryPointLocation>
+          <loc:alertCMethod2SecondaryPointLocation>
+            <loc:alertCLocation>
+              <loc:specificLocation>23386</loc:specificLocation>
+            </loc:alertCLocation>
+          </loc:alertCMethod2SecondaryPointLocation>
+        </loc:alertCLinear>
+        <loc:linearWithinLinearElement>
+          <loc:directionRelativeOnLinearSection>aligned</loc:directionRelativeOnLinearSection>
+          <loc:linearElement>
+            <loc:roadNumber>14</loc:roadNumber>
+          </loc:linearElement>
+          <loc:fromPoint xsi:type="loc:DistanceFromLinearElementStart">
+            <loc:distanceAlong>115498</loc:distanceAlong>
+          </loc:fromPoint>
+          <loc:toPoint xsi:type="loc:DistanceFromLinearElementStart">
+            <loc:distanceAlong>115821</loc:distanceAlong>
+          </loc:toPoint>
+        </loc:linearWithinLinearElement>
+        <!-- GN -->
+        <loc:linearWithinLinearElement>
+          <loc:directionRelativeOnLinearSection>aligned</loc:directionRelativeOnLinearSection>
+          <loc:linearElement xsi:type="loc:LinearElementByCode">
+            <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
+            <loc:linearElementReferenceModelVersion>26.06</loc:linearElementReferenceModelVersion>
+            <loc:linearElementIdentifier>1678138</loc:linearElementIdentifier>
+          </loc:linearElement>
+          <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>82.16</loc:percentageDistanceAlong>
+          </loc:fromPoint>
+          <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
+          </loc:toPoint>
+        </loc:linearWithinLinearElement>
+        <loc:linearWithinLinearElement>
+          <loc:directionRelativeOnLinearSection>aligned</loc:directionRelativeOnLinearSection>
+          <loc:linearElement xsi:type="loc:LinearElementByCode">
+            <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
+            <loc:linearElementReferenceModelVersion>26.06</loc:linearElementReferenceModelVersion>
+            <loc:linearElementIdentifier>1456372</loc:linearElementIdentifier>
+          </loc:linearElement>
+          <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
+          </loc:fromPoint>
+          <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
+          </loc:toPoint>
+        </loc:linearWithinLinearElement>
+        <loc:linearWithinLinearElement>
+          <loc:directionRelativeOnLinearSection>aligned</loc:directionRelativeOnLinearSection>
+          <loc:linearElement xsi:type="loc:LinearElementByCode">
+            <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
+            <loc:linearElementReferenceModelVersion>26.06</loc:linearElementReferenceModelVersion>
+            <loc:linearElementIdentifier>1456373</loc:linearElementIdentifier>
+          </loc:linearElement>
+          <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
+          </loc:fromPoint>
+          <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
+          </loc:toPoint>
+        </loc:linearWithinLinearElement>
+        <loc:linearWithinLinearElement>
+          <loc:directionRelativeOnLinearSection>aligned</loc:directionRelativeOnLinearSection>
+          <loc:linearElement xsi:type="loc:LinearElementByCode">
+            <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
+            <loc:linearElementReferenceModelVersion>26.06</loc:linearElementReferenceModelVersion>
+            <loc:linearElementIdentifier>1456374</loc:linearElementIdentifier>
+          </loc:linearElement>
+          <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
+          </loc:fromPoint>
+          <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
+            <loc:percentageDistanceAlong>0.88</loc:percentageDistanceAlong>
+          </loc:toPoint>
+        </loc:linearWithinLinearElement>
+      </sit:locationReference>
+      <!-- tag::operator[] -->
+      <sit:complianceOption>mandatory</sit:complianceOption>
+      <sit:roadOrCarriagewayOrLaneManagementType>singleAlternateLineTraffic</sit:roadOrCarriagewayOrLaneManagementType>
+      <!-- end::operator[] -->
+    </sit:situationRecord>
+    <sit:situationRecord xsi:type="sit:MaintenanceWorks" id="5177a7c3-31bd-42de-a7d9-740ff941af03_MaintenanceWorks" version="2">
+      <!-- tag::record-meta[] -->
+      <sit:situationRecordCreationTime>2026-09-18T07:57:42+02:00</sit:situationRecordCreationTime>
+      <sit:situationRecordVersionTime>2026-09-18T08:28:56+02:00</sit:situationRecordVersionTime>
       <sit:probabilityOfOccurrence>certain</sit:probabilityOfOccurrence>
       <sit:source>
         <com:sourceIdentification>RSD</com:sourceIdentification>
@@ -29,86 +185,82 @@
       <sit:validity>
         <com:validityStatus>definedByValidityTimeSpec</com:validityStatus>
         <com:validityTimeSpecification>
-          <com:overallStartTime>2023-08-30T07:00:00+02:00</com:overallStartTime>
-          <com:overallEndTime>2023-09-01T23:59:00+02:00</com:overallEndTime>
+          <com:overallStartTime>2026-10-05T00:00:00+02:00</com:overallStartTime>
+          <com:overallEndTime>2026-12-18T23:59:00+01:00</com:overallEndTime>
         </com:validityTimeSpecification>
       </sit:validity>
       <!-- end::validity[] -->
-      <!-- tag::comment-url[] -->
+      <!-- tag::comment[] -->
       <sit:generalPublicComment>
         <sit:comment>
           <com:values>
-            <com:value lang="cs">silnice I/10 (ulice Krkonošská), Desná, okr. Jablonec nad Nisou, stavební práce, kyvadlový provoz jedním jízdním pruhem, Od 30.08.2023 07:00 Do 01.09.2023 23:59, Z důvodu provádění stavebních prací bude na dotčeném úseku silnice I/10  provedena 
-částečná uzavírka provozu, která bude označena dle schváleného dopravně 
-inženýrského opatření. V průběhu provádění stavebních prací bude doprava řízena kyvadlově 
-dvoucestným signalizačním zařízením., Vydal: Krajský úřad Libereckého kraje</com:value>
+            <com:value lang="cs">silnice I/14 (ulice Kostelecká), Dolní Radechová, okr. Náchod, práce na silnici, střídavý jednosměrný provoz, Od 05.10.2026 00:00 Do 18.12.2026 23:59, Částečná uzavírka silnice I/14 dvoucestné řízení provozu, kyvadlový provoz; Kyvadlový provoz bude řízen ve dnech pondělí až pátek 7:00 - 16:00 hod. pověřenými a poučenými osobami zhotovitele. Mimo tuto dobu semafory., Vydal: Krajský úřad Královéhradeckého kraje</com:value>
           </com:values>
         </sit:comment>
       </sit:generalPublicComment>
-      <sit:urlLink>
-        <com:urlLinkAddress>https://dopravniinfo.cz/te/3bdeb91a-d680-47e5-ab5c-c3b9b4a13006</com:urlLinkAddress>
-        <com:urlLinkType>html</com:urlLinkType>
-      </sit:urlLink>
-      <!-- end::comment-url[] -->
+      <!-- end::comment[] -->
       <sit:locationReference xsi:type="loc:SingleRoadLinearLocation">
+        <!-- OpenLR -->
         <!-- tag::loc-openlr[] -->
         <loc:openlrLinear>
           <loc:firstDirection>
             <loc:openlrLocationReferencePoint>
               <loc:openlrCoordinates>
-                <loc:latitude>50.765282088427412</loc:latitude>
-                <loc:longitude>15.337521544012871</loc:longitude>
+                <loc:latitude>50.445582174407051</loc:latitude>
+                <loc:longitude>16.149628367016476</loc:longitude>
               </loc:openlrCoordinates>
               <loc:openlrLineAttributes>
-                <loc:openlrFunctionalRoadClass>frc1</loc:openlrFunctionalRoadClass>
+                <loc:openlrFunctionalRoadClass>frc2</loc:openlrFunctionalRoadClass>
                 <loc:openlrFormOfWay>singleCarriageway</loc:openlrFormOfWay>
-                <loc:openlrBearing>112</loc:openlrBearing>
+                <loc:openlrBearing>212</loc:openlrBearing>
               </loc:openlrLineAttributes>
               <loc:openlrPathAttributes>
-                <loc:openlrLowestFrcToNextLRPoint>frc1</loc:openlrLowestFrcToNextLRPoint>
-                <loc:openlrDistanceToNextLRPoint>1240</loc:openlrDistanceToNextLRPoint>
+                <loc:openlrLowestFrcToNextLRPoint>frc2</loc:openlrLowestFrcToNextLRPoint>
+                <loc:openlrDistanceToNextLRPoint>497</loc:openlrDistanceToNextLRPoint>
               </loc:openlrPathAttributes>
             </loc:openlrLocationReferencePoint>
             <loc:openlrLastLocationReferencePoint>
               <loc:openlrCoordinates>
-                <loc:latitude>50.763208691718496</loc:latitude>
-                <loc:longitude>15.347566415800618</loc:longitude>
+                <loc:latitude>50.441726871333032</loc:latitude>
+                <loc:longitude>16.148647700733559</loc:longitude>
               </loc:openlrCoordinates>
               <loc:openlrLineAttributes>
-                <loc:openlrFunctionalRoadClass>frc1</loc:openlrFunctionalRoadClass>
+                <loc:openlrFunctionalRoadClass>frc2</loc:openlrFunctionalRoadClass>
                 <loc:openlrFormOfWay>singleCarriageway</loc:openlrFormOfWay>
-                <loc:openlrBearing>283</loc:openlrBearing>
+                <loc:openlrBearing>352</loc:openlrBearing>
               </loc:openlrLineAttributes>
             </loc:openlrLastLocationReferencePoint>
             <loc:openlrOffsets>
-              <loc:openlrPositiveOffset>120</loc:openlrPositiveOffset>
-              <loc:openlrNegativeOffset>418</loc:openlrNegativeOffset>
+              <loc:openlrPositiveOffset>141</loc:openlrPositiveOffset>
+              <loc:openlrNegativeOffset>33</loc:openlrNegativeOffset>
             </loc:openlrOffsets>
           </loc:firstDirection>
         </loc:openlrLinear>
         <!-- end::loc-openlr[] -->
+        <!-- gmlLineString -->
         <!-- tag::loc-gml[] -->
         <loc:gmlLineString srsName="EPSG:4326" srsDimension="2">
-          <loc:posList>50.76510 15.33916 50.76567 15.33998 50.76613 15.33994 50.76698 15.33935 50.76723 15.33955 50.76734 15.34006 50.76705 15.34061 50.76574 15.34091 50.76497 15.34312</loc:posList>
+          <loc:posList>50.44449 16.14860 50.44361 16.14751 50.44301 16.14775 50.44202 16.14859</loc:posList>
         </loc:gmlLineString>
         <!-- end::loc-gml[] -->
+        <!-- ALERT-C -->
         <!-- tag::loc-alertc[] -->
         <loc:alertCLinear xsi:type="loc:AlertCMethod2Linear">
           <loc:alertCLocationCountryCode>2</loc:alertCLocationCountryCode>
           <loc:alertCLocationTableNumber>25</loc:alertCLocationTableNumber>
-          <loc:alertCLocationTableVersion>9.0</loc:alertCLocationTableVersion>
+          <loc:alertCLocationTableVersion>11.0</loc:alertCLocationTableVersion>
           <loc:alertCDirection>
             <loc:alertCDirectionCoded>negative</loc:alertCDirectionCoded>
             <loc:alertCAffectedDirection>aligned</loc:alertCAffectedDirection>
           </loc:alertCDirection>
           <loc:alertCMethod2PrimaryPointLocation>
             <loc:alertCLocation>
-              <loc:specificLocation>8973</loc:specificLocation>
+              <loc:specificLocation>26094</loc:specificLocation>
             </loc:alertCLocation>
           </loc:alertCMethod2PrimaryPointLocation>
           <loc:alertCMethod2SecondaryPointLocation>
             <loc:alertCLocation>
-              <loc:specificLocation>8974</loc:specificLocation>
+              <loc:specificLocation>23386</loc:specificLocation>
             </loc:alertCLocation>
           </loc:alertCMethod2SecondaryPointLocation>
         </loc:alertCLinear>
@@ -117,268 +269,82 @@ dvoucestným signalizačním zařízením., Vydal: Krajský úřad Libereckého 
         <loc:linearWithinLinearElement>
           <loc:directionRelativeOnLinearSection>aligned</loc:directionRelativeOnLinearSection>
           <loc:linearElement>
-            <loc:roadNumber>10</loc:roadNumber>
+            <loc:roadNumber>14</loc:roadNumber>
           </loc:linearElement>
           <loc:fromPoint xsi:type="loc:DistanceFromLinearElementStart">
-            <loc:distanceAlong>106797</loc:distanceAlong>
+            <loc:distanceAlong>115498</loc:distanceAlong>
           </loc:fromPoint>
           <loc:toPoint xsi:type="loc:DistanceFromLinearElementStart">
-            <loc:distanceAlong>107507</loc:distanceAlong>
+            <loc:distanceAlong>115821</loc:distanceAlong>
           </loc:toPoint>
         </loc:linearWithinLinearElement>
         <!-- end::loc-station[] -->
+        <!-- GN -->
         <!-- tag::loc-gn[] -->
         <loc:linearWithinLinearElement>
-          <loc:directionRelativeOnLinearSection>opposite</loc:directionRelativeOnLinearSection>
+          <loc:directionRelativeOnLinearSection>aligned</loc:directionRelativeOnLinearSection>
           <loc:linearElement xsi:type="loc:LinearElementByCode">
             <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
-            <loc:linearElementReferenceModelVersion>22.12</loc:linearElementReferenceModelVersion>
-            <loc:linearElementIdentifier>126853</loc:linearElementIdentifier>
+            <loc:linearElementReferenceModelVersion>26.06</loc:linearElementReferenceModelVersion>
+            <loc:linearElementIdentifier>1678138</loc:linearElementIdentifier>
           </loc:linearElement>
           <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
-            <loc:percentageDistanceAlong>9.22</loc:percentageDistanceAlong>
+            <loc:percentageDistanceAlong>82.16</loc:percentageDistanceAlong>
           </loc:fromPoint>
           <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
-            <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
+            <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
           </loc:toPoint>
         </loc:linearWithinLinearElement>
         <loc:linearWithinLinearElement>
-          <loc:directionRelativeOnLinearSection>opposite</loc:directionRelativeOnLinearSection>
+          <loc:directionRelativeOnLinearSection>aligned</loc:directionRelativeOnLinearSection>
           <loc:linearElement xsi:type="loc:LinearElementByCode">
             <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
-            <loc:linearElementReferenceModelVersion>22.12</loc:linearElementReferenceModelVersion>
-            <loc:linearElementIdentifier>126599</loc:linearElementIdentifier>
+            <loc:linearElementReferenceModelVersion>26.06</loc:linearElementReferenceModelVersion>
+            <loc:linearElementIdentifier>1456372</loc:linearElementIdentifier>
           </loc:linearElement>
           <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
-            <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
+            <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
           </loc:fromPoint>
           <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
-            <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
+            <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
           </loc:toPoint>
         </loc:linearWithinLinearElement>
         <loc:linearWithinLinearElement>
-          <loc:directionRelativeOnLinearSection>opposite</loc:directionRelativeOnLinearSection>
+          <loc:directionRelativeOnLinearSection>aligned</loc:directionRelativeOnLinearSection>
           <loc:linearElement xsi:type="loc:LinearElementByCode">
             <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
-            <loc:linearElementReferenceModelVersion>22.12</loc:linearElementReferenceModelVersion>
-            <loc:linearElementIdentifier>1461717</loc:linearElementIdentifier>
+            <loc:linearElementReferenceModelVersion>26.06</loc:linearElementReferenceModelVersion>
+            <loc:linearElementIdentifier>1456373</loc:linearElementIdentifier>
           </loc:linearElement>
           <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
-            <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
+            <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
           </loc:fromPoint>
           <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
-            <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
+            <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
           </loc:toPoint>
         </loc:linearWithinLinearElement>
         <loc:linearWithinLinearElement>
-          <loc:directionRelativeOnLinearSection>opposite</loc:directionRelativeOnLinearSection>
+          <loc:directionRelativeOnLinearSection>aligned</loc:directionRelativeOnLinearSection>
           <loc:linearElement xsi:type="loc:LinearElementByCode">
             <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
-            <loc:linearElementReferenceModelVersion>22.12</loc:linearElementReferenceModelVersion>
-            <loc:linearElementIdentifier>1461719</loc:linearElementIdentifier>
+            <loc:linearElementReferenceModelVersion>26.06</loc:linearElementReferenceModelVersion>
+            <loc:linearElementIdentifier>1456374</loc:linearElementIdentifier>
           </loc:linearElement>
           <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
-            <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
-          </loc:fromPoint>
-          <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
             <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
-          </loc:toPoint>
-        </loc:linearWithinLinearElement>
-        <loc:linearWithinLinearElement>
-          <loc:directionRelativeOnLinearSection>opposite</loc:directionRelativeOnLinearSection>
-          <loc:linearElement xsi:type="loc:LinearElementByCode">
-            <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
-            <loc:linearElementReferenceModelVersion>22.12</loc:linearElementReferenceModelVersion>
-            <loc:linearElementIdentifier>2901326</loc:linearElementIdentifier>
-          </loc:linearElement>
-          <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
-            <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
           </loc:fromPoint>
           <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
-            <loc:percentageDistanceAlong>14.79</loc:percentageDistanceAlong>
+            <loc:percentageDistanceAlong>0.88</loc:percentageDistanceAlong>
           </loc:toPoint>
         </loc:linearWithinLinearElement>
         <!-- end::loc-gn[] -->
       </sit:locationReference>
       <!-- tag::works[] -->
       <sit:subjects>
-        <sit:subjectTypeOfWorks>other</sit:subjectTypeOfWorks>
+        <sit:subjectTypeOfWorks>road</sit:subjectTypeOfWorks>
       </sit:subjects>
-      <sit:constructionWorkType>constructionWork</sit:constructionWorkType>
+      <sit:roadMaintenanceType>roadworks</sit:roadMaintenanceType>
       <!-- end::works[] -->
-    </sit:situationRecord>
-    <sit:situationRecord xsi:type="sit:RoadOrCarriagewayOrLaneManagement" id="3bdeb91a-d680-47e5-ab5c-c3b9b4a13006_RoadOrCarriagewayOrLaneManagement" version="6">
-      <sit:situationRecordCreationTime>2023-08-30T07:00:02+02:00</sit:situationRecordCreationTime>
-      <sit:situationRecordVersionTime>2023-08-30T07:00:02+02:00</sit:situationRecordVersionTime>
-      <sit:probabilityOfOccurrence>certain</sit:probabilityOfOccurrence>
-      <sit:source>
-        <com:sourceIdentification>RSD</com:sourceIdentification>
-      </sit:source>
-      <sit:validity>
-        <com:validityStatus>definedByValidityTimeSpec</com:validityStatus>
-        <com:validityTimeSpecification>
-          <com:overallStartTime>2023-08-30T07:00:00+02:00</com:overallStartTime>
-          <com:overallEndTime>2023-09-01T23:59:00+02:00</com:overallEndTime>
-        </com:validityTimeSpecification>
-      </sit:validity>
-      <sit:generalPublicComment>
-        <sit:comment>
-          <com:values>
-            <com:value lang="cs">silnice I/10 (ulice Krkonošská), Desná, okr. Jablonec nad Nisou, stavební práce, kyvadlový provoz jedním jízdním pruhem, Od 30.08.2023 07:00 Do 01.09.2023 23:59, Z důvodu provádění stavebních prací bude na dotčeném úseku silnice I/10  provedena 
-částečná uzavírka provozu, která bude označena dle schváleného dopravně 
-inženýrského opatření. V průběhu provádění stavebních prací bude doprava řízena kyvadlově 
-dvoucestným signalizačním zařízením., Vydal: Krajský úřad Libereckého kraje</com:value>
-          </com:values>
-        </sit:comment>
-      </sit:generalPublicComment>
-      <sit:urlLink>
-        <com:urlLinkAddress>https://dopravniinfo.cz/te/3bdeb91a-d680-47e5-ab5c-c3b9b4a13006</com:urlLinkAddress>
-        <com:urlLinkType>html</com:urlLinkType>
-      </sit:urlLink>
-      <sit:locationReference xsi:type="loc:SingleRoadLinearLocation">
-        <loc:openlrLinear>
-          <loc:firstDirection>
-            <loc:openlrLocationReferencePoint>
-              <loc:openlrCoordinates>
-                <loc:latitude>50.765282088427412</loc:latitude>
-                <loc:longitude>15.337521544012871</loc:longitude>
-              </loc:openlrCoordinates>
-              <loc:openlrLineAttributes>
-                <loc:openlrFunctionalRoadClass>frc1</loc:openlrFunctionalRoadClass>
-                <loc:openlrFormOfWay>singleCarriageway</loc:openlrFormOfWay>
-                <loc:openlrBearing>112</loc:openlrBearing>
-              </loc:openlrLineAttributes>
-              <loc:openlrPathAttributes>
-                <loc:openlrLowestFrcToNextLRPoint>frc1</loc:openlrLowestFrcToNextLRPoint>
-                <loc:openlrDistanceToNextLRPoint>1240</loc:openlrDistanceToNextLRPoint>
-              </loc:openlrPathAttributes>
-            </loc:openlrLocationReferencePoint>
-            <loc:openlrLastLocationReferencePoint>
-              <loc:openlrCoordinates>
-                <loc:latitude>50.763208691718496</loc:latitude>
-                <loc:longitude>15.347566415800618</loc:longitude>
-              </loc:openlrCoordinates>
-              <loc:openlrLineAttributes>
-                <loc:openlrFunctionalRoadClass>frc1</loc:openlrFunctionalRoadClass>
-                <loc:openlrFormOfWay>singleCarriageway</loc:openlrFormOfWay>
-                <loc:openlrBearing>283</loc:openlrBearing>
-              </loc:openlrLineAttributes>
-            </loc:openlrLastLocationReferencePoint>
-            <loc:openlrOffsets>
-              <loc:openlrPositiveOffset>120</loc:openlrPositiveOffset>
-              <loc:openlrNegativeOffset>418</loc:openlrNegativeOffset>
-            </loc:openlrOffsets>
-          </loc:firstDirection>
-        </loc:openlrLinear>
-        <loc:gmlLineString srsName="EPSG:4326" srsDimension="2">
-          <loc:posList>50.76510 15.33916 50.76567 15.33998 50.76613 15.33994 50.76698 15.33935 50.76723 15.33955 50.76734 15.34006 50.76705 15.34061 50.76574 15.34091 50.76497 15.34312</loc:posList>
-        </loc:gmlLineString>
-        <loc:alertCLinear xsi:type="loc:AlertCMethod2Linear">
-          <loc:alertCLocationCountryCode>2</loc:alertCLocationCountryCode>
-          <loc:alertCLocationTableNumber>25</loc:alertCLocationTableNumber>
-          <loc:alertCLocationTableVersion>9.0</loc:alertCLocationTableVersion>
-          <loc:alertCDirection>
-            <loc:alertCDirectionCoded>negative</loc:alertCDirectionCoded>
-            <loc:alertCAffectedDirection>aligned</loc:alertCAffectedDirection>
-          </loc:alertCDirection>
-          <loc:alertCMethod2PrimaryPointLocation>
-            <loc:alertCLocation>
-              <loc:specificLocation>8973</loc:specificLocation>
-            </loc:alertCLocation>
-          </loc:alertCMethod2PrimaryPointLocation>
-          <loc:alertCMethod2SecondaryPointLocation>
-            <loc:alertCLocation>
-              <loc:specificLocation>8974</loc:specificLocation>
-            </loc:alertCLocation>
-          </loc:alertCMethod2SecondaryPointLocation>
-        </loc:alertCLinear>
-        <loc:linearWithinLinearElement>
-          <loc:directionRelativeOnLinearSection>aligned</loc:directionRelativeOnLinearSection>
-          <loc:linearElement>
-            <loc:roadNumber>10</loc:roadNumber>
-          </loc:linearElement>
-          <loc:fromPoint xsi:type="loc:DistanceFromLinearElementStart">
-            <loc:distanceAlong>106797</loc:distanceAlong>
-          </loc:fromPoint>
-          <loc:toPoint xsi:type="loc:DistanceFromLinearElementStart">
-            <loc:distanceAlong>107507</loc:distanceAlong>
-          </loc:toPoint>
-        </loc:linearWithinLinearElement>
-        <loc:linearWithinLinearElement>
-          <loc:directionRelativeOnLinearSection>opposite</loc:directionRelativeOnLinearSection>
-          <loc:linearElement xsi:type="loc:LinearElementByCode">
-            <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
-            <loc:linearElementReferenceModelVersion>22.12</loc:linearElementReferenceModelVersion>
-            <loc:linearElementIdentifier>126853</loc:linearElementIdentifier>
-          </loc:linearElement>
-          <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
-            <loc:percentageDistanceAlong>9.22</loc:percentageDistanceAlong>
-          </loc:fromPoint>
-          <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
-            <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
-          </loc:toPoint>
-        </loc:linearWithinLinearElement>
-        <loc:linearWithinLinearElement>
-          <loc:directionRelativeOnLinearSection>opposite</loc:directionRelativeOnLinearSection>
-          <loc:linearElement xsi:type="loc:LinearElementByCode">
-            <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
-            <loc:linearElementReferenceModelVersion>22.12</loc:linearElementReferenceModelVersion>
-            <loc:linearElementIdentifier>126599</loc:linearElementIdentifier>
-          </loc:linearElement>
-          <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
-            <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
-          </loc:fromPoint>
-          <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
-            <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
-          </loc:toPoint>
-        </loc:linearWithinLinearElement>
-        <loc:linearWithinLinearElement>
-          <loc:directionRelativeOnLinearSection>opposite</loc:directionRelativeOnLinearSection>
-          <loc:linearElement xsi:type="loc:LinearElementByCode">
-            <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
-            <loc:linearElementReferenceModelVersion>22.12</loc:linearElementReferenceModelVersion>
-            <loc:linearElementIdentifier>1461717</loc:linearElementIdentifier>
-          </loc:linearElement>
-          <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
-            <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
-          </loc:fromPoint>
-          <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
-            <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
-          </loc:toPoint>
-        </loc:linearWithinLinearElement>
-        <loc:linearWithinLinearElement>
-          <loc:directionRelativeOnLinearSection>opposite</loc:directionRelativeOnLinearSection>
-          <loc:linearElement xsi:type="loc:LinearElementByCode">
-            <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
-            <loc:linearElementReferenceModelVersion>22.12</loc:linearElementReferenceModelVersion>
-            <loc:linearElementIdentifier>1461719</loc:linearElementIdentifier>
-          </loc:linearElement>
-          <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
-            <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
-          </loc:fromPoint>
-          <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
-            <loc:percentageDistanceAlong>0</loc:percentageDistanceAlong>
-          </loc:toPoint>
-        </loc:linearWithinLinearElement>
-        <loc:linearWithinLinearElement>
-          <loc:directionRelativeOnLinearSection>opposite</loc:directionRelativeOnLinearSection>
-          <loc:linearElement xsi:type="loc:LinearElementByCode">
-            <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
-            <loc:linearElementReferenceModelVersion>22.12</loc:linearElementReferenceModelVersion>
-            <loc:linearElementIdentifier>2901326</loc:linearElementIdentifier>
-          </loc:linearElement>
-          <loc:fromPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
-            <loc:percentageDistanceAlong>100</loc:percentageDistanceAlong>
-          </loc:fromPoint>
-          <loc:toPoint xsi:type="loc:PercentageDistanceAlongLinearElement">
-            <loc:percentageDistanceAlong>14.79</loc:percentageDistanceAlong>
-          </loc:toPoint>
-        </loc:linearWithinLinearElement>
-      </sit:locationReference>
-      <!-- tag::operator[] -->
-      <sit:complianceOption>mandatory</sit:complianceOption>
-      <sit:roadOrCarriagewayOrLaneManagementType>singleAlternateLineTraffic</sit:roadOrCarriagewayOrLaneManagementType>
-      <!-- end::operator[] -->
     </sit:situationRecord>
   </sit:situation>
 </d2:payload>

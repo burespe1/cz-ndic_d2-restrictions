@@ -97,10 +97,10 @@ include::{samplesdir}/restriction.xml[tag=record-meta,indent=0]
   (zpravidla stejný text), aby byl každý záznam srozumitelný i samostatně.
 * `urlLink` – odkaz na webovou stránku s podrobnostmi o události (`urlLinkType` = `html`).
 
-.Komentář a odkaz na podrobnosti (vzorek `restriction.xml`)
+.Komentář a odkaz na podrobnosti (vzorek `works-prague.xml`)
 [source,xml]
 ----
-include::{samplesdir}/restriction.xml[tag=comment-url,indent=0]
+include::{samplesdir}/works-prague.xml[tag=comment-url,indent=0]
 ----
 
 [[typy]]

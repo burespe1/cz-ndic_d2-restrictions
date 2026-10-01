@@ -2,38 +2,53 @@
 
 The samples are part of the specification package `{schema-uri}.zip` (directory `samples`).
 
-=== restriction.xml – roadworks, alternating one-lane traffic
+=== restriction.xml – roadworks, alternate one-way traffic
 
-The publication contains a partial closure of road I/10 in Desná (Jablonec nad Nisou district) due to
-construction works with alternating traffic in one lane.
+Planned roadworks on road I/14 in Dolní Radechová (Náchod district) with alternate one-way traffic in one lane.
 
 [source,xml]
 ----
 include::{samplesdir}/restriction.xml[tags=**]
 ----
 
-Envelope and header::
-Root `d2:payload` of type `sit:SituationPublication` with the `profileName` and `profileVersion` attributes
-identifying the format, `publicationTime` and `publicationCreator`. `feedType` refers to the data source.
-
 Situation::
-The situation contains two records in version 6. A record of type `ConstructionWorks` describes the cause
-(construction works, `constructionWork`), a record of type `RoadOrCarriagewayOrLaneManagement` the impact
-(alternating traffic in one lane, `singleAlternateLineTraffic`, mandatory – `complianceOption` =
-`mandatory`). The value `probabilityOfOccurrence` = `certain` – the closure is already in force at the time
-of publication.
+The record of type `MaintenanceWorks` describes the cause (roadworks, `roadworks`, subject of works the road
+surface – `road`), the record of type `RoadOrCarriagewayOrLaneManagement` the impact (alternate one-way traffic,
+`singleAlternateLineTraffic`, mandatory – `complianceOption` = `mandatory`). The works are planned, so
+`probabilityOfOccurrence` = `certain` and the validity starts in the future. Both records are in version 2.
 
 Validity::
-Both records are valid from 30{nbsp}August 2023 7:00 to 1{nbsp}September 2023 23:59.
+From 5{nbsp}October 2026 0:00 to 18{nbsp}December 2026 23:59. That traffic is controlled on working days
+7:00–16:00 is stated in the comment only.
 
 Location::
-The location is described by all methods: OpenLR, ALERT-C, chainage of road 10 (106 797–107 507 m),
-Global Network sections of version 22.12 (five sections in travel order, 126853–2901326) and the location
-path `gmlLineString` in WGS-84.
+The location is described by all methods: OpenLR, ALERT-C (locations 26094 → 23386, `alertCDirectionCoded` =
+`negative`), chainage of road 14 (115 498–115 821 m), Global Network sections of version 26.06 (four sections in
+travel order, 1678138 from 82.16{nbsp}%, 1456372 and 1456373 whole, 1456374 to 0.88{nbsp}%) and the location path
+`gmlLineString`.
 
-Other content::
-`source` gives the originator of the information (ŘSD), `generalPublicComment` the text of the closure
-decision and `urlLink` a link to details.
+=== works-prague.xml – construction works in Prague with a link to details
+
+Construction works in Počernická street (Prague 10) with narrowed lanes; the source is the Prague road
+administration TSK (`TSK2`).
+
+[source,xml]
+----
+include::{samplesdir}/works-prague.xml[tags=**]
+----
+
+Situation::
+A record of type `ConstructionWorks` (`constructionWork`) and a record of type `RoadOrCarriagewayOrLaneManagement`
+– traffic in the opposite lane (`contraflow`), both in version 6. Both records carry a link to a page with details
+(`urlLink`, `urlLinkType` = `html`).
+
+Validity::
+From 9{nbsp}September 2026 0:00 to 10{nbsp}October 2026 23:59.
+
+Location::
+A location for both directions (`alertCAffectedDirection` = `both`) at one ALERT-C location (13131 → 13131),
+OpenLR and two Global Network sections of version 25.12 serving both directions
+(`directionRelativeOnLinearSection` = `both`).
 
 === lane-closure.xml – closed lane on a motorway
 
