@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <Selection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <packages />
+  <packages/>
   <d2Components>
     <D2Component>
       <name>LocationGroup</name>
@@ -1233,7 +1233,7 @@
         <upperBound>-1</upperBound>
         <upperBoundUnlimited>true</upperBoundUnlimited>
         <definition>Places, in generic terms, at which the network management applies.</definition>
-        <generate>true</generate>
+        <generate>false</generate>
         <attribute>false</attribute>
         <newLowerBound>-1</newLowerBound>
         <newUpperBound>-1</newUpperBound>

@@ -211,9 +211,9 @@ popisují tentýž úsek skutečnosti. Musí být uvedena alespoň jedna metoda.
 Dotčený jízdní pás, jízdní pruhy nebo druh místa (např. most) upřesňuje `supplementaryPositionalDescription`
 (<<upresneni>>).
 
-Metody popisu polohy jsou popsány shodně ve všech formátech NDIC, které je používají. Grafické ukázky metod
-(lokace ALERT-C a směr, obousměrná poloha v OpenLR, složení polohy z úseků Global Network) obsahuje
-dokumentace formátu `cz-ndic_d2-pls`, kapitola Popisování poloh.
+IMPORTANT: Metody popisu polohy jsou popsány shodně ve všech formátech NDIC, které je používají. Grafické
+ukázky metod (lokace ALERT-C a směr, obousměrná poloha v OpenLR, složení polohy z úseků Global Network)
+obsahuje dokumentace formátu `cz-ndic_d2-pls`, kapitola Popisování poloh.
 
 [[alertc]]
 === Popis polohy pomocí ALERT-C

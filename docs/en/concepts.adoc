@@ -216,8 +216,8 @@ the given place; all of them describe the same real-world section. At least one 
 The affected carriageway, lanes or kind of place (e.g. a bridge) are specified by
 `supplementaryPositionalDescription` (<<upresneni>>).
 
-The location referencing methods are described identically in all NDIC formats that use them. Graphical
-illustrations of the methods (ALERT-C locations and direction, bidirectional location in OpenLR, location
+IMPORTANT: The location referencing methods are described identically in all NDIC formats that use them.
+Graphical illustrations of the methods (ALERT-C locations and direction, bidirectional location in OpenLR, location
 composed of Global Network sections) are given in the documentation of the format `cz-ndic_d2-pls`,
 chapter Location referencing.
 

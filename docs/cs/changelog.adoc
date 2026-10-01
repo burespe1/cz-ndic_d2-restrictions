@@ -31,5 +31,7 @@
    `ItineraryByIndexedLocations` a nesouvislá nebo rozvětvená poloha `LocationGroupByList`.
 ** Profil je zúžen na prvky a hodnoty výčtů, které NDIC publikuje nebo které plní hlášení ALERT-C; vypuštěné
    hodnoty ALERT-C se vyjadřují obecnější hodnotou (např. tenisový turnaj `sportsMeeting`).
+** Obecná místa platnosti řízení provozu (`placesAtWhichApplicable`, např. „v tunelech“) se neuvádějí –
+   událost se vždy týká konkrétní polohy.
 * Původ dat:
 ** Směrovost události (`alertCAffectedDirection`) vychází ze směrovosti v katalogu událostí ALERT-C <<ISO14819-2>>.

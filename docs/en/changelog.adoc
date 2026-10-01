@@ -36,5 +36,7 @@
 ** The profile is narrowed to the elements and enumeration values that NDIC publishes or that ALERT-C messages
    fill; ALERT-C values removed from the profile are expressed by a more general value (e.g. a tennis tournament
    `sportsMeeting`).
+** Generic places at which traffic management applies (`placesAtWhichApplicable`, e.g. "in tunnels") are not
+   given – an event always concerns a specific location.
 * Origin of the data:
 ** The directionality of an event (`alertCAffectedDirection`) follows the directionality in the ALERT-C event list <<ISO14819-2>>.
