@@ -6,11 +6,10 @@ languages:
 - cs
 - en
 cs:
-  perex: Plánované uzavírky, práce a omezení provozu na celé síti ČR (podmnožina common).
+  perex: 'Tento dokument popisuje datový formát, používaný pro poskytování informací o aktuálních a plánovaných uzavírkách a omezeních provozu na silniční síti ČR: pracích na silnici, uzavírkách, objížďkách, omezeních rychlosti a změnách uspořádání provozu. Formát je podmnožinou formátu cz-ndic_d2-common omezenou na akce správce komunikace; struktura zpráv, popis polohy a pravidla plnění jsou v obou formátech shodné. Formát vychází z publikace SituationPublication modelu DATEX II 3.7 a nepoužívá národní rozšíření.'
   keywords: DATEX II, NDIC, SituationPublication
 en:
-  perex: Planned closures, roadworks and traffic restrictions in the Czech Republic
-    (subset of common).
+  perex: 'This document describes the data format used to provide information about current and planned closures and traffic restrictions on the road network of the Czech Republic: roadworks, closures, diversions, speed restrictions and changes of traffic arrangement. The format is a subset of the format cz-ndic_d2-common limited to road operator actions; message structure, location referencing and filling rules are the same in both formats. The format is based on the SituationPublication of the DATEX II 3.7 model and uses no national extension.'
   keywords: DATEX II, NDIC, SituationPublication
 tables:
   scope: samples
