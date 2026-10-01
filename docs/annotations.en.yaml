@@ -9,13 +9,17 @@
 #     required: true    # NDIC vždy vyplňuje
 #     values:           # překlad/upřesnění hodnot výčtu jen pro tento element
 #       certain: jistě nastalo
+#   locationReference:
+#     variants: reduced # u elementu s více typy: výčet typů je zúžený profilem (popisek „zúžený výčet – N“);
+#                       # seznam názvů tříd ([A, B]) uvede jen tyto typy
 #
 # _enum:                # překlady hodnot výčtů pro celý formát (přepisují sdílený slovník kitu)
 #   ProbabilityEnum.certain: jistá
+# _unused_types: [LinearLocation]   # třídy, které schéma připouští, ale formát nepoužívá (ve výčtech variant se neuvádějí)
 
 GmlLineString:
   posList:
-    ndic: "Line in the direction of travel from the start to the end of the location (for a bidirectional location in the first direction). The start and end are exact, intermediate points are simplified with a deviation of at most 10 m from the GN section geometry; WGS-84 coordinates to 5 decimal places (≈ 1 m)."
+    ndic: "Line in the direction of travel from the start to the end of the location (for a bidirectional location in the first direction). The start and end are exact, intermediate points are simplified with a deviation of at most 10 m from the GN section geometry; at least two points (start and end); ETRS89 coordinates (`srsName` = `urn:ogc:def:crs:EPSG::4258`) to 5 decimal places (≈ 1 m)."
 
 PercentageDistanceAlongLinearElement:
   percentageDistanceAlong:
@@ -35,3 +39,9 @@ Source:
     ndic: >-
       Code of the information source (preliminary code list): `RSD`, `SSU`, `SSU2`, `TSK2`, `PCR`, `USDI`, `DIRC`,
       `FCD` (floating car data), `PPP-D4`, `OKAS`. The complete list of source codes and names will be added.
+
+_unused_types: [LinearLocation]
+
+Situation:
+  situationRecord:
+    variants: reduced

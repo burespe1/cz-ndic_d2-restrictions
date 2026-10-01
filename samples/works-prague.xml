@@ -82,7 +82,7 @@
           </loc:firstDirection>
         </loc:openlrLinear>
         <!-- gmlLineString -->
-        <loc:gmlLineString srsName="EPSG:4326" srsDimension="2">
+        <loc:gmlLineString srsName="urn:ogc:def:crs:EPSG::4258" srsDimension="2">
           <loc:posList>50.08100 14.49376 50.08037 14.48755</loc:posList>
         </loc:gmlLineString>
         <!-- ALERT-C -->
@@ -206,7 +206,7 @@
           </loc:firstDirection>
         </loc:openlrLinear>
         <!-- gmlLineString -->
-        <loc:gmlLineString srsName="EPSG:4326" srsDimension="2">
+        <loc:gmlLineString srsName="urn:ogc:def:crs:EPSG::4258" srsDimension="2">
           <loc:posList>50.08100 14.49376 50.08037 14.48755</loc:posList>
         </loc:gmlLineString>
         <!-- ALERT-C -->

@@ -74,7 +74,7 @@
           </loc:firstDirection>
         </loc:openlrLinear>
         <!-- gmlLineString -->
-        <loc:gmlLineString srsName="EPSG:4326" srsDimension="2">
+        <loc:gmlLineString srsName="urn:ogc:def:crs:EPSG::4258" srsDimension="2">
           <loc:posList>50.44449 16.14860 50.44361 16.14751 50.44301 16.14775 50.44202 16.14859</loc:posList>
         </loc:gmlLineString>
         <!-- ALERT-C -->
@@ -239,7 +239,7 @@
         <!-- end::loc-openlr[] -->
         <!-- gmlLineString -->
         <!-- tag::loc-gml[] -->
-        <loc:gmlLineString srsName="EPSG:4326" srsDimension="2">
+        <loc:gmlLineString srsName="urn:ogc:def:crs:EPSG::4258" srsDimension="2">
           <loc:posList>50.44449 16.14860 50.44361 16.14751 50.44301 16.14775 50.44202 16.14859</loc:posList>
         </loc:gmlLineString>
         <!-- end::loc-gml[] -->

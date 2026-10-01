@@ -42,7 +42,7 @@
       <sit:locationReference xsi:type="loc:LocationGroupByList">
         <loc:locationContainedInGroup xsi:type="loc:SingleRoadLinearLocation">
           <!-- II/259 -->
-          <loc:gmlLineString srsName="EPSG:4326" srsDimension="2">
+          <loc:gmlLineString srsName="urn:ogc:def:crs:EPSG::4258" srsDimension="2">
             <loc:posList>50.43145 14.69128 50.43192 14.69192 50.43278 14.69394</loc:posList>
           </loc:gmlLineString>
           <loc:linearWithinLinearElement>
@@ -75,7 +75,7 @@
           </loc:linearWithinLinearElement>
         </loc:locationContainedInGroup>
         <loc:locationContainedInGroup xsi:type="loc:SingleRoadLinearLocation">
-          <loc:gmlLineString srsName="EPSG:4326" srsDimension="2">
+          <loc:gmlLineString srsName="urn:ogc:def:crs:EPSG::4258" srsDimension="2">
             <loc:posList>50.43188 14.69322 50.43245 14.69326</loc:posList>
           </loc:gmlLineString>
           <loc:linearWithinLinearElement>
@@ -95,7 +95,7 @@
         </loc:locationContainedInGroup>
         <loc:locationContainedInGroup xsi:type="loc:SingleRoadLinearLocation">
           <!-- III/25924 -->
-          <loc:gmlLineString srsName="EPSG:4326" srsDimension="2">
+          <loc:gmlLineString srsName="urn:ogc:def:crs:EPSG::4258" srsDimension="2">
             <loc:posList>50.43364 14.69181 50.43245 14.69326</loc:posList>
           </loc:gmlLineString>
           <loc:linearWithinLinearElement>

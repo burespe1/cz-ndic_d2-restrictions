@@ -46,7 +46,7 @@
           <loc:location xsi:type="loc:SingleRoadLinearLocation">
             <!-- III/34041 -->
       <!-- end::itinerary[] -->
-            <loc:gmlLineString srsName="EPSG:4326" srsDimension="2">
+            <loc:gmlLineString srsName="urn:ogc:def:crs:EPSG::4258" srsDimension="2">
               <loc:posList>49.97614 15.86850 49.97670 15.86815 49.97789 15.86826 49.97846 15.86793</loc:posList>
             </loc:gmlLineString>
             <loc:linearWithinLinearElement>
@@ -110,7 +110,7 @@
         <loc:locationContainedInItinerary index="2">
           <loc:location xsi:type="loc:SingleRoadLinearLocation">
             <!-- III/34042 -->
-            <loc:gmlLineString srsName="EPSG:4326" srsDimension="2">
+            <loc:gmlLineString srsName="urn:ogc:def:crs:EPSG::4258" srsDimension="2">
               <loc:posList>49.97846 15.86793 49.97873 15.86969 49.97799 15.87155</loc:posList>
             </loc:gmlLineString>
             <loc:linearWithinLinearElement>

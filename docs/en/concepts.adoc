@@ -26,10 +26,8 @@ The format the message conforms to is identified solely by attributes of the roo
 
 The publication header contains:
 
-* `feedType` – identifier of the data source (distribution) in the register of the national access point
-  <<nap>>. The source refers to the format in which it provides the data; the format of the message is
-  identified by the `profileName` and `profileVersion` attributes. The same format may be used by several
-  sources with different `feedType`.
+* `feedType` – identifier of the data source the message comes from. The format of the message is
+  identified by the `profileName` and `profileVersion` attributes, not by `feedType`.
 * `publicationTime` – time the publication content was created. If the content has not changed since
   the previous publication, the original time is kept; a new time is set only when the content changes.
 * `publicationCreator` – publication provider: country code in lower case (`cz`) and provider
@@ -212,37 +210,32 @@ the given place; all of them describe the same real-world section. At least one 
 |OpenLR |`openlrLinear` |always, where the location can be encoded (dynamic location referencing)
 |Road chainage |`linearWithinLinearElement` with `roadNumber` |roads with chainage
 |Global Network |`linearWithinLinearElement` with `LinearElementByCode` |sections of the Global Network (ŘSD)
-|Location path |`gmlLineString` |line in WGS-84 for display on a map (<<prubeh>>)
+|Location path |`gmlLineString` |line in ETRS89 for display on a map; the only exact coordinates of the start and end of the location (<<prubeh>>)
 |===
 
 The affected carriageway, lanes or kind of place (e.g. a bridge) are specified by
 `supplementaryPositionalDescription` (<<upresneni>>).
 
+The location referencing methods are described identically in all NDIC formats that use them. Graphical
+illustrations of the methods (ALERT-C locations and direction, bidirectional location in OpenLR, location
+composed of Global Network sections) are given in the documentation of the format `cz-ndic_d2-pls`,
+chapter Location referencing.
+
+[[alertc]]
 === ALERT-C location referencing
 
-The method describes a linear location by codes of the ALERT-C location table <<ISO14819-3>> in the
-`alertCLinear` element of type `AlertCMethod2Linear`.
+include::{kitdir}/shared/en/poloha/alertc.adoc[]
 
-* The location table is identified by `alertCLocationCountryCode`, `alertCLocationTableNumber`
-  and `alertCLocationTableVersion`. The country code is given according to IEC 62106 – for the Czech
-  Republic the value `2` (not `CZ`).
-* According to the ALERT-C principle, the primary location (`alertCMethod2PrimaryPointLocation`) is the
-  place where the event occurred or where the driver leaves the problem section; the secondary location
-  (`alertCMethod2SecondaryPointLocation`) is the end of the queue or the place where the driver enters the
-  problem section.
-* `alertCDirectionCoded` = `positive` if the direction of traffic matches the coding direction of the road
-  in the location table.
-* `alertCAffectedDirection` (mandatory) specifies which directions of traffic the event
-  concerns, relative to the direction of the described location (given by `alertCDirectionCoded`):
-  `aligned` for one-directional events in this direction, `both` for events valid in both directions.
-* A location has at most one `alertCLinear` element – one ALERT-C path along one road. If an event
-  runs over several roads, each part of the route (<<trasa>>) or member of the group has its own `alertCLinear`.
-* A point-like event between two locations (e.g. an accident on a section) is described by the whole section
-  between adjacent locations. Only an event at an ALERT-C location point, usually in the middle of a junction,
-  has identical primary and secondary locations.
+In messages about events the following also applies:
 
-IMPORTANT: The meaning of `alertCDirectionCoded` is the opposite of the meaning of the RDS-TMC
-`direction` bit, which is used to find the secondary location.
+* According to the ALERT-C principle, the primary location is the place where the event occurred (e.g. the
+  head of a queue), the secondary location the end of the affected section (e.g. the end of the queue).
+* `alertCAffectedDirection` = `both` expresses an event valid in both directions of travel.
+* If an event runs over several roads, each part of the route (<<trasa>>) or member of the group
+  (<<skupiny>>) has its own `alertCLinear`.
+* A point-like event between two locations (e.g. an accident on a section) is described by the whole
+  section between adjacent locations. Only an event at an ALERT-C location point, usually in the middle of
+  a junction, has identical primary and secondary locations.
 
 .ALERT-C location referencing (sample `restriction.xml`)
 [source,xml]
@@ -250,15 +243,12 @@ IMPORTANT: The meaning of `alertCDirectionCoded` is the opposite of the meaning 
 include::{samplesdir}/restriction.xml[tag=loc-alertc,indent=0]
 ----
 
+[[openlr]]
 === OpenLR location referencing
 
-The OpenLR method (`openlrLinear` element) describes the location independently of any map: the
-subscriber finds it in its own map by searching a route (so-called on-the-fly location referencing). The
-reference points `openlrLocationReferencePoint` and `openlrLastLocationReferencePoint` are given by
-coordinates (WGS-84), bearing and road class; the found route is trimmed by the offsets
-`openlrPositiveOffset` and `openlrNegativeOffset` to the actual extent of the event. If two points are not
-enough, intermediate points are used. For a point-like event, OpenLR describes a short section at the
-place of the event (the offsets do not delimit a section of zero length).
+include::{kitdir}/shared/en/poloha/openlr.adoc[]
+
+For a point-like event OpenLR describes a short section at the place of the event.
 
 .OpenLR location referencing (sample `restriction.xml`)
 [source,xml]
@@ -266,13 +256,10 @@ place of the event (the offsets do not delimit a section of zero length).
 include::{samplesdir}/restriction.xml[tag=loc-openlr,indent=0]
 ----
 
+[[staniceni]]
 === Road chainage location referencing
 
-Road chainage is described by the `linearWithinLinearElement` element whose `linearElement` carries the
-road number (`roadNumber`). `directionRelativeOnLinearSection` specifies the direction relative to the
-chainage (`aligned` along, `opposite` against it) and `fromPoint` and `toPoint` of type
-`DistanceFromLinearElementStart` the distance of the start and end of the event from the beginning of the
-road in metres (`distanceAlong`).
+include::{kitdir}/shared/en/poloha/staniceni.adoc[]
 
 .Road chainage location referencing (sample `restriction.xml`)
 [source,xml]
@@ -283,26 +270,7 @@ include::{samplesdir}/restriction.xml[tag=loc-station,indent=0]
 [[gn]]
 === Global Network location referencing
 
-Sections of the Global Network road network (GN, ŘSD) are described as follows:
-
-* Each section is one `linearWithinLinearElement` element whose `linearElement` is of type
-  `LinearElementByCode`: `linearElementReferenceModel` = `CZ-RSD-GlobalNetwork`,
-  `linearElementReferenceModelVersion` = network version and `linearElementIdentifier` = section
-  identifier. All sections of the route are given in travel order, including full inner sections.
-* `directionRelativeOnLinearSection` specifies the travel direction relative to the section coding, i.e.
-  the direction in which the section was created in the GN database: `aligned` (along the coding),
-  `opposite` (against the coding), `both` (the section serves both directions). The direction may
-  alternate along a route so that the section ends connect – e.g. when the route passes a section created
-  by coding another road that runs concurrently with it.
-* One-way sections (e.g. separate carriageways, junction ramps) are always coded in the travel direction;
-  they are therefore travelled only as `aligned` and a route never runs against them.
-* `fromPoint` and `toPoint` are the points where the route enters and leaves the section, always of type
-  `PercentageDistanceAlongLinearElement` – percent of the section length (0–100, at most 2 decimal places) measured from the start
-  of the section coding. For `aligned` the value increases (e.g. 20 → 100), for `opposite` it decreases
-  (e.g. 100 → 20); a full section is 0 → 100 or 100 → 0.
-* The *start and end of the location* are given by the percentages of the first and last section. The GN
-  sections do not carry the coordinates of the start and end; they are carried by the location path
-  `gmlLineString` (<<prubeh>>).
+include::{kitdir}/shared/en/poloha/gn.adoc[]
 
 .Global Network sections – route (sample `restriction.xml`)
 [source,xml]
@@ -310,40 +278,16 @@ Sections of the Global Network road network (GN, ŘSD) are described as follows:
 include::{samplesdir}/restriction.xml[tag=loc-gn,indent=0]
 ----
 
-A location valid for both directions of travel is described in the GN network as follows:
+==== Bidirectional location in GN
 
-* If the sections serve both directions to the same extent, they are given once with
-  `directionRelativeOnLinearSection` = `both`, in the order of the first direction and with its points:
-  `fromPoint` → `toPoint` describes travel in the first direction, so a decreasing value (e.g. 100 → 30)
-  means that the first direction runs against the section coding. The opposite direction is the same list
-  read from the end, with the points in reverse order. Only sections passable in both directions may have
-  direction `both`.
-* If the opposite direction runs elsewhere (separate carriageways, one-way sections) or to a different
-  extent, the whole route of the first direction is given first, followed by the whole route of the
-  opposite direction, both as `linearWithinLinearElement`. The first direction runs from the start to the
-  end of the location, the opposite direction from the end to the start. Each route is preceded by the XML
-  comment `<!-- GN firstDirection -->` or `<!-- GN oppositeDirection -->` (model element names, independent
-  of language). The comment is meant for human readers and a receiver should not rely on it; it determines
-  the boundary between the routes from the connectivity of the sections in the GN network. Both directions
-  are also described unambiguously by OpenLR (`firstDirection`, `oppositeDirection`).
+include::{kitdir}/shared/en/poloha/gn-obousmerne-spolecne.adoc[]
 
-NOTE: Percentage values (type `Percentage`) are given in the range 0–100.
+include::{kitdir}/shared/en/poloha/gn-obousmerne-oddelene.adoc[]
 
 [[prubeh]]
 === Location path
 
-A linear location carries its path in WGS-84 in the `gmlLineString` element so that a subscriber can show
-it on a map without the GN network, the ALERT-C location table or an OpenLR decoder:
-
-* `posList` – "latitude longitude" pairs separated by spaces; `srsName` = `EPSG:4326`,
-  `srsDimension` = `2`.
-* The line runs in the direction of travel: the first point is the start and the last point the end
-  of the location. It is
-  made from the geometry of the GN sections trimmed by the percentages of the edge sections; the start and end
-  are exact, intermediate points are simplified so that the line deviates from the section geometry by at
-  most 10{nbsp}m. Coordinates have 5 decimal places (≈{nbsp}1{nbsp}m).
-* For a bidirectional location the line runs in the first direction (the model allows one line per
-  location).
+include::{kitdir}/shared/en/poloha/prubeh.adoc[]
 
 .Location path (sample `restriction.xml`)
 [source,xml]

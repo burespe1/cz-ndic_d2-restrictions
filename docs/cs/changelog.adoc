@@ -12,7 +12,7 @@
 ** Národní rozšíření polohy (`linearExtension`, `globalNetworkLinear`, `openlrExtendedLinear`) nahradily
    prvky modelu 3.7: OpenLR v `openlrLinear`, úseky Global Network v `linearWithinLinearElement`
    s `LinearElementByCode`.
-** Počátek a konec polohy GN (`startPoint`, `endPoint` v S-JTSK) nahradil průběh polohy ve WGS-84
+** Počátek a konec polohy GN (`startPoint`, `endPoint` v S-JTSK) nahradil průběh polohy v ETRS89
    (`gmlLineString`); krajní úseky GN mají procenta.
 ** Nový povinný prvek `alertCAffectedDirection`.
 ** Bodové polohy (`PointLocation`) ani plošné polohy (`AreaLocation`) se nepoužívají; bodové místo je krátký
