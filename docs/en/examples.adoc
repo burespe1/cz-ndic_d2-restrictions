@@ -27,13 +27,48 @@ Validity::
 Both records are valid from 30{nbsp}August 2023 7:00 to 1{nbsp}September 2023 23:59.
 
 Location::
-The location is described by four methods: OpenLR, ALERT-C, chainage of road 10 (106 797–107 507 m) and
-Global Network sections of version 22.12 – five sections in travel order (126853–2901326) – and by the
-location path `gmlLineString` in WGS-84.
+The location is described by all methods: OpenLR, ALERT-C, chainage of road 10 (106 797–107 507 m),
+Global Network sections of version 22.12 (five sections in travel order, 126853–2901326) and the location
+path `gmlLineString` in WGS-84.
 
 Other content::
 `source` gives the originator of the information (ŘSD), `generalPublicComment` the text of the closure
 decision and `urlLink` a link to details.
+
+=== lane-closure.xml – closed lane on a motorway
+
+Roadworks on motorway D1 between km 330.4 and 331.1 towards Ostrava with the right lane closed.
+
+[source,xml]
+----
+include::{samplesdir}/lane-closure.xml[tags=**]
+----
+
+Situation::
+A record of type `MaintenanceWorks` describes the cause (roadworks, `roadworks`, subject of works the road
+surface – `road`), a record of type `RoadOrCarriagewayOrLaneManagement` the impact – a lane closure
+(`laneClosures`), mandatory. Both records are in version 5 and give one operational lane
+(`numberOfOperationalLanes`):
++
+[source,xml]
+----
+include::{samplesdir}/lane-closure.xml[tag=impact-lanes,indent=0]
+include::{samplesdir}/lane-closure.xml[tag=lane-closure,indent=0]
+----
+
+Validity::
+1{nbsp}October 2026 from 7:00 to 17:00.
+
+Location::
+A linear location in one direction (`alertCAffectedDirection` = `aligned`) described by OpenLR, ALERT-C
+(locations 25605 → 23015), chainage of motorway D1 (330 399–331 099 m), Global Network section 3867332 of
+version 26.06 (15.47 → 82.71{nbsp}%) and the location path `gmlLineString`. The supplementary positional
+description gives the affected right lane (`rightLane`) of the main carriageway (`mainCarriageway`):
++
+[source,xml]
+----
+include::{samplesdir}/lane-closure.xml[tag=loc-spd,indent=0]
+----
 
 === closure-junction.xml – closure of a junction with three arms
 

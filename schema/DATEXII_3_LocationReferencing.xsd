@@ -29,13 +29,6 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:complexType name="_HeightGradeEnum">
-    <xs:simpleContent>
-      <xs:extension base="loc:HeightGradeEnum">
-        <xs:attribute name="_extendedValue" type="xs:string" />
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
   <xs:complexType name="_InfrastructureDescriptorEnum">
     <xs:simpleContent>
       <xs:extension base="loc:InfrastructureDescriptorEnum">
@@ -87,13 +80,6 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:complexType name="_LinearElementNatureEnum">
-    <xs:simpleContent>
-      <xs:extension base="loc:LinearElementNatureEnum">
-        <xs:attribute name="_extendedValue" type="xs:string" />
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
   <xs:complexType name="_LocationContainedInItinerary">
     <xs:sequence>
       <xs:element name="location" type="loc:Location" minOccurs="1" maxOccurs="1" />
@@ -129,11 +115,6 @@
       <xs:element name="alertCDirectionCoded" type="loc:_AlertCDirectionEnum" minOccurs="1" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>Direction of navigation with respect to secondary to primary location (RDS direction)</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="alertCDirectionNamed" type="com:MultilingualString" minOccurs="0" maxOccurs="1">
-        <xs:annotation>
-          <xs:documentation>ALERT-C name of a direction e.g. Brussels -&gt; Lille.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="alertCAffectedDirection" type="loc:_LinearDirectionEnum" minOccurs="1" maxOccurs="1">
@@ -190,11 +171,6 @@
       <xs:documentation>Identification of a specific point, linear or area location in an ALERT-C location table.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="alertCLocationName" type="com:MultilingualString" minOccurs="0" maxOccurs="1">
-        <xs:annotation>
-          <xs:documentation>Name of ALERT-C location.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
       <xs:element name="specificLocation" type="loc:AlertCLocationCode" minOccurs="1" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>Unique code within the ALERT-C location table which identifies the specific point, linear or area location.</xs:documentation>
@@ -274,11 +250,6 @@
           <xs:documentation>On the connecting carriageway.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="cycleTrack">
-        <xs:annotation>
-          <xs:documentation>Independent road or part of a road designated for cycles, signposted as such. A cycle track is separated from other roads or other parts of the same road by structural means.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="entrySlipRoad">
         <xs:annotation>
           <xs:documentation>On the entry slip road.</xs:documentation>
@@ -287,21 +258,6 @@
       <xs:enumeration value="exitSlipRoad">
         <xs:annotation>
           <xs:documentation>On the exit slip road.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="flyover">
-        <xs:annotation>
-          <xs:documentation>On the flyover, i.e. the section of road passing over another.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="footpath">
-        <xs:annotation>
-          <xs:documentation>On the footpath</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="leftHandFeederRoad">
-        <xs:annotation>
-          <xs:documentation>On the left hand feeder road.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="leftHandParallelCarriageway">
@@ -324,11 +280,6 @@
           <xs:documentation>On the adjacent external parallel carriageway.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="rightHandFeederRoad">
-        <xs:annotation>
-          <xs:documentation>On the right hand feeder road.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="rightHandParallelCarriageway">
         <xs:annotation>
           <xs:documentation>On the right hand parallel carriageway.</xs:documentation>
@@ -349,16 +300,6 @@
           <xs:documentation>On the slip roads.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="underpass">
-        <xs:annotation>
-          <xs:documentation>On the underpass, i.e. the section of road passing under another.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="unspecifiedCarriageway">
-        <xs:annotation>
-          <xs:documentation>On an unspecified carriageway</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="_extended" />
     </xs:restriction>
   </xs:simpleType>
@@ -377,89 +318,9 @@
           <xs:documentation>All directions (where more than two are applicable) at this point on the road network.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="anticlockwise">
-        <xs:annotation>
-          <xs:documentation>Anti-clockwise.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="bothWays">
         <xs:annotation>
           <xs:documentation>Both directions that are applicable at this point on the road network.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="clockwise">
-        <xs:annotation>
-          <xs:documentation>Clockwise.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="innerRing">
-        <xs:annotation>
-          <xs:documentation>Inner ring direction.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="outerRing">
-        <xs:annotation>
-          <xs:documentation>Outer ring direction.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="eastBound">
-        <xs:annotation>
-          <xs:documentation>East bound general direction.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="northBound">
-        <xs:annotation>
-          <xs:documentation>North bound general direction.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="northEastBound">
-        <xs:annotation>
-          <xs:documentation>North east bound general direction.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="northWestBound">
-        <xs:annotation>
-          <xs:documentation>North west bound general direction.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="southBound">
-        <xs:annotation>
-          <xs:documentation>South bound general direction.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="southEastBound">
-        <xs:annotation>
-          <xs:documentation>South east bound general direction.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="southWestBound">
-        <xs:annotation>
-          <xs:documentation>South west bound general direction.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="westBound">
-        <xs:annotation>
-          <xs:documentation>West bound general direction.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="inboundTowardsTown">
-        <xs:annotation>
-          <xs:documentation>Heading towards town centre direction of travel.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="outboundFromTown">
-        <xs:annotation>
-          <xs:documentation>Heading out of or away from the town centre direction of travel.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="opposite">
-        <xs:annotation>
-          <xs:documentation>Opposite direction to the normal direction of flow at this point on the road network.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="unknown">
-        <xs:annotation>
-          <xs:documentation>Direction is unknown.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="other">
@@ -510,11 +371,6 @@
           <xs:documentation>On border crossing.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="onPass">
-        <xs:annotation>
-          <xs:documentation>On mountain pass.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="overCrestOfHill">
         <xs:annotation>
           <xs:documentation>Over the crest of a hill.</xs:documentation>
@@ -554,29 +410,6 @@
       <xs:pattern value="[-+]?[0-9]*\.?[0-9]+(\s[-+]?[0-9]*\.?[0-9]+){3,}" />
     </xs:restriction>
   </xs:simpleType>
-  <xs:simpleType name="HeightGradeEnum">
-    <xs:annotation>
-      <xs:documentation>List of height or vertical gradings of road sections.</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="aboveGrade">
-        <xs:annotation>
-          <xs:documentation>Above or over the normal road grade elevation.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="atGrade">
-        <xs:annotation>
-          <xs:documentation>At the normal road grade elevation.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="belowGrade">
-        <xs:annotation>
-          <xs:documentation>Below or under the normal road grade elevation.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="_extended" />
-    </xs:restriction>
-  </xs:simpleType>
   <xs:simpleType name="InfrastructureDescriptorEnum">
     <xs:annotation>
       <xs:documentation>Descriptor identifying infrastructure to help to identify a specific location.</xs:documentation>
@@ -587,29 +420,14 @@
           <xs:documentation>At a motorway interchange.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="atRestArea">
-        <xs:annotation>
-          <xs:documentation>At rest area off the carriageway.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="atServiceArea">
         <xs:annotation>
           <xs:documentation>At service area.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="atTollPlaza">
-        <xs:annotation>
-          <xs:documentation>At toll plaza.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="atTunnelEntryOrExit">
         <xs:annotation>
           <xs:documentation>At entry or exit of tunnel.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="inGallery">
-        <xs:annotation>
-          <xs:documentation>In gallery.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="inTunnel">
@@ -622,39 +440,9 @@
           <xs:documentation>On bridge.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="onConnector">
-        <xs:annotation>
-          <xs:documentation>On connecting carriageway between two different roads or road sections.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="onElevatedSection">
-        <xs:annotation>
-          <xs:documentation>On elevated section of road.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="onFlyover">
-        <xs:annotation>
-          <xs:documentation>On flyover, i.e. on section of road over another road.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="onIceRoad">
-        <xs:annotation>
-          <xs:documentation>On ice road.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="onLevelCrossing">
-        <xs:annotation>
-          <xs:documentation>On level-crossing.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="onLinkRoad">
         <xs:annotation>
           <xs:documentation>On road section linking two different roads.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="onRoundabout">
-        <xs:annotation>
-          <xs:documentation>On roundabout.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="onTheRoadway">
@@ -662,19 +450,9 @@
           <xs:documentation>On the roadway.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="onUndergroundSection">
-        <xs:annotation>
-          <xs:documentation>On underground section of road.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="onUnderpass">
         <xs:annotation>
           <xs:documentation>On underpass, i.e. section of road which passes under another road.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="withinJunction">
-        <xs:annotation>
-          <xs:documentation>On the main carriageway within a junction between exit slip road and entry slip road.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="_extended" />
@@ -737,11 +515,6 @@
           <xs:documentation>In the bus lane.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="busStop">
-        <xs:annotation>
-          <xs:documentation>In the bus stop lane.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="carPoolLane">
         <xs:annotation>
           <xs:documentation>In the carpool lane.</xs:documentation>
@@ -757,19 +530,9 @@
           <xs:documentation>In the crawler lane - a lane that should be used by slower vehicles.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="cycleLane">
-        <xs:annotation>
-          <xs:documentation>Part of a carriageway designated for cycles. A cycle lane is distinguished from the rest of the carriageway by longitudinal road markings.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="emergencyLane">
         <xs:annotation>
           <xs:documentation>In the emergency lane.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="escapeLane">
-        <xs:annotation>
-          <xs:documentation>In the escape lane.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="expressLane">
@@ -785,16 +548,6 @@
       <xs:enumeration value="heavyVehicleLane">
         <xs:annotation>
           <xs:documentation>In the heavy vehicle lane.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="layBy">
-        <xs:annotation>
-          <xs:documentation>In a lay-by.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="leftHandTurningLane">
-        <xs:annotation>
-          <xs:documentation>In the left hand turning lane.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="leftLane">
@@ -817,24 +570,9 @@
           <xs:documentation>In the overtaking lane.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="rightHandTurningLane">
-        <xs:annotation>
-          <xs:documentation>In the right hand turning lane.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="rightLane">
         <xs:annotation>
           <xs:documentation>In the right lane.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="rushHourLane">
-        <xs:annotation>
-          <xs:documentation>In the lane dedicated for use during the rush (peak) hour.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="setDownArea">
-        <xs:annotation>
-          <xs:documentation>In the area/lane reserved for passenger pick-up or set-down.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="slowVehicleLane">
@@ -847,19 +585,9 @@
           <xs:documentation>In the through traffic lane.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="tidalFlowLane">
-        <xs:annotation>
-          <xs:documentation>In the lane dedicated for use as a tidal flow lane.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="turningLane">
         <xs:annotation>
           <xs:documentation>In the turning lane.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="verge">
-        <xs:annotation>
-          <xs:documentation>On the verge.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="_extended" />
@@ -885,11 +613,6 @@
           <xs:documentation>Indicates that the direction of traffic flow affected by the situation or related to the traffic data is in the same sense as the direction in which the linear element is defined.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="unknown">
-        <xs:annotation>
-          <xs:documentation>Indicates that the direction of traffic flow affected by the situation or related to the traffic data is unknown.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="_extended" />
     </xs:restriction>
   </xs:simpleType>
@@ -898,11 +621,6 @@
       <xs:documentation>A linear element along a single linear object, consistent with EN ISO 19148 definitions. </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="roadName" type="com:MultilingualString" minOccurs="0" maxOccurs="1">
-        <xs:annotation>
-          <xs:documentation>Name of the road</xs:documentation>
-        </xs:annotation>
-      </xs:element>
       <xs:element name="roadNumber" type="com:String" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>Identifier/number of the road</xs:documentation>
@@ -916,11 +634,6 @@
       <xs:element name="linearElementReferenceModelVersion" type="com:String" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>The version of the identified road network reference model.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="linearElementNature" type="loc:_LinearElementNatureEnum" minOccurs="0" maxOccurs="1">
-        <xs:annotation>
-          <xs:documentation>An indication of the nature of the linear element.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="_linearElementExtension" type="com:_ExtensionType" minOccurs="0" />
@@ -943,34 +656,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="LinearElementNatureEnum">
-    <xs:annotation>
-      <xs:documentation>List of indicative natures of linear elements.</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="road">
-        <xs:annotation>
-          <xs:documentation>The nature of the linear element is a road.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="roadSection">
-        <xs:annotation>
-          <xs:documentation>The nature of the linear element is a section of a road.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="slipRoad">
-        <xs:annotation>
-          <xs:documentation>The nature of the linear element is a slip road.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="other">
-        <xs:annotation>
-          <xs:documentation>Other than as defined in this enumeration.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="_extended" />
-    </xs:restriction>
-  </xs:simpleType>
   <xs:complexType name="LinearLocation">
     <xs:annotation>
       <xs:documentation>Location representing a linear section with optional directionality defined between two points. </xs:documentation>
@@ -990,24 +675,9 @@
       <xs:documentation>A linear section along a linear element where the linear element is either a part of or the whole of a linear object (i.e. a road), consistent with ISO 19148 definitions. </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="administrativeAreaOfLinearSection" type="com:MultilingualString" minOccurs="0" maxOccurs="1">
-        <xs:annotation>
-          <xs:documentation>Identification of the road administration area which contains the specified linear section.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="directionOnLinearSection" type="loc:_DirectionEnum" minOccurs="0" maxOccurs="1">
-        <xs:annotation>
-          <xs:documentation>The direction of traffic flow on the linear section in terms of general destination direction.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
       <xs:element name="directionRelativeOnLinearSection" type="loc:_LinearDirectionEnum" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>The direction of traffic flow on the linear section relative to the direction in which the linear element is defined.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="heightGradeOfLinearSection" type="loc:_HeightGradeEnum" minOccurs="0" maxOccurs="1">
-        <xs:annotation>
-          <xs:documentation>Identification of whether the linear section that is part of the linear element is at, above or below the normal elevation of a linear element of that type (e.g. road or road section) at that location, typically used to indicate "grade" separation.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="linearElement" type="loc:LinearElement" />
@@ -1126,11 +796,6 @@
       <xs:documentation>Enumeration of for of way</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <xs:enumeration value="undefined">
-        <xs:annotation>
-          <xs:documentation>Undefined</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="motorway">
         <xs:annotation>
           <xs:documentation>Motorway</xs:documentation>
@@ -1154,11 +819,6 @@
       <xs:enumeration value="slipRoad">
         <xs:annotation>
           <xs:documentation>Slip road</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="trafficSquare">
-        <xs:annotation>
-          <xs:documentation>Traffic square</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="other">
@@ -1419,10 +1079,5 @@
       <xs:element name="carriageway" type="loc:Carriageway" minOccurs="0" maxOccurs="unbounded" />
       <xs:element name="_supplementaryPositionalDescriptionExtension" type="com:_ExtensionType" minOccurs="0" />
     </xs:sequence>
-    <xs:attribute name="locationPrecision" type="com:MetresAsNonNegativeInteger" use="optional">
-      <xs:annotation>
-        <xs:documentation>Indicates that the location is given with a precision which is better than the stated value in metres.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
   </xs:complexType>
 </xs:schema>

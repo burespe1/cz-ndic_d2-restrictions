@@ -29,3 +29,9 @@ ItineraryByIndexedLocations:
   locationContainedInItinerary:
     card: '2..n'
     ndic: "Části trasy v pořadí jízdy, `@index` = 1, 2, …; každá část (`location`) je souvislý úsek jedné komunikace (`SingleRoadLinearLocation`)."
+
+Source:
+  sourceIdentification:
+    ndic: >-
+      Kód zdroje informace (předběžný číselník): `RSD`, `SSU`, `SSU2`, `TSK2`, `PCR`, `USDI`, `DIRC`,
+      `FCD` (data z plovoucích vozidel), `PPP-D4`, `OKAS`. Úplný číselník kódů a názvů zdrojů bude doplněn.

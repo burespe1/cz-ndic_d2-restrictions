@@ -28,7 +28,8 @@ The publication header contains:
 
 * `feedType` – identifier of the data source (distribution) in the register of the national access point
   <<nap>>. The source refers to the format in which it provides the data; the format of the message is
-  identified by the `profileName` and `profileVersion` attributes. The `feedDescription` element is not used.
+  identified by the `profileName` and `profileVersion` attributes. The same format may be used by several
+  sources with different `feedType`.
 * `publicationTime` – time the publication content was created. If the content has not changed since
   the previous publication, the original time is kept; a new time is set only when the content changes.
 * `publicationCreator` – publication provider: country code in lower case (`cz`) and provider
@@ -86,18 +87,16 @@ include::{samplesdir}/restriction.xml[tag=record-meta,indent=0]
 </sit:situationRecord>
 ----
 
-* `probabilityOfOccurrence` – `certain` for an event that has occurred, `probable` for a probable event,
-  `riskOf` for a planned event that has not occurred yet.
+* `probabilityOfOccurrence` – `certain` for an event that has occurred and also for a planned event (its
+  validity starts in the future, see <<platnost>>); `probable` for information not yet verified (a preliminary
+  report from an unconfirmed source), `riskOf` for an impending phenomenon that may or may not occur.
 * `safetyRelatedMessage` – `true` marks safety-related traffic information according to Commission
   Delegated Regulation (EU) No 886/2013 (SRTI).
 * `source` – who created the information and is responsible for its correctness (`sourceIdentification`,
   where applicable `sourceName`).
-* `generalPublicComment` – free-text description of the event by its originator, usually in Czech.
+* `generalPublicComment` – free-text description of the event by its originator, usually in Czech. It is given
+  in every record of the situation (usually the same text), so that each record can be understood on its own.
 * `urlLink` – link to a web page with details of the event (`urlLinkType` = `html`).
-
-NOTE: The situation summary record (`situationSummary`) offered by model 3.7 is not used yet: a summary
-must have its own location, validity and mandatory type elements, which would make messages longer.
-Comments remain in the individual records.
 
 .Comment and link to details (sample `restriction.xml`)
 [source,xml]
@@ -117,8 +116,7 @@ The format uses only records of the road operator action type (subclasses of `Op
 |Closures and traffic layout |`RoadOrCarriagewayOrLaneManagement`
 |Diversions |`ReroutingManagement`
 |Speed limits |`SpeedManagement`
-|Winter maintenance and driving |`WinterDrivingManagement`
-|Other traffic management |`GeneralNetworkManagement`, `GeneralInstructionOrMessageToRoadUsers`, `RoadsideAssistance`
+|Other traffic management |`GeneralNetworkManagement`, `GeneralInstructionOrMessageToRoadUsers`
 |===
 
 A situation typically contains the cause (e.g. roadworks) and its consequence (e.g. a closure or
@@ -131,9 +129,23 @@ include::{samplesdir}/restriction.xml[tag=works,indent=0]
 ----
 
 For road operator actions, `complianceOption` specifies whether the measure is mandatory (`mandatory`) or
-advisory (`advisory`). The impact on traffic can be expressed by the `impact` element (remaining capacity
-`capacityRemaining`, 0 for a full closure, or delay `delays`); for measures in both directions
-(`applicableForTrafficDirection` = `bothWays`) the impact on the opposite direction is given in the
+advisory (`advisory`).
+
+The impact on traffic is described in the `impact` element – by an estimate of the remaining road capacity
+(`capacityRemaining`, 0 for a full closure), by the number of operational (`numberOfOperationalLanes`) or
+restricted (`numberOfLanesRestricted`) lanes, or by the delay (`delays`).
+
+.Lane closure with one operational lane (sample `lane-closure.xml`)
+[source,xml]
+----
+include::{samplesdir}/lane-closure.xml[tag=impact-lanes,indent=0]
+include::{samplesdir}/lane-closure.xml[tag=lane-closure,indent=0]
+----
+
+If a measure concerns both directions, this is expressed by its location: `alertCAffectedDirection` = `both`,
+Global Network sections with direction `both`, or a route of the opposite direction (<<gn>>). The record is not
+duplicated for the other direction. A measure may also state both directions explicitly
+(`applicableForTrafficDirection` = `bothWays`) and the impact on the opposite direction in the
 `impactOnOppositeDirection` element.
 
 .Alternating one-lane traffic (sample `restriction.xml`)
@@ -152,9 +164,14 @@ Validity is given for each situation record separately in the `validity` structu
 If an event applies only in a certain part of the day (e.g. works only during the day, at night or
 outside rush hours), the interval is supplemented by the `validPeriod` element: the period name
 `periodName` and the daily time period `recurringTimePeriodOfDay` (`startTimeOfPeriod`,
-`endTimeOfPeriod`). Other recurring intervals (days of the week, dates) are not used; a recurring event is
-otherwise described by several consecutive records. The validity interval may lie in the past, the present
+`endTimeOfPeriod`). An event recurring in another way (e.g. only on some days) is described by several
+consecutive records. The validity interval may lie in the past, the present
 or the future.
+
+An event is published with its expected or planned end (`overallEndTime`), which the provider refines with new
+versions of the record as the situation develops. The event ends either when its validity expires (it ended as
+planned), or the provider ends it earlier by setting the end of validity to the time of the message. The format
+contains no status or periodically generated data.
 
 .Validity of a record (sample `restriction.xml`)
 [source,xml]
@@ -167,8 +184,9 @@ include::{samplesdir}/restriction.xml[tag=validity,indent=0]
 
 The location is described directly in the message by the `locationReference` element, usually of type
 `loc:SingleRoadLinearLocation` (linear location on a single road). A linear location is also used for
-point-like events (e.g. an accident): in ALERT-C the primary and secondary locations are identical, OpenLR
-and the Global Network sections describe a short road section at the place of the event. Point and area locations are not used.
+point-like events (e.g. an accident): in ALERT-C the event is projected onto the whole section between
+adjacent locations, OpenLR and the Global Network sections describe a short road section at the place of the
+event.
 
 The location type follows its shape. A linear location `loc:SingleRoadLinearLocation` is always a
 contiguous section of *one road* – a numbered road or a named street – and all methods describing it
@@ -197,6 +215,9 @@ the given place; all of them describe the same real-world section. At least one 
 |Location path |`gmlLineString` |line in WGS-84 for display on a map (<<prubeh>>)
 |===
 
+The affected carriageway, lanes or kind of place (e.g. a bridge) are specified by
+`supplementaryPositionalDescription` (<<upresneni>>).
+
 === ALERT-C location referencing
 
 The method describes a linear location by codes of the ALERT-C location table <<ISO14819-3>> in the
@@ -216,8 +237,9 @@ The method describes a linear location by codes of the ALERT-C location table <<
   `aligned` for one-directional events in this direction, `both` for events valid in both directions.
 * A location has at most one `alertCLinear` element – one ALERT-C path along one road. If an event
   runs over several roads, each part of the route (<<trasa>>) or member of the group has its own `alertCLinear`.
-* A point-like event (including the inside of a junction or tunnel) has identical primary and secondary
-  locations.
+* A point-like event between two locations (e.g. an accident on a section) is described by the whole section
+  between adjacent locations. Only an event at an ALERT-C location point, usually in the middle of a junction,
+  has identical primary and secondary locations.
 
 IMPORTANT: The meaning of `alertCDirectionCoded` is the opposite of the meaning of the RDS-TMC
 `direction` bit, which is used to find the secondary location.
@@ -329,6 +351,26 @@ it on a map without the GN network, the ALERT-C location table or an OpenLR deco
 include::{samplesdir}/restriction.xml[tag=loc-gml,indent=0]
 ----
 
+[[upresneni]]
+=== Supplementary positional description
+
+The `supplementaryPositionalDescription` element specifies which part of the road the event affects. It applies
+to the whole location and all methods describing it:
+
+* `carriageway` – the affected carriageway (`carriageway`, e.g. `mainCarriageway`, `entrySlipRoad` and
+  `exitSlipRoad`) and the affected lanes in it (`lane/laneUsage`, e.g. `rightLane`, `leftLane`, `middleLane`,
+  `hardShoulder`). Without a lane, the event affects the whole carriageway.
+* `infrastructureDescriptor` – the kind of place on the road, e.g. `onBridge` or `atServiceArea`;
+  `geographicDescriptor` – the position in the terrain, e.g. `onBorder` (at the state border).
+* `lengthAffected` – length of the affected section in metres if the source gives only the length (e.g. a restriction
+  2 km long).
+
+.Supplementary positional description – closed right lane of the main carriageway (sample `lane-closure.xml`)
+[source,xml]
+----
+include::{samplesdir}/lane-closure.xml[tag=loc-spd,indent=0]
+----
+
 [[trasa]]
 === Location on more than one road
 
@@ -345,7 +387,7 @@ adjoining third-class road), it is described as a route – `locationReference` 
 * A section of another road inside a junction, a short connecting link or two concurrent roads do not start
   a new part. If the location has an ALERT-C description, each part corresponds to one path of the ALERT-C
   location table.
-* A route has at least two parts; `routeDestination` is not used. A location on one road is always directly
+* A route has at least two parts. A location on one road is always directly
   `loc:SingleRoadLinearLocation`.
 
 .Route along two roads (sample `closure-route.xml`, shortened)
@@ -383,7 +425,7 @@ sections:
   of the `cz-ndic_d2-pls` format: `locationReference` of type `loc:LocationGroupByReference` with
   `predefinedLocationGroupReference` (`targetClass` = `loc:PredefinedLocationGroup`).
 
-Area locations are not used; an area is covered by a list of linear sections.
+An area is always described by a list of linear sections.
 
 .Closure of a junction with three arms – group of sections (sample `closure-junction.xml`)
 [source,xml]

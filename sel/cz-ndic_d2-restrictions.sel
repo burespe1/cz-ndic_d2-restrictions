@@ -224,7 +224,7 @@
         <upperBound>1</upperBound>
         <upperBoundUnlimited>false</upperBoundUnlimited>
         <definition>An indication of the nature of the linear element.</definition>
-        <generate>true</generate>
+        <generate>false</generate>
         <attribute>false</attribute>
         <newLowerBound>-1</newLowerBound>
         <newUpperBound>-1</newUpperBound>
@@ -266,7 +266,7 @@
         <upperBound>1</upperBound>
         <upperBoundUnlimited>false</upperBoundUnlimited>
         <definition>Name of the road</definition>
-        <generate>true</generate>
+        <generate>false</generate>
         <attribute>false</attribute>
         <newLowerBound>-1</newLowerBound>
         <newUpperBound>-1</newUpperBound>
@@ -348,36 +348,12 @@
       <isAbstract>true</isAbstract>
       <isExtension>false</isExtension>
       <relations>
-        <ID>EAID_716CCCB0_D398_4867_BC4F_9CA1FAA33387</ID>
-        <role>informationManagerOverride</role>
-        <target>EAID_89F74DD6_CCE5_45aa_93DA_A5DFCEE9D88E</target>
-        <order>8</order>
-        <lowerBound>0</lowerBound>
-        <upperBound>1</upperBound>
-        <upperBoundUnlimited>false</upperBoundUnlimited>
-        <definition>Organisation that manages the information content (is responsible for updates of this information) typically the organisation that first made the DATEX II publication of this content. This value overrides any value specified at a more general level.</definition>
-        <generate>false</generate>
-        <newLowerBound>-1</newLowerBound>
-        <newUpperBound>-1</newUpperBound>
-      </relations>
-      <relations>
         <ID>EAID_B4AD02AC_4907_4dff_87CC_CE7B86574AD2</ID>
         <target>EAID_8069FF02_0B57_4564_90D1_E96616145F8E</target>
         <order>0</order>
         <lowerBound>0</lowerBound>
         <upperBound>1</upperBound>
         <upperBoundUnlimited>false</upperBoundUnlimited>
-        <generate>true</generate>
-        <newLowerBound>-1</newLowerBound>
-        <newUpperBound>-1</newUpperBound>
-      </relations>
-      <relations>
-        <ID>EAID_5475E34E_0640_42f2_9270_42D72AB67BA1</ID>
-        <target>EAID_AC5B3818_EB8B_48d5_AEE7_E3C6362C9096</target>
-        <order>6</order>
-        <lowerBound>0</lowerBound>
-        <upperBound>-1</upperBound>
-        <upperBoundUnlimited>true</upperBoundUnlimited>
         <generate>true</generate>
         <newLowerBound>-1</newLowerBound>
         <newUpperBound>-1</newUpperBound>
@@ -394,12 +370,14 @@
         <newUpperBound>-1</newUpperBound>
       </relations>
       <relations>
-        <ID>EAID_AEDB657C_7D9D_4370_AAE3_EE64EAB0DA27</ID>
-        <target>EAID_A2A4DD9E_C635_48e4_8143_F444A0A0C335</target>
-        <order>7</order>
-        <lowerBound>1</lowerBound>
+        <ID>EAID_44373F9D_3071_48d7_806E_8DF19D0A0696</ID>
+        <role>impact</role>
+        <target>EAID_480D8D37_3A5F_40e4_AE70_E887E23D78C7</target>
+        <order>2</order>
+        <lowerBound>0</lowerBound>
         <upperBound>1</upperBound>
         <upperBoundUnlimited>false</upperBoundUnlimited>
+        <definition>Impact of the situation element</definition>
         <generate>true</generate>
         <newLowerBound>-1</newLowerBound>
         <newUpperBound>-1</newUpperBound>
@@ -411,6 +389,19 @@
         <lowerBound>0</lowerBound>
         <upperBound>1</upperBound>
         <upperBoundUnlimited>false</upperBoundUnlimited>
+        <generate>true</generate>
+        <newLowerBound>-1</newLowerBound>
+        <newUpperBound>-1</newUpperBound>
+      </relations>
+      <relations>
+        <ID>EAID_9C8D129D_594F_4227_A6B4_3ED4DA4B4139</ID>
+        <role>generalPublicComment</role>
+        <target>EAID_D1567E46_DCE8_4795_B382_79ADDBF24D6A</target>
+        <order>4</order>
+        <lowerBound>0</lowerBound>
+        <upperBound>-1</upperBound>
+        <upperBoundUnlimited>true</upperBoundUnlimited>
+        <definition>A comment which may be freely distributed to the general public</definition>
         <generate>true</generate>
         <newLowerBound>-1</newLowerBound>
         <newUpperBound>-1</newUpperBound>
@@ -429,15 +420,37 @@
         <newUpperBound>-1</newUpperBound>
       </relations>
       <relations>
-        <ID>EAID_9C8D129D_594F_4227_A6B4_3ED4DA4B4139</ID>
-        <role>generalPublicComment</role>
-        <target>EAID_D1567E46_DCE8_4795_B382_79ADDBF24D6A</target>
-        <order>4</order>
+        <ID>EAID_5475E34E_0640_42f2_9270_42D72AB67BA1</ID>
+        <target>EAID_AC5B3818_EB8B_48d5_AEE7_E3C6362C9096</target>
+        <order>6</order>
         <lowerBound>0</lowerBound>
         <upperBound>-1</upperBound>
         <upperBoundUnlimited>true</upperBoundUnlimited>
-        <definition>A comment which may be freely distributed to the general public</definition>
         <generate>true</generate>
+        <newLowerBound>-1</newLowerBound>
+        <newUpperBound>-1</newUpperBound>
+      </relations>
+      <relations>
+        <ID>EAID_AEDB657C_7D9D_4370_AAE3_EE64EAB0DA27</ID>
+        <target>EAID_A2A4DD9E_C635_48e4_8143_F444A0A0C335</target>
+        <order>7</order>
+        <lowerBound>1</lowerBound>
+        <upperBound>1</upperBound>
+        <upperBoundUnlimited>false</upperBoundUnlimited>
+        <generate>true</generate>
+        <newLowerBound>-1</newLowerBound>
+        <newUpperBound>-1</newUpperBound>
+      </relations>
+      <relations>
+        <ID>EAID_716CCCB0_D398_4867_BC4F_9CA1FAA33387</ID>
+        <role>informationManagerOverride</role>
+        <target>EAID_89F74DD6_CCE5_45aa_93DA_A5DFCEE9D88E</target>
+        <order>8</order>
+        <lowerBound>0</lowerBound>
+        <upperBound>1</upperBound>
+        <upperBoundUnlimited>false</upperBoundUnlimited>
+        <definition>Organisation that manages the information content (is responsible for updates of this information) typically the organisation that first made the DATEX II publication of this content. This value overrides any value specified at a more general level.</definition>
+        <generate>false</generate>
         <newLowerBound>-1</newLowerBound>
         <newUpperBound>-1</newUpperBound>
       </relations>
@@ -454,75 +467,6 @@
         <newLowerBound>-1</newLowerBound>
         <newUpperBound>-1</newUpperBound>
       </relations>
-      <relations>
-        <ID>EAID_44373F9D_3071_48d7_806E_8DF19D0A0696</ID>
-        <role>impact</role>
-        <target>EAID_480D8D37_3A5F_40e4_AE70_E887E23D78C7</target>
-        <order>2</order>
-        <lowerBound>0</lowerBound>
-        <upperBound>1</upperBound>
-        <upperBoundUnlimited>false</upperBoundUnlimited>
-        <definition>Impact of the situation element</definition>
-        <generate>true</generate>
-        <newLowerBound>-1</newLowerBound>
-        <newUpperBound>-1</newUpperBound>
-      </relations>
-      <attributes>
-        <ID>EAID_837C752A_AABF_4616_A9FC_6CBDD6990F25</ID>
-        <name>confidentialityOverride</name>
-        <type>EAID_74A8CB5B_7457_4096_BB47_5F88068F0055</type>
-        <order>5</order>
-        <lowerBound>0</lowerBound>
-        <upperBound>1</upperBound>
-        <upperBoundUnlimited>false</upperBoundUnlimited>
-        <definition>The extent to which the related information may be circulated, according to the recipient type. Recipients must comply with this confidentiality statement. This overrides any confidentiality defined for the situation as a whole in the header information.</definition>
-        <generate>false</generate>
-        <attribute>false</attribute>
-        <newLowerBound>-1</newLowerBound>
-        <newUpperBound>-1</newUpperBound>
-      </attributes>
-      <attributes>
-        <ID>EAID_83579DC1_83B2_4e22_99C5_1505E6705778</ID>
-        <name>probabilityOfOccurrence</name>
-        <type>EAID_8EB4A178_6D8A_4e7a_8691_5B441EF4D32D</type>
-        <order>6</order>
-        <lowerBound>1</lowerBound>
-        <upperBound>1</upperBound>
-        <upperBoundUnlimited>false</upperBoundUnlimited>
-        <definition>An assessment of the degree of likelihood that the reported event will occur.</definition>
-        <generate>true</generate>
-        <attribute>false</attribute>
-        <newLowerBound>-1</newLowerBound>
-        <newUpperBound>-1</newUpperBound>
-      </attributes>
-      <attributes>
-        <ID>EAID_2302B93B_F1A6_4d79_A03D_000012C5FC9B</ID>
-        <name>safetyRelatedMessage</name>
-        <type>EAID_009D010E_BE3D_49c1_86D8_34478683971E</type>
-        <order>8</order>
-        <lowerBound>0</lowerBound>
-        <upperBound>1</upperBound>
-        <upperBoundUnlimited>false</upperBoundUnlimited>
-        <definition>Indicates whether this SituationRecord specifies a safety-related traffic situation. At least all traffic situations governed by Commission Delegated Regulation (EU) No 886/2013 shall be indicated.</definition>
-        <generate>true</generate>
-        <attribute>false</attribute>
-        <newLowerBound>-1</newLowerBound>
-        <newUpperBound>-1</newUpperBound>
-      </attributes>
-      <attributes>
-        <ID>EAID_09246DF5_1543_4289_B40B_500D3C56E82C</ID>
-        <name>severity</name>
-        <type>EAID_70F23F05_624B_4683_947F_BBBC8A2F8210</type>
-        <order>7</order>
-        <lowerBound>0</lowerBound>
-        <upperBound>1</upperBound>
-        <upperBoundUnlimited>false</upperBoundUnlimited>
-        <definition>The assessment of the impact (in terms of severity) that this element of the situation is having, or will have, on the traffic flow as perceived by the supplier.</definition>
-        <generate>false</generate>
-        <attribute>false</attribute>
-        <newLowerBound>-1</newLowerBound>
-        <newUpperBound>-1</newUpperBound>
-      </attributes>
       <attributes>
         <ID>EAID_31AFC7E2_1860_4174_8AFC_8864690C0CB9</ID>
         <name>situationRecordCreationReference</name>
@@ -552,20 +496,6 @@
         <newUpperBound>-1</newUpperBound>
       </attributes>
       <attributes>
-        <ID>EAID_46545F54_CF59_44ee_A60D_7040CB16710F</ID>
-        <name>situationRecordFirstSupplierVersionTime</name>
-        <type>EAID_B3DA3E42_F3EC_426b_BE80_37FF4BCB6CBA</type>
-        <order>4</order>
-        <lowerBound>0</lowerBound>
-        <upperBound>1</upperBound>
-        <upperBoundUnlimited>false</upperBoundUnlimited>
-        <definition>The date/time that the current version of the Situation Record was written into the database of the original supplier in the supply chain.</definition>
-        <generate>false</generate>
-        <attribute>false</attribute>
-        <newLowerBound>-1</newLowerBound>
-        <newUpperBound>-1</newUpperBound>
-      </attributes>
-      <attributes>
         <ID>EAID_C8B3895D_7488_4f39_BAE9_5703D3A41027</ID>
         <name>situationRecordObservationTime</name>
         <type>EAID_B3DA3E42_F3EC_426b_BE80_37FF4BCB6CBA</type>
@@ -588,6 +518,76 @@
         <upperBound>1</upperBound>
         <upperBoundUnlimited>false</upperBoundUnlimited>
         <definition>The date/time that this current version of the SituationRecord within the situation was written into the database of the supplier which is involved in the data exchange. Identity and version of record are defined by the class stereotype implementation.</definition>
+        <generate>true</generate>
+        <attribute>false</attribute>
+        <newLowerBound>-1</newLowerBound>
+        <newUpperBound>-1</newUpperBound>
+      </attributes>
+      <attributes>
+        <ID>EAID_46545F54_CF59_44ee_A60D_7040CB16710F</ID>
+        <name>situationRecordFirstSupplierVersionTime</name>
+        <type>EAID_B3DA3E42_F3EC_426b_BE80_37FF4BCB6CBA</type>
+        <order>4</order>
+        <lowerBound>0</lowerBound>
+        <upperBound>1</upperBound>
+        <upperBoundUnlimited>false</upperBoundUnlimited>
+        <definition>The date/time that the current version of the Situation Record was written into the database of the original supplier in the supply chain.</definition>
+        <generate>false</generate>
+        <attribute>false</attribute>
+        <newLowerBound>-1</newLowerBound>
+        <newUpperBound>-1</newUpperBound>
+      </attributes>
+      <attributes>
+        <ID>EAID_837C752A_AABF_4616_A9FC_6CBDD6990F25</ID>
+        <name>confidentialityOverride</name>
+        <type>EAID_74A8CB5B_7457_4096_BB47_5F88068F0055</type>
+        <order>5</order>
+        <lowerBound>0</lowerBound>
+        <upperBound>1</upperBound>
+        <upperBoundUnlimited>false</upperBoundUnlimited>
+        <definition>The extent to which the related information may be circulated, according to the recipient type. Recipients must comply with this confidentiality statement. This overrides any confidentiality defined for the situation as a whole in the header information.</definition>
+        <generate>false</generate>
+        <attribute>false</attribute>
+        <newLowerBound>-1</newLowerBound>
+        <newUpperBound>-1</newUpperBound>
+      </attributes>
+      <attributes>
+        <ID>EAID_83579DC1_83B2_4e22_99C5_1505E6705778</ID>
+        <name>probabilityOfOccurrence</name>
+        <type>EAID_8EB4A178_6D8A_4e7a_8691_5B441EF4D32D</type>
+        <order>6</order>
+        <lowerBound>1</lowerBound>
+        <upperBound>1</upperBound>
+        <upperBoundUnlimited>false</upperBoundUnlimited>
+        <definition>An assessment of the degree of likelihood that the reported event will occur.</definition>
+        <generate>true</generate>
+        <attribute>false</attribute>
+        <newLowerBound>-1</newLowerBound>
+        <newUpperBound>-1</newUpperBound>
+      </attributes>
+      <attributes>
+        <ID>EAID_09246DF5_1543_4289_B40B_500D3C56E82C</ID>
+        <name>severity</name>
+        <type>EAID_70F23F05_624B_4683_947F_BBBC8A2F8210</type>
+        <order>7</order>
+        <lowerBound>0</lowerBound>
+        <upperBound>1</upperBound>
+        <upperBoundUnlimited>false</upperBoundUnlimited>
+        <definition>The assessment of the impact (in terms of severity) that this element of the situation is having, or will have, on the traffic flow as perceived by the supplier.</definition>
+        <generate>false</generate>
+        <attribute>false</attribute>
+        <newLowerBound>-1</newLowerBound>
+        <newUpperBound>-1</newUpperBound>
+      </attributes>
+      <attributes>
+        <ID>EAID_2302B93B_F1A6_4d79_A03D_000012C5FC9B</ID>
+        <name>safetyRelatedMessage</name>
+        <type>EAID_009D010E_BE3D_49c1_86D8_34478683971E</type>
+        <order>8</order>
+        <lowerBound>0</lowerBound>
+        <upperBound>1</upperBound>
+        <upperBoundUnlimited>false</upperBoundUnlimited>
+        <definition>Indicates whether this SituationRecord specifies a safety-related traffic situation. At least all traffic situations governed by Commission Delegated Regulation (EU) No 886/2013 shall be indicated.</definition>
         <generate>true</generate>
         <attribute>false</attribute>
         <newLowerBound>-1</newLowerBound>
@@ -949,19 +949,6 @@
         <newUpperBound>-1</newUpperBound>
       </relations>
       <relations>
-        <ID>EAID_27376860_E06F_4862_A191_B8033456A1EC</ID>
-        <role>informationManager</role>
-        <target>EAID_89F74DD6_CCE5_45aa_93DA_A5DFCEE9D88E</target>
-        <order>3</order>
-        <lowerBound>0</lowerBound>
-        <upperBound>1</upperBound>
-        <upperBoundUnlimited>false</upperBoundUnlimited>
-        <definition>Organisation that manages the information content (is responsible for updates of this information) typically the organisation that first made the DATEX II publication of this content.</definition>
-        <generate>false</generate>
-        <newLowerBound>-1</newLowerBound>
-        <newUpperBound>-1</newUpperBound>
-      </relations>
-      <relations>
         <ID>EAID_ABF5ABAE_E0EF_47e1_A37E_D8223C0A96F6</ID>
         <target>EAID_14358B9A_22CA_463c_ADA7_092CBB3D3E14</target>
         <order>1</order>
@@ -970,19 +957,6 @@
         <upperBoundUnlimited>true</upperBoundUnlimited>
         <definition>Details of the Situation</definition>
         <generate>true</generate>
-        <newLowerBound>-1</newLowerBound>
-        <newUpperBound>-1</newUpperBound>
-      </relations>
-      <relations>
-        <ID>EAID_C2CED6B5_9239_4514_8EEF_19825B2ECEF1</ID>
-        <role>situationSummary</role>
-        <target>EAID_14358B9A_22CA_463c_ADA7_092CBB3D3E14</target>
-        <order>4</order>
-        <lowerBound>0</lowerBound>
-        <upperBound>1</upperBound>
-        <upperBoundUnlimited>false</upperBoundUnlimited>
-        <definition>A SituationRecord that provides a summary of the information described by the corresponding Situation, i.e. a superset of at least the location and validity information of all (other) SituationRecords in this Situation. </definition>
-        <generate>false</generate>
         <newLowerBound>-1</newLowerBound>
         <newUpperBound>-1</newUpperBound>
       </relations>
@@ -999,6 +973,32 @@
         <newLowerBound>-1</newLowerBound>
         <newUpperBound>-1</newUpperBound>
       </relations>
+      <relations>
+        <ID>EAID_27376860_E06F_4862_A191_B8033456A1EC</ID>
+        <role>informationManager</role>
+        <target>EAID_89F74DD6_CCE5_45aa_93DA_A5DFCEE9D88E</target>
+        <order>3</order>
+        <lowerBound>0</lowerBound>
+        <upperBound>1</upperBound>
+        <upperBoundUnlimited>false</upperBoundUnlimited>
+        <definition>Organisation that manages the information content (is responsible for updates of this information) typically the organisation that first made the DATEX II publication of this content.</definition>
+        <generate>false</generate>
+        <newLowerBound>-1</newLowerBound>
+        <newUpperBound>-1</newUpperBound>
+      </relations>
+      <relations>
+        <ID>EAID_C2CED6B5_9239_4514_8EEF_19825B2ECEF1</ID>
+        <role>situationSummary</role>
+        <target>EAID_14358B9A_22CA_463c_ADA7_092CBB3D3E14</target>
+        <order>4</order>
+        <lowerBound>0</lowerBound>
+        <upperBound>1</upperBound>
+        <upperBoundUnlimited>false</upperBoundUnlimited>
+        <definition>A SituationRecord that provides a summary of the information described by the corresponding Situation, i.e. a superset of at least the location and validity information of all (other) SituationRecords in this Situation. </definition>
+        <generate>false</generate>
+        <newLowerBound>-1</newLowerBound>
+        <newUpperBound>-1</newUpperBound>
+      </relations>
       <attributes>
         <ID>EAID_70D32D37_C1B0_4efd_9DAF_759D1B69D43C</ID>
         <name>overallSeverity</name>
@@ -1008,7 +1008,7 @@
         <upperBound>1</upperBound>
         <upperBoundUnlimited>false</upperBoundUnlimited>
         <definition>The overall assessment of the impact (in terms of severity) that the situation as a whole is having, or will have, on the traffic flow as perceived by the supplier.</definition>
-        <generate>true</generate>
+        <generate>false</generate>
         <attribute>false</attribute>
         <newLowerBound>-1</newLowerBound>
         <newUpperBound>-1</newUpperBound>
@@ -1090,7 +1090,7 @@
         <upperBound>1</upperBound>
         <upperBoundUnlimited>false</upperBoundUnlimited>
         <definition>Identification of the road administration area which contains the specified linear section.</definition>
-        <generate>true</generate>
+        <generate>false</generate>
         <attribute>false</attribute>
         <newLowerBound>-1</newLowerBound>
         <newUpperBound>-1</newUpperBound>
@@ -1104,7 +1104,7 @@
         <upperBound>1</upperBound>
         <upperBoundUnlimited>false</upperBoundUnlimited>
         <definition>The direction of traffic flow on the linear section in terms of general destination direction.</definition>
-        <generate>true</generate>
+        <generate>false</generate>
         <attribute>false</attribute>
         <newLowerBound>-1</newLowerBound>
         <newUpperBound>-1</newUpperBound>
@@ -1132,7 +1132,7 @@
         <upperBound>1</upperBound>
         <upperBoundUnlimited>false</upperBoundUnlimited>
         <definition>Identification of whether the linear section that is part of the linear element is at, above or below the normal elevation of a linear element of that type (e.g. road or road section) at that location, typically used to indicate "grade" separation.</definition>
-        <generate>true</generate>
+        <generate>false</generate>
         <attribute>false</attribute>
         <newLowerBound>-1</newLowerBound>
         <newUpperBound>-1</newUpperBound>
@@ -1310,7 +1310,7 @@
         <upperBound>1</upperBound>
         <upperBoundUnlimited>false</upperBoundUnlimited>
         <definition>The minimum number of persons required in a vehicle in order for it to be allowed to transit the specified road section.</definition>
-        <generate>true</generate>
+        <generate>false</generate>
         <attribute>false</attribute>
         <newLowerBound>-1</newLowerBound>
         <newUpperBound>-1</newUpperBound>
@@ -1423,7 +1423,7 @@
         <lowerBound>0</lowerBound>
         <upperBound>2</upperBound>
         <upperBoundUnlimited>false</upperBoundUnlimited>
-        <generate>true</generate>
+        <generate>false</generate>
         <newLowerBound>-1</newLowerBound>
         <newUpperBound>-1</newUpperBound>
       </relations>
@@ -2006,7 +2006,7 @@
         <upperBound>1</upperBound>
         <upperBoundUnlimited>false</upperBoundUnlimited>
         <definition>Name of ALERT-C location.</definition>
-        <generate>true</generate>
+        <generate>false</generate>
         <attribute>false</attribute>
         <newLowerBound>-1</newLowerBound>
         <newUpperBound>-1</newUpperBound>
@@ -2313,7 +2313,7 @@
         <upperBound>1</upperBound>
         <upperBoundUnlimited>false</upperBoundUnlimited>
         <definition>An indication as to whether the source deems the associated information to be reliable/correct. "True" indicates it is deemed reliable.</definition>
-        <generate>true</generate>
+        <generate>false</generate>
         <attribute>false</attribute>
         <newLowerBound>-1</newLowerBound>
         <newUpperBound>-1</newUpperBound>
@@ -2327,7 +2327,7 @@
         <upperBound>1</upperBound>
         <upperBoundUnlimited>false</upperBoundUnlimited>
         <definition>EN ISO 3166-1 two-character country code of the source of the information.</definition>
-        <generate>true</generate>
+        <generate>false</generate>
         <attribute>false</attribute>
         <newLowerBound>-1</newLowerBound>
         <newUpperBound>-1</newUpperBound>
@@ -2369,7 +2369,7 @@
         <upperBound>1</upperBound>
         <upperBoundUnlimited>false</upperBoundUnlimited>
         <definition>Information about the technology used for measuring the data or the method used for obtaining qualitative descriptions relating to this version of the information.</definition>
-        <generate>true</generate>
+        <generate>false</generate>
         <attribute>false</attribute>
         <newLowerBound>-1</newLowerBound>
         <newUpperBound>-1</newUpperBound>
@@ -2462,65 +2462,6 @@
         <newUpperBound>-1</newUpperBound>
       </relations>
       <definition>The specification of a location either on a network (as a point or a linear location) or as an area. This may be provided in one or more referencing systems.</definition>
-    </D2Component>
-    <D2Component>
-      <name>GrossWeightCharacteristic</name>
-      <ID>EAID_8CF7AB8D_00E4_4427_9389_5C04E1797044</ID>
-      <package>
-        <name>VehicleCharacteristics</name>
-        <ID>EAPK_7A08EDA9_E12D_431c_93AD_0D1EEE14C0FE</ID>
-        <generate>true</generate>
-        <definition>A collection of parameters which characterise a vehicle.</definition>
-        <NamespaceName>Common</NamespaceName>
-      </package>
-      <generate>true</generate>
-      <isGenerated>true</isGenerated>
-      <NamespaceName>Common</NamespaceName>
-      <isAbstract>false</isAbstract>
-      <isExtension>false</isExtension>
-      <attributes>
-        <ID>EAID_15792B03_478D_4dc8_A1B9_96FF7456A107</ID>
-        <name>comparisonOperator</name>
-        <type>EAID_4013D83C_DA11_4d0c_B4BD_072E4CCC74D2</type>
-        <order>0</order>
-        <lowerBound>1</lowerBound>
-        <upperBound>1</upperBound>
-        <upperBoundUnlimited>false</upperBoundUnlimited>
-        <definition>The operator to be used in the vehicle characteristic comparison operation.</definition>
-        <generate>true</generate>
-        <attribute>false</attribute>
-        <newLowerBound>-1</newLowerBound>
-        <newUpperBound>-1</newUpperBound>
-      </attributes>
-      <attributes>
-        <ID>EAID_E4DE08B1_90B6_4421_ABEB_0A11DBDE4455</ID>
-        <name>grossVehicleWeight</name>
-        <type>EAID_18215DD2_0F5E_4c31_976A_BA16FF6F8CBE</type>
-        <order>1</order>
-        <lowerBound>1</lowerBound>
-        <upperBound>1</upperBound>
-        <upperBoundUnlimited>false</upperBoundUnlimited>
-        <definition>The gross weight of the vehicle and its load, including any trailers.</definition>
-        <generate>true</generate>
-        <attribute>false</attribute>
-        <newLowerBound>-1</newLowerBound>
-        <newUpperBound>-1</newUpperBound>
-      </attributes>
-      <attributes>
-        <ID>EAID_DE7E6B45_FA65_429a_9844_BCB49E1F0B94</ID>
-        <name>typeOfWeight</name>
-        <type>EAID_24EC9188_E53D_47b2_AB55_8BD8242C60CE</type>
-        <order>2</order>
-        <lowerBound>1</lowerBound>
-        <upperBound>1</upperBound>
-        <upperBoundUnlimited>false</upperBoundUnlimited>
-        <definition>The meaning of the weight value</definition>
-        <generate>false</generate>
-        <attribute>false</attribute>
-        <newLowerBound>-1</newLowerBound>
-        <newUpperBound>-1</newUpperBound>
-      </attributes>
-      <definition>Gross weight characteristic of a vehicle.</definition>
     </D2Component>
     <D2Component>
       <name>Subjects</name>
@@ -2857,7 +2798,7 @@
         <upperBound>1</upperBound>
         <upperBoundUnlimited>false</upperBoundUnlimited>
         <definition>Description of the relevant information available on the Internet from the URL link.</definition>
-        <generate>true</generate>
+        <generate>false</generate>
         <attribute>false</attribute>
         <newLowerBound>-1</newLowerBound>
         <newUpperBound>-1</newUpperBound>
@@ -2995,7 +2936,7 @@
         <upperBound>1</upperBound>
         <upperBoundUnlimited>false</upperBoundUnlimited>
         <definition>Indicates in general terms the expected duration of the roadworks.</definition>
-        <generate>true</generate>
+        <generate>false</generate>
         <attribute>false</attribute>
         <newLowerBound>-1</newLowerBound>
         <newUpperBound>-1</newUpperBound>
@@ -3086,70 +3027,6 @@
         <newUpperBound>-1</newUpperBound>
       </relations>
       <definition>A publication containing zero or more traffic/travel situations.</definition>
-    </D2Component>
-    <D2Component>
-      <name>RoadsideAssistance</name>
-      <ID>EAID_BD2B5C17_C8BC_4264_84A1_77C995DA70DD</ID>
-      <package>
-        <name>OperatorAction</name>
-        <ID>EAPK_6B6F10C4_97E7_420c_BCF5_F77D3070D9EA</ID>
-        <generate>true</generate>
-        <definition>Operator actions.</definition>
-        <NamespaceName>Situation</NamespaceName>
-      </package>
-      <generate>true</generate>
-      <isGenerated>true</isGenerated>
-      <SuperD2Component>EAID_F9419767_2CDD_46b3_820B_E5F2A880CADF</SuperD2Component>
-      <NamespaceName>Situation</NamespaceName>
-      <isAbstract>false</isAbstract>
-      <isExtension>false</isExtension>
-      <attributes>
-        <ID>EAID_40CF4BAE_7DC0_4a3e_B7E7_A0E6880B648D</ID>
-        <name>roadsideAssistanceType</name>
-        <type>EAID_460B7757_E9D8_4957_8870_9A3FCFCC8E99</type>
-        <order>0</order>
-        <lowerBound>1</lowerBound>
-        <upperBound>1</upperBound>
-        <upperBoundUnlimited>false</upperBoundUnlimited>
-        <definition>Indicates the nature of the road side assistance that will be, is or has been provided.</definition>
-        <generate>true</generate>
-        <attribute>false</attribute>
-        <newLowerBound>-1</newLowerBound>
-        <newUpperBound>-1</newUpperBound>
-      </attributes>
-      <definition>Details of road side assistance required or being given.</definition>
-    </D2Component>
-    <D2Component>
-      <name>WinterDrivingManagement</name>
-      <ID>EAID_C0FD25A5_8D33_4021_BC71_33E80AE8A002</ID>
-      <package>
-        <name>NetworkManagement</name>
-        <ID>EAPK_984D4994_0822_4f6f_A622_424056B40F28</ID>
-        <generate>true</generate>
-        <definition>Restrictions on road usage, whether by legal order or by operational decisions. It includes road and lane closures, weight and dimensional limits, banned turns, contraflows and alternate traffic operations.</definition>
-        <NamespaceName>Situation</NamespaceName>
-      </package>
-      <generate>true</generate>
-      <isGenerated>true</isGenerated>
-      <SuperD2Component>EAID_3A29F165_7446_41d0_8B69_EB2969C62870</SuperD2Component>
-      <NamespaceName>Situation</NamespaceName>
-      <isAbstract>false</isAbstract>
-      <isExtension>false</isExtension>
-      <attributes>
-        <ID>EAID_7423B48D_DA1D_4412_803C_DB0FAF39D38A</ID>
-        <name>winterEquipmentManagementType</name>
-        <type>EAID_89946255_EE22_4b00_8785_4C861B96E61C</type>
-        <order>0</order>
-        <lowerBound>1</lowerBound>
-        <upperBound>1</upperBound>
-        <upperBoundUnlimited>false</upperBoundUnlimited>
-        <definition>Type of winter equipment management action instigated by operator.</definition>
-        <generate>true</generate>
-        <attribute>false</attribute>
-        <newLowerBound>-1</newLowerBound>
-        <newUpperBound>-1</newUpperBound>
-      </attributes>
-      <definition>Winter driving management action that is instigated by the network/road operator.</definition>
     </D2Component>
     <D2Component>
       <name>GeneralNetworkManagement</name>
@@ -3294,7 +3171,7 @@
         <upperBound>1</upperBound>
         <upperBoundUnlimited>false</upperBoundUnlimited>
         <definition>The date/time at which the comment was made.</definition>
-        <generate>true</generate>
+        <generate>false</generate>
         <attribute>false</attribute>
         <newLowerBound>-1</newLowerBound>
         <newUpperBound>-1</newUpperBound>
@@ -3308,7 +3185,7 @@
         <upperBound>1</upperBound>
         <upperBoundUnlimited>false</upperBoundUnlimited>
         <definition>A classification of the the type of comment.</definition>
-        <generate>true</generate>
+        <generate>false</generate>
         <attribute>false</attribute>
         <newLowerBound>-1</newLowerBound>
         <newUpperBound>-1</newUpperBound>
@@ -3387,8 +3264,8 @@
         <definition>Coarse classification of the delay.</definition>
         <generate>true</generate>
         <attribute>false</attribute>
-        <newLowerBound>-1</newLowerBound>
-        <newUpperBound>-1</newUpperBound>
+        <newLowerBound>0</newLowerBound>
+        <newUpperBound>1</newUpperBound>
       </attributes>
       <attributes>
         <ID>EAID_60719DFA_F5B5_4e0b_A098_A5B1FD3BF588</ID>
@@ -3678,7 +3555,7 @@
         <upperBound>1</upperBound>
         <upperBoundUnlimited>false</upperBoundUnlimited>
         <definition>Indicates that the location is given with a precision which is better than the stated value in metres.</definition>
-        <generate>true</generate>
+        <generate>false</generate>
         <attribute>true</attribute>
         <newLowerBound>-1</newLowerBound>
         <newUpperBound>-1</newUpperBound>
@@ -3993,7 +3870,7 @@
         <upperBound>1</upperBound>
         <upperBoundUnlimited>false</upperBoundUnlimited>
         <definition>ALERT-C name of a direction e.g. Brussels -&gt; Lille.</definition>
-        <generate>true</generate>
+        <generate>false</generate>
         <attribute>false</attribute>
         <newLowerBound>-1</newLowerBound>
         <newUpperBound>-1</newUpperBound>
@@ -4043,5 +3920,3316 @@
       <definition>Base class used to hold data about a reference point.</definition>
     </D2Component>
   </d2Components>
-  <d2Types />
+  <d2Types>
+    <D2Enumeration>
+      <name>RoadMaintenanceTypeEnum</name>
+      <definition>Types of road maintenance.</definition>
+      <id>EAID_0E6AA3F1_2E2A_46ee_81DB_2A712623EE05</id>
+      <isGenerated>true</isGenerated>
+      <package>
+        <name>Enumerations</name>
+        <ID>EAPK_9E2307F1_3590_4d2f_9EAA_0904DFD104E6</ID>
+        <generate>false</generate>
+        <definition>A collection of enumerations that are used only in the Situation package of the DATEX II model.</definition>
+        <NamespaceName>Situation</NamespaceName>
+      </package>
+      <NamespaceName>Situation</NamespaceName>
+      <d2Litteral>
+        <D2Litteral>
+          <name>accidentRepairWork</name>
+          <definition>repairing works after an accident, not clearance work but rebuilding of infrastructure</definition>
+          <order>0</order>
+          <generate>false</generate>
+          <ID>EAID_1D67A033_62AC_4e96_9BA7_B12942908135</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>clearanceWork</name>
+          <definition>Clearance work of an unspecified nature.</definition>
+          <order>1</order>
+          <generate>true</generate>
+          <ID>EAID_9A7901AE_5EB8_46e4_8A5D_A60DF89D08A4</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>controlledAvalanche</name>
+          <definition>Controlled avalanche work.</definition>
+          <order>2</order>
+          <generate>false</generate>
+          <ID>EAID_C949C78B_2C5C_446c_85D2_0085D67C01D7</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>installationWork</name>
+          <definition>Installation of new equipments or systems on or along-side the roadway.</definition>
+          <order>3</order>
+          <generate>false</generate>
+          <ID>EAID_11EA494D_1D16_4452_BE9E_DECB4E8D5391</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>grassCuttingWork</name>
+          <definition>Grass cutting work.</definition>
+          <order>4</order>
+          <generate>true</generate>
+          <ID>EAID_51E926D0_2D89_4104_B063_70B6F874B8BC</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>litterClearance</name>
+          <definition>Work to collect litter from the roadway and/or adjacent verges.</definition>
+          <order>5</order>
+          <generate>false</generate>
+          <ID>EAID_C75CB0DD_DCA4_46bc_A8E0_88693473F559</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>maintenanceWork</name>
+          <definition>Maintenance of road, associated infrastructure or equipments.</definition>
+          <order>6</order>
+          <generate>true</generate>
+          <ID>EAID_774E9678_9532_410d_BFA3_B9597EAB2F66</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>maintenancePeopleOnRoad</name>
+          <definition>People on road for general maintenance purpose</definition>
+          <order>7</order>
+          <generate>false</generate>
+          <ID>EAID_366B19B2_EBC8_4c16_8A10_AEC0D5E7BF17</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>overheadWorks</name>
+          <definition>Works which are overhead of the carriageway.</definition>
+          <order>8</order>
+          <generate>false</generate>
+          <ID>EAID_5984337B_6556_46d7_B044_84D26AAFF314</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>repairWork</name>
+          <definition>Repair work to road, associated infrastructure or equipments.</definition>
+          <order>9</order>
+          <generate>false</generate>
+          <ID>EAID_18D6FF61_9C53_4455_9F57_F5F274EE519B</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>resurfacingWork</name>
+          <definition>Work associated with relaying or renewal of worn-out road surface (pavement).</definition>
+          <order>10</order>
+          <generate>true</generate>
+          <ID>EAID_5172B329_C69A_4e27_A3AF_665D482280A8</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>roadMarkingWork</name>
+          <definition>Striping and repainting of road markings, plus placement or replacement of reflecting studs (cats' eyes).</definition>
+          <order>11</order>
+          <generate>true</generate>
+          <ID>EAID_880C0454_CFDE_4e30_9A57_E54CB812239C</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>roadsideWork</name>
+          <definition>Road side work of an unspecified nature.</definition>
+          <order>12</order>
+          <generate>true</generate>
+          <ID>EAID_6F7D518A_F46D_4143_B002_1638A7399E1E</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>roadworksClearance</name>
+          <definition>Roadworks are completed and are being cleared.</definition>
+          <order>13</order>
+          <generate>true</generate>
+          <ID>EAID_14D68D16_1387_449e_9573_0B6488F399E1</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>roadworks</name>
+          <definition>Road maintenance or improvement activity of an unspecified nature which may potentially cause traffic disruption.</definition>
+          <order>14</order>
+          <generate>true</generate>
+          <ID>EAID_B83BDB4E_BA27_4de6_B2E9_F55EF137992E</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>rockFallPreventativeMaintenance</name>
+          <definition>Rock fall preventative maintenance.</definition>
+          <order>15</order>
+          <generate>false</generate>
+          <ID>EAID_FA272496_1E3E_4ba3_854F_158BD0DE749F</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>saltingInProgress</name>
+          <definition>Spreading of salt and / or grit on the road surface to prevent or melt snow or ice.</definition>
+          <order>16</order>
+          <generate>true</generate>
+          <ID>EAID_19F18F45_5B61_4ea9_822A_80297107743E</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>snowploughsInUse</name>
+          <definition>Snowploughs or other similar mechanical devices in use to clear snow from the road.</definition>
+          <order>17</order>
+          <generate>true</generate>
+          <ID>EAID_A385C105_2492_477d_96B2_0FBF9FCE573C</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>sweepingOfRoad</name>
+          <definition>Sweeping of the roadway.</definition>
+          <order>18</order>
+          <generate>false</generate>
+          <ID>EAID_EE72B0D8_07F1_4fed_BC2E_3F095D34FB94</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>treeAndVegetationCuttingWork</name>
+          <definition>Tree and vegetation cutting work adjacent to the roadway.</definition>
+          <order>19</order>
+          <generate>true</generate>
+          <ID>EAID_7D08DEB7_E554_4f0b_9A37_7BC5E7F7CDAE</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>other</name>
+          <definition>Other than as defined in this enumeration.</definition>
+          <order>20</order>
+          <generate>true</generate>
+          <ID>EAID_3D6B879A_1A85_4418_80C0_6D9918D256B1</ID>
+        </D2Litteral>
+      </d2Litteral>
+      <isExtension>false</isExtension>
+      <isExtended>false</isExtended>
+    </D2Enumeration>
+    <D2Enumeration>
+      <name>GeneralInstructionToRoadUsersTypeEnum</name>
+      <definition>General instructions that may be issued to road users (specifically drivers and sometimes passengers) by an operator or operational system in support of network management activities or emergency situations.</definition>
+      <id>EAID_190234CA_6BF4_4c6f_BF65_AB4550B5A884</id>
+      <isGenerated>true</isGenerated>
+      <package>
+        <name>Enumerations</name>
+        <ID>EAPK_9E2307F1_3590_4d2f_9EAA_0904DFD104E6</ID>
+        <generate>false</generate>
+        <definition>A collection of enumerations that are used only in the Situation package of the DATEX II model.</definition>
+        <NamespaceName>Situation</NamespaceName>
+      </package>
+      <NamespaceName>Situation</NamespaceName>
+      <d2Litteral>
+        <D2Litteral>
+          <name>allowEmergencyVehiclesToPass</name>
+          <definition>Allow emergency vehicles to pass.</definition>
+          <order>0</order>
+          <generate>true</generate>
+          <ID>EAID_391352E3_D35E_4c93_8152_DE8DC04B6F66</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>approachWithCare</name>
+          <definition>Approach with care.</definition>
+          <order>1</order>
+          <generate>true</generate>
+          <ID>EAID_219E0163_7CF4_4919_8E17_1480AB84A92C</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>avoidTheArea</name>
+          <definition>Drivers are to avoid the area.</definition>
+          <order>2</order>
+          <generate>true</generate>
+          <ID>EAID_848B571B_C2E4_4e0b_BDFB_49436D10CABF</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>closeAllWindowsTurnOffHeaterAndVents</name>
+          <definition>Close all windows and turn off heater and vents.</definition>
+          <order>3</order>
+          <generate>false</generate>
+          <ID>EAID_BBE8F204_AEC4_4bd6_B755_3DA675809007</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>crossJunctionWithCare</name>
+          <definition>Cross junction with care.</definition>
+          <order>4</order>
+          <generate>true</generate>
+          <ID>EAID_24F72B26_E490_494b_9EED_9D4A595B5BB3</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>doNotAllowUnnecessaryGaps</name>
+          <definition>Do not allow unnecessary gaps.</definition>
+          <order>5</order>
+          <generate>false</generate>
+          <ID>EAID_C84144A7_7139_4a32_ADE9_A097D0703CFB</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>doNotLeaveYourVehicle</name>
+          <definition>Do not leave your vehicle.</definition>
+          <order>6</order>
+          <generate>false</generate>
+          <ID>EAID_A007402B_24EC_44c6_9BD0_23B34ED8D758</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>doNotThrowOutAnyBurningObjects</name>
+          <definition>Do not throw out any burning objects.</definition>
+          <order>7</order>
+          <generate>false</generate>
+          <ID>EAID_85C595BE_BA0F_4206_9BE2_E02C28E220DC</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>doNotUseNavigationSystems</name>
+          <definition>Do not use navigation systems to determine routing.</definition>
+          <order>8</order>
+          <generate>false</generate>
+          <ID>EAID_EAE56419_D72A_4261_851E_B0F73EE58850</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>driveCarefully</name>
+          <definition>Drive carefully.</definition>
+          <order>9</order>
+          <generate>true</generate>
+          <ID>EAID_B9BF80D3_A20F_4cc2_A4D5_CAC76924AB15</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>driveWithExtremeCaution</name>
+          <definition>Drive with extreme caution.</definition>
+          <order>10</order>
+          <generate>true</generate>
+          <ID>EAID_60BAA6C6_CEA0_4ba9_BD0C_46C5D827A0CD</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>flashYourLights</name>
+          <definition>Flash your lights to warn oncoming traffic of hazard ahead.</definition>
+          <order>11</order>
+          <generate>false</generate>
+          <ID>EAID_7073CF68_5FA2_434f_BD2D_09A61C2B7362</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>followTheVehicleInFrontSmoothly</name>
+          <definition>Follow the vehicle in front, smoothly.</definition>
+          <order>12</order>
+          <generate>false</generate>
+          <ID>EAID_DFD310D6_CDFE_4d11_885F_E26C96FE438E</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>increaseNormalFollowingDistance</name>
+          <definition>Increase normal following distance.</definition>
+          <order>13</order>
+          <generate>false</generate>
+          <ID>EAID_B25633AC_E4C6_431d_8655_E42D08532CA8</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>inEmergencyWaitForPatrolService</name>
+          <definition>In emergency, wait for patrol service (either road operator or police patrol service).</definition>
+          <order>14</order>
+          <generate>true</generate>
+          <ID>EAID_FC728A45_63A1_4799_8B28_5B38792F5752</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>keepYourDistance</name>
+          <definition>Keep your distance.</definition>
+          <order>15</order>
+          <generate>false</generate>
+          <ID>EAID_25EA29CE_D367_474a_B0F6_27470FEB15C7</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>leaveYourVehicleProceedToNextSafePlace</name>
+          <definition>Leave your vehicle and proceed to next safe place.</definition>
+          <order>16</order>
+          <generate>false</generate>
+          <ID>EAID_58EDB76E_1CFB_431b_B5D9_45D852E572B9</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>noNakedFlames</name>
+          <definition>No naked flames.</definition>
+          <order>17</order>
+          <generate>false</generate>
+          <ID>EAID_D5741A73_07E0_49ee_BEB5_A790D75AF693</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>noOvertaking</name>
+          <definition>No overtaking on the specified section of road.</definition>
+          <order>18</order>
+          <generate>true</generate>
+          <ID>EAID_C6C03C9D_FA89_4e07_B7B0_0843709DC4F3</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>noSmoking</name>
+          <definition>No smoking.</definition>
+          <order>19</order>
+          <generate>false</generate>
+          <ID>EAID_868A1F1C_E8A7_4855_8B1E_2363D114D34C</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>noStopping</name>
+          <definition>No stopping.</definition>
+          <order>20</order>
+          <generate>false</generate>
+          <ID>EAID_C63F5B41_4CB2_4d81_8B26_1894B21DF8E5</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>noUturns</name>
+          <definition>No U-turns.</definition>
+          <order>21</order>
+          <generate>false</generate>
+          <ID>EAID_DA333769_4FED_462b_B424_DAB22EC464B4</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>observeAmberAlert</name>
+          <definition>Observe current amber alert (an emergency alert issued for a missing or abducted child).</definition>
+          <order>22</order>
+          <generate>true</generate>
+          <ID>EAID_2F22BF6B_9F89_4ac1_9FF9_34D565FE4CB0</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>observeSignals</name>
+          <definition>Observe signals.</definition>
+          <order>23</order>
+          <generate>false</generate>
+          <ID>EAID_2DC2C382_767E_4c6d_BB9D_B88CD7C6C3AE</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>observeSigns</name>
+          <definition>Observe signs.</definition>
+          <order>24</order>
+          <generate>false</generate>
+          <ID>EAID_AD533792_1960_47a4_8F18_A432CA79304F</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>onlyTravelIfAbsolutelyNecessary</name>
+          <definition>Only travel if absolutely necessary.</definition>
+          <order>25</order>
+          <generate>false</generate>
+          <ID>EAID_C9B07AF0_70D1_46de_9D1C_AE63F4BBC1B4</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>overtakeWithCare</name>
+          <definition>Overtake with care.</definition>
+          <order>26</order>
+          <generate>true</generate>
+          <ID>EAID_E643EF36_2FA1_4339_B048_094F56C9F1D1</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>pullOverToTheEdgeOfTheRoadway</name>
+          <definition>Pull over to the edge of the roadway.</definition>
+          <order>27</order>
+          <generate>false</generate>
+          <ID>EAID_BC5F11E4_FD20_478d_BEBB_5600DDF90537</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>stopAtNextSafePlace</name>
+          <definition>Stop at next safe place.</definition>
+          <order>28</order>
+          <generate>true</generate>
+          <ID>EAID_94A2E556_8E48_4c5c_A45D_BEA1DA8A7D5B</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>stopAtNextServiceArea</name>
+          <definition>Stop at next rest service area or car park.</definition>
+          <order>29</order>
+          <generate>false</generate>
+          <ID>EAID_EF113EEB_ED99_4ec0_B785_54FDBCD81EF0</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>switchOffEngine</name>
+          <definition>Switch off engine.</definition>
+          <order>30</order>
+          <generate>false</generate>
+          <ID>EAID_6D08E533_A638_4a82_B762_7752DDA1C643</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>switchOffMobilePhonesAndTwoWayRadios</name>
+          <definition>Switch off mobile phones and two-way radios.</definition>
+          <order>31</order>
+          <generate>false</generate>
+          <ID>EAID_1A16D8C6_6E2F_4dfc_9951_D253484288BF</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>testYourBrakes</name>
+          <definition>Test your brakes.</definition>
+          <order>32</order>
+          <generate>false</generate>
+          <ID>EAID_5B95773C_A577_43bc_8205_E4392F157CFB</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>useBusService</name>
+          <definition>Use bus service.</definition>
+          <order>33</order>
+          <generate>false</generate>
+          <ID>EAID_9E2393BA_9235_435a_9F11_D8075D55F79E</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>useFogLights</name>
+          <definition>Use fog lights.</definition>
+          <order>34</order>
+          <generate>false</generate>
+          <ID>EAID_6E5ED7C1_D72B_404d_944B_D7611E95E300</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>useHazardWarningLights</name>
+          <definition>Use hazard warning lights.</definition>
+          <order>35</order>
+          <generate>false</generate>
+          <ID>EAID_CBA15AA5_5D80_49f5_974A_BBF02FCEB098</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>useHeadlights</name>
+          <definition>Use headlights.</definition>
+          <order>36</order>
+          <generate>false</generate>
+          <ID>EAID_10B4D027_2245_4a2a_ADCD_9C92866CC9FC</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>useRailService</name>
+          <definition>Use rail service.</definition>
+          <order>37</order>
+          <generate>false</generate>
+          <ID>EAID_9F3CECB4_5DC3_4ddd_9414_3D5B46E0F602</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>useTramService</name>
+          <definition>Use tram service.</definition>
+          <order>38</order>
+          <generate>false</generate>
+          <ID>EAID_843608CC_958B_464f_B71D_C82D480320EA</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>useUndergroundService</name>
+          <definition>Use underground service.</definition>
+          <order>39</order>
+          <generate>false</generate>
+          <ID>EAID_AAD2D864_7550_4e3f_A5E1_0FF9C27620A1</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>waitForEscortVehicle</name>
+          <definition>Wait for escort vehicle.</definition>
+          <order>40</order>
+          <generate>false</generate>
+          <ID>EAID_FEE7AA63_754F_42a1_9CCF_C96694848E3D</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>other</name>
+          <definition>Other than as defined in this enumeration.</definition>
+          <order>41</order>
+          <generate>true</generate>
+          <ID>EAID_AC8C7694_5F38_4e16_84BC_997E2DE59042</ID>
+        </D2Litteral>
+      </d2Litteral>
+      <isExtension>false</isExtension>
+      <isExtended>true</isExtended>
+    </D2Enumeration>
+    <D2Enumeration>
+      <name>LoadTypeEnum</name>
+      <definition>Types of load carried by a vehicle.</definition>
+      <id>EAID_1C112154_300E_4645_A522_E6FA0D29AB51</id>
+      <isGenerated>true</isGenerated>
+      <package>
+        <name>Enumerations</name>
+        <ID>EAPK_B491E67F_A42E_44a8_AC75_A17AC2E6D898</ID>
+        <generate>false</generate>
+        <definition>A collection of lists of enumeration values used throughout the DATEX II model.</definition>
+        <NamespaceName>Common</NamespaceName>
+      </package>
+      <NamespaceName>Common</NamespaceName>
+      <d2Litteral>
+        <D2Litteral>
+          <name>abnormalLoad</name>
+          <definition>A load that exceeds normal vehicle dimensions in terms of height, length, width, gross vehicle weight or axle weight or any combination of these. Generally termed an "abnormal load".</definition>
+          <order>0</order>
+          <generate>true</generate>
+          <ID>EAID_A326131A_85CE_4652_ABCA_F1987C2A9C1E</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>ammunition</name>
+          <definition>Ammunition.</definition>
+          <order>1</order>
+          <generate>false</generate>
+          <ID>EAID_1EB2046B_0E54_4b7c_AD3E_267AA39252C3</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>chemicals</name>
+          <definition>Chemicals of unspecified type.</definition>
+          <order>2</order>
+          <generate>false</generate>
+          <ID>EAID_F72EC389_DF8D_4fad_BD06_91261074AAB6</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>combustibleMaterials</name>
+          <definition>Combustible materials of unspecified type.</definition>
+          <order>3</order>
+          <generate>false</generate>
+          <ID>EAID_5B2F30D4_0144_4733_A39D_9DFF415B79D9</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>corrosiveMaterials</name>
+          <definition>Corrosive materials of unspecified type.</definition>
+          <order>4</order>
+          <generate>false</generate>
+          <ID>EAID_F7E71899_7335_4bd4_961D_CA97A09DC49D</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>debris</name>
+          <definition>Debris of unspecified type.</definition>
+          <order>5</order>
+          <generate>false</generate>
+          <ID>EAID_774EF418_75F2_4288_8357_882BE09D765C</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>empty</name>
+          <definition>No load.</definition>
+          <order>6</order>
+          <generate>false</generate>
+          <ID>EAID_915C840C_4F5D_46f6_B50C_E98C950CFCD1</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>explosiveMaterials</name>
+          <definition>Explosive materials of unspecified type.</definition>
+          <order>7</order>
+          <generate>false</generate>
+          <ID>EAID_5DA783B1_9645_417a_B887_81632F1014E0</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>extraHighLoad</name>
+          <definition>A load of exceptional height.</definition>
+          <order>8</order>
+          <generate>true</generate>
+          <ID>EAID_9BDFE4D6_80AF_4ac2_9FFB_87C1855A6CF1</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>extraLongLoad</name>
+          <definition>A load of exceptional length.</definition>
+          <order>9</order>
+          <generate>true</generate>
+          <ID>EAID_9A0F5E93_5F65_4831_B34B_B719872C3EC3</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>extraWideLoad</name>
+          <definition>A load of exceptional width.</definition>
+          <order>10</order>
+          <generate>true</generate>
+          <ID>EAID_9D13C016_3E88_4a17_94B7_42E10EDEC230</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>fuel</name>
+          <definition>Fuel of unspecified type.</definition>
+          <order>11</order>
+          <generate>false</generate>
+          <ID>EAID_A0DA6FA8_F3E8_4bba_9818_416AF68A517A</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>glass</name>
+          <definition>Glass.</definition>
+          <order>12</order>
+          <generate>false</generate>
+          <ID>EAID_2159DEF2_1525_4233_90DE_A5AE131CB4D5</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>goods</name>
+          <definition>Any goods of a commercial nature.</definition>
+          <order>13</order>
+          <generate>false</generate>
+          <ID>EAID_D9F007A3_A44C_449e_9FDC_879B2C73B320</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>hazardousMaterials</name>
+          <definition>Materials classed as being of a hazardous nature.</definition>
+          <order>14</order>
+          <generate>true</generate>
+          <ID>EAID_C30DDCB0_5D75_4bd9_A2AC_B5E148413E75</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>liquid</name>
+          <definition>Liquid of an unspecified nature.</definition>
+          <order>15</order>
+          <generate>false</generate>
+          <ID>EAID_AF093328_B6FD_453a_AC05_3E356E21468A</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>livestock</name>
+          <definition>Livestock.</definition>
+          <order>16</order>
+          <generate>false</generate>
+          <ID>EAID_D5EAF96E_7F33_4bd8_B415_1F03B1BCE72E</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>materials</name>
+          <definition>General materials of unspecified type.</definition>
+          <order>17</order>
+          <generate>false</generate>
+          <ID>EAID_000251FB_0547_475c_88AB_4A9536EB6991</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>materialsDangerousForPeople</name>
+          <definition>Materials classed as being of a danger to people or animals.</definition>
+          <order>18</order>
+          <generate>false</generate>
+          <ID>EAID_1A1BA78B_5D48_4c1e_90C3_4E83B2431CAB</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>materialsDangerousForTheEnvironment</name>
+          <definition>Materials classed as being potentially dangerous to the environment.</definition>
+          <order>19</order>
+          <generate>false</generate>
+          <ID>EAID_BF5F102E_1932_4f8f_B680_7266D9913648</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>materialsDangerousForWater</name>
+          <definition>Materials classed as being dangerous when exposed to water (e.g. materials which may react exothermically with water).</definition>
+          <order>20</order>
+          <generate>false</generate>
+          <ID>EAID_8BFA2152_FA75_443d_B95D_1E30938A499A</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>oil</name>
+          <definition>Oil.</definition>
+          <order>21</order>
+          <generate>false</generate>
+          <ID>EAID_7D66BD72_145F_4e55_B4EF_6C52DB8CADF3</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>ordinary</name>
+          <definition>Materials that present limited environmental or health risk. Non-combustible, non-toxic, non-corrosive.</definition>
+          <order>22</order>
+          <generate>false</generate>
+          <ID>EAID_8BBF9BE0_2330_46ae_9BD2_567C9F41267B</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>perishableProducts</name>
+          <definition>Products or produce that will significantly degrade in quality or freshness over a short period of time.</definition>
+          <order>23</order>
+          <generate>false</generate>
+          <ID>EAID_1378DBFA_59B7_43ea_977B_3E90B20A54AF</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>petrol</name>
+          <definition>Petrol or petroleum.</definition>
+          <order>24</order>
+          <generate>false</generate>
+          <ID>EAID_FDA33689_00BC_40f9_B5DE_96632BC3DA72</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>pharmaceuticalMaterials</name>
+          <definition>Pharmaceutical materials.</definition>
+          <order>25</order>
+          <generate>false</generate>
+          <ID>EAID_B017A5C8_1B47_42ba_B749_D3348EB87B0C</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>radioactiveMaterials</name>
+          <definition>Materials that emit significant quantities of electro-magnetic radiation that may present a risk to people, animals or the environment.</definition>
+          <order>26</order>
+          <generate>false</generate>
+          <ID>EAID_A47904C4_E3E6_418a_81FE_9AA256BCE143</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>refrigeratedGoods</name>
+          <definition>Refrigerated goods.</definition>
+          <order>27</order>
+          <generate>false</generate>
+          <ID>EAID_A014447F_C821_4faa_8ED6_E8444DF8F61C</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>refuse</name>
+          <definition>Refuse.</definition>
+          <order>28</order>
+          <generate>false</generate>
+          <ID>EAID_464518DB_5AB2_4464_96BD_E9C5C3238F33</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>toxicMaterials</name>
+          <definition>Materials of a toxic nature which may damage the environment or endanger public health.</definition>
+          <order>29</order>
+          <generate>false</generate>
+          <ID>EAID_4056DD7B_EF69_4d15_BD93_D00113C748C5</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>vehicles</name>
+          <definition>Vehicles of any type which are being transported.</definition>
+          <order>30</order>
+          <generate>false</generate>
+          <ID>EAID_76CF149A_7F63_4013_83EC_DAF8086AB1D9</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>other</name>
+          <definition>Other than as defined in this enumeration.</definition>
+          <order>100</order>
+          <generate>true</generate>
+          <ID>EAID_64CDE770_2DCC_420d_B3A6_BFD4445D39C2</ID>
+        </D2Litteral>
+      </d2Litteral>
+      <isExtension>false</isExtension>
+      <isExtended>true</isExtended>
+    </D2Enumeration>
+    <D2Enumeration>
+      <name>DirectionEnum</name>
+      <definition>List of directions of travel.</definition>
+      <id>EAID_21079C67_C37F_4608_A1B6_3203D8F4FBF4</id>
+      <isGenerated>true</isGenerated>
+      <package>
+        <name>Enumerations</name>
+        <ID>EAPK_1FC76BEE_DA3B_4218_8202_40BD7A4D6445</ID>
+        <generate>false</generate>
+        <definition>A collection of enumerations that are used LocationReferencing package of the DATEX II model.</definition>
+        <NamespaceName>LocationReferencing</NamespaceName>
+      </package>
+      <NamespaceName>LocationReferencing</NamespaceName>
+      <d2Litteral>
+        <D2Litteral>
+          <name>aligned</name>
+          <definition>Same direction as the normal direction of flow at this point on the road network.</definition>
+          <order>0</order>
+          <generate>true</generate>
+          <ID>EAID_4CA5653B_F23E_4b35_867C_53DE67BF1F02</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>allDirections</name>
+          <definition>All directions (where more than two are applicable) at this point on the road network.</definition>
+          <order>1</order>
+          <generate>true</generate>
+          <ID>EAID_A1A7C0F6_D812_4c2a_AD41_DE7CECA7E16C</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>anticlockwise</name>
+          <definition>Anti-clockwise.</definition>
+          <order>2</order>
+          <generate>false</generate>
+          <ID>EAID_4EF19453_D073_4cfe_B903_5F98876E1BC1</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>bothWays</name>
+          <definition>Both directions that are applicable at this point on the road network.</definition>
+          <order>3</order>
+          <generate>true</generate>
+          <ID>EAID_DFF7EDD0_448D_4e8a_953B_654B97A875FC</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>clockwise</name>
+          <definition>Clockwise.</definition>
+          <order>4</order>
+          <generate>false</generate>
+          <ID>EAID_9A764CF1_8637_48e8_BCE4_40E55FDA879A</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>innerRing</name>
+          <definition>Inner ring direction.</definition>
+          <order>5</order>
+          <generate>false</generate>
+          <ID>EAID_163DA1C9_D240_4c67_8508_DBD0EF3EC2B8</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>outerRing</name>
+          <definition>Outer ring direction.</definition>
+          <order>6</order>
+          <generate>false</generate>
+          <ID>EAID_CCE3C1BF_6965_474d_BEAA_6F1B1A1EAAB6</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>eastBound</name>
+          <definition>East bound general direction.</definition>
+          <order>7</order>
+          <generate>false</generate>
+          <ID>EAID_DE655F3D_F5F6_406e_9502_C8AF09097860</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>northBound</name>
+          <definition>North bound general direction.</definition>
+          <order>8</order>
+          <generate>false</generate>
+          <ID>EAID_769F7D4E_4497_4ff7_8679_57E2DD5AB4BA</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>northEastBound</name>
+          <definition>North east bound general direction.</definition>
+          <order>9</order>
+          <generate>false</generate>
+          <ID>EAID_051E0B4D_B4CC_4119_94DA_5C63A1A631E3</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>northWestBound</name>
+          <definition>North west bound general direction.</definition>
+          <order>10</order>
+          <generate>false</generate>
+          <ID>EAID_0A7E0DA2_32E0_460b_B7C1_919D8760EFD7</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>southBound</name>
+          <definition>South bound general direction.</definition>
+          <order>11</order>
+          <generate>false</generate>
+          <ID>EAID_CE73AF79_F408_454c_BBD0_39393A3D66A7</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>southEastBound</name>
+          <definition>South east bound general direction.</definition>
+          <order>12</order>
+          <generate>false</generate>
+          <ID>EAID_F2475382_1181_4bc1_8807_047D23FA613D</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>southWestBound</name>
+          <definition>South west bound general direction.</definition>
+          <order>13</order>
+          <generate>false</generate>
+          <ID>EAID_D1FA6814_4C34_4f51_A949_9455683189EA</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>westBound</name>
+          <definition>West bound general direction.</definition>
+          <order>14</order>
+          <generate>false</generate>
+          <ID>EAID_FA46EF1A_9031_4c5a_96D7_768F9F92B8BD</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>inboundTowardsTown</name>
+          <definition>Heading towards town centre direction of travel.</definition>
+          <order>15</order>
+          <generate>false</generate>
+          <ID>EAID_2CFAA54A_F129_4bf5_A3C0_8179A31F6F96</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>outboundFromTown</name>
+          <definition>Heading out of or away from the town centre direction of travel.</definition>
+          <order>16</order>
+          <generate>false</generate>
+          <ID>EAID_5C9D851C_B91B_4190_BA78_7669ED658A07</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>opposite</name>
+          <definition>Opposite direction to the normal direction of flow at this point on the road network.</definition>
+          <order>17</order>
+          <generate>false</generate>
+          <ID>EAID_2CB6D425_BE0F_44e2_AEAE_737C2E926067</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>unknown</name>
+          <definition>Direction is unknown.</definition>
+          <order>18</order>
+          <generate>false</generate>
+          <ID>EAID_70DFFB34_599D_446d_89D8_470954FAD6F8</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>other</name>
+          <definition>Other than as defined in this enumeration.</definition>
+          <order>19</order>
+          <generate>true</generate>
+          <ID>EAID_1CEDD736_DE43_41d6_86EC_1D68C5BD1719</ID>
+        </D2Litteral>
+      </d2Litteral>
+      <isExtension>false</isExtension>
+      <isExtended>false</isExtended>
+    </D2Enumeration>
+    <D2Enumeration>
+      <name>GeographicCharacteristicEnum</name>
+      <definition>Descriptor to help to identify a specific location.</definition>
+      <id>EAID_2349DBC9_9F61_46ce_BEF6_C75FAA8E9899</id>
+      <isGenerated>true</isGenerated>
+      <package>
+        <name>Enumerations</name>
+        <ID>EAPK_1FC76BEE_DA3B_4218_8202_40BD7A4D6445</ID>
+        <generate>false</generate>
+        <definition>A collection of enumerations that are used LocationReferencing package of the DATEX II model.</definition>
+        <NamespaceName>LocationReferencing</NamespaceName>
+      </package>
+      <NamespaceName>LocationReferencing</NamespaceName>
+      <d2Litteral>
+        <D2Litteral>
+          <name>aroundABendInRoad</name>
+          <definition>Around a bend in the road.</definition>
+          <order>0</order>
+          <generate>true</generate>
+          <ID>EAID_8188071A_BE6F_4c58_8E66_FAB64DA0D169</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>onBorder</name>
+          <definition>On border crossing.</definition>
+          <order>1</order>
+          <generate>true</generate>
+          <ID>EAID_0EB56BAA_BA3D_4425_B6C4_10A5770DA7EB</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>onPass</name>
+          <definition>On mountain pass.</definition>
+          <order>2</order>
+          <generate>false</generate>
+          <ID>EAID_D63FCE07_23EC_4d8b_B114_08A36C257E89</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>overCrestOfHill</name>
+          <definition>Over the crest of a hill.</definition>
+          <order>3</order>
+          <generate>true</generate>
+          <ID>EAID_819318B2_8397_4d9c_BF93_AC4568C95E5C</ID>
+        </D2Litteral>
+      </d2Litteral>
+      <isExtension>false</isExtension>
+      <isExtended>false</isExtended>
+    </D2Enumeration>
+    <D2Enumeration>
+      <name>TrafficTypeEnum</name>
+      <definition>Types of traffic, mostly classified by its destination type.</definition>
+      <id>EAID_27EF8926_626E_4109_99D7_A0BFB39A2AB9</id>
+      <isGenerated>true</isGenerated>
+      <package>
+        <name>Enumerations</name>
+        <ID>EAPK_9E2307F1_3590_4d2f_9EAA_0904DFD104E6</ID>
+        <generate>false</generate>
+        <definition>A collection of enumerations that are used only in the Situation package of the DATEX II model.</definition>
+        <NamespaceName>Situation</NamespaceName>
+      </package>
+      <NamespaceName>Situation</NamespaceName>
+      <d2Litteral>
+        <D2Litteral>
+          <name>accessOnlyTraffic</name>
+          <definition>Traffic destined for local access only.</definition>
+          <order>0</order>
+          <generate>false</generate>
+          <ID>EAID_88677F9B_3213_4840_886B_187232AFD418</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>destinedForAirport</name>
+          <definition>Traffic destined for the airport.</definition>
+          <order>1</order>
+          <generate>false</generate>
+          <ID>EAID_60184BC7_5CF0_4bae_AB27_9502B05BF43C</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>destinedForAirportArrivals</name>
+          <definition>Traffic destined for airport arrivals.</definition>
+          <order>2</order>
+          <generate>false</generate>
+          <ID>EAID_75638EE8_A12F_4e9a_910E_7CB19944F73B</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>destinedForAirportDepartures</name>
+          <definition>Traffic destined for airport departures.</definition>
+          <order>3</order>
+          <generate>false</generate>
+          <ID>EAID_C2803DED_F4CC_400a_B392_BA8AE0529524</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>destinedForFerryService</name>
+          <definition>Traffic destined for the ferry service.</definition>
+          <order>4</order>
+          <generate>false</generate>
+          <ID>EAID_12DD0659_FF8D_47f0_B7DA_5AE7AB98DF45</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>destinedForRailService</name>
+          <definition>Traffic destined for the rail service.</definition>
+          <order>5</order>
+          <generate>false</generate>
+          <ID>EAID_D2D3F2D7_D8CC_4c64_BC83_AA143A6CF9B4</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>holidayTraffic</name>
+          <definition>Traffic heading towards holiday destinations.</definition>
+          <order>6</order>
+          <generate>false</generate>
+          <ID>EAID_FFBC8E17_3BA4_4004_9865_427BF48D224B</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>localTraffic</name>
+          <definition>Traffic heading towards local destinations.</definition>
+          <order>7</order>
+          <generate>false</generate>
+          <ID>EAID_4B08D9DB_DCD9_4aad_8589_327015616B3B</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>longDistanceTraffic</name>
+          <definition>Traffic heading towards destinations which are a long distance away.</definition>
+          <order>8</order>
+          <generate>false</generate>
+          <ID>EAID_83050600_A1C8_4f81_98FF_21E1ECC2D6EC</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>regionalTraffic</name>
+          <definition>Traffic heading towards local regional destinations.</definition>
+          <order>9</order>
+          <generate>false</generate>
+          <ID>EAID_099D096B_21CC_409a_8013_F21CE672BA48</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>residentsOnlyTraffic</name>
+          <definition>Local residents only traffic.</definition>
+          <order>10</order>
+          <generate>false</generate>
+          <ID>EAID_5C90440F_1D52_478f_8543_0D978ED33A88</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>throughTraffic</name>
+          <definition>Traffic which is not for local access, i.e. traffic not destined for local town, city or built up area but for transit though the area.</definition>
+          <order>11</order>
+          <generate>true</generate>
+          <ID>EAID_1B5563B7_4A1F_4a84_83A3_BB9FA7F183B9</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>visitorTraffic</name>
+          <definition>Traffic heading towards local visitor attraction.</definition>
+          <order>12</order>
+          <generate>false</generate>
+          <ID>EAID_4A0F8032_DDDD_4b82_852A_EEA108072250</ID>
+        </D2Litteral>
+      </d2Litteral>
+      <isExtension>false</isExtension>
+      <isExtended>true</isExtended>
+    </D2Enumeration>
+    <D2Enumeration>
+      <name>SpeedManagementTypeEnum</name>
+      <definition>Management actions relating to speed.</definition>
+      <id>EAID_2832B76B_8083_4766_BC98_32897AC63360</id>
+      <isGenerated>true</isGenerated>
+      <package>
+        <name>Enumerations</name>
+        <ID>EAPK_9E2307F1_3590_4d2f_9EAA_0904DFD104E6</ID>
+        <generate>false</generate>
+        <definition>A collection of enumerations that are used only in the Situation package of the DATEX II model.</definition>
+        <NamespaceName>Situation</NamespaceName>
+      </package>
+      <NamespaceName>Situation</NamespaceName>
+      <d2Litteral>
+        <D2Litteral>
+          <name>activeSpeedControlInOperation</name>
+          <definition>Automatic speed control measures are in place at the specified location, whereby speed limits are set by an automatic system which is triggered by traffic sensing equipment.</definition>
+          <order>0</order>
+          <generate>false</generate>
+          <ID>EAID_A5577E4B_8022_4588_B6CF_5277142E5843</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>doNotSlowdownUnnecessarily</name>
+          <definition>Do not slow down unnecessarily.</definition>
+          <order>1</order>
+          <generate>false</generate>
+          <ID>EAID_1FE5DB76_A293_483f_9579_4E34A0EBC023</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>observeSpeedLimit</name>
+          <definition>Observe speed limit.</definition>
+          <order>2</order>
+          <generate>true</generate>
+          <ID>EAID_8886966E_990F_42d0_8FCF_9E9EFFF67923</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>policeSpeedChecksInOperation</name>
+          <definition>Police speed checks are in operation.</definition>
+          <order>3</order>
+          <generate>true</generate>
+          <ID>EAID_A24AE58C_5D9E_4cb1_99C7_03DD3161F0A8</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>reduceYourSpeed</name>
+          <definition>Reduce your speed.</definition>
+          <order>4</order>
+          <generate>true</generate>
+          <ID>EAID_D00F4518_30DE_413a_BC23_F162CDABEADD</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>speedRestrictionInOperation</name>
+          <definition>A speed restriction is in operation.</definition>
+          <order>5</order>
+          <generate>true</generate>
+          <ID>EAID_341DC7F4_43EE_43ed_B5E3_A9D5433152DD</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>other</name>
+          <definition>Other than as defined in this enumeration.</definition>
+          <order>6</order>
+          <generate>true</generate>
+          <ID>EAID_0EB2A0DC_9766_42ec_B9F2_5347E679FADB</ID>
+        </D2Litteral>
+      </d2Litteral>
+      <isExtension>false</isExtension>
+      <isExtended>false</isExtended>
+    </D2Enumeration>
+    <D2Enumeration>
+      <name>CarriagewayEnum</name>
+      <definition>List of descriptors identifying specific carriageway details.</definition>
+      <id>EAID_2CABB53C_29CF_4ad3_A561_3B8F60C9997C</id>
+      <isGenerated>true</isGenerated>
+      <package>
+        <name>Enumerations</name>
+        <ID>EAPK_1FC76BEE_DA3B_4218_8202_40BD7A4D6445</ID>
+        <generate>false</generate>
+        <definition>A collection of enumerations that are used LocationReferencing package of the DATEX II model.</definition>
+        <NamespaceName>LocationReferencing</NamespaceName>
+      </package>
+      <NamespaceName>LocationReferencing</NamespaceName>
+      <d2Litteral>
+        <D2Litteral>
+          <name>connectingCarriageway</name>
+          <definition>On the connecting carriageway.</definition>
+          <order>0</order>
+          <generate>true</generate>
+          <ID>EAID_9FC11E15_7505_4b73_A4D9_233EE9FE436B</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>cycleTrack</name>
+          <definition>Independent road or part of a road designated for cycles, signposted as such. A cycle track is separated from other roads or other parts of the same road by structural means.</definition>
+          <order>1</order>
+          <generate>false</generate>
+          <ID>EAID_D80408F3_D319_4343_9C81_FC63B3347D23</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>entrySlipRoad</name>
+          <definition>On the entry slip road.</definition>
+          <order>2</order>
+          <generate>true</generate>
+          <ID>EAID_2109512F_20BD_4de7_94BF_727F4579FCD5</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>exitSlipRoad</name>
+          <definition>On the exit slip road.</definition>
+          <order>3</order>
+          <generate>true</generate>
+          <ID>EAID_FF3C2292_6A07_4fcd_92C1_9FBB9D382108</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>flyover</name>
+          <definition>On the flyover, i.e. the section of road passing over another.</definition>
+          <order>4</order>
+          <generate>false</generate>
+          <ID>EAID_04B77327_52A4_48c8_B647_369AF5391425</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>footpath</name>
+          <definition>On the footpath</definition>
+          <order>5</order>
+          <generate>false</generate>
+          <ID>EAID_D742AC1B_3848_4ab9_AFB6_E1D94EEE9973</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>leftHandParallelCarriageway</name>
+          <definition>On the left hand parallel carriageway.</definition>
+          <order>7</order>
+          <generate>true</generate>
+          <ID>EAID_A694871B_B20F_469d_8B5E_30F4ECCB28A7</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>leftHandFeederRoad</name>
+          <definition>On the left hand feeder road.</definition>
+          <order>6</order>
+          <generate>false</generate>
+          <ID>EAID_ED48D712_2F9D_45cc_B1F6_C6348D1CB3E6</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>mainCarriageway</name>
+          <definition>On the main carriageway.</definition>
+          <order>8</order>
+          <generate>true</generate>
+          <ID>EAID_9E515364_B4B0_434e_A6D5_50FCC0FD8651</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>oppositeCarriageway</name>
+          <definition>On the opposite carriageway.</definition>
+          <order>9</order>
+          <generate>true</generate>
+          <ID>EAID_17263FF2_A44D_4c1c_896C_256B356B58F5</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>parallelCarriageway</name>
+          <definition>On the adjacent external parallel carriageway.</definition>
+          <order>10</order>
+          <generate>true</generate>
+          <ID>EAID_47B592AB_A495_40f8_BE55_7CA064669827</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>rightHandFeederRoad</name>
+          <definition>On the right hand feeder road.</definition>
+          <order>11</order>
+          <generate>false</generate>
+          <ID>EAID_C7B32334_67E8_4df5_A89F_A4831F697E75</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>rightHandParallelCarriageway</name>
+          <definition>On the right hand parallel carriageway.</definition>
+          <order>12</order>
+          <generate>true</generate>
+          <ID>EAID_DB2C24A2_855A_4871_B902_E89D12277C64</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>roundabout</name>
+          <definition>On the roundabout.</definition>
+          <order>13</order>
+          <generate>true</generate>
+          <ID>EAID_317800E5_501C_4a8b_91A0_6DA3C442D805</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>serviceRoad</name>
+          <definition>On the adjacent service road.</definition>
+          <order>14</order>
+          <generate>true</generate>
+          <ID>EAID_7C994C7C_3296_40a7_B347_D3E3F13B241A</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>slipRoads</name>
+          <definition>On the slip roads.</definition>
+          <order>15</order>
+          <generate>true</generate>
+          <ID>EAID_28FEDA14_BA42_4235_9299_7943F1CB583C</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>underpass</name>
+          <definition>On the underpass, i.e. the section of road passing under another.</definition>
+          <order>16</order>
+          <generate>false</generate>
+          <ID>EAID_90DAA5D4_037E_4732_AEDD_4D8974BB5C0A</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>unspecifiedCarriageway</name>
+          <definition>On an unspecified carriageway</definition>
+          <order>17</order>
+          <generate>false</generate>
+          <ID>EAID_21335038_7125_4379_A2BB_D19C69079BD5</ID>
+        </D2Litteral>
+      </d2Litteral>
+      <isExtension>false</isExtension>
+      <isExtended>false</isExtended>
+    </D2Enumeration>
+    <D2Enumeration>
+      <name>LinearDirectionEnum</name>
+      <definition>Directions of traffic flow relative to the direction in which the linear element is defined.</definition>
+      <id>EAID_3855110B_58FC_4abc_B24D_F8E0A01CE1DB</id>
+      <isGenerated>true</isGenerated>
+      <package>
+        <name>Enumerations</name>
+        <ID>EAPK_1FC76BEE_DA3B_4218_8202_40BD7A4D6445</ID>
+        <generate>false</generate>
+        <definition>A collection of enumerations that are used LocationReferencing package of the DATEX II model.</definition>
+        <NamespaceName>LocationReferencing</NamespaceName>
+      </package>
+      <NamespaceName>LocationReferencing</NamespaceName>
+      <d2Litteral>
+        <D2Litteral>
+          <name>both</name>
+          <definition>Indicates that both directions of traffic flow are affected by the situation or relate to the traffic data.</definition>
+          <order>0</order>
+          <generate>true</generate>
+          <ID>EAID_97747ACC_2279_4fbf_B25A_E4AE74958C26</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>opposite</name>
+          <definition>Indicates that the direction of traffic flow affected by the situation or related to the traffic data is in the opposite sense to the direction in which the linear element is defined.</definition>
+          <order>1</order>
+          <generate>true</generate>
+          <ID>EAID_01C375B8_A355_44c5_9584_FC5EE2D1751E</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>aligned</name>
+          <definition>Indicates that the direction of traffic flow affected by the situation or related to the traffic data is in the same sense as the direction in which the linear element is defined.</definition>
+          <order>2</order>
+          <generate>true</generate>
+          <ID>EAID_5A7CA6C4_D7D1_416d_B0C3_526E6CB187C9</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>unknown</name>
+          <definition>Indicates that the direction of traffic flow affected by the situation or related to the traffic data is unknown.</definition>
+          <order>3</order>
+          <generate>false</generate>
+          <ID>EAID_9E5F22E4_EE0A_4ac8_9B22_DDEDE49C708B</ID>
+        </D2Litteral>
+      </d2Litteral>
+      <isExtension>false</isExtension>
+      <isExtended>false</isExtended>
+    </D2Enumeration>
+    <D2Enumeration>
+      <name>LaneEnum</name>
+      <definition>List of descriptors identifying specific lanes.</definition>
+      <id>EAID_54E375E2_2F62_4ebe_B81C_1EEBA7EC487F</id>
+      <isGenerated>true</isGenerated>
+      <package>
+        <name>Enumerations</name>
+        <ID>EAPK_1FC76BEE_DA3B_4218_8202_40BD7A4D6445</ID>
+        <generate>false</generate>
+        <definition>A collection of enumerations that are used LocationReferencing package of the DATEX II model.</definition>
+        <NamespaceName>LocationReferencing</NamespaceName>
+      </package>
+      <NamespaceName>LocationReferencing</NamespaceName>
+      <d2Litteral>
+        <D2Litteral>
+          <name>allLanesCompleteCarriageway</name>
+          <definition>In all lanes of the carriageway.</definition>
+          <order>0</order>
+          <generate>true</generate>
+          <ID>EAID_1187AA6C_5960_42da_B44D_EE589FF4A087</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>busLane</name>
+          <definition>In the bus lane.</definition>
+          <order>1</order>
+          <generate>true</generate>
+          <ID>EAID_EE252D2A_1B27_4d91_BB79_DC0406DDD639</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>busStop</name>
+          <definition>In the bus stop lane.</definition>
+          <order>2</order>
+          <generate>false</generate>
+          <ID>EAID_5392482E_F5D2_4223_BA5C_8D4DAF30E2CF</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>carPoolLane</name>
+          <definition>In the carpool lane.</definition>
+          <order>3</order>
+          <generate>true</generate>
+          <ID>EAID_05D8759B_59EA_456b_A925_66AF591527ED</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>centralReservation</name>
+          <definition>On the central reservation separating the two directional carriageways of the highway.</definition>
+          <order>4</order>
+          <generate>true</generate>
+          <ID>EAID_249C293B_D502_4f7f_8A1B_58BB710A7911</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>crawlerLane</name>
+          <definition>In the crawler lane - a lane that should be used by slower vehicles.</definition>
+          <order>5</order>
+          <generate>true</generate>
+          <ID>EAID_370FFF46_99AC_4fcf_B5BF_3A33AADAAA4F</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>cycleLane</name>
+          <definition>Part of a carriageway designated for cycles. A cycle lane is distinguished from the rest of the carriageway by longitudinal road markings.</definition>
+          <order>6</order>
+          <generate>false</generate>
+          <ID>EAID_4AAAE47F_C13D_457c_866D_E4E5412753F9</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>emergencyLane</name>
+          <definition>In the emergency lane.</definition>
+          <order>7</order>
+          <generate>true</generate>
+          <ID>EAID_CFD43A54_C2EA_4516_9C27_4FD733F0BD29</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>escapeLane</name>
+          <definition>In the escape lane.</definition>
+          <order>8</order>
+          <generate>false</generate>
+          <ID>EAID_F3C49316_D0EB_4b77_8B96_D9B085C85CAA</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>expressLane</name>
+          <definition>In the express lane.</definition>
+          <order>9</order>
+          <generate>true</generate>
+          <ID>EAID_41A3D23B_8049_4be3_8E47_1E9CE2C697DD</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>hardShoulder</name>
+          <definition>On the hard shoulder.</definition>
+          <order>10</order>
+          <generate>true</generate>
+          <ID>EAID_349682A1_661D_4065_A4C5_2849EE7D39AB</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>heavyVehicleLane</name>
+          <definition>In the heavy vehicle lane.</definition>
+          <order>11</order>
+          <generate>true</generate>
+          <ID>EAID_7F8B514D_7C77_4b21_8EC9_230FBCCD08A7</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>layBy</name>
+          <definition>In a lay-by.</definition>
+          <order>21</order>
+          <generate>false</generate>
+          <ID>EAID_A302BD01_856F_4d86_BD8E_21F830E90139</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>leftHandTurningLane</name>
+          <definition>In the left hand turning lane.</definition>
+          <order>22</order>
+          <generate>false</generate>
+          <ID>EAID_C5EF8407_02D8_4b60_B919_63E06C9AD189</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>leftLane</name>
+          <definition>In the left lane.</definition>
+          <order>23</order>
+          <generate>true</generate>
+          <ID>EAID_645E6F97_4505_4d98_B06B_A41951B7D4A5</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>localTrafficLane</name>
+          <definition>In the local traffic lane.</definition>
+          <order>24</order>
+          <generate>true</generate>
+          <ID>EAID_A1E64600_6F7D_40eb_8DAD_F15EA357018D</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>middleLane</name>
+          <definition>In the middle lane.</definition>
+          <order>25</order>
+          <generate>true</generate>
+          <ID>EAID_867EBEDA_0FB7_4647_B8B1_B81F84A6984A</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>overtakingLane</name>
+          <definition>In the overtaking lane.</definition>
+          <order>27</order>
+          <generate>true</generate>
+          <ID>EAID_E2672550_80ED_4aed_ADF9_749C9692C330</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>rightHandTurningLane</name>
+          <definition>In the right hand turning lane.</definition>
+          <order>28</order>
+          <generate>false</generate>
+          <ID>EAID_02CD4C00_6225_4bee_A19B_7E23A5131F31</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>rightLane</name>
+          <definition>In the right lane.</definition>
+          <order>29</order>
+          <generate>true</generate>
+          <ID>EAID_F324859C_B7C2_4d53_8B1A_B219CD3F750B</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>rushHourLane</name>
+          <definition>In the lane dedicated for use during the rush (peak) hour.</definition>
+          <order>30</order>
+          <generate>false</generate>
+          <ID>EAID_4F376AF9_BCA5_4bd3_8635_D55B19201821</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>setDownArea</name>
+          <definition>In the area/lane reserved for passenger pick-up or set-down.</definition>
+          <order>31</order>
+          <generate>false</generate>
+          <ID>EAID_F46C4894_8704_44e1_89BA_12342B4A5039</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>slowVehicleLane</name>
+          <definition>In a lane dedicated to vehicles that are not permitted to exceed a fixed slow speed.</definition>
+          <order>32</order>
+          <generate>true</generate>
+          <ID>EAID_950D3E0A_5E99_499e_94CA_15B1782FFEF9</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>throughTrafficLane</name>
+          <definition>In the through traffic lane.</definition>
+          <order>33</order>
+          <generate>true</generate>
+          <ID>EAID_ADFA9F3E_DF90_452b_A506_9A8027DFDB12</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>tidalFlowLane</name>
+          <definition>In the lane dedicated for use as a tidal flow lane.</definition>
+          <order>34</order>
+          <generate>false</generate>
+          <ID>EAID_BA03F904_2695_427e_9F55_1910C34BBA1B</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>turningLane</name>
+          <definition>In the turning lane.</definition>
+          <order>35</order>
+          <generate>true</generate>
+          <ID>EAID_720EE939_3E6B_4791_994D_08AA49AD495E</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>verge</name>
+          <definition>On the verge.</definition>
+          <order>36</order>
+          <generate>false</generate>
+          <ID>EAID_95D786D8_5B0C_4f33_A223_6F315F519A7E</ID>
+        </D2Litteral>
+      </d2Litteral>
+      <isExtension>false</isExtension>
+      <isExtended>true</isExtended>
+    </D2Enumeration>
+    <D2Enumeration>
+      <name>VehicleTypeEnum</name>
+      <definition>Types of vehicle.</definition>
+      <id>EAID_61FF4543_14D3_4a72_8934_72AECC1EC99C</id>
+      <isGenerated>true</isGenerated>
+      <package>
+        <name>Enumerations</name>
+        <ID>EAPK_B491E67F_A42E_44a8_AC75_A17AC2E6D898</ID>
+        <generate>false</generate>
+        <definition>A collection of lists of enumeration values used throughout the DATEX II model.</definition>
+        <NamespaceName>Common</NamespaceName>
+      </package>
+      <NamespaceName>Common</NamespaceName>
+      <d2Litteral>
+        <D2Litteral>
+          <name>agriculturalVehicle</name>
+          <definition>Vehicle normally used for agricultural purposes, e.g. tractor, combined harvester etc.</definition>
+          <order>0</order>
+          <generate>false</generate>
+          <ID>EAID_93C98B7E_B473_45ac_8E20_0D8ED6A8F4D2</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>anyVehicle</name>
+          <definition>Vehicle of any type.</definition>
+          <order>1</order>
+          <generate>true</generate>
+          <ID>EAID_D8209F4D_8B30_495d_A58C_B637D23007CA</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>articulatedBus</name>
+          <definition>Articulated bus</definition>
+          <order>2</order>
+          <generate>false</generate>
+          <ID>EAID_E3651E09_20E1_439d_A137_6EC8086838C1</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>articulatedTrolleyBus</name>
+          <definition>Articulated trolley bus</definition>
+          <order>3</order>
+          <generate>false</generate>
+          <ID>EAID_8D416E72_781C_4467_9CFE_AA625716E782</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>articulatedVehicle</name>
+          <definition>Articulated vehicle.</definition>
+          <order>4</order>
+          <generate>true</generate>
+          <ID>EAID_61ACAC61_DEDE_4c9e_8C1B_E1C0CD9FB89D</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>bicycle</name>
+          <definition>Bicycle.</definition>
+          <order>5</order>
+          <generate>false</generate>
+          <ID>EAID_21DBB12B_3638_41e6_BE4A_919C1867A047</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>bus</name>
+          <definition>Bus.</definition>
+          <order>6</order>
+          <generate>true</generate>
+          <ID>EAID_1162D797_4061_48b1_9701_EEBC4337960C</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>car</name>
+          <definition>Vehicles designed and constructed for the carriage of passengers and comprising no more than eight seats in addition to the driver’s seat, and having a maximum mass (“technically permissible maximum laden mass”) not exceeding 3.5 tons (M1).</definition>
+          <order>7</order>
+          <generate>true</generate>
+          <ID>EAID_92349491_7AAE_4089_9DE8_2A4E74F7DB8C</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>caravan</name>
+          <definition>Caravan.</definition>
+          <order>8</order>
+          <generate>true</generate>
+          <ID>EAID_477A07B6_C822_4472_BAF4_49F7103BFE46</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>carOrLightVehicle</name>
+          <definition>Car or light vehicle.</definition>
+          <order>9</order>
+          <generate>true</generate>
+          <ID>EAID_0FD582CF_77FC_41f5_B34F_A9BEF5C40C4E</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>carWithCaravan</name>
+          <definition>Car towing a caravan.</definition>
+          <order>10</order>
+          <generate>false</generate>
+          <ID>EAID_FE9D9504_C6B6_4acd_A29B_A8DDD21A4544</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>carWithTrailer</name>
+          <definition>Car towing a trailer.</definition>
+          <order>11</order>
+          <generate>false</generate>
+          <ID>EAID_A38C3334_25B2_42b6_A159_2D08D3848256</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>constructionOrMaintenanceVehicle</name>
+          <definition>Vehicle normally used for construction or maintenance purposes, e.g. digger, excavator, bulldozer, lorry mounted crane etc.</definition>
+          <order>12</order>
+          <generate>true</generate>
+          <ID>EAID_FF174F9D_0F75_43d2_A992_5345E864DF1E</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>fourWheelDrive</name>
+          <definition>Four wheel drive vehicle.</definition>
+          <order>13</order>
+          <generate>false</generate>
+          <ID>EAID_13616ECF_30F6_4315_8477_50BCD0D10A1F</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>heavyGoodsVehicle</name>
+          <definition>Vehicles with a total weight above 3,500 kg (vehicle and load).</definition>
+          <order>14</order>
+          <generate>false</generate>
+          <ID>EAID_40818879_5219_49c0_A867_FA22E4B21D49</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>heavyGoodsVehicleWithTrailer</name>
+          <definition>Heavy goods vehicle with trailer</definition>
+          <order>15</order>
+          <generate>false</generate>
+          <ID>EAID_FE2460AD_6F85_4580_A071_A8ECAAD7D5FD</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>heavyDutyTransporter</name>
+          <definition>A transporter for heavy duty (usually with abnormal dimensions).</definition>
+          <order>16</order>
+          <generate>false</generate>
+          <ID>EAID_C047C5D8_6A7E_4d01_9A94_A16CAEB7689C</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>heavyVehicle</name>
+          <definition>Vehicle whose weight means it should be classed as a heavy vehicle</definition>
+          <order>17</order>
+          <generate>false</generate>
+          <ID>EAID_696F71A8_BFAC_4584_8356_6228CA9B1897</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>highSidedVehicle</name>
+          <definition>High sided vehicle.</definition>
+          <order>18</order>
+          <generate>true</generate>
+          <ID>EAID_F953E080_6203_42a8_A68C_E9D187856337</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>lightCommercialVehicle</name>
+          <definition>Vehicles for the carriage of goods and having a maximum mass not exceeding 3.5 tonnes (class N1).</definition>
+          <order>19</order>
+          <generate>false</generate>
+          <ID>EAID_B6FB1D01_A3E3_460e_ACCE_A957E4018EBB</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>largeCar</name>
+          <definition>Large car</definition>
+          <order>20</order>
+          <generate>false</generate>
+          <ID>EAID_505A9113_ADF0_4c69_8EBB_040229798E43</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>largeGoodsVehicle</name>
+          <definition>Vehicles for the carriage of goods and having a maximum mass exceeding 3.5 tonnes (belonging to class N2 when not exceeding 12 tonnes, otherwise class N3).</definition>
+          <order>21</order>
+          <generate>false</generate>
+          <ID>EAID_6FBBEBF9_D98D_433d_AAC3_B4BCE1A62164</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>lightCommercialVehicleWithTrailer</name>
+          <definition>Light goods vehicle with trailer</definition>
+          <order>22</order>
+          <generate>false</generate>
+          <ID>EAID_E5D75FBE_EA03_43f3_955B_AF39CF2093AC</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>longHeavyLorry</name>
+          <definition>A heavy lorry that is longer than normal.</definition>
+          <order>23</order>
+          <generate>false</generate>
+          <ID>EAID_C5EE7BAA_6A36_40bb_B21D_DEBACA8D1576</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>lorry</name>
+          <definition>Lorry of any type.</definition>
+          <order>24</order>
+          <generate>true</generate>
+          <ID>EAID_FF621D50_740C_4db5_AC7D_55F1F1FE4586</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>metro</name>
+          <definition>Metro</definition>
+          <order>25</order>
+          <generate>false</generate>
+          <ID>EAID_5AE9F130_C060_487b_9368_25B50FE139F6</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>minibus</name>
+          <definition>Vehicles designed and constructed for the carriage of passengers, comprising more than eight seats in addition to the driver’s seat, and having a maximum mass not exceeding 5 tonnes (class M2).</definition>
+          <order>26</order>
+          <generate>false</generate>
+          <ID>EAID_36716019_F8F6_4297_8C10_0D2CD7942E45</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>moped</name>
+          <definition>Moped (a two wheeled motor vehicle characterized by a small engine typically less than 50cc and by normally having pedals).</definition>
+          <order>27</order>
+          <generate>false</generate>
+          <ID>EAID_B8A7830A_6BE1_4a3d_B8B7_532D4EDD1837</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>motorcycle</name>
+          <definition>Motorcycle.</definition>
+          <order>28</order>
+          <generate>false</generate>
+          <ID>EAID_9E41CE47_75CF_4e70_AF4D_27169E150CB6</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>motorcycleWithSideCar</name>
+          <definition>Three wheeled vehicle comprising a motorcycle with an attached side car.</definition>
+          <order>29</order>
+          <generate>false</generate>
+          <ID>EAID_604699A2_31E5_405b_A57A_3E1FA1BB49EA</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>motorhome</name>
+          <definition>Motorhome</definition>
+          <order>30</order>
+          <generate>false</generate>
+          <ID>EAID_8F24091B_DF0E_4042_9132_4BF62EF70ED3</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>motorscooter</name>
+          <definition>Motorscooter (a two wheeled motor vehicle characterized by a step-through frame and small diameter wheels).</definition>
+          <order>31</order>
+          <generate>false</generate>
+          <ID>EAID_B9E4BBDF_89DB_47c1_BA79_1ECC8A3FC8AF</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>passengerCar</name>
+          <definition>Passenger car</definition>
+          <order>32</order>
+          <generate>false</generate>
+          <ID>EAID_0931F00E_2FF2_4a21_8058_BCFE242F8AE0</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>smallCar</name>
+          <definition>Small car</definition>
+          <order>33</order>
+          <generate>false</generate>
+          <ID>EAID_5DB96992_23A9_443d_96BB_73D33E6CDD74</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>tanker</name>
+          <definition>Vehicle with large tank for carrying bulk liquids.</definition>
+          <order>34</order>
+          <generate>false</generate>
+          <ID>EAID_55CEEE62_BEB6_467c_9553_2C6575D6F594</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>threeWheeledVehicle</name>
+          <definition>Three wheeled vehicle of unspecified type.</definition>
+          <order>35</order>
+          <generate>false</generate>
+          <ID>EAID_F1AA2C26_3ED7_497d_B09A_3683ABCF81C0</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>trailer</name>
+          <definition>Trailer.</definition>
+          <order>36</order>
+          <generate>true</generate>
+          <ID>EAID_7E1C3A67_CCAB_436c_9DD9_968C9D84ED0F</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>tram</name>
+          <definition>Tram.</definition>
+          <order>37</order>
+          <generate>false</generate>
+          <ID>EAID_0F890CA0_24CE_427d_9289_8161B81D99C6</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>trolleyBus</name>
+          <definition>Trolley bus</definition>
+          <order>38</order>
+          <generate>false</generate>
+          <ID>EAID_62E3D48F_3C0C_4755_9DC8_931A55BF3088</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>twoWheeledVehicle</name>
+          <definition>Two wheeled vehicle of unspecified type.</definition>
+          <order>39</order>
+          <generate>false</generate>
+          <ID>EAID_32A5B25D_6277_48e7_B60C_AA0E7A2B149C</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>van</name>
+          <definition>Van.</definition>
+          <order>40</order>
+          <generate>false</generate>
+          <ID>EAID_F648CDFE_004B_4148_A98D_18C9A3E3EECE</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>vehicleWithCaravan</name>
+          <definition>Vehicle (of unspecified type) towing a caravan.</definition>
+          <order>41</order>
+          <generate>true</generate>
+          <ID>EAID_BB5D6AE7_819E_4312_A2C8_54F682DCFF14</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>vehicleWithCatalyticConverter</name>
+          <definition>Vehicle with catalytic converter.</definition>
+          <order>42</order>
+          <generate>true</generate>
+          <ID>EAID_03FB80B3_E9E7_421c_B128_A821B269669C</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>vehicleWithoutCatalyticConverter</name>
+          <definition>Vehicle without catalytic converter.</definition>
+          <order>43</order>
+          <generate>true</generate>
+          <ID>EAID_25FCE113_3D80_4df0_B31B_4BBFF1189037</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>vehicleWithTrailer</name>
+          <definition>Vehicle (of unspecified type) towing a trailer.</definition>
+          <order>44</order>
+          <generate>true</generate>
+          <ID>EAID_DA9E4CDE_955E_4276_A329_49D8DDE62A2E</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>withEvenNumberedRegistrationPlates</name>
+          <definition>Vehicle with even numbered registration plate.</definition>
+          <order>45</order>
+          <generate>true</generate>
+          <ID>EAID_7E449750_52E3_447d_9C0D_A06AAB2A78FA</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>withOddNumberedRegistrationPlates</name>
+          <definition>Vehicle with odd numbered registration plate.</definition>
+          <order>46</order>
+          <generate>true</generate>
+          <ID>EAID_624A9F43_74C4_4405_B116_00D9E40AC343</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>unknown</name>
+          <definition>Unknown.</definition>
+          <order>99</order>
+          <generate>false</generate>
+          <ID>EAID_546BD71D_28A5_45c7_AE6D_2157F9ECDB98</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>other</name>
+          <definition>Other than as defined in this enumeration.</definition>
+          <order>100</order>
+          <generate>true</generate>
+          <ID>EAID_9F5B881F_D6CB_42aa_8A0E_CCA5DE08798D</ID>
+        </D2Litteral>
+      </d2Litteral>
+      <isExtension>false</isExtension>
+      <isExtended>true</isExtended>
+    </D2Enumeration>
+    <D2Enumeration>
+      <name>DelaysTypeEnum</name>
+      <definition>Course classifications of a delay.</definition>
+      <id>EAID_634A1507_B766_4d3c_8663_29C65B1427FF</id>
+      <isGenerated>true</isGenerated>
+      <package>
+        <name>Enumerations</name>
+        <ID>EAPK_9E2307F1_3590_4d2f_9EAA_0904DFD104E6</ID>
+        <generate>false</generate>
+        <definition>A collection of enumerations that are used only in the Situation package of the DATEX II model.</definition>
+        <NamespaceName>Situation</NamespaceName>
+      </package>
+      <NamespaceName>Situation</NamespaceName>
+      <d2Litteral>
+        <D2Litteral>
+          <name>delays</name>
+          <definition>Delays on the road network as a result of any situation which causes hold-ups.</definition>
+          <order>0</order>
+          <generate>true</generate>
+          <ID>EAID_B17F779D_CECB_4258_AF9B_49E77034973A</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>delaysOfUncertainDuration</name>
+          <definition>Delays on the road network whose predicted duration cannot be estimated.</definition>
+          <order>1</order>
+          <generate>false</generate>
+          <ID>EAID_7F19F2BA_BF13_4359_91AC_38E2F2C5708D</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>longDelays</name>
+          <definition>Delays on the road network of unusual severity.</definition>
+          <order>2</order>
+          <generate>true</generate>
+          <ID>EAID_B4A3BCB4_C1EB_4f94_870D_AFEA0D1ACC9E</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>veryLongDelays</name>
+          <definition>Delays on the road network of abnormally unusual severity.</definition>
+          <order>3</order>
+          <generate>true</generate>
+          <ID>EAID_FDD3FE3E_05B3_41f3_8B0A_EC3FD24C7269</ID>
+        </D2Litteral>
+      </d2Litteral>
+      <isExtension>false</isExtension>
+      <isExtended>false</isExtended>
+    </D2Enumeration>
+    <D2Enumeration>
+      <name>UrlLinkTypeEnum</name>
+      <definition>Types of URL links.</definition>
+      <id>EAID_726C154B_6CE3_4038_A274_0AF455F5B74C</id>
+      <isGenerated>true</isGenerated>
+      <package>
+        <name>Enumerations</name>
+        <ID>EAPK_B491E67F_A42E_44a8_AC75_A17AC2E6D898</ID>
+        <generate>false</generate>
+        <definition>A collection of lists of enumeration values used throughout the DATEX II model.</definition>
+        <NamespaceName>Common</NamespaceName>
+      </package>
+      <NamespaceName>Common</NamespaceName>
+      <d2Litteral>
+        <D2Litteral>
+          <name>documentPdf</name>
+          <definition>URL link to a pdf document.</definition>
+          <order>0</order>
+          <generate>false</generate>
+          <ID>EAID_9FB6FF80_9639_42ea_BF3A_2F374F06C3E4</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>html</name>
+          <definition>URL link to an html page.</definition>
+          <order>1</order>
+          <generate>true</generate>
+          <ID>EAID_ABFA584B_AD98_47a7_867A_AA1B85547376</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>image</name>
+          <definition>URL link to an image.</definition>
+          <order>2</order>
+          <generate>false</generate>
+          <ID>EAID_78FF4FF3_3125_4e53_934A_4D03641A0904</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>rss</name>
+          <definition>URL link to an RSS feed.</definition>
+          <order>3</order>
+          <generate>false</generate>
+          <ID>EAID_E4EEDC0B_094F_47f5_8781_6E5A19EF6AE2</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>videoStream</name>
+          <definition>URL link to a video stream.</definition>
+          <order>4</order>
+          <generate>false</generate>
+          <ID>EAID_3A29BE95_44CC_44e4_9646_0212D8BD2ACA</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>voiceStream</name>
+          <definition>URL link to a voice stream.</definition>
+          <order>5</order>
+          <generate>false</generate>
+          <ID>EAID_6D8BECD7_BF0D_4b8e_B0A8_B187C1562E0A</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>other</name>
+          <definition>Other than as defined in this enumeration.</definition>
+          <order>6</order>
+          <generate>false</generate>
+          <ID>EAID_A4F03A05_366B_4aaf_ABED_C253226DF7F9</ID>
+        </D2Litteral>
+      </d2Litteral>
+      <isExtension>false</isExtension>
+      <isExtended>false</isExtended>
+    </D2Enumeration>
+    <D2Enumeration>
+      <name>ConfidentialityValueEnum</name>
+      <definition>Values of confidentiality.</definition>
+      <id>EAID_74A8CB5B_7457_4096_BB47_5F88068F0055</id>
+      <isGenerated>true</isGenerated>
+      <package>
+        <name>Enumerations</name>
+        <ID>EAPK_B491E67F_A42E_44a8_AC75_A17AC2E6D898</ID>
+        <generate>false</generate>
+        <definition>A collection of lists of enumeration values used throughout the DATEX II model.</definition>
+        <NamespaceName>Common</NamespaceName>
+      </package>
+      <NamespaceName>Common</NamespaceName>
+      <d2Litteral>
+        <D2Litteral>
+          <name>internalUse</name>
+          <definition>For internal use only of the recipient organisation.</definition>
+          <order>0</order>
+          <generate>false</generate>
+          <ID>EAID_32BD4CF1_638F_4441_8347_E3738F34BE4E</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>noRestriction</name>
+          <definition>No restriction on usage.</definition>
+          <order>1</order>
+          <generate>true</generate>
+          <ID>EAID_EEE708CC_36BC_4662_B9B6_BEF1BFAFB6A1</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>restrictedToAuthorities</name>
+          <definition>Restricted for use only by authorities.</definition>
+          <order>2</order>
+          <generate>false</generate>
+          <ID>EAID_698283FB_6140_442b_AFB5_B4B37B25B9BA</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>restrictedToAuthoritiesAndTrafficOperators</name>
+          <definition>Restricted for use only by authorities and traffic operators.</definition>
+          <order>3</order>
+          <generate>false</generate>
+          <ID>EAID_6CBDBC45_701A_4c72_8C3A_51E6F416270D</ID>
+        </D2Litteral>
+      </d2Litteral>
+      <isExtension>false</isExtension>
+      <isExtended>false</isExtended>
+    </D2Enumeration>
+    <D2Enumeration>
+      <name>SubjectTypeOfWorksEnum</name>
+      <definition>Subject types of construction or maintenance work.</definition>
+      <id>EAID_74AD87B4_654F_4396_AC76_DB3D8601C988</id>
+      <isGenerated>true</isGenerated>
+      <package>
+        <name>Enumerations</name>
+        <ID>EAPK_9E2307F1_3590_4d2f_9EAA_0904DFD104E6</ID>
+        <generate>false</generate>
+        <definition>A collection of enumerations that are used only in the Situation package of the DATEX II model.</definition>
+        <NamespaceName>Situation</NamespaceName>
+      </package>
+      <NamespaceName>Situation</NamespaceName>
+      <d2Litteral>
+        <D2Litteral>
+          <name>bridge</name>
+          <definition>Bridge on, over or under the highway.</definition>
+          <order>0</order>
+          <generate>true</generate>
+          <ID>EAID_6C7B8603_AB80_4e9c_B813_CAF24A09A750</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>buriedCables</name>
+          <definition>Buried cables under or along the highway.</definition>
+          <order>1</order>
+          <generate>true</generate>
+          <ID>EAID_CB09DEEA_7BE5_401f_8986_62520625A0E6</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>buriedServices</name>
+          <definition>Unspecified buried services on, under or along the highway.</definition>
+          <order>2</order>
+          <generate>true</generate>
+          <ID>EAID_B3E1F09A_D06E_46ec_9BA5_B6443A7ECEE9</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>crashBarrier</name>
+          <definition>Crash barrier.</definition>
+          <order>3</order>
+          <generate>false</generate>
+          <ID>EAID_CAB5C15B_0031_4ad3_9388_E44F85F47DF9</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>cycleTrack</name>
+          <definition>Cycle track adjacent to the road</definition>
+          <order>4</order>
+          <generate>false</generate>
+          <ID>EAID_4E63698B_3E96_464a_838E_F7333A280832</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>footpath</name>
+          <definition>a footpath</definition>
+          <order>5</order>
+          <generate>false</generate>
+          <ID>EAID_DAF702C7_7E60_4fd1_AB03_567DF670A7F2</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>gallery</name>
+          <definition>Gallery.</definition>
+          <order>6</order>
+          <generate>false</generate>
+          <ID>EAID_D8104009_8F2A_4291_B95A_1D6117091D33</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>gantry</name>
+          <definition>Gantry over or above the roadway.</definition>
+          <order>7</order>
+          <generate>false</generate>
+          <ID>EAID_F547B9C0_3D60_4d9a_9CD5_7EA883A19519</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>gasMainWork</name>
+          <definition>Gas mains.</definition>
+          <order>8</order>
+          <generate>true</generate>
+          <ID>EAID_8358CED9_3AA1_4393_A2FC_DC1DFF392F34</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>heatingPipe</name>
+          <definition>a heating pipe</definition>
+          <order>9</order>
+          <generate>false</generate>
+          <ID>EAID_EF3B7CC2_4331_47d7_89CA_08CD08B2CE6D</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>interchange</name>
+          <definition>Motorway or major road interchange.</definition>
+          <order>10</order>
+          <generate>false</generate>
+          <ID>EAID_CF7F7B76_3B0E_4cb9_8FF8_FF75698383A1</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>junction</name>
+          <definition>Motorway or major road junction.</definition>
+          <order>11</order>
+          <generate>false</generate>
+          <ID>EAID_1B71D871_C0E7_4ea7_9CE2_2FF2B1C1F464</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>levelCrossing</name>
+          <definition>Level-crossing or associated equipment.</definition>
+          <order>12</order>
+          <generate>true</generate>
+          <ID>EAID_D8DEC1F0_8F30_4aa1_9AE6_AA69EC3E096F</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>lightingSystem</name>
+          <definition>Road lighting system.</definition>
+          <order>13</order>
+          <generate>false</generate>
+          <ID>EAID_98A46685_D4E7_46c2_97DB_4FF08A59838C</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>lock</name>
+          <definition>lock on a waterway adjacent to the road</definition>
+          <order>14</order>
+          <generate>false</generate>
+          <ID>EAID_5BA797B5_5066_44a6_8465_D5F2FDDD4084</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>measurementEquipment</name>
+          <definition>Equipment used for determining traffic measurements.</definition>
+          <order>15</order>
+          <generate>false</generate>
+          <ID>EAID_B190E4BF_EC70_49af_9F4A_D7B352E076C3</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>metro</name>
+          <definition>passenger railway system, typically underground, in a metropolitan area</definition>
+          <order>16</order>
+          <generate>false</generate>
+          <ID>EAID_F5C3DD20_3E56_4723_9E90_1F2B6000F41E</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>noiseProtection</name>
+          <definition>Installations along the roadway designed to reduce road noise in the surrounding environment.</definition>
+          <order>17</order>
+          <generate>false</generate>
+          <ID>EAID_7D6F8F8C_5BD7_4508_8D18_5FA7CDFAE4DD</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>parking</name>
+          <definition>parking facilities</definition>
+          <order>18</order>
+          <generate>false</generate>
+          <ID>EAID_8D9DF404_D5BC_4c26_A44A_981B660B214D</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>publicTransportInfrastructure</name>
+          <definition>public transport infrastructure</definition>
+          <order>19</order>
+          <generate>false</generate>
+          <ID>EAID_757A681A_1166_48ec_8197_156E16DCA35B</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>publicTransportStop</name>
+          <definition>public transport stop (including but not limited to bus stops, trams stops, taxi stops)</definition>
+          <order>20</order>
+          <generate>false</generate>
+          <ID>EAID_D37EBB44_29B7_4033_893E_C7719D2A282E</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>road</name>
+          <definition>Road.</definition>
+          <order>21</order>
+          <generate>true</generate>
+          <ID>EAID_26683C2E_03C3_4f45_880B_49903377D78B</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>roadSigns</name>
+          <definition>Road signs.</definition>
+          <order>22</order>
+          <generate>true</generate>
+          <ID>EAID_1092EB46_BC8D_40be_95F0_FBAE5ED08188</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>roadsideDrains</name>
+          <definition>Roadside drains.</definition>
+          <order>23</order>
+          <generate>false</generate>
+          <ID>EAID_A58C29D6_98D3_48e0_8876_65548B1F0803</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>roadsideEmbankment</name>
+          <definition>Roadside embankment.</definition>
+          <order>24</order>
+          <generate>false</generate>
+          <ID>EAID_A81802DC_1231_4372_8A6D_B510D0057A40</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>roadsideEquipment</name>
+          <definition>Roadside equipment.</definition>
+          <order>25</order>
+          <generate>true</generate>
+          <ID>EAID_F2AE22C4_4421_4634_9FFD_0B45C45E5B31</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>roundabout</name>
+          <definition>Roundabout.</definition>
+          <order>26</order>
+          <generate>false</generate>
+          <ID>EAID_8A761B2E_BBE9_48fa_8D26_CE16E80FF677</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>sewer</name>
+          <definition>a sewer</definition>
+          <order>27</order>
+          <generate>false</generate>
+          <ID>EAID_7C75FFB4_664C_4934_95B5_15F7CFA23DDE</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>streetParking</name>
+          <definition>street parking places</definition>
+          <order>28</order>
+          <generate>false</generate>
+          <ID>EAID_2375D8FD_0F01_44e7_9AF1_518E38468D31</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>tollGate</name>
+          <definition>Toll gate.</definition>
+          <order>29</order>
+          <generate>false</generate>
+          <ID>EAID_B5B64E29_A6E8_40b2_B9F4_6E256F568B5B</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>trafficSignals</name>
+          <definition>traffic signals</definition>
+          <order>30</order>
+          <generate>false</generate>
+          <ID>EAID_245EA305_EF9E_4e32_BF27_4421A31D17C5</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>tunnel</name>
+          <definition>Road tunnel.</definition>
+          <order>31</order>
+          <generate>false</generate>
+          <ID>EAID_0149A59E_E629_470b_921B_7A6548F7A337</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>waterBank</name>
+          <definition>bank of a waterway adjacent to the road</definition>
+          <order>32</order>
+          <generate>false</generate>
+          <ID>EAID_5F8C09C1_03A9_4c44_B535_B54785FB43A5</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>waterMain</name>
+          <definition>Water main under or along the highway.</definition>
+          <order>33</order>
+          <generate>true</generate>
+          <ID>EAID_1767AF0A_8811_4393_B636_AA3923657676</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>other</name>
+          <definition>Other than as defined in this enumeration.</definition>
+          <order>34</order>
+          <generate>true</generate>
+          <ID>EAID_BDDB161A_C387_42b9_B568_080BB0FBE20F</ID>
+        </D2Litteral>
+      </d2Litteral>
+      <isExtension>false</isExtension>
+      <isExtended>false</isExtended>
+    </D2Enumeration>
+    <D2Enumeration>
+      <name>MaintenanceVehicleActionsEnum</name>
+      <definition>Types of maintenance vehicle actions associated with roadworks.</definition>
+      <id>EAID_7A8518A0_C806_4325_AB28_E9E08EB3EFF1</id>
+      <isGenerated>true</isGenerated>
+      <package>
+        <name>Enumerations</name>
+        <ID>EAPK_9E2307F1_3590_4d2f_9EAA_0904DFD104E6</ID>
+        <generate>false</generate>
+        <definition>A collection of enumerations that are used only in the Situation package of the DATEX II model.</definition>
+        <NamespaceName>Situation</NamespaceName>
+      </package>
+      <NamespaceName>Situation</NamespaceName>
+      <d2Litteral>
+        <D2Litteral>
+          <name>maintenanceAction</name>
+          <definition>Maintenance vehicles are performing maintenance action</definition>
+          <order>0</order>
+          <generate>true</generate>
+          <ID>EAID_57DD47A3_E0C2_45cc_BB21_5555E306559E</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>maintenanceVehiclesMergingIntoTrafficFlow</name>
+          <definition>Maintenance vehicles are merging into the traffic flow creating a potential hazard for road users.</definition>
+          <order>1</order>
+          <generate>true</generate>
+          <ID>EAID_AEFEEA10_8FC4_4afc_8410_2EA474E71FFA</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>slowMoving</name>
+          <definition>Maintenance vehicles are slow moving.</definition>
+          <order>2</order>
+          <generate>true</generate>
+          <ID>EAID_F3B7D91F_8D70_4892_AD7B_006EA84A704F</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>stoppingToServiceEquipments</name>
+          <definition>Maintenance vehicles are stopping to service equipments on or next to the roadway.</definition>
+          <order>3</order>
+          <generate>false</generate>
+          <ID>EAID_A4AAA0DB_659F_4053_A484_BB43D84E00C2</ID>
+        </D2Litteral>
+      </d2Litteral>
+      <isExtension>false</isExtension>
+      <isExtended>false</isExtended>
+    </D2Enumeration>
+    <D2Enumeration>
+      <name>VehicleUsageEnum</name>
+      <definition>Types of usage of a vehicle.</definition>
+      <id>EAID_90DDE5F1_B273_4918_9BA3_BD93BA6823B9</id>
+      <isGenerated>true</isGenerated>
+      <package>
+        <name>Enumerations</name>
+        <ID>EAPK_B491E67F_A42E_44a8_AC75_A17AC2E6D898</ID>
+        <generate>false</generate>
+        <definition>A collection of lists of enumeration values used throughout the DATEX II model.</definition>
+        <NamespaceName>Common</NamespaceName>
+      </package>
+      <NamespaceName>Common</NamespaceName>
+      <d2Litteral>
+        <D2Litteral>
+          <name>agricultural</name>
+          <definition>Vehicle used for agricultural purposes.</definition>
+          <order>0</order>
+          <generate>false</generate>
+          <ID>EAID_38C1F70A_BFC9_400d_8586_1C11264899FB</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>carSharing</name>
+          <definition>Vehicles operated by a car-sharing company.</definition>
+          <order>1</order>
+          <generate>false</generate>
+          <ID>EAID_8096BE40_841A_4248_96F2_78DFA67AFCD4</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>cityLogistics</name>
+          <definition>Vehicles that are used to deliver goods in a city area.</definition>
+          <order>2</order>
+          <generate>false</generate>
+          <ID>EAID_DF4DD7FA_75BD_48b7_95F5_FCF640A264D0</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>commercial</name>
+          <definition>Vehicle which is limited to non-private usage or public transport usage.</definition>
+          <order>3</order>
+          <generate>false</generate>
+          <ID>EAID_0F7CDD91_C97B_4992_B264_DB945033B827</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>emergencyServices</name>
+          <definition>Vehicle used by the emergency services.</definition>
+          <order>4</order>
+          <generate>true</generate>
+          <ID>EAID_42F12C21_7D0D_48bf_A9D4_865C5DA28080</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>military</name>
+          <definition>Vehicle used by the military.</definition>
+          <order>5</order>
+          <generate>false</generate>
+          <ID>EAID_FE951ADD_3AA2_4cc7_82AA_4807A59FB8B9</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>nonCommercial</name>
+          <definition>Vehicle used for non-commercial or private purposes.</definition>
+          <order>6</order>
+          <generate>false</generate>
+          <ID>EAID_1785002D_1D71_4836_B4A5_1ADB8EFCACA9</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>patrol</name>
+          <definition>Vehicle used as part of a patrol service, e.g. road operator or automobile association patrol vehicle.</definition>
+          <order>7</order>
+          <generate>false</generate>
+          <ID>EAID_DD2CD33F_FD64_483d_8CB1_E70289ED49DA</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>recoveryServices</name>
+          <definition>Vehicle used to provide a recovery service.</definition>
+          <order>8</order>
+          <generate>false</generate>
+          <ID>EAID_2FA01B65_1AC8_4c5d_B0A6_735157AE042F</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>roadMaintenanceOrConstruction</name>
+          <definition>Vehicle used for road maintenance or construction work purposes.</definition>
+          <order>9</order>
+          <generate>true</generate>
+          <ID>EAID_1C7588AE_FF40_4e28_A984_8AAA9783B912</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>roadOperator</name>
+          <definition>Vehicle used by the road operator.</definition>
+          <order>10</order>
+          <generate>false</generate>
+          <ID>EAID_ABFC47C6_4442_4684_9EA8_45E4CC0DC073</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>taxi</name>
+          <definition>Vehicle used to provide an authorised taxi service.</definition>
+          <order>11</order>
+          <generate>false</generate>
+          <ID>EAID_D3641269_C67F_4d26_8A2B_3FB98F816D9E</ID>
+        </D2Litteral>
+      </d2Litteral>
+      <isExtension>false</isExtension>
+      <isExtended>true</isExtended>
+    </D2Enumeration>
+    <D2Enumeration>
+      <name>InformationStatusEnum</name>
+      <definition>Status of the related information (i.e. real, test or exercise).</definition>
+      <id>EAID_960BC244_5D5A_45ec_8572_3EF2EB88664B</id>
+      <isGenerated>true</isGenerated>
+      <package>
+        <name>Enumerations</name>
+        <ID>EAPK_B491E67F_A42E_44a8_AC75_A17AC2E6D898</ID>
+        <generate>false</generate>
+        <definition>A collection of lists of enumeration values used throughout the DATEX II model.</definition>
+        <NamespaceName>Common</NamespaceName>
+      </package>
+      <NamespaceName>Common</NamespaceName>
+      <d2Litteral>
+        <D2Litteral>
+          <name>real</name>
+          <definition>The information is real. It is not a test or exercise.</definition>
+          <order>0</order>
+          <generate>true</generate>
+          <ID>EAID_6EE579DA_D490_49a2_B768_5003B68E9687</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>securityExercise</name>
+          <definition>The information is part of an exercise which is for testing security.</definition>
+          <order>1</order>
+          <generate>false</generate>
+          <ID>EAID_15E94C2E_3D28_47f1_B9BE_67A26A1CD503</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>technicalExercise</name>
+          <definition>The information is part of an exercise which includes tests of associated technical subsystems.</definition>
+          <order>2</order>
+          <generate>false</generate>
+          <ID>EAID_E0F9886E_D4F5_4389_89AF_9D1E2A3BF6B0</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>test</name>
+          <definition>The information is part of a test for checking the exchange of this type of information.</definition>
+          <order>3</order>
+          <generate>false</generate>
+          <ID>EAID_F370396C_F895_40a9_8837_26C62859708D</ID>
+        </D2Litteral>
+      </d2Litteral>
+      <isExtension>false</isExtension>
+      <isExtended>false</isExtended>
+    </D2Enumeration>
+    <D2Enumeration>
+      <name>ConstructionWorkTypeEnum</name>
+      <definition>Types of works relating to construction.</definition>
+      <id>EAID_9D6F08AF_E84C_4ea2_B541_A2F0FA565FD4</id>
+      <isGenerated>true</isGenerated>
+      <package>
+        <name>Enumerations</name>
+        <ID>EAPK_9E2307F1_3590_4d2f_9EAA_0904DFD104E6</ID>
+        <generate>false</generate>
+        <definition>A collection of enumerations that are used only in the Situation package of the DATEX II model.</definition>
+        <NamespaceName>Situation</NamespaceName>
+      </package>
+      <NamespaceName>Situation</NamespaceName>
+      <d2Litteral>
+        <D2Litteral>
+          <name>blastingWork</name>
+          <definition>Blasting or quarrying work at the specified location.</definition>
+          <order>0</order>
+          <generate>true</generate>
+          <ID>EAID_961064D5_3172_4560_B46F_0D0F1AD62626</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>constructionWork</name>
+          <definition>Construction work of a general nature at the specified location.</definition>
+          <order>1</order>
+          <generate>true</generate>
+          <ID>EAID_4B3929CC_40C0_4e85_8373_62AF136AFA4E</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>demolitionWork</name>
+          <definition>Demolition work associated with the construction work.</definition>
+          <order>2</order>
+          <generate>true</generate>
+          <ID>EAID_F5962D44_B1E2_4a07_B3D3_42638D5613F7</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>roadImprovementOrUpgrading</name>
+          <definition>Construction work associated with improvements to the road or its layout or with it upgrading.</definition>
+          <order>3</order>
+          <generate>true</generate>
+          <ID>EAID_B4AA8BA3_F49B_4936_8C5A_1F317BC94491</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>roadWideningWork</name>
+          <definition>Road widening work at the specified location.</definition>
+          <order>4</order>
+          <generate>false</generate>
+          <ID>EAID_B50183C5_C55C_4bca_B96D_EDCFA8B1B7CF</ID>
+        </D2Litteral>
+      </d2Litteral>
+      <isExtension>false</isExtension>
+      <isExtended>false</isExtended>
+    </D2Enumeration>
+    <D2Enumeration>
+      <name>ValidityStatusEnum</name>
+      <definition>Values of validity status that can be assigned to a described event, action or item.</definition>
+      <id>EAID_B071CFA6_4318_4638_92B6_A58A29022D23</id>
+      <isGenerated>true</isGenerated>
+      <package>
+        <name>Enumerations</name>
+        <ID>EAPK_B491E67F_A42E_44a8_AC75_A17AC2E6D898</ID>
+        <generate>false</generate>
+        <definition>A collection of lists of enumeration values used throughout the DATEX II model.</definition>
+        <NamespaceName>Common</NamespaceName>
+      </package>
+      <NamespaceName>Common</NamespaceName>
+      <d2Litteral>
+        <D2Litteral>
+          <name>active</name>
+          <definition>The described event, action or item is currently active regardless of the definition of the validity time specification.</definition>
+          <order>0</order>
+          <generate>false</generate>
+          <ID>EAID_47C91F16_0B96_4abb_A42E_85D2CBE400D0</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>planned</name>
+          <definition>The described event, action or item is currently planned regardless of the definition of the validity time specification.</definition>
+          <order>1</order>
+          <generate>false</generate>
+          <ID>EAID_6D765056_785E_41e7_85A2_9B82142A3DA8</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>suspended</name>
+          <definition>The described event, action or item is currently suspended, that is inactive, regardless of the definition of the validity time specification.</definition>
+          <order>2</order>
+          <generate>false</generate>
+          <ID>EAID_2A0A1AB4_036C_4447_B053_49D24F067870</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>definedByValidityTimeSpec</name>
+          <definition>The validity status of the described event, action or item is in accordance with the definition of the validity time specification.</definition>
+          <order>3</order>
+          <generate>true</generate>
+          <ID>EAID_6C5AC5AD_3021_4ed0_BC4F_F4524CEBD30D</ID>
+        </D2Litteral>
+      </d2Litteral>
+      <isExtension>false</isExtension>
+      <isExtended>false</isExtended>
+    </D2Enumeration>
+    <D2Enumeration>
+      <name>GeneralNetworkManagementTypeEnum</name>
+      <definition>Types of network management actions.</definition>
+      <id>EAID_C077F57A_C187_4550_AA1C_1E44BEA12828</id>
+      <isGenerated>true</isGenerated>
+      <package>
+        <name>Enumerations</name>
+        <ID>EAPK_9E2307F1_3590_4d2f_9EAA_0904DFD104E6</ID>
+        <generate>false</generate>
+        <definition>A collection of enumerations that are used only in the Situation package of the DATEX II model.</definition>
+        <NamespaceName>Situation</NamespaceName>
+      </package>
+      <NamespaceName>Situation</NamespaceName>
+      <d2Litteral>
+        <D2Litteral>
+          <name>bridgeSwingInOperation</name>
+          <definition>The bridge at the specified location has swung or lifted and is therefore temporarily closed to traffic.</definition>
+          <order>0</order>
+          <generate>false</generate>
+          <ID>EAID_0E48255C_8572_4b9e_932D_12F742DA577B</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>convoyService</name>
+          <definition>A vehicle convoy service is in operation, for example with a snowplough running ahead due to bad weather conditions.</definition>
+          <order>1</order>
+          <generate>true</generate>
+          <ID>EAID_708F673C_BEDE_4187_8C85_D00121B28CE3</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>obstacleSignalling</name>
+          <definition>Signs are being put out before or around an obstacle to protect drivers.</definition>
+          <order>2</order>
+          <generate>false</generate>
+          <ID>EAID_B51183DF_C9D4_4bbe_ACFA_3BACA23C6D36</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>rampMeteringInOperation</name>
+          <definition>Ramp metering is now active at the specified location.</definition>
+          <order>3</order>
+          <generate>false</generate>
+          <ID>EAID_EBBC062F_4A92_4e51_A45C_A5CA1C854D47</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>temporaryTrafficLights</name>
+          <definition>Traffic is being controlled by temporary traffic lights (red-yellow-green or red-green).</definition>
+          <order>4</order>
+          <generate>true</generate>
+          <ID>EAID_06631D33_5FEA_4114_879A_FE12291930D2</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>tollGatesOpen</name>
+          <definition>Toll gates are open with no fee collection at the specified location.</definition>
+          <order>5</order>
+          <generate>false</generate>
+          <ID>EAID_6127B782_757F_4449_B807_CF104B688DA5</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>trafficBeingManuallyDirected</name>
+          <definition>Traffic is being manually directed.</definition>
+          <order>6</order>
+          <generate>true</generate>
+          <ID>EAID_41AB49A0_F0C0_4ba1_B178_B903BEC2D0CB</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>trafficHeld</name>
+          <definition>Traffic in the specified direction is temporarily held up due to an unplanned event (e.g. for clearance of wreckage following an accident).</definition>
+          <order>7</order>
+          <generate>false</generate>
+          <ID>EAID_84E35AC7_7C3E_417a_BC04_0293172BE1BA</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>other</name>
+          <definition>Other than as defined in this enumeration.</definition>
+          <order>8</order>
+          <generate>true</generate>
+          <ID>EAID_68F226D9_C60F_4beb_9F32_7636EE7820A1</ID>
+        </D2Litteral>
+      </d2Litteral>
+      <isExtension>false</isExtension>
+      <isExtended>true</isExtended>
+    </D2Enumeration>
+    <D2Enumeration>
+      <name>RoadOrCarriagewayOrLaneManagementTypeEnum</name>
+      <definition>Management actions relating to road, carriageway or lane usage.</definition>
+      <id>EAID_C76C4E19_C7D9_4938_8BA5_8B5CDD35137A</id>
+      <isGenerated>true</isGenerated>
+      <package>
+        <name>Enumerations</name>
+        <ID>EAPK_9E2307F1_3590_4d2f_9EAA_0904DFD104E6</ID>
+        <generate>false</generate>
+        <definition>A collection of enumerations that are used only in the Situation package of the DATEX II model.</definition>
+        <NamespaceName>Situation</NamespaceName>
+      </package>
+      <NamespaceName>Situation</NamespaceName>
+      <d2Litteral>
+        <D2Litteral>
+          <name>carPoolLaneInOperation</name>
+          <definition>Dedicated car pool lane(s) are in operation for vehicles carrying at least the specified number of occupants.</definition>
+          <order>0</order>
+          <generate>true</generate>
+          <ID>EAID_6F3D31E7_15F9_4708_B69D_0A9BDD6D120E</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>carriagewayClosures</name>
+          <definition>Carriageway closures are in operation at the specified location.</definition>
+          <order>1</order>
+          <generate>true</generate>
+          <ID>EAID_CCF0C92B_4739_4b2d_8EC2_3D5D31B97351</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>clearALaneForEmergencyVehicles</name>
+          <definition>Clear a lane for emergency vehicles.</definition>
+          <order>2</order>
+          <generate>true</generate>
+          <ID>EAID_80F2CE0F_6A0E_45f1_BD5F_C65C1C6E19E2</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>clearALaneForSnowploughsAndGrittingVehicles</name>
+          <definition>Clear a lane for snow ploughs and gritting vehicles.</definition>
+          <order>3</order>
+          <generate>true</generate>
+          <ID>EAID_14EF4906_44B1_48da_A7A3_F1B113903F1F</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>closedPermanentlyForTheWinter</name>
+          <definition>The road is closed to vehicles with the specified characteristics or all, if none defined, for the duration of the winter.</definition>
+          <order>4</order>
+          <generate>true</generate>
+          <ID>EAID_66FE187D_B8EC_4b81_ADD7_383B22725745</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>contraflow</name>
+          <definition>Two-way traffic is temporarily sharing a single carriageway.</definition>
+          <order>5</order>
+          <generate>true</generate>
+          <ID>EAID_76C4830C_6F2C_46cb_AC30_5C9CBF867780</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>doNotUseSpecifiedLanesOrCarriageways</name>
+          <definition>Do not use the specified lane(s) or carriageway(s).</definition>
+          <order>6</order>
+          <generate>true</generate>
+          <ID>EAID_BD1F5C34_6B70_45b1_9931_1BDB231443C2</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>hardShoulderRunningInOperation</name>
+          <definition>The hard shoulder is open as an operational lane.</definition>
+          <order>7</order>
+          <generate>true</generate>
+          <ID>EAID_1D79CADD_2366_43e7_99D4_2705FDAD3EC0</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>hardShoulderRunningNotInOperation</name>
+          <definition>the hardshoulder used for dynamic hardshoulder management is closed to vehicles i.e. not running</definition>
+          <order>8</order>
+          <generate>false</generate>
+          <ID>EAID_49D5F076_9F56_4ea3_B94A_048CFF2FF767</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>heightRestrictionInOperation</name>
+          <definition>A height restriction is in operation.</definition>
+          <order>9</order>
+          <generate>true</generate>
+          <ID>EAID_5CF159B0_77B1_4955_BBA8_0710AD903B52</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>intermittentShortTermClosures</name>
+          <definition>Road closures occur intermittently on the specified road in the specified direction for short durations.</definition>
+          <order>10</order>
+          <generate>true</generate>
+          <ID>EAID_446E1439_DAF1_4686_9501_E6264B83A536</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>keepToTheLeft</name>
+          <definition>Keep to the left.</definition>
+          <order>11</order>
+          <generate>true</generate>
+          <ID>EAID_62DB52B3_9D6A_4a62_A6D6_A5AF88F01576</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>keepToTheRight</name>
+          <definition>Keep to the right.</definition>
+          <order>12</order>
+          <generate>true</generate>
+          <ID>EAID_5872818B_18F4_425c_A4D7_E32E24397218</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>laneClosures</name>
+          <definition>Lane closures are in operation at the specified location for vehicles with the specified characteristics or all, if none defined, in the specified direction.</definition>
+          <order>13</order>
+          <generate>true</generate>
+          <ID>EAID_0B615AC6_2725_4ce5_836C_D50D38E4528B</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>lanesDeviated</name>
+          <definition>Lane deviations are in operation at the specified location.</definition>
+          <order>14</order>
+          <generate>false</generate>
+          <ID>EAID_2B8A1DB7_9E75_470f_AB60_E7BFF1400910</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>narrowLanes</name>
+          <definition>Normal lane widths are temporarily reduced.</definition>
+          <order>15</order>
+          <generate>true</generate>
+          <ID>EAID_2B80FA26_4DE6_47fd_A903_6135738D4893</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>newRoadworksLayout</name>
+          <definition>A new layout of lanes/carriageway has been implemented associated with roadworks.</definition>
+          <order>16</order>
+          <generate>true</generate>
+          <ID>EAID_19476918_3C4D_4e70_B388_C00E9F6738D4</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>overnightClosures</name>
+          <definition>Every night the road is closed to vehicles with the specified characteristics or all, if none defined, in the specified direction by decision of the appropriate authorities.</definition>
+          <order>17</order>
+          <generate>true</generate>
+          <ID>EAID_650FE410_2974_48f0_8A8D_86572B7C9CE1</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>roadCleared</name>
+          <definition>The road has been cleared of earlier reported problems.</definition>
+          <order>18</order>
+          <generate>true</generate>
+          <ID>EAID_AE0022B4_CA53_4bf1_B846_B338AA7616AA</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>roadClosed</name>
+          <definition>The road is closed to vehicles with the specified characteristics or all, if none defined, in the specified direction.</definition>
+          <order>19</order>
+          <generate>true</generate>
+          <ID>EAID_6E985227_D510_44fd_A9C7_AE803ADC4668</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>rollingRoadBlock</name>
+          <definition>Traffic officers or police are driving slowly in front of a queue of traffic to create a gap in the traffic to allow for clearance activities to take place in safety on the road ahead.</definition>
+          <order>20</order>
+          <generate>false</generate>
+          <ID>EAID_FEB10522_3182_46b2_9BC5_5D54D04FC048</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>rushHourLaneInOperation</name>
+          <definition>Dedicated rush (peak) hour lane(s) are in operation.</definition>
+          <order>21</order>
+          <generate>false</generate>
+          <ID>EAID_47CD1635_41BD_4987_BAFB_C523F053F97D</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>singleAlternateLineTraffic</name>
+          <definition>Traffic is being controlled to move in alternate single lines. This control may be undertaken by traffic lights or flagman.</definition>
+          <order>22</order>
+          <generate>true</generate>
+          <ID>EAID_A7A4F56B_3005_4479_A0B6_D90583C82EE6</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>tidalFlowLaneInOperation</name>
+          <definition>Dedicated tidal flow lane(s) are in operation in the specified direction.</definition>
+          <order>23</order>
+          <generate>false</generate>
+          <ID>EAID_920443F2_3344_4128_9C83_E0191E10FBCD</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>turnAroundInOperation</name>
+          <definition>Traffic is being directed back down the opposite carriageway, possibly requiring the temporary removal of the central crash barrier.</definition>
+          <order>24</order>
+          <generate>false</generate>
+          <ID>EAID_CBE1979F_86F5_4a30_AA4A_2762F9B5BC22</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>useOfSpecifiedLanesOrCarriagewaysAllowed</name>
+          <definition>The specified lane(s) or carriageway(s) may be used. The normal lane(s) or carriageway(s) restrictions are not currently in force.</definition>
+          <order>25</order>
+          <generate>true</generate>
+          <ID>EAID_6251DCAE_7B8E_473b_8804_F94F7B37D91F</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>useSpecifiedLanesOrCarriageways</name>
+          <definition>Use the specified lane(s) or carriageway(s).</definition>
+          <order>26</order>
+          <generate>false</generate>
+          <ID>EAID_1E2B3E28_4BE0_44fd_8B37_49422FA3A3EC</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>vehicleStorageInOperation</name>
+          <definition>Vehicles are being stored on the roadway and/or at a rest area or service area at the specified location.</definition>
+          <order>27</order>
+          <generate>false</generate>
+          <ID>EAID_890A3E1B_08F4_4fe7_93D4_2B1A011D9682</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>weightRestrictionInOperation</name>
+          <definition>A weight restriction is in operation.</definition>
+          <order>28</order>
+          <generate>true</generate>
+          <ID>EAID_02572BE3_0274_4b25_BC99_03C654A5E473</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>other</name>
+          <definition>Other than as defined in this enumeration.</definition>
+          <order>29</order>
+          <generate>true</generate>
+          <ID>EAID_D4156426_9FC7_4dad_85AB_DEA760F77CA2</ID>
+        </D2Litteral>
+      </d2Litteral>
+      <isExtension>false</isExtension>
+      <isExtended>true</isExtended>
+    </D2Enumeration>
+    <D2Enumeration>
+      <name>ReroutingManagementTypeEnum</name>
+      <definition>Management actions relating to rerouting.</definition>
+      <id>EAID_D62A78D5_46C5_4910_BC1E_39905542FA47</id>
+      <isGenerated>true</isGenerated>
+      <package>
+        <name>Enumerations</name>
+        <ID>EAPK_9E2307F1_3590_4d2f_9EAA_0904DFD104E6</ID>
+        <generate>false</generate>
+        <definition>A collection of enumerations that are used only in the Situation package of the DATEX II model.</definition>
+        <NamespaceName>Situation</NamespaceName>
+      </package>
+      <NamespaceName>Situation</NamespaceName>
+      <d2Litteral>
+        <D2Litteral>
+          <name>doNotFollowDiversionSigns</name>
+          <definition>Do not follow diversion signs.</definition>
+          <order>0</order>
+          <generate>false</generate>
+          <ID>EAID_8A8EF84E_6F7D_4229_92F6_EA0F5696B394</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>doNotUseEntry</name>
+          <definition>Rerouted traffic is not to use the specified entry onto the identified road to commence the alternative route.</definition>
+          <order>1</order>
+          <generate>false</generate>
+          <ID>EAID_66A1B03A_7B57_438a_82CE_9139BFA94AC7</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>doNotUseExit</name>
+          <definition>Rerouted traffic is not to use the specified exit from the identified road to commence the alternative route.</definition>
+          <order>2</order>
+          <generate>false</generate>
+          <ID>EAID_FB42F4B0_1C43_44d9_AD08_8C5E9ABE1121</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>doNotUseIntersectionOrJunction</name>
+          <definition>Rerouted traffic is not to use the specified intersection or junction.</definition>
+          <order>3</order>
+          <generate>false</generate>
+          <ID>EAID_D836294C_065A_4fc3_9561_143BA1A1159E</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>followDiversionSigns</name>
+          <definition>Rerouted traffic is to follow the diversion signs.</definition>
+          <order>4</order>
+          <generate>true</generate>
+          <ID>EAID_42D2BFD0_0EF7_48f0_8E46_994651B4631A</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>followLocalDiversion</name>
+          <definition>Rerouted traffic is to follow local diversion.</definition>
+          <order>5</order>
+          <generate>false</generate>
+          <ID>EAID_4041DA40_9CD7_43b6_BC1B_DE41454DC03C</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>followSpecialMarkers</name>
+          <definition>Rerouted traffic is to follow the special diversion markers.</definition>
+          <order>6</order>
+          <generate>false</generate>
+          <ID>EAID_628CAC92_FAD2_40ad_A0FE_9E85A2171CC8</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>useEntry</name>
+          <definition>Rerouted traffic is to use the specified entry onto the identified road to commence the alternative route.</definition>
+          <order>7</order>
+          <generate>false</generate>
+          <ID>EAID_EBEB9944_CF46_4963_8C09_06169E89BB44</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>useExit</name>
+          <definition>Rerouted traffic is to use the specified exit from the identified road to commence the alternative route.</definition>
+          <order>8</order>
+          <generate>false</generate>
+          <ID>EAID_B07CE38E_1464_409f_9741_284044D12F41</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>useIntersectionOrJunction</name>
+          <definition>Rerouted traffic is to use the specified intersection or junction to commence the alternative route.</definition>
+          <order>9</order>
+          <generate>false</generate>
+          <ID>EAID_5F4C114E_BA51_497f_A228_7BF7F62D1A0B</ID>
+        </D2Litteral>
+      </d2Litteral>
+      <isExtension>false</isExtension>
+      <isExtended>false</isExtended>
+    </D2Enumeration>
+    <D2Enumeration>
+      <name>OpenlrFormOfWayEnum</name>
+      <definition>Enumeration of for of way</definition>
+      <id>EAID_E404840F_C8A0_4c64_9F82_1924AC176581</id>
+      <isGenerated>true</isGenerated>
+      <package>
+        <name>Enumerations</name>
+        <ID>EAPK_1FC76BEE_DA3B_4218_8202_40BD7A4D6445</ID>
+        <generate>false</generate>
+        <definition>A collection of enumerations that are used LocationReferencing package of the DATEX II model.</definition>
+        <NamespaceName>LocationReferencing</NamespaceName>
+      </package>
+      <NamespaceName>LocationReferencing</NamespaceName>
+      <d2Litteral>
+        <D2Litteral>
+          <name>undefined</name>
+          <definition>Undefined</definition>
+          <order>0</order>
+          <generate>false</generate>
+          <ID>EAID_47C3514A_3DAC_41ba_A488_5EC6E44D7136</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>motorway</name>
+          <definition>Motorway</definition>
+          <order>1</order>
+          <generate>true</generate>
+          <ID>EAID_09B9B518_5AED_4ab9_8A32_35E84927B012</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>multipleCarriageway</name>
+          <definition>Multiple carriageway</definition>
+          <order>2</order>
+          <generate>true</generate>
+          <ID>EAID_AD9C97B1_8AFC_4822_8B90_E120E2A6BE00</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>singleCarriageway</name>
+          <definition>Single carriageway</definition>
+          <order>3</order>
+          <generate>true</generate>
+          <ID>EAID_FE14217A_75C5_4b2d_9D93_70697A5305D0</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>roundabout</name>
+          <definition>Roundabout</definition>
+          <order>4</order>
+          <generate>true</generate>
+          <ID>EAID_B0D69B37_6AC1_4819_84F8_C8F2D86C4FC0</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>slipRoad</name>
+          <definition>Slip road</definition>
+          <order>5</order>
+          <generate>true</generate>
+          <ID>EAID_32741834_CF09_40d0_82BB_16266629CB75</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>trafficSquare</name>
+          <definition>Traffic square</definition>
+          <order>6</order>
+          <generate>false</generate>
+          <ID>EAID_97A416CE_6B09_45ac_8FD8_682CD5F3C579</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>other</name>
+          <definition>Other</definition>
+          <order>7</order>
+          <generate>true</generate>
+          <ID>EAID_6D742B66_D84A_4340_8675_A032187DB3EA</ID>
+        </D2Litteral>
+      </d2Litteral>
+      <isExtension>false</isExtension>
+      <isExtended>false</isExtended>
+    </D2Enumeration>
+    <D2Enumeration>
+      <name>InfrastructureDescriptorEnum</name>
+      <definition>Descriptor identifying infrastructure to help to identify a specific location.</definition>
+      <id>EAID_F070917E_B59F_4a5a_9149_65A8B936DF20</id>
+      <isGenerated>true</isGenerated>
+      <package>
+        <name>Enumerations</name>
+        <ID>EAPK_1FC76BEE_DA3B_4218_8202_40BD7A4D6445</ID>
+        <generate>false</generate>
+        <definition>A collection of enumerations that are used LocationReferencing package of the DATEX II model.</definition>
+        <NamespaceName>LocationReferencing</NamespaceName>
+      </package>
+      <NamespaceName>LocationReferencing</NamespaceName>
+      <d2Litteral>
+        <D2Litteral>
+          <name>atMotorwayInterchange</name>
+          <definition>At a motorway interchange.</definition>
+          <order>1</order>
+          <generate>true</generate>
+          <ID>EAID_623F143B_D3F5_4046_AC4C_8C2488032328</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>atRestArea</name>
+          <definition>At rest area off the carriageway.</definition>
+          <order>2</order>
+          <generate>false</generate>
+          <ID>EAID_DD8DC5C4_F164_4340_8F96_C65C03C08943</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>atServiceArea</name>
+          <definition>At service area.</definition>
+          <order>3</order>
+          <generate>true</generate>
+          <ID>EAID_96DE6DD6_049C_46f2_A94D_ED2426DA91B3</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>atTollPlaza</name>
+          <definition>At toll plaza.</definition>
+          <order>4</order>
+          <generate>false</generate>
+          <ID>EAID_6EABED3A_A297_4af6_8EE3_3C888BE899BB</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>atTunnelEntryOrExit</name>
+          <definition>At entry or exit of tunnel.</definition>
+          <order>5</order>
+          <generate>true</generate>
+          <ID>EAID_1688BE02_BD21_4e19_8095_AD5AC7E33399</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>inGallery</name>
+          <definition>In gallery.</definition>
+          <order>6</order>
+          <generate>false</generate>
+          <ID>EAID_D8F84ED6_7E5A_4e35_B594_2284DAE8D0F9</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>inTunnel</name>
+          <definition>In tunnel.</definition>
+          <order>7</order>
+          <generate>true</generate>
+          <ID>EAID_99307DAF_3451_4c9c_BA4D_BF74EA81B05F</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>onBridge</name>
+          <definition>On bridge.</definition>
+          <order>8</order>
+          <generate>true</generate>
+          <ID>EAID_AE08B4A2_9EA8_4374_AD69_C14AB958F5E7</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>onConnector</name>
+          <definition>On connecting carriageway between two different roads or road sections.</definition>
+          <order>9</order>
+          <generate>false</generate>
+          <ID>EAID_F2FFCD75_20A6_4eb1_9375_8281938A83E8</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>onElevatedSection</name>
+          <definition>On elevated section of road.</definition>
+          <order>10</order>
+          <generate>false</generate>
+          <ID>EAID_9FF1E42F_64A7_47a7_A6AB_AEBC09021B25</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>onFlyover</name>
+          <definition>On flyover, i.e. on section of road over another road.</definition>
+          <order>11</order>
+          <generate>false</generate>
+          <ID>EAID_BDAD6BB7_B047_45f0_871A_84B827B53A9D</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>onIceRoad</name>
+          <definition>On ice road.</definition>
+          <order>12</order>
+          <generate>false</generate>
+          <ID>EAID_AB6ABAB5_F05C_474e_8B9A_CEB8C1BE0746</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>onLevelCrossing</name>
+          <definition>On level-crossing.</definition>
+          <order>13</order>
+          <generate>false</generate>
+          <ID>EAID_B00B1553_14E9_4c3a_B2A7_134681DD5E58</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>onLinkRoad</name>
+          <definition>On road section linking two different roads.</definition>
+          <order>14</order>
+          <generate>true</generate>
+          <ID>EAID_284A470B_6894_411a_BB73_4F86D6B8666D</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>onRoundabout</name>
+          <definition>On roundabout.</definition>
+          <order>15</order>
+          <generate>false</generate>
+          <ID>EAID_3DE72FBF_72D3_408d_AA8B_3255F85D2CCC</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>onTheRoadway</name>
+          <definition>On the roadway.</definition>
+          <order>16</order>
+          <generate>true</generate>
+          <ID>EAID_44F839ED_E3E8_4b19_B2E8_ED10D73CE1B1</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>onUndergroundSection</name>
+          <definition>On underground section of road.</definition>
+          <order>17</order>
+          <generate>false</generate>
+          <ID>EAID_EB81E797_41B5_481f_84DB_B79EB1A5B4E8</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>onUnderpass</name>
+          <definition>On underpass, i.e. section of road which passes under another road.</definition>
+          <order>18</order>
+          <generate>true</generate>
+          <ID>EAID_DFABB3B2_347A_4d32_9A67_C4A1F64CF0FD</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>withinJunction</name>
+          <definition>On the main carriageway within a junction between exit slip road and entry slip road.</definition>
+          <order>19</order>
+          <generate>false</generate>
+          <ID>EAID_ED90336C_924F_49ba_8D71_DBE364C8A344</ID>
+        </D2Litteral>
+      </d2Litteral>
+      <isExtension>false</isExtension>
+      <isExtended>true</isExtended>
+    </D2Enumeration>
+    <D2Enumeration>
+      <name>PersonCategoryEnum</name>
+      <definition>Categories of person.</definition>
+      <id>EAID_F11DBC61_CA2D_4f0e_8582_BD95041DD101</id>
+      <isGenerated>true</isGenerated>
+      <package>
+        <name>Enumerations</name>
+        <ID>EAPK_9E2307F1_3590_4d2f_9EAA_0904DFD104E6</ID>
+        <generate>false</generate>
+        <definition>A collection of enumerations that are used only in the Situation package of the DATEX II model.</definition>
+        <NamespaceName>Situation</NamespaceName>
+      </package>
+      <NamespaceName>Situation</NamespaceName>
+      <d2Litteral>
+        <D2Litteral>
+          <name>adult</name>
+          <definition>Adult.</definition>
+          <order>0</order>
+          <generate>false</generate>
+          <ID>EAID_B9459614_DBA9_49ab_921B_7A736EA1262B</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>child</name>
+          <definition>Child (age 4 to 17).</definition>
+          <order>1</order>
+          <generate>false</generate>
+          <ID>EAID_08896640_59AC_490f_AFDC_7E3E81FB3FB5</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>emergencyServicesPerson</name>
+          <definition>A member of the emergency services, other than the police.</definition>
+          <order>2</order>
+          <generate>false</generate>
+          <ID>EAID_362100EA_3122_4c60_967B_C3DC462280D9</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>fireman</name>
+          <definition>A member of the fire service.</definition>
+          <order>3</order>
+          <generate>true</generate>
+          <ID>EAID_6F0E90C0_5045_4928_87A5_F0A651DDFC54</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>infant</name>
+          <definition>Infant (age 0 to 3).</definition>
+          <order>4</order>
+          <generate>false</generate>
+          <ID>EAID_420EFB96_A112_41d0_AD6D_DFEE65DB8018</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>medicalStaff</name>
+          <definition>A member of the medical service.</definition>
+          <order>5</order>
+          <generate>false</generate>
+          <ID>EAID_11D6FA42_C1A0_46c8_9443_52F190ACC37C</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>memberOfThePublic</name>
+          <definition>A member of the general public.</definition>
+          <order>6</order>
+          <generate>false</generate>
+          <ID>EAID_7692221A_C172_4d7e_893A_861538300710</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>policeman</name>
+          <definition>A member of the police force.</definition>
+          <order>7</order>
+          <generate>true</generate>
+          <ID>EAID_602B62A9_8B37_44a6_9FA2_2A0943A4787A</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>politician</name>
+          <definition>A politician.</definition>
+          <order>8</order>
+          <generate>false</generate>
+          <ID>EAID_3019DE12_BDCA_48a0_AD6F_E130038DF4E1</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>publicTransportPassenger</name>
+          <definition>A passenger on or from a public transport vehicle.</definition>
+          <order>9</order>
+          <generate>false</generate>
+          <ID>EAID_2DEC9080_2E0C_4c8f_9243_AC31A6AA3C2A</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>sickPerson</name>
+          <definition>A sick person.</definition>
+          <order>10</order>
+          <generate>false</generate>
+          <ID>EAID_5D8938D7_17A2_40be_87E5_E546D85815FC</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>trafficOfficer</name>
+          <definition>A traffic patrol officer of the road authority.</definition>
+          <order>11</order>
+          <generate>false</generate>
+          <ID>EAID_95F9A012_8C8F_41fb_A640_13410B4B6080</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>trafficWarden</name>
+          <definition>A member of the local traffic warden service.</definition>
+          <order>12</order>
+          <generate>false</generate>
+          <ID>EAID_81C20DB2_CFAC_4f56_941F_C20BA6C968DB</ID>
+        </D2Litteral>
+        <D2Litteral>
+          <name>veryImportantPerson</name>
+          <definition>A very important person.</definition>
+          <order>13</order>
+          <generate>false</generate>
+          <ID>EAID_DF953ED2_19BC_4851_9C0D_6A8316C625E7</ID>
+        </D2Litteral>
+      </d2Litteral>
+      <isExtension>false</isExtension>
+      <isExtended>false</isExtended>
+    </D2Enumeration>
+  </d2Types>
 </Selection>

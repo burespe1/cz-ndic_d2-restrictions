@@ -29,3 +29,9 @@ ItineraryByIndexedLocations:
   locationContainedInItinerary:
     card: '2..n'
     ndic: "Parts of the route in travel order, `@index` = 1, 2, …; each part (`location`) is a contiguous section of one road (`SingleRoadLinearLocation`)."
+
+Source:
+  sourceIdentification:
+    ndic: >-
+      Code of the information source (preliminary code list): `RSD`, `SSU`, `SSU2`, `TSK2`, `PCR`, `USDI`, `DIRC`,
+      `FCD` (floating car data), `PPP-D4`, `OKAS`. The complete list of source codes and names will be added.

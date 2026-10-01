@@ -23,16 +23,50 @@ jedním pruhem, `singleAlternateLineTraffic`, závazně – `complianceOption` =
 `probabilityOfOccurrence` = `certain` – uzavírka v době publikace již platí.
 
 Platnost::
-Oba záznamy platí od 30. 8. 2023 7:00 do 1. 9. 2023 23:59.
+Oba záznamy platí od 30.{nbsp}8.{nbsp}2023 7:00 do 1.{nbsp}9.{nbsp}2023 23:59.
 
 Poloha::
-Poloha je popsána čtyřmi metodami: OpenLR, ALERT-C, staničením silnice 10 (106 797–107 507 m) a úseky
-Global Network verze 22.12: pět úseků v pořadí jízdy (126853–2901326), a průběhem
-polohy `gmlLineString` ve WGS-84.
+Poloha je popsána všemi metodami: OpenLR, ALERT-C, staničením silnice 10 (106 797–107 507 m), úseky
+Global Network verze 22.12 (pět úseků v pořadí jízdy, 126853–2901326) a průběhem polohy `gmlLineString`
+ve WGS-84.
 
 Další obsah::
 `source` uvádí původce informace (ŘSD), `generalPublicComment` text rozhodnutí o uzavírce
 a `urlLink` odkaz na podrobnosti.
+
+=== lane-closure.xml – uzavřený jízdní pruh na dálnici
+
+Práce na vozovce dálnice D1 mezi km 330,4 a 331,1 ve směru Ostrava s uzavřeným pravým jízdním pruhem.
+
+[source,xml]
+----
+include::{samplesdir}/lane-closure.xml[tags=**]
+----
+
+Situace::
+Záznam typu `MaintenanceWorks` popisuje příčinu (práce na silnici, `roadworks`, předmět prací vozovka – `road`),
+záznam typu `RoadOrCarriagewayOrLaneManagement` dopad – uzavření jízdního pruhu (`laneClosures`), závazně.
+Oba záznamy jsou ve verzi 5 a uvádějí jeden průjezdný jízdní pruh (`numberOfOperationalLanes`):
++
+[source,xml]
+----
+include::{samplesdir}/lane-closure.xml[tag=impact-lanes,indent=0]
+include::{samplesdir}/lane-closure.xml[tag=lane-closure,indent=0]
+----
+
+Platnost::
+1.{nbsp}10.{nbsp}2026 od 7:00 do 17:00.
+
+Poloha::
+Liniová poloha v jednom směru (`alertCAffectedDirection` = `aligned`) popsaná metodami OpenLR, ALERT-C
+(lokace 25605 → 23015), staničením dálnice D1 (330 399–331 099 m), úsekem Global Network 3867332 verze 26.06
+(15,47 → 82,71{nbsp}%) a průběhem `gmlLineString`. Upřesnění polohy uvádí dotčený pravý jízdní pruh
+(`rightLane`) hlavního jízdního pásu (`mainCarriageway`):
++
+[source,xml]
+----
+include::{samplesdir}/lane-closure.xml[tag=loc-spd,indent=0]
+----
 
 === closure-junction.xml – uzavírka křižovatky se třemi rameny
 
