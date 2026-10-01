@@ -5,10 +5,10 @@ network of the Czech Republic: roadworks, closures, diversions, speed limits and
 
 IMPORTANT: The format is a subset of the `cz-ndic_d2-common` format, where closures and roadworks are
 published together with other events. The restrictions profile selection is derived from the common
-selection by limiting it to road operator actions (`OperatorAction`); the structures and rules are the same
+selection by limiting it to road operator actions (`sit:OperatorAction`); the structures and rules are the same
 in both formats.
 
-The format is based on the DATEX II publication `SituationPublication` <<EN16157-3>>. It uses the DATEX II 3.7 model without national extensions. No status
+The format is based on the DATEX II publication `sit:SituationPublication` <<EN16157-3>>. It uses the DATEX II 3.7 model without national extensions. No status
 information is part of the publication.
 
 [[obalka]]
@@ -16,24 +16,26 @@ information is part of the publication.
 
 Each message is a DATEX II 3 document with the root element `d2:payload`. The `xsi:type` attribute of the root element
 specifies the publication type (here `sit:SituationPublication`), the `modelBaseVersion="3"` attribute
-the model version and the `lang` attribute the default language of texts.
+the model version and the `@lang` attribute the default language of texts.
 
 The format the message conforms to is identified solely by attributes of the root element:
 
 [horizontal]
-`profileName`:: format identifier without version (`cz-ndic_d2-restrictions`),
-`profileVersion`:: format version (`2.0`).
+`@profileName`:: format identifier without version (`cz-ndic_d2-restrictions`),
+`@profileVersion`:: format version (`2.0`).
 
 The publication header contains:
 
-* `feedType` – identifier of the data source the message comes from. The format of the message is
-  identified by the `profileName` and `profileVersion` attributes, not by `feedType`.
-* `publicationTime` – time the publication content was created. If the content has not changed since
-  the previous publication, the original time is kept; a new time is set only when the content changes.
-* `publicationCreator` – publication provider: country code in lower case (`cz`) and provider
-  abbreviation (`nationalIdentifier`).
-* `headerInformation` – handling of the information; NDIC always sets `confidentiality` =
-  `noRestriction` and `informationStatus` = `real`.
+* `feedType` – identifier of the data source the message comes from; the format of the message is identified
+  by the `@profileName` and `@profileVersion` attributes, not by `feedType`.
+* `publicationTime` – time the publication content was created; if the content has not changed since the
+  previous publication, the original time is kept; a new time is set only when the content changes.
+* `publicationCreator` – publication provider:
+** country code in lower case (`cz`),
+** provider abbreviation (`nationalIdentifier`).
+* `headerInformation` – handling of the information; NDIC always sets:
+** `confidentiality` = `noRestriction`,
+** `informationStatus` = `real`.
 
 All times in the message include the time zone.
 
@@ -71,9 +73,10 @@ road closure). The record identifier is derived from the situation identifier an
   `situationRecordCreationTime` and the creation time of the current version
   `situationRecordVersionTime`.
 * Each change of a record increases its version by one and changes `situationRecordVersionTime`.
-* In version 3 of the model a situation has no version number. Its version is expressed by
-  `situationVersionTime`, which always equals the latest `situationRecordVersionTime` of its records – each
-  change of a record is therefore also a new version of the situation.
+* In version 3 of the model a situation has no version number:
+** its version is expressed by `situationVersionTime`, which always equals the latest
+   `situationRecordVersionTime` of its records,
+** each change of a record is therefore also a new version of the situation.
 
 ==== Common content of a record
 
@@ -85,9 +88,11 @@ include::{samplesdir}/restriction.xml[tag=record-meta,indent=0]
 </sit:situationRecord>
 ----
 
-* `probabilityOfOccurrence` – `certain` for an event that has occurred and also for a planned event (its
-  validity starts in the future, see <<platnost>>); `probable` for information not yet verified (a preliminary
-  report from an unconfirmed source), `riskOf` for an impending phenomenon that may or may not occur.
+* `probabilityOfOccurrence`:
+** `certain` – an event that has occurred and also a planned event (its validity starts in the future, see
+   <<platnost>>),
+** `probable` – information not yet verified (a preliminary report from an unconfirmed source),
+** `riskOf` – an impending phenomenon that may or may not occur.
 * `safetyRelatedMessage` – `true` marks safety-related traffic information according to Commission
   Delegated Regulation (EU) No 886/2013 (SRTI).
 * `source` – who created the information and is responsible for its correctness (`sourceIdentification`,
@@ -105,16 +110,16 @@ include::{samplesdir}/works-prague.xml[tag=comment-url,indent=0]
 [[typy]]
 === Record types
 
-The format uses only records of the road operator action type (subclasses of `OperatorAction`):
+The format uses only records of the road operator action type (subclasses of `sit:OperatorAction`):
 
 [cols="2,3",options="header"]
 |===
 |Area |Record types
-|Roadworks |`ConstructionWorks` (construction works), `MaintenanceWorks` (maintenance)
-|Closures and traffic layout |`RoadOrCarriagewayOrLaneManagement`
-|Diversions |`ReroutingManagement`
-|Speed limits |`SpeedManagement`
-|Other traffic management |`GeneralNetworkManagement`, `GeneralInstructionOrMessageToRoadUsers`
+|Roadworks |`sit:ConstructionWorks` (construction works), `sit:MaintenanceWorks` (maintenance)
+|Closures and traffic layout |`sit:RoadOrCarriagewayOrLaneManagement`
+|Diversions |`sit:ReroutingManagement`
+|Speed limits |`sit:SpeedManagement`
+|Other traffic management |`sit:GeneralNetworkManagement`, `sit:GeneralInstructionOrMessageToRoadUsers`
 |===
 
 A situation typically contains the cause (e.g. roadworks) and its consequence (e.g. a closure or
@@ -157,7 +162,7 @@ include::{samplesdir}/restriction.xml[tag=operator,indent=0]
 
 Validity is given for each situation record separately in the `validity` structure. Only
 `validityStatus` = `definedByValidityTimeSpec` is used, with the interval `validityTimeSpecification`
-(class `OverallPeriod`) with the start `overallStartTime` and the end `overallEndTime`.
+(class `com:OverallPeriod`) with the start `overallStartTime` and the end `overallEndTime`.
 
 If an event applies only in a certain part of the day (e.g. works only during the day, at night or
 outside rush hours), the interval is supplemented by the `validPeriod` element: the period name
@@ -206,10 +211,10 @@ the given place; all of them describe the same real-world section. At least one 
 [cols="2,3,4",options="header"]
 |===
 |Method |Element |Use
-|ALERT-C |`alertCLinear` (`AlertCMethod2Linear`) |where a location exists in the ALERT-C location table
+|ALERT-C |`alertCLinear` (`loc:AlertCMethod2Linear`) |where a location exists in the ALERT-C location table
 |OpenLR |`openlrLinear` |always, where the location can be encoded (dynamic location referencing)
 |Road chainage |`linearWithinLinearElement` with `roadNumber` |roads with chainage
-|Global Network |`linearWithinLinearElement` with `LinearElementByCode` |sections of the Global Network (ŘSD)
+|Global Network |`linearWithinLinearElement` with `loc:LinearElementByCode` |sections of the Global Network (ŘSD)
 |Location path |`gmlLineString` |line in ETRS89 for display on a map; the only exact coordinates of the start and end of the location (<<prubeh>>)
 |===
 
@@ -233,9 +238,11 @@ In messages about events the following also applies:
 * `alertCAffectedDirection` = `both` expresses an event valid in both directions of travel.
 * If an event runs over several roads, each part of the route (<<trasa>>) or member of the group
   (<<skupiny>>) has its own `alertCLinear`.
-* A point-like event between two locations (e.g. an accident on a section) is described by the whole
-  section between adjacent locations. Only an event at an ALERT-C location point, usually in the middle of
-  a junction, has identical primary and secondary locations.
+* A point-like event:
+** between two locations (e.g. an accident on a section) is described by the whole section between
+   adjacent locations,
+** only an event at an ALERT-C location point, usually in the middle of a junction, has identical primary
+   and secondary locations.
 
 .ALERT-C location referencing (sample `restriction.xml`)
 [source,xml]
@@ -301,11 +308,21 @@ include::{samplesdir}/restriction.xml[tag=loc-gml,indent=0]
 The `supplementaryPositionalDescription` element specifies which part of the road the event affects. It applies
 to the whole location and all methods describing it:
 
-* `carriageway` – the affected carriageway (`carriageway`, e.g. `mainCarriageway`, `entrySlipRoad` and
-  `exitSlipRoad`) and the affected lanes in it (`lane/laneUsage`, e.g. `rightLane`, `leftLane`, `middleLane`,
-  `hardShoulder`). Without a lane, the event affects the whole carriageway.
-* `infrastructureDescriptor` – the kind of place on the road, e.g. `onBridge` or `atServiceArea`;
-  `geographicDescriptor` – the position in the terrain, e.g. `onBorder` (at the state border).
+* `carriageway` – the affected carriageway and the affected lanes in it:
+** carriageway `carriageway`, e.g.:
+*** `mainCarriageway` – main carriageway,
+*** `entrySlipRoad` – entry slip road,
+*** `exitSlipRoad` – exit slip road,
+** lane `lane/laneUsage`, e.g.:
+*** `rightLane` – right lane,
+*** `leftLane` – left lane,
+*** `middleLane` – middle lane,
+*** `hardShoulder` – hard shoulder,
+** without a lane, the event affects the whole carriageway.
+* `infrastructureDescriptor` – the kind of place on the road, e.g.:
+** `onBridge` – on a bridge,
+** `atServiceArea` – at a service area.
+* `geographicDescriptor` – the position in the terrain, e.g. `onBorder` (at the state border).
 * `lengthAffected` – length of the affected section in metres if the source gives only the length (e.g. a restriction
   2 km long).
 
@@ -322,9 +339,10 @@ If a contiguous location passes from one road to another (e.g. a closure along a
 adjoining third-class road), it is described as a route – `locationReference` of type
 `loc:ItineraryByIndexedLocations`:
 
-* Each part of the route lies on one road. It is a `locationContainedInItinerary` element with the `index`
-  attribute (1, 2, …) whose `location` element is a linear location `loc:SingleRoadLinearLocation` described by all available
-  methods and with its own location path `gmlLineString`.
+* Each part of the route lies on one road:
+** it is a `locationContainedInItinerary` element with the `@index` attribute (1, 2, …),
+** its `location` element is a linear location `loc:SingleRoadLinearLocation` described by all available
+   methods and with its own location path `gmlLineString`.
 * The parts are in the order of travel (for a bidirectional location in the order of the first direction);
   the end of a part is the start of the next one and the parts do not overlap. Directionality is the same in
   all parts.
@@ -362,12 +380,15 @@ including its arms, a network of streets, sections with gaps (also on one road) 
 (closure of an area, an event, a calamity) – is described by one record whose location is a group of
 sections:
 
-* *One-off area* – `locationReference` of type `loc:LocationGroupByList`; the individual sections are in
-  `locationContainedInGroup` elements (at least two), each on one road and described as a separate linear location (`loc:SingleRoadLinearLocation`) by all
-  available methods. The order of the sections has no meaning.
+* *One-off area* – `locationReference` of type `loc:LocationGroupByList`:
+** the individual sections are in `locationContainedInGroup` elements (at least two),
+** each section lies on one road and is described as a separate linear location
+   (`loc:SingleRoadLinearLocation`) by all available methods,
+** the order of the sections has no meaning.
 * *Recurring area* (regular winter closures, permanent diversion routes) – reference to a predefined group
-  of the `cz-ndic_d2-pls` format: `locationReference` of type `loc:LocationGroupByReference` with
-  `predefinedLocationGroupReference` (`targetClass` = `loc:PredefinedLocationGroup`).
+  of the `cz-ndic_d2-pls` format:
+** `locationReference` of type `loc:LocationGroupByReference`,
+** with `predefinedLocationGroupReference` (`@targetClass` = `loc:PredefinedLocationGroup`).
 
 An area is always described by a list of linear sections.
 

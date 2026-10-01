@@ -19,7 +19,7 @@
 
 GmlLineString:
   posList:
-    ndic: "Line in the direction of travel from the start to the end of the location (for a bidirectional location in the first direction). The start and end are exact, intermediate points are simplified with a deviation of at most 10 m from the GN section geometry; at least two points (start and end); ETRS89 coordinates (`srsName` = `urn:ogc:def:crs:EPSG::4258`) to 5 decimal places (≈ 1 m)."
+    ndic: "Line in the direction of travel from the start to the end of the location (for a bidirectional location in the first direction). The start and end are exact, intermediate points are simplified with a deviation of at most 10 m from the GN section geometry; at least two points (start and end); ETRS89 coordinates (`@srsName` = `urn:ogc:def:crs:EPSG::4258`) to 5 decimal places (≈ 1 m)."
 
 PercentageDistanceAlongLinearElement:
   percentageDistanceAlong:
@@ -27,12 +27,12 @@ PercentageDistanceAlongLinearElement:
 
 LocationGroupByList:
   locationContainedInGroup:
-    ndic: "Each member of the group is a contiguous section of one road (`SingleRoadLinearLocation`); the order of the members has no meaning."
+    ndic: "Each member of the group is a contiguous section of one road (`loc:SingleRoadLinearLocation`); the order of the members has no meaning."
 
 ItineraryByIndexedLocations:
   locationContainedInItinerary:
     card: '2..n'
-    ndic: "Parts of the route in travel order, `@index` = 1, 2, …; each part (`location`) is a contiguous section of one road (`SingleRoadLinearLocation`)."
+    ndic: "Parts of the route in travel order, `@index` = 1, 2, …; each part (`location`) is a contiguous section of one road (`loc:SingleRoadLinearLocation`)."
 
 Source:
   sourceIdentification:

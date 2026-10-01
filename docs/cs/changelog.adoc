@@ -7,30 +7,30 @@
   cz-ndic_d2-restrictions-v1.2 (DATEX II 2.3).
 * Změny oproti verzi 1.2 (DATEX II 2.3):
 ** Formát je převeden na model DATEX II 3.7 bez národních rozšíření. Obálky `d2LogicalModel` a `exchange`
-   se nepoužívají; kořen je `d2:payload`, formát určují atributy `profileName` a `profileVersion`.
+   se nepoužívají; kořen je `d2:payload`, formát určují atributy `@profileName` a `@profileVersion`.
 ** `safetyRelatedMessage` je součástí modelu (dříve národní rozšíření).
 ** Národní rozšíření polohy (`linearExtension`, `globalNetworkLinear`, `openlrExtendedLinear`) nahradily
    prvky modelu 3.7: OpenLR v `openlrLinear`, úseky Global Network v `linearWithinLinearElement`
-   s `LinearElementByCode`.
+   s `loc:LinearElementByCode`.
 ** Počátek a konec polohy GN (`startPoint`, `endPoint` v S-JTSK) nahradil průběh polohy v ETRS89
    (`gmlLineString`); krajní úseky GN mají procenta.
 ** Nový povinný prvek `alertCAffectedDirection`.
-** Bodové polohy (`PointLocation`) ani plošné polohy (`AreaLocation`) se nepoužívají; bodové místo je krátký
+** Bodové polohy (`loc:PointLocation`) ani plošné polohy (`loc:AreaLocation`) se nepoužívají; bodové místo je krátký
    liniový úsek, oblast výčet liniových úseků.
 ** Upřesnění polohy (`supplementaryPositionalDescription`) má strukturu modelu 3.7: jízdní pás a pruhy
    (dříve `affectedCarriagewayAndLanes`) jsou v `carriageway` s `lane/laneUsage`, popis místa (dříve
    `locationDescriptor`) v `infrastructureDescriptor`, resp. `geographicDescriptor`.
 ** `trafficConstrictionType` (dříve v `impact`) se nepoužívá: model 3.7 ho u akcí správce nemá; rozsah omezení
-   vyjadřuje záznam `RoadOrCarriagewayOrLaneManagement` a `impact`.
+   vyjadřuje záznam `sit:RoadOrCarriagewayOrLaneManagement` a `impact`.
 ** Nepoužívají se: popis zdroje dat `feedDescription` (zdroj určuje `feedType`), souhrnný záznam situace
    `situationSummary` (souhrn by musel mít vlastní polohu, platnost a povinné prvky typu; komentáře zůstávají
    v jednotlivých záznamech), cíl trasy `routeDestination` a opakované intervaly platnosti jiné než denní
    časový úsek (`recurringTimePeriodOfDay`).
-** Poloha se nepopisuje jednou liniovou polohou přes více komunikací: `SingleRoadLinearLocation` je souvislý
+** Poloha se nepopisuje jednou liniovou polohou přes více komunikací: `loc:SingleRoadLinearLocation` je souvislý
    úsek jedné komunikace s nejvýše jedním `alertCLinear`, souvislá trasa přes více komunikací je
-   `ItineraryByIndexedLocations` a nesouvislá nebo rozvětvená poloha `LocationGroupByList`.
+   `loc:ItineraryByIndexedLocations` a nesouvislá nebo rozvětvená poloha `loc:LocationGroupByList`.
 ** Profil je zúžen na prvky a hodnoty výčtů, které NDIC publikuje nebo které plní hlášení ALERT-C; vypuštěné
-   hodnoty ALERT-C se vyjadřují obecnější hodnotou (např. tenisový turnaj `sportsMeeting`).
+   hodnoty ALERT-C se vyjadřují obecnější hodnotou.
 ** Obecná místa platnosti řízení provozu (`placesAtWhichApplicable`, např. „v tunelech“) se neuvádějí –
    událost se vždy týká konkrétní polohy.
 * Původ dat:

@@ -8,34 +8,33 @@
 * Changes compared to version 1.2 (DATEX II 2.3):
 ** The format has been migrated to the DATEX II 3.7 model without national extensions. The `d2LogicalModel`
    and `exchange` envelopes are not used; the root is `d2:payload`, the format is identified by the
-   `profileName` and `profileVersion` attributes.
+   `@profileName` and `@profileVersion` attributes.
 ** `safetyRelatedMessage` is part of the model (formerly a national extension).
 ** The national location extensions (`linearExtension`, `globalNetworkLinear`, `openlrExtendedLinear`) were
    replaced by elements of the 3.7 model: OpenLR in `openlrLinear`, Global Network sections in
-   `linearWithinLinearElement` with `LinearElementByCode`.
+   `linearWithinLinearElement` with `loc:LinearElementByCode`.
 ** The start and end of a GN location (`startPoint`, `endPoint` in S-JTSK) are replaced by the location path
    in ETRS89 (`gmlLineString`); GN edge sections use percentages.
 ** New mandatory element `alertCAffectedDirection`.
-** Neither point locations (`PointLocation`) nor area locations (`AreaLocation`) are used; a point-like
+** Neither point locations (`loc:PointLocation`) nor area locations (`loc:AreaLocation`) are used; a point-like
    place is a short linear section, an area a list of linear sections.
 ** The supplementary positional description (`supplementaryPositionalDescription`) follows the structure of
    model 3.7: the carriageway and lanes (previously `affectedCarriagewayAndLanes`) are in `carriageway` with
    `lane/laneUsage`, the description of the place (previously `locationDescriptor`) in
    `infrastructureDescriptor` or `geographicDescriptor`.
 ** `trafficConstrictionType` (previously in `impact`) is not used: model 3.7 does not have it for road operator
-   actions; the extent of the restriction is expressed by the `RoadOrCarriagewayOrLaneManagement` record and
+   actions; the extent of the restriction is expressed by the `sit:RoadOrCarriagewayOrLaneManagement` record and
    `impact`.
 ** Not used: the description of the data source `feedDescription` (the source is identified by `feedType`),
    the situation summary record `situationSummary` (a summary would need its own location, validity and
    mandatory type elements; comments remain in the individual records), the route destination
    `routeDestination` and recurring validity intervals other than a daily time period
    (`recurringTimePeriodOfDay`).
-** A location is not described by one linear location over several roads: `SingleRoadLinearLocation` is a
+** A location is not described by one linear location over several roads: `loc:SingleRoadLinearLocation` is a
    contiguous section of one road with at most one `alertCLinear`, a contiguous route over several roads is
-   `ItineraryByIndexedLocations` and a non-contiguous or branching location `LocationGroupByList`.
+   `loc:ItineraryByIndexedLocations` and a non-contiguous or branching location `loc:LocationGroupByList`.
 ** The profile is narrowed to the elements and enumeration values that NDIC publishes or that ALERT-C messages
-   fill; ALERT-C values removed from the profile are expressed by a more general value (e.g. a tennis tournament
-   `sportsMeeting`).
+   fill; ALERT-C values removed from the profile are expressed by a more general value.
 ** Generic places at which traffic management applies (`placesAtWhichApplicable`, e.g. "in tunnels") are not
    given – an event always concerns a specific location.
 * Origin of the data:

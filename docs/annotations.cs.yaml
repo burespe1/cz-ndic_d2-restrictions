@@ -19,7 +19,7 @@
 
 GmlLineString:
   posList:
-    ndic: "Linie ve směru jízdy od počátku ke konci polohy (u obousměrné polohy v prvním směru). Počátek a konec jsou přesné, mezilehlé body zjednodušené s odchylkou nejvýše 10 m od geometrie úseků GN; alespoň dva body (počátek a konec); souřadnice ETRS89 (`srsName` = `urn:ogc:def:crs:EPSG::4258`) na 5 desetinných míst (≈ 1 m)."
+    ndic: "Linie ve směru jízdy od počátku ke konci polohy (u obousměrné polohy v prvním směru). Počátek a konec jsou přesné, mezilehlé body zjednodušené s odchylkou nejvýše 10 m od geometrie úseků GN; alespoň dva body (počátek a konec); souřadnice ETRS89 (`@srsName` = `urn:ogc:def:crs:EPSG::4258`) na 5 desetinných míst (≈ 1 m)."
 
 PercentageDistanceAlongLinearElement:
   percentageDistanceAlong:
@@ -27,12 +27,12 @@ PercentageDistanceAlongLinearElement:
 
 LocationGroupByList:
   locationContainedInGroup:
-    ndic: "Každý člen skupiny je souvislý úsek jedné komunikace (`SingleRoadLinearLocation`); pořadí členů nemá význam."
+    ndic: "Každý člen skupiny je souvislý úsek jedné komunikace (`loc:SingleRoadLinearLocation`); pořadí členů nemá význam."
 
 ItineraryByIndexedLocations:
   locationContainedInItinerary:
     card: '2..n'
-    ndic: "Části trasy v pořadí jízdy, `@index` = 1, 2, …; každá část (`location`) je souvislý úsek jedné komunikace (`SingleRoadLinearLocation`)."
+    ndic: "Části trasy v pořadí jízdy, `@index` = 1, 2, …; každá část (`location`) je souvislý úsek jedné komunikace (`loc:SingleRoadLinearLocation`)."
 
 Source:
   sourceIdentification:
