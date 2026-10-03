@@ -18,6 +18,7 @@
 # _unused_types: [LinearLocation]   # třídy, které schéma připouští, ale formát nepoužívá (ve výčtech variant se neuvádějí)
 
 GmlLineString:
+  _: Location path; always given where it can be created from the geometry of the GN sections.
   posList:
     ndic: "Line in the direction of travel from the start to the end of the location (for a bidirectional location in the first direction). The start and end are exact, intermediate points are simplified with a deviation of at most 10 m from the GN section geometry; at least two points (start and end); ETRS89 coordinates (`@srsName` = `urn:ogc:def:crs:EPSG::4258`) to 5 decimal places (≈ 1 m)."
 
@@ -45,3 +46,7 @@ _unused_types: [LinearLocation]
 Situation:
   situationRecord:
     variants: reduced
+SingleRoadLinearLocation:
+  alertCLinear:
+    card: 0..1
+    ndic: "At most one ALERT-C path along one road."
