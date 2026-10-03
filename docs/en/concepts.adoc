@@ -93,8 +93,7 @@ include::{samplesdir}/restriction.xml[tag=record-meta,indent=0]
    <<platnost>>),
 ** `probable` – information not yet verified (a preliminary report from an unconfirmed source),
 ** `riskOf` – an impending phenomenon that may or may not occur.
-* `safetyRelatedMessage` – `true` marks safety-related traffic information according to Commission
-  Delegated Regulation (EU) No 886/2013 (SRTI).
+* `safetyRelatedMessage` – `true` marks safety-related traffic information (SRTI).
 * `source` – who created the information and is responsible for its correctness (`sourceIdentification`,
   where applicable `sourceName`).
 * `generalPublicComment` – free-text description of the event by its originator, usually in Czech. It is given
