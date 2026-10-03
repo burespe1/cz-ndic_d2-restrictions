@@ -29,7 +29,7 @@ travel order, 1678138 from 82.16{nbsp}%, 1456372 and 1456373 whole, 1456374 to 0
 
 === works-prague.xml – construction works in Prague with a link to details
 
-Construction works in Počernická street (Prague 10) with narrowed lanes; the source is the Prague road
+Construction works in Počernická street (Prague 10) with narrowed lanes; the originator is the Prague road
 administration TSK (`TSK2`).
 
 [source,xml]

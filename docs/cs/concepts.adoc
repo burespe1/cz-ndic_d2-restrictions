@@ -93,7 +93,7 @@ include::{samplesdir}/restriction.xml[tag=record-meta,indent=0]
 ** `probable` – dosud neověřená informace (předběžné hlášení z nepotvrzeného zdroje),
 ** `riskOf` – hrozící jev, o kterém není jisté, zda nastane.
 * `safetyRelatedMessage` – `true` označuje informaci související s bezpečností silničního provozu (SRTI).
-* `source` – kdo informaci vytvořil a odpovídá za její správnost (`sourceIdentification`, případně
+* `source` – původce informace, který ji vytvořil a odpovídá za její správnost (`sourceIdentification`, případně
   `sourceName`).
 * `generalPublicComment` – volný popis události jejím tvůrcem, zpravidla česky. Uvádí se u každého záznamu situace
   (zpravidla stejný text), aby byl každý záznam srozumitelný i samostatně.
