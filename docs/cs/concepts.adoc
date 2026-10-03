@@ -181,7 +181,7 @@ include::{samplesdir}/restriction.xml[tag=validity,indent=0]
 [[polohy]]
 == Popisování poloh
 
-Poloha se popisuje přímo ve zprávě elementem `locationReference`, zpravidla typu `loc:SingleRoadLinearLocation`
+Poloha se popisuje přímo ve zprávě elementem `locationReference` typu podle tvaru polohy (tabulka níže), nejčastěji `loc:SingleRoadLinearLocation`
 (liniová poloha na jedné komunikaci). Liniová poloha se používá i pro bodové události (např. nehodu):
 v ALERT-C se událost promítne do celého úseku mezi sousedními lokacemi, OpenLR a úseky Global Network popisují
 krátký úsek komunikace v místě události.

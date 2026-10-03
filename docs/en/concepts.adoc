@@ -185,8 +185,8 @@ include::{samplesdir}/restriction.xml[tag=validity,indent=0]
 [[polohy]]
 == Location referencing
 
-The location is described directly in the message by the `locationReference` element, usually of type
-`loc:SingleRoadLinearLocation` (linear location on a single road). A linear location is also used for
+The location is described directly in the message by the `locationReference` element of a type that follows the
+shape of the location (table below), most often `loc:SingleRoadLinearLocation` (linear location on a single road). A linear location is also used for
 point-like events (e.g. an accident): in ALERT-C the event is projected onto the whole section between
 adjacent locations, OpenLR and the Global Network sections describe a short road section at the place of the
 event.
