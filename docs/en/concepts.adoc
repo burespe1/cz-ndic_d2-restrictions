@@ -64,7 +64,7 @@ include::{samplesdir}/restriction.xml[tag=situation-head,indent=0]
 
 The information itself is carried by `situationRecord` records. A situation may contain several records,
 each of a different type (`@xsi:type`) – typically a cause (e.g. an accident) and its consequence (e.g. a
-road closure). The record identifier is derived from the situation identifier and the record type.
+road closure). The record identifier is derived from the situation identifier and the record type; a situation therefore contains at most one record of each type.
 
 [[verzovani]]
 ==== Versioning
@@ -72,7 +72,8 @@ road closure). The record identifier is derived from the situation identifier an
 * Each record carries a version number (`@version`), the creation time of its first version
   `situationRecordCreationTime` and the creation time of the current version
   `situationRecordVersionTime`.
-* Each change of a record increases its version by one and changes `situationRecordVersionTime`.
+* When any record of a situation changes, all its records get a new version (incremented by one) and a new
+  `situationRecordVersionTime` equal to `situationVersionTime`.
 * In version 3 of the model a situation has no version number:
 ** its version is expressed by `situationVersionTime`, which always equals the latest
    `situationRecordVersionTime` of its records,

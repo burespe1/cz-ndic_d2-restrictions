@@ -63,14 +63,15 @@ include::{samplesdir}/restriction.xml[tag=situation-head,indent=0]
 
 Vlastní informace nesou záznamy `situationRecord`. V jedné situaci může být záznamů více, každý jiného
 typu (`@xsi:type`) – typicky příčina (např. nehoda) a její důsledek (např. uzavření silnice). Identifikátor
-záznamu je odvozen od identifikátoru situace a typu záznamu.
+záznamu je odvozen od identifikátoru situace a typu záznamu; situace proto obsahuje nejvýše jeden záznam každého typu.
 
 [[verzovani]]
 ==== Verzování
 
 * Každý záznam nese číslo verze (`@version`), čas vzniku první verze `situationRecordCreationTime`
   a čas vzniku aktuální verze `situationRecordVersionTime`.
-* Každá změna záznamu zvyšuje jeho verzi o jedna a mění `situationRecordVersionTime`.
+* Změní-li se kterýkoli záznam situace, dostanou všechny její záznamy novou verzi (o jedna vyšší) a nový
+  `situationRecordVersionTime`, rovný `situationVersionTime`.
 * Situace ve verzi 3 modelu číslo verze nemá:
 ** její verzi vyjadřuje `situationVersionTime`, který je vždy roven nejnovějšímu `situationRecordVersionTime`
    jejích záznamů,
