@@ -167,7 +167,8 @@ Validity is given for each situation record separately in the `validity` structu
 If an event applies only in a certain part of the day (e.g. works only during the day, at night or
 outside rush hours), the interval is supplemented by the `validPeriod` element: the period name
 `periodName` and the daily time period `recurringTimePeriodOfDay` (`startTimeOfPeriod`,
-`endTimeOfPeriod`). An event recurring in another way (e.g. only on some days) is described by several
+`endTimeOfPeriod`); times of the daily period are Czech local time (CET/CEST) without offset, and if
+`endTimeOfPeriod` is earlier than `startTimeOfPeriod`, the period spans midnight. An event recurring in another way (e.g. only on some days) is described by several
 consecutive records. The validity interval may lie in the past, the present
 or the future.
 

@@ -163,7 +163,8 @@ include::{samplesdir}/restriction.xml[tag=operator,indent=0]
 
 Platí-li událost jen v určité části dne (např. práce jen přes den, v noci nebo mimo dopravní špičku),
 doplňuje se interval elementem `validPeriod`: název období `periodName` a denní časový úsek
-`recurringTimePeriodOfDay` (`startTimeOfPeriod`, `endTimeOfPeriod`). Opakuje-li se událost jinak (např.
+`recurringTimePeriodOfDay` (`startTimeOfPeriod`, `endTimeOfPeriod`); časy denního úseku jsou místní čas ČR (SEČ/SELČ)
+bez posunu, a je-li `endTimeOfPeriod` menší než `startTimeOfPeriod`, úsek přechází přes půlnoc. Opakuje-li se událost jinak (např.
 jen v některé dny), popisuje se více po sobě jdoucími záznamy.
 Interval platnosti může ležet v minulosti, přítomnosti i budoucnosti.
 
