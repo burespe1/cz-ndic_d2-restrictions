@@ -72,8 +72,7 @@ road closure or alternate one-way traffic). The record identifier is derived fro
 * Each record carries a version number (`@version`), the creation time of its first version
   `situationRecordCreationTime` and the creation time of the current version
   `situationRecordVersionTime`.
-* When any record of a situation changes, all its records get a new version (incremented by one) and a new
-  `situationRecordVersionTime` equal to `situationVersionTime`.
+* Each change of a record increases its version by one and changes `situationRecordVersionTime`.
 * In version 3 of the model a situation has no version number:
 ** its version is expressed by `situationVersionTime`, which always equals the latest
    `situationRecordVersionTime` of its records,

@@ -70,8 +70,7 @@ záznamu je odvozen od identifikátoru situace a typu záznamu; situace proto ob
 
 * Každý záznam nese číslo verze (`@version`), čas vzniku první verze `situationRecordCreationTime`
   a čas vzniku aktuální verze `situationRecordVersionTime`.
-* Změní-li se kterýkoli záznam situace, dostanou všechny její záznamy novou verzi (o jedna vyšší) a nový
-  `situationRecordVersionTime`, rovný `situationVersionTime`.
+* Každá změna záznamu zvyšuje jeho verzi o jedna a mění `situationRecordVersionTime`.
 * Situace ve verzi 3 modelu číslo verze nemá:
 ** její verzi vyjadřuje `situationVersionTime`, který je vždy roven nejnovějšímu `situationRecordVersionTime`
    jejích záznamů,
