@@ -63,8 +63,8 @@ include::{samplesdir}/restriction.xml[tag=situation-head,indent=0]
 ----
 
 The information itself is carried by `situationRecord` records. A situation may contain several records,
-each of a different type (`@xsi:type`) – typically a cause (e.g. an accident) and its consequence (e.g. a
-road closure). The record identifier is derived from the situation identifier and the record type; a situation therefore contains at most one record of each type.
+each of a different type (`@xsi:type`) – typically roadworks and their consequence (e.g. a
+road closure or alternate one-way traffic). The record identifier is derived from the situation identifier and the record type; a situation therefore contains at most one record of each type.
 
 [[verzovani]]
 ==== Versioning

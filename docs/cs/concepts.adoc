@@ -62,7 +62,7 @@ include::{samplesdir}/restriction.xml[tag=situation-head,indent=0]
 ----
 
 Vlastní informace nesou záznamy `situationRecord`. V jedné situaci může být záznamů více, každý jiného
-typu (`@xsi:type`) – typicky příčina (např. nehoda) a její důsledek (např. uzavření silnice). Identifikátor
+typu (`@xsi:type`) – typicky práce na silnici a jejich důsledek (např. uzavření silnice nebo kyvadlový provoz). Identifikátor
 záznamu je odvozen od identifikátoru situace a typu záznamu; situace proto obsahuje nejvýše jeden záznam každého typu.
 
 [[verzovani]]
