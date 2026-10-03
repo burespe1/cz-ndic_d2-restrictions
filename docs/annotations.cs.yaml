@@ -38,8 +38,8 @@ ItineraryByIndexedLocations:
 Source:
   sourceIdentification:
     ndic: >-
-      Kód původce informace, např. `RSD` (ŘSD), `PCR` (Policie ČR), `TSK2` (TSK hl. m. Prahy), `FCD` (data
-      z plovoucích vozidel). Výčet kódů není uzavřený; neznámý kód není chybou. Čitelný název původce nese `sourceName`.
+      Kód původce informace; stávající kódy: `RSD` (ŘSD), `SSU`, `SSU2`, `TSK2` (TSK hl. m. Prahy), `PCR`
+      (Policie ČR), `USDI`, `DIRC`, `FCD` (data z plovoucích vozidel), `PPP-D4`, `OKAS`. Výčet kódů není uzavřený; neznámý kód není chybou. Čitelný název původce nese `sourceName`.
 
 _unused_types: [LinearLocation]
 

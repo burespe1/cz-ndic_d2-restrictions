@@ -38,8 +38,9 @@ ItineraryByIndexedLocations:
 Source:
   sourceIdentification:
     ndic: >-
-      Code of the information originator, e.g. `RSD` (ŘSD), `PCR` (Police of the Czech Republic), `TSK2` (Prague road
-      administration TSK), `FCD` (floating car data). The list of codes is open; an unknown code is not an error. The
+      Code of the information originator; current codes: `RSD` (ŘSD), `SSU`, `SSU2`, `TSK2` (Prague road
+      administration TSK), `PCR` (Police of the Czech Republic), `USDI`, `DIRC`, `FCD` (floating car data),
+      `PPP-D4`, `OKAS`. The list of codes is open; an unknown code is not an error. The
       readable name of the originator is given in `sourceName`.
 
 _unused_types: [LinearLocation]
