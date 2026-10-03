@@ -33,5 +33,15 @@
    hodnoty ALERT-C se vyjadřují obecnější hodnotou.
 ** Obecná místa platnosti řízení provozu (`placesAtWhichApplicable`, např. „v tunelech“) se neuvádějí –
    událost se vždy týká konkrétní polohy.
+** Procenta délky úseku GN (`percentageDistanceAlong`) jsou v rozsahu 0–100 (dříve 0–1).
+** Kód země ALERT-C (`alertCLocationCountryCode`) je `2` (dříve `CZ`).
+** Prvky OpenLR mají názvy modelu 3.7 (`openlrCoordinates`, `openlrLowestFrcToNextLRPoint`), třída komunikace
+   se píše malými písmeny (`frc0`–`frc7`).
+** Naléhavost (`urgency`) se neuvádí.
+** Změněné hodnoty: `earlierAccident` → `earlierIncident`; `seriousAccident` → `seriousInjuryOrFatalAccident`;
+   `multivehicleAccident` → `multipleVehicleAccident`; kluzká vozovka z povětrnostní příčiny `slippery`
+   (dříve `slipperyRoad`); porucha služeb odpočívky je záznam `sit:ServiceDisruption`; bezohledný řidič záznam
+   `sit:VehicleObstruction`.
+** Původní počet pruhů (`originalNumberOfLanes`) se uvádí u jízdního pásu (`carriageway`), ne v `impact`.
 * Původ dat:
 ** Směrovost události (`alertCAffectedDirection`) vychází ze směrovosti v katalogu událostí ALERT-C <<ISO14819-2>>.
