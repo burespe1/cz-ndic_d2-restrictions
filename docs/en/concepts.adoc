@@ -14,7 +14,7 @@ information is part of the publication.
 [[obalka]]
 === Envelope and publication header
 
-Each message is a DATEX II 3 document with the root element `d2:payload`. The `xsi:type` attribute of the root element
+Each message is a DATEX II 3 document with the root element `d2:payload`. The `@xsi:type` attribute of the root element
 specifies the publication type (here `sit:SituationPublication`), the `modelBaseVersion="3"` attribute
 the model version and the `@lang` attribute the default language of texts.
 
@@ -63,7 +63,7 @@ include::{samplesdir}/restriction.xml[tag=situation-head,indent=0]
 ----
 
 The information itself is carried by `situationRecord` records. A situation may contain several records,
-each of a different type (`xsi:type`) – typically a cause (e.g. an accident) and its consequence (e.g. a
+each of a different type (`@xsi:type`) – typically a cause (e.g. an accident) and its consequence (e.g. a
 road closure). The record identifier is derived from the situation identifier and the record type.
 
 [[verzovani]]
