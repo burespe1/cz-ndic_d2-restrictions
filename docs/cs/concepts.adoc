@@ -332,8 +332,8 @@ III. třídy), popisuje se jako trasa – `locationReference` typu `loc:Itinerar
 
 * Každá část trasy leží na jedné komunikaci:
 ** je to element `locationContainedInItinerary` s atributem `@index` (1, 2, …),
-** jeho element `location` je liniová poloha `loc:SingleRoadLinearLocation` popsaná všemi dostupnými
-   metodami a vlastním průběhem `gmlLineString`.
+** jeho element `location` je liniová poloha `loc:SingleRoadLinearLocation` popsaná úseky GN a vlastním
+   průběhem `gmlLineString`; OpenLR a ALERT-C se uvádějí, lze-li je pro danou část zakódovat.
 * Části jsou v pořadí jízdy (u obousměrné polohy v pořadí prvního směru), konec části je počátkem následující
   a části se nepřekrývají. Směrovost je ve všech částech shodná.
 * Novou část nezakládá úsek jiné komunikace uvnitř křižovatky, krátká spojka ani souběh dvou silnic. Má-li
@@ -370,7 +370,8 @@ jedním záznamem, jehož poloha je skupinou úseků:
 * *Jednorázová oblast* – `locationReference` typu `loc:LocationGroupByList`:
 ** jednotlivé úseky jsou v elementech `locationContainedInGroup` (alespoň dva),
 ** každý úsek leží na jedné komunikaci a je popsán jako samostatná liniová poloha
-   (`loc:SingleRoadLinearLocation`) všemi metodami, které jsou k dispozici,
+   (`loc:SingleRoadLinearLocation`) úseky GN a průběhem; OpenLR a ALERT-C se uvádějí, lze-li je pro daný
+   úsek zakódovat,
 ** pořadí úseků nemá význam.
 * *Opakující se oblast* (pravidelné zimní uzavírky, stálé objízdné trasy) – odkaz na předdefinovanou
   skupinu formátu `cz-ndic_d2-pls`:
