@@ -5,8 +5,8 @@ name:
   cs: DATEX II Situation Publication – Uzavírky a omezení
   en: DATEX II Situation Publication – Closures and restrictions
 description:
-  cs: Plánované uzavírky, práce a omezení provozu (podmnožina common).
-  en: Planned closures, roadworks and traffic restrictions (subset of common).
+  cs: Aktuální a plánované uzavírky, práce a omezení provozu (podmnožina common).
+  en: Current and planned closures, roadworks and traffic restrictions (subset of common).
 publisher:
   cs: Národní dopravní informační centrum
   en: National Traffic Information Centre

@@ -28,7 +28,7 @@ staničením silnice 14 (115 498–115 821 m), úseky Global Network verze 26.06
 
 === works-prague.xml – stavební práce v Praze s odkazem na podrobnosti
 
-Stavební práce v ulici Počernická (Praha 10) se zúženými jízdními pruhy; zdrojem je TSK hl. m. Prahy (`TSK2`).
+Stavební práce v ulici Počernická (Praha 10) se zúženými jízdními pruhy; původcem je TSK hl. m. Prahy (`TSK2`).
 
 [source,xml]
 ----

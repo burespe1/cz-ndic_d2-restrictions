@@ -37,5 +37,16 @@
    fill; ALERT-C values removed from the profile are expressed by a more general value.
 ** Generic places at which traffic management applies (`placesAtWhichApplicable`, e.g. "in tunnels") are not
    given – an event always concerns a specific location.
+** Percentages along GN sections (`percentageDistanceAlong`) range from 0 to 100 (previously 0–1).
+** The ALERT-C country code (`alertCLocationCountryCode`) is `2` (previously `CZ`).
+** OpenLR elements use the names of model 3.7 (`openlrCoordinates`, `openlrLowestFrcToNextLRPoint`), the
+   functional road class is written in lower case (`frc0`–`frc7`).
+** Urgency (`urgency`) is not given.
+** Changed values: `earlierAccident` → `earlierIncident`; `seriousAccident` → `seriousInjuryOrFatalAccident`;
+   `multivehicleAccident` → `multipleVehicleAccident`; slippery road due to weather `slippery` (previously
+   `slipperyRoad`); a service area disruption is a `sit:ServiceDisruption` record; a reckless driver a
+   `sit:VehicleObstruction` record.
+** The original number of lanes (`originalNumberOfLanes`) is given for the carriageway (`carriageway`), not in
+   `impact`.
 * Origin of the data:
 ** The directionality of an event (`alertCAffectedDirection`) follows the directionality in the ALERT-C event list <<ISO14819-2>>.

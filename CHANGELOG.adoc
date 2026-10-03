@@ -4,8 +4,9 @@
 
 Formát převeden na model DATEX II 3.7 (dříve cz-ndic_d2-restrictions-v1.2 (DATEX II 2.3)).
 
-* Zpráva: kořenový element `d2:payload` s typem publikace v `xsi:type`; obálky `d2LogicalModel` a `exchange` se nepoužívají.
-* Formát identifikují atributy `profileName` a `profileVersion`; `feedType` identifikuje distribuci (`x-source:…`), `feedDescription` se nepoužívá.
+* Zpráva: kořenový element `d2:payload` s typem publikace v atributu `@xsi:type`; obálky `d2LogicalModel` a `exchange` se nepoužívají.
+* Formát identifikují atributy `@profileName` a `@profileVersion`; `feedType` identifikuje distribuci (`x-source:…`), `feedDescription` se nepoužívá.
 * Síť Global Network označena `CZ-RSD-GlobalNetwork`.
+* Změněné měřítko procent (0–100), kód země ALERT-C (`2`) a hodnoty výčtů – viz dokumentace, příloha Historie změn.
 
 Podrobný popis viz dokumentace formátu (příloha Historie změn dokumentace).

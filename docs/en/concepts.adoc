@@ -14,7 +14,7 @@ information is part of the publication.
 [[obalka]]
 === Envelope and publication header
 
-Each message is a DATEX II 3 document with the root element `d2:payload`. The `xsi:type` attribute of the root element
+Each message is a DATEX II 3 document with the root element `d2:payload`. The `@xsi:type` attribute of the root element
 specifies the publication type (here `sit:SituationPublication`), the `modelBaseVersion="3"` attribute
 the model version and the `@lang` attribute the default language of texts.
 
@@ -26,8 +26,8 @@ The format the message conforms to is identified solely by attributes of the roo
 
 The publication header contains:
 
-* `feedType` – identifier of the data source the message comes from; the format of the message is identified
-  by the `@profileName` and `@profileVersion` attributes, not by `feedType`.
+* `feedType` – identifier of the data source (distribution) in the register of the national access point <<nap>>; the format of the message is identified
+  by the `@profileName` and `@profileVersion` attributes, not by `feedType`; the `feedDescription` element is not used.
 * `publicationTime` – time the publication content was created; if the content has not changed since the
   previous publication, the original time is kept; a new time is set only when the content changes.
 * `publicationCreator` – publication provider:
@@ -63,8 +63,8 @@ include::{samplesdir}/restriction.xml[tag=situation-head,indent=0]
 ----
 
 The information itself is carried by `situationRecord` records. A situation may contain several records,
-each of a different type (`xsi:type`) – typically a cause (e.g. an accident) and its consequence (e.g. a
-road closure). The record identifier is derived from the situation identifier and the record type.
+each of a different type (`@xsi:type`) – typically roadworks and their consequence (e.g. a
+road closure or alternate one-way traffic). The record identifier is derived from the situation identifier and the record type; a situation therefore contains at most one record of each type.
 
 [[verzovani]]
 ==== Versioning
@@ -93,9 +93,8 @@ include::{samplesdir}/restriction.xml[tag=record-meta,indent=0]
    <<platnost>>),
 ** `probable` – information not yet verified (a preliminary report from an unconfirmed source),
 ** `riskOf` – an impending phenomenon that may or may not occur.
-* `safetyRelatedMessage` – `true` marks safety-related traffic information according to Commission
-  Delegated Regulation (EU) No 886/2013 (SRTI).
-* `source` – who created the information and is responsible for its correctness (`sourceIdentification`,
+* `safetyRelatedMessage` – `true` marks safety-related traffic information (SRTI).
+* `source` – originator of the information, who created it and is responsible for its correctness (`sourceIdentification`,
   where applicable `sourceName`).
 * `generalPublicComment` – free-text description of the event by its originator, usually in Czech. It is given
   in every record of the situation (usually the same text), so that each record can be understood on its own.
@@ -167,7 +166,8 @@ Validity is given for each situation record separately in the `validity` structu
 If an event applies only in a certain part of the day (e.g. works only during the day, at night or
 outside rush hours), the interval is supplemented by the `validPeriod` element: the period name
 `periodName` and the daily time period `recurringTimePeriodOfDay` (`startTimeOfPeriod`,
-`endTimeOfPeriod`). An event recurring in another way (e.g. only on some days) is described by several
+`endTimeOfPeriod`); times of the daily period are Czech local time (CET/CEST) without offset, and if
+`endTimeOfPeriod` is earlier than `startTimeOfPeriod`, the period spans midnight. An event recurring in another way (e.g. only on some days) is described by several
 consecutive records. The validity interval may lie in the past, the present
 or the future.
 
@@ -185,8 +185,8 @@ include::{samplesdir}/restriction.xml[tag=validity,indent=0]
 [[polohy]]
 == Location referencing
 
-The location is described directly in the message by the `locationReference` element, usually of type
-`loc:SingleRoadLinearLocation` (linear location on a single road). A linear location is also used for
+The location is described directly in the message by the `locationReference` element of a type that follows the
+shape of the location (table below), most often `loc:SingleRoadLinearLocation` (linear location on a single road). A linear location is also used for
 point-like events (e.g. an accident): in ALERT-C the event is projected onto the whole section between
 adjacent locations, OpenLR and the Global Network sections describe a short road section at the place of the
 event.
@@ -341,8 +341,9 @@ adjoining third-class road), it is described as a route – `locationReference` 
 
 * Each part of the route lies on one road:
 ** it is a `locationContainedInItinerary` element with the `@index` attribute (1, 2, …),
-** its `location` element is a linear location `loc:SingleRoadLinearLocation` described by all available
-   methods and with its own location path `gmlLineString`.
+** its `location` element is a linear location `loc:SingleRoadLinearLocation` described by GN sections
+   and its own location path `gmlLineString`; OpenLR and ALERT-C are given where they can be encoded for that part
+   (ALERT-C locations cover only part of the road network).
 * The parts are in the order of travel (for a bidirectional location in the order of the first direction);
   the end of a part is the start of the next one and the parts do not overlap. Directionality is the same in
   all parts.
@@ -359,9 +360,7 @@ include::{samplesdir}/closure-route.xml[tag=itinerary,indent=0]
       ...
     </loc:location>
   </loc:locationContainedInItinerary>
-  <loc:locationContainedInItinerary index="2">
-    <loc:location xsi:type="loc:SingleRoadLinearLocation">
-      <!-- III/34042 -->
+include::{samplesdir}/closure-route.xml[tag=itinerary-2,indent=2]
       ...
     </loc:location>
   </loc:locationContainedInItinerary>
@@ -383,7 +382,8 @@ sections:
 * *One-off area* – `locationReference` of type `loc:LocationGroupByList`:
 ** the individual sections are in `locationContainedInGroup` elements (at least two),
 ** each section lies on one road and is described as a separate linear location
-   (`loc:SingleRoadLinearLocation`) by all available methods,
+   (`loc:SingleRoadLinearLocation`) by GN sections and the location path; OpenLR and ALERT-C are given where
+   they can be encoded for that section (ALERT-C locations cover only part of the road network),
 ** the order of the sections has no meaning.
 * *Recurring area* (regular winter closures, permanent diversion routes) – reference to a predefined group
   of the `cz-ndic_d2-pls` format:

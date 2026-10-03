@@ -14,7 +14,7 @@ nepatří žádné stavové informace.
 [[obalka]]
 === Obálka a hlavička publikace
 
-Každá zpráva je dokument DATEX II 3 s kořenovým elementem `d2:payload`. Atribut `xsi:type` kořenového elementu určuje typ
+Každá zpráva je dokument DATEX II 3 s kořenovým elementem `d2:payload`. Atribut `@xsi:type` kořenového elementu určuje typ
 publikace (zde `sit:SituationPublication`), atribut `modelBaseVersion="3"` verzi modelu a atribut `@lang` výchozí jazyk
 textů.
 
@@ -26,8 +26,8 @@ Formát, podle kterého je zpráva sestavena, identifikují výhradně atributy 
 
 Hlavička publikace obsahuje:
 
-* `feedType` – identifikátor zdroje dat, ze kterého zpráva pochází; formát zprávy určují atributy
-  `@profileName` a `@profileVersion`, nikoli `feedType`.
+* `feedType` – identifikátor zdroje dat (distribuce) v registru národního přístupového bodu <<nap>>; formát zprávy určují atributy
+  `@profileName` a `@profileVersion`, nikoli `feedType`; element `feedDescription` se nepoužívá.
 * `publicationTime` – čas vytvoření obsahu publikace; pokud se obsah od předchozí publikace nezměnil, zůstává
   čas původní; nový čas vzniká jen se změnou obsahu.
 * `publicationCreator` – poskytovatel publikace:
@@ -62,8 +62,8 @@ include::{samplesdir}/restriction.xml[tag=situation-head,indent=0]
 ----
 
 Vlastní informace nesou záznamy `situationRecord`. V jedné situaci může být záznamů více, každý jiného
-typu (`xsi:type`) – typicky příčina (např. nehoda) a její důsledek (např. uzavření silnice). Identifikátor
-záznamu je odvozen od identifikátoru situace a typu záznamu.
+typu (`@xsi:type`) – typicky práce na silnici a jejich důsledek (např. uzavření silnice nebo kyvadlový provoz). Identifikátor
+záznamu je odvozen od identifikátoru situace a typu záznamu; situace proto obsahuje nejvýše jeden záznam každého typu.
 
 [[verzovani]]
 ==== Verzování
@@ -91,9 +91,8 @@ include::{samplesdir}/restriction.xml[tag=record-meta,indent=0]
    <<platnost>>),
 ** `probable` – dosud neověřená informace (předběžné hlášení z nepotvrzeného zdroje),
 ** `riskOf` – hrozící jev, o kterém není jisté, zda nastane.
-* `safetyRelatedMessage` – `true` označuje informaci související s bezpečností silničního provozu podle
-  nařízení v přenesené pravomoci (EU) č. 886/2013 (SRTI).
-* `source` – kdo informaci vytvořil a odpovídá za její správnost (`sourceIdentification`, případně
+* `safetyRelatedMessage` – `true` označuje informaci související s bezpečností silničního provozu (SRTI).
+* `source` – původce informace, který ji vytvořil a odpovídá za její správnost (`sourceIdentification`, případně
   `sourceName`).
 * `generalPublicComment` – volný popis události jejím tvůrcem, zpravidla česky. Uvádí se u každého záznamu situace
   (zpravidla stejný text), aby byl každý záznam srozumitelný i samostatně.
@@ -163,7 +162,8 @@ include::{samplesdir}/restriction.xml[tag=operator,indent=0]
 
 Platí-li událost jen v určité části dne (např. práce jen přes den, v noci nebo mimo dopravní špičku),
 doplňuje se interval elementem `validPeriod`: název období `periodName` a denní časový úsek
-`recurringTimePeriodOfDay` (`startTimeOfPeriod`, `endTimeOfPeriod`). Opakuje-li se událost jinak (např.
+`recurringTimePeriodOfDay` (`startTimeOfPeriod`, `endTimeOfPeriod`); časy denního úseku jsou místní čas ČR (SEČ/SELČ)
+bez posunu, a je-li `endTimeOfPeriod` menší než `startTimeOfPeriod`, úsek přechází přes půlnoc. Opakuje-li se událost jinak (např.
 jen v některé dny), popisuje se více po sobě jdoucími záznamy.
 Interval platnosti může ležet v minulosti, přítomnosti i budoucnosti.
 
@@ -181,7 +181,7 @@ include::{samplesdir}/restriction.xml[tag=validity,indent=0]
 [[polohy]]
 == Popisování poloh
 
-Poloha se popisuje přímo ve zprávě elementem `locationReference`, zpravidla typu `loc:SingleRoadLinearLocation`
+Poloha se popisuje přímo ve zprávě elementem `locationReference` typu podle tvaru polohy (tabulka níže), nejčastěji `loc:SingleRoadLinearLocation`
 (liniová poloha na jedné komunikaci). Liniová poloha se používá i pro bodové události (např. nehodu):
 v ALERT-C se událost promítne do celého úseku mezi sousedními lokacemi, OpenLR a úseky Global Network popisují
 krátký úsek komunikace v místě události.
@@ -332,8 +332,9 @@ III. třídy), popisuje se jako trasa – `locationReference` typu `loc:Itinerar
 
 * Každá část trasy leží na jedné komunikaci:
 ** je to element `locationContainedInItinerary` s atributem `@index` (1, 2, …),
-** jeho element `location` je liniová poloha `loc:SingleRoadLinearLocation` popsaná všemi dostupnými
-   metodami a vlastním průběhem `gmlLineString`.
+** jeho element `location` je liniová poloha `loc:SingleRoadLinearLocation` popsaná úseky GN a vlastním
+   průběhem `gmlLineString`; OpenLR a ALERT-C se uvádějí, lze-li je pro danou část zakódovat (lokace
+   ALERT-C pokrývají jen část silniční sítě).
 * Části jsou v pořadí jízdy (u obousměrné polohy v pořadí prvního směru), konec části je počátkem následující
   a části se nepřekrývají. Směrovost je ve všech částech shodná.
 * Novou část nezakládá úsek jiné komunikace uvnitř křižovatky, krátká spojka ani souběh dvou silnic. Má-li
@@ -348,9 +349,7 @@ include::{samplesdir}/closure-route.xml[tag=itinerary,indent=0]
       ...
     </loc:location>
   </loc:locationContainedInItinerary>
-  <loc:locationContainedInItinerary index="2">
-    <loc:location xsi:type="loc:SingleRoadLinearLocation">
-      <!-- III/34042 -->
+include::{samplesdir}/closure-route.xml[tag=itinerary-2,indent=2]
       ...
     </loc:location>
   </loc:locationContainedInItinerary>
@@ -370,7 +369,8 @@ jedním záznamem, jehož poloha je skupinou úseků:
 * *Jednorázová oblast* – `locationReference` typu `loc:LocationGroupByList`:
 ** jednotlivé úseky jsou v elementech `locationContainedInGroup` (alespoň dva),
 ** každý úsek leží na jedné komunikaci a je popsán jako samostatná liniová poloha
-   (`loc:SingleRoadLinearLocation`) všemi metodami, které jsou k dispozici,
+   (`loc:SingleRoadLinearLocation`) úseky GN a průběhem; OpenLR a ALERT-C se uvádějí, lze-li je pro daný
+   úsek zakódovat (lokace ALERT-C pokrývají jen část silniční sítě),
 ** pořadí úseků nemá význam.
 * *Opakující se oblast* (pravidelné zimní uzavírky, stálé objízdné trasy) – odkaz na předdefinovanou
   skupinu formátu `cz-ndic_d2-pls`:

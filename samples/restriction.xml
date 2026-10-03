@@ -8,8 +8,8 @@
     <com:nationalIdentifier>NDIC</com:nationalIdentifier>
   </com:publicationCreator>
   <!-- end::header[] -->
+  <!-- tag::situation-head[] -->
   <sit:situation id="5177a7c3-31bd-42de-a7d9-740ff941af03">
-    <!-- tag::situation-head[] -->
     <sit:situationVersionTime>2026-09-18T08:28:56+02:00</sit:situationVersionTime>
     <sit:headerInformation>
       <com:confidentiality>noRestriction</com:confidentiality>
@@ -172,8 +172,8 @@
       <sit:roadOrCarriagewayOrLaneManagementType>singleAlternateLineTraffic</sit:roadOrCarriagewayOrLaneManagementType>
       <!-- end::operator[] -->
     </sit:situationRecord>
+    <!-- tag::record-meta[] -->
     <sit:situationRecord xsi:type="sit:MaintenanceWorks" id="5177a7c3-31bd-42de-a7d9-740ff941af03_MaintenanceWorks" version="2">
-      <!-- tag::record-meta[] -->
       <sit:situationRecordCreationTime>2026-09-18T07:57:42+02:00</sit:situationRecordCreationTime>
       <sit:situationRecordVersionTime>2026-09-18T08:28:56+02:00</sit:situationRecordVersionTime>
       <sit:probabilityOfOccurrence>certain</sit:probabilityOfOccurrence>
