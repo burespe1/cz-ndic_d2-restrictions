@@ -349,9 +349,7 @@ include::{samplesdir}/closure-route.xml[tag=itinerary,indent=0]
       ...
     </loc:location>
   </loc:locationContainedInItinerary>
-  <loc:locationContainedInItinerary index="2">
-    <loc:location xsi:type="loc:SingleRoadLinearLocation">
-      <!-- III/34042 -->
+include::{samplesdir}/closure-route.xml[tag=itinerary-2,indent=2]
       ...
     </loc:location>
   </loc:locationContainedInItinerary>
