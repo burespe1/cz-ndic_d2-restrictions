@@ -342,7 +342,8 @@ adjoining third-class road), it is described as a route – `locationReference` 
 * Each part of the route lies on one road:
 ** it is a `locationContainedInItinerary` element with the `@index` attribute (1, 2, …),
 ** its `location` element is a linear location `loc:SingleRoadLinearLocation` described by GN sections
-   and its own location path `gmlLineString`; OpenLR and ALERT-C are given where they can be encoded for that part.
+   and its own location path `gmlLineString`; OpenLR and ALERT-C are given where they can be encoded for that part
+   (ALERT-C locations cover only part of the road network).
 * The parts are in the order of travel (for a bidirectional location in the order of the first direction);
   the end of a part is the start of the next one and the parts do not overlap. Directionality is the same in
   all parts.
@@ -382,7 +383,7 @@ sections:
 ** the individual sections are in `locationContainedInGroup` elements (at least two),
 ** each section lies on one road and is described as a separate linear location
    (`loc:SingleRoadLinearLocation`) by GN sections and the location path; OpenLR and ALERT-C are given where
-   they can be encoded for that section,
+   they can be encoded for that section (ALERT-C locations cover only part of the road network),
 ** the order of the sections has no meaning.
 * *Recurring area* (regular winter closures, permanent diversion routes) – reference to a predefined group
   of the `cz-ndic_d2-pls` format:
